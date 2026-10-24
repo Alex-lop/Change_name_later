@@ -105,6 +105,38 @@ npm run build   # production build to dist/
 
 Open http://localhost:5173, click a demo trial, and toggle criteria.
 
+## Deployment
+
+In production the FastAPI app serves the built frontend itself, so a single
+process handles both the API and the UI.
+
+1. **Build the frontend** (produces `frontend/dist`):
+   ```bash
+   cd frontend && npm install && npm run build
+   ```
+2. **Run the API** — it serves `/api/*` and the SPA from `frontend/dist`, and
+   generates `backend/data/patients.csv` on startup if it is missing:
+   ```bash
+   cd backend && uv run uvicorn dryrun.api:app --host 0.0.0.0 --port 8000
+   ```
+   Then open http://localhost:8000.
+
+### Docker
+
+A multi-stage `Dockerfile` builds the frontend with Node and runs the API with
+Python, serving everything on port 8000:
+
+```bash
+docker build -t dryrun .
+docker run -p 8000:8000 dryrun
+# open http://localhost:8000
+```
+
+The synthetic population is generated from a fixed seed at container startup,
+so no separate data-prep step or volume is required. The seeded parse cache and
+trials registry ship in the image, so the demo trials load offline. Cost
+figures remain labeled estimates.
+
 ## Layout
 
 ```

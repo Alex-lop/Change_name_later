@@ -15,11 +15,14 @@ criterion or edits assumptions.
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 import httpx
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from . import parser as parser_mod
@@ -29,9 +32,9 @@ from .analysis import VerdictMatrix, analyze
 from .cost import Assumptions, cost_model
 from .model import Rule
 from .seed import load_registry
-from .store import get_store
+from .store import DEFAULT_CSV, get_store
 
-app = FastAPI(title="Dry Run", version="0.1.0")
+app = FastAPI(title="Dry Run", version="0.2.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -40,6 +43,22 @@ app.add_middleware(
 )
 
 _parser = parser_mod.RuleParser()
+
+# Built frontend (vite) output, served in production. Optional in dev.
+FRONTEND_DIST = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+
+
+@app.on_event("startup")
+def _ensure_population() -> None:
+    """Generate the synthetic population CSV at startup if it is missing.
+
+    Keeps deployment one-step: the container does not need a separate data
+    generation stage. The seed is fixed so the population is reproducible.
+    """
+    csv_path = Path(DEFAULT_CSV)
+    if not csv_path.exists():
+        pop = synthea.generate_population()  # all adults with type 2 diabetes
+        synthea.write_csv(pop, csv_path)
 
 
 # --- request/response models ---------------------------------------------------
@@ -183,3 +202,25 @@ def analyze_endpoint(req: AnalyzeRequest) -> dict:
     result["active_rule_ids"] = active_ids
     result["population_label"] = synthea.POPULATION_LABEL
     return result
+
+
+# --- static frontend (production) ---------------------------------------------
+# Mounted LAST so it never shadows the /api/* routes above. Serves the built
+# Vite app from frontend/dist with SPA fallback to index.html.
+
+if FRONTEND_DIST.exists():
+    assets = FRONTEND_DIST / "assets"
+    if assets.exists():
+        app.mount("/assets", StaticFiles(directory=str(assets)), name="assets")
+
+    @app.get("/")
+    def _index() -> FileResponse:
+        return FileResponse(str(FRONTEND_DIST / "index.html"))
+
+    @app.get("/{full_path:path}")
+    def _spa_fallback(full_path: str) -> FileResponse:
+        # Any non-API, non-asset path returns the SPA shell.
+        candidate = FRONTEND_DIST / full_path
+        if candidate.is_file():
+            return FileResponse(str(candidate))
+        return FileResponse(str(FRONTEND_DIST / "index.html"))
