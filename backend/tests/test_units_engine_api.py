@@ -86,7 +86,28 @@ def test_api_parse_requires_input():
     assert c.post("/api/parse", json={}).status_code == 400
 
 
-def test_price_tag_demographics_are_fair():
+def test_added_rule_evaluated_by_engine():
+    # Task 7: a hand-added rule (added=true, no parser) is evaluated like any
+    # other rule and tightens the confirmed-eligible count.
+    c = TestClient(app)
+    pr = c.post("/api/parse", json={"nct_id": "NCT01179048"}).json()
+    rules = pr["rules"]
+    an_before = c.post("/api/analyze", json={"rules": rules}).json()
+    added = {
+        "id": "added_1",
+        "field": "bmi",
+        "operator": "<=",
+        "value": 30,
+        "unit": "kg/m2",
+        "kind": "inclusion",
+        "source_sentence": "Added: bmi <= 30 kg/m2",
+        "label": "added in Dry Run",
+        "added": True,
+    }
+    an_after = c.post("/api/analyze", json={"rules": rules + [added]}).json()
+    assert an_after["confirmed_eligible"] <= an_before["confirmed_eligible"]
+    # The added rule appears in its own price tag, marked and evaluated.
+    assert any(t["rule_id"] == "added_1" for t in an_after["price_tags"])
     # Task 2: deltas compare vs the acted-on cohort, are age+sex only (no race),
     # and are hidden when the excluded group is under 30 patients.
     c = TestClient(app)

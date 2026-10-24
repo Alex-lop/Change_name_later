@@ -5,6 +5,7 @@ import AssumptionsPanel from "./AssumptionsPanel";
 import PriceTags, { fmtMoney } from "./PriceTags";
 import CriterionRow from "./CriterionRow";
 import ResultsHeader from "./ResultsHeader";
+import AddCriterion from "./AddCriterion";
 
 const DEFAULT_ASSUMPTIONS = {
   target_enrollment: 1000,
@@ -130,6 +131,13 @@ export default function App() {
     setActiveIds(restored.map((r) => r.id));
   }
 
+  function addRule(rule) {
+    // Added rules are NOT part of the original protocol baseline, so reset
+    // removes them. They are evaluated by the same engine as seeded rules.
+    setRules((prev) => [...prev, rule]);
+    setActiveIds((prev) => [...prev, rule.id]);
+  }
+
   const cost = analysis?.cost;
 
   return (
@@ -224,6 +232,8 @@ export default function App() {
                 ))}
               </ul>
             </section>
+
+            <AddCriterion onAdd={addRule} />
 
             <AssumptionsPanel assumptions={assumptions} onChange={setAssumptions} />
           </div>

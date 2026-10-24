@@ -73,6 +73,7 @@ class Rule(BaseModel):
     kind: Kind = Kind.INCLUSION
     source_sentence: str = ""
     label: str = ""
+    added: bool = False  # True for criteria added by hand in the UI
 
     @field_validator("field")
     @classmethod
