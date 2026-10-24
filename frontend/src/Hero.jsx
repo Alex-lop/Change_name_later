@@ -46,7 +46,7 @@ export default function Hero({ excludedFraction, onEnter }) {
     const canvas = canvasRef.current;
     const ctx = canvas && canvas.getContext("2d");
     if (!ctx) return;
-    const INK = getComputedStyle(document.documentElement).getPropertyValue("--ink").trim() || "#12161a";
+    const INK = getComputedStyle(document.documentElement).getPropertyValue("--ink").trim() || "#2c261e";
     const buckets = [[], [], [], [], [], [], [], []];
     let W = 0, H = 0, gridW = 0, gridH = -1e3, ticks = [];
     let raf = 0, rt = 0, pointer = false, px = 0, py = 0, wx = 0, wy = 0;

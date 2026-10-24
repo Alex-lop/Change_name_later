@@ -22,7 +22,7 @@ import "./field.css";
 // With a mapSlot, a "By age | By place" toggle slides between this canvas and
 // the lead's map, which gets the canvas height.
 
-const INK = "#12161a";
+const INK = "#2c261e";
 const ACCENT = "#1a5fff";
 const FALLEN = (80 * Math.PI) / 180;
 const FEATHER = 0.12; // sweep edge width, as a fraction of the field

@@ -8,11 +8,11 @@ import "./map.css";
 // shares (excluded_by / patients, statewide totals) and deltas vs. baseline.
 
 // Token hexes from styles.css :root. Fills are mixed here so they can transition.
-const PAPER = "#f2f4f3";
+const PAPER = "#f4efe4";
 const ACCENT = "#1a5fff";
-const INK = "#12161a";
-const INK2 = "#4e5a60";
-const RULE = "#cfd6d4";
+const INK = "#2c261e";
+const INK2 = "#5f5548";
+const RULE = "#d3c6b0";
 
 function mix(a, b, t) {
   const c = (h, i) => parseInt(h.slice(1 + 2 * i, 3 + 2 * i), 16);

@@ -1,15 +1,16 @@
-/* Sieve v3 — lab-paper instrument.
-   Structure from spacing and a single left edge, not boxes. No gradients, no
-   shadows (except a 3px paper halo on slider thumbs), 2px radius everywhere. */
+/* Sieve v3 — warm paper instrument.
+   Structure from spacing and a single left edge, not boxes. No wash gradients,
+   no shadows (except a 3px paper halo on slider thumbs), 2px radius everywhere.
+   The page ground is a fine fiber stipple on warm paper. */
 
 :root {
   color-scheme: light;
 
-  --paper: #f2f4f3;
-  --paper-2: #e6eae8;
-  --ink: #12161a;
-  --ink-2: #4e5a60;
-  --rule: #cfd6d4;
+  --paper: #f4efe4;
+  --paper-2: #e9e0cf;
+  --ink: #2c261e;
+  --ink-2: #5f5548;
+  --rule: #d3c6b0;
   --accent: #1a5fff;
   --redline: #c8102e;
 
@@ -27,7 +28,9 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image: radial-gradient(rgba(92, 72, 42, 0.045) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
@@ -475,7 +478,7 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
 .month-bar-track { height: 6px; background: var(--rule); border-radius: var(--radius); }
 .month-bar { height: 6px; background: var(--ink); border-radius: var(--radius); }
 .cost-row { cursor: default; }
-.cost-row:hover { background: rgba(26, 95, 255, 0.04); }
+.cost-row:hover { background: rgba(44, 38, 30, 0.045); }
 .cost-row.hot td { color: var(--ink); }
 
 /* ---- footer --------------------------------------------------------------- */
