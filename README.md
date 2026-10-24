@@ -1,12 +1,24 @@
-Most clinical trials don’t stall because the drug doesn’t work. They stall because they can’t find enough patients. Sieve shows which eligibility criteria are to blame, before you launch.
-
 <p align="center">
   <img src="docs/images/sieve.png" alt="Sieve" width="480">
 </p>
 
+Most clinical trials don’t stall because the drug doesn’t work. They stall because they can’t find enough patients. Sieve shows which eligibility criteria are to blame, before you launch.
+
 A protocol can look careful and still be unfillable. One age cutoff, one lab threshold, one exclusion for a history almost nobody in the cohort has, and the eligible pool collapses. Sieve runs the criteria against 10,000 synthetic adults with type 2 diabetes and prices each rule: patients kept out, months added, and estimated delay cost. Move a threshold and those numbers update against the protocol you loaded, so you can see the trade before the first patient is screened.
 
 It is a planning workbench for trial designers at biotechs, CROs, and academic research groups. It does not give medical advice and it does not recommend treatment for any person. Every time and cost figure is an estimate. The Python package is `dryrun`.
+
+## Why it is worth opening
+
+- **The bottleneck has a name.** Each criterion gets its own price tag, with the others held fixed, so the rule that quietly empties the funnel is the one at the top of the list.
+- **The argument happens before the sites open.** Nudge an age floor or an eGFR cutoff and watch patients, months, and dollars move together. The original protocol stays marked, and reset puts it back.
+- **A day of delay is not abstract.** The model prices added months at the cost per day on screen, so a tighter lab cutoff shows up as time and money, not just a smaller percentage.
+- **You can loosen the rule that hurts and keep the one that doesn’t.** Turning a criterion off is a direct test: if the funnel barely moves, that sentence was never the problem.
+- **Missing data does not get counted as a yes.** A lab that was never drawn stays unknown. The screen separates confirmed-eligible from possibly-eligible, so optimism does not sneak into the headline.
+- **Criteria the data cannot answer stay visible.** They are shown with a reason and left out of the counts. Coverage is a number you can defend, not a silent omission.
+- **Same cutoff, same verdict, whatever unit the protocol used.** HbA1c in % or mmol/mol, glucose in mg/dL or mmol/L: the comparison happens after the conversion.
+- **No patient record leaves a hospital.** The cohort is synthetic and fixed-seed. You can try a harsher exclusion without touching real people.
+- **The verdict is not a model’s guess.** A sentence is translated into a structured rule. Deterministic code decides meets, fails, or unknown. An exclusion flips the first two and leaves unknown alone.
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-1B3A4B" alt="Apache 2.0"></a>
