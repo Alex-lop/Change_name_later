@@ -450,5 +450,261 @@
         "kind": "exclusion"
       }
     ]
+  },
+  "NCT04255433": {
+    "nct_id": "NCT04255433",
+    "title": "SURPASS-CVOT: A Study of Tirzepatide (LY3298176) Compared With Dulaglutide on Major Cardiovascular Events in Participants With Type 2 Diabetes",
+    "condition": "type 2 diabetes with established cardiovascular disease",
+    "paraphrased": false,
+    "criteria": [
+      {
+        "sentence": "Men or women at least 40 years old with a diagnosis of type 2 diabetes",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Established cardiovascular disease, including at least 1 of the following:",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Coronary artery disease (CAD) with any of the following:",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Documented history of spontaneous myocardial infarction (MI)",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "\u226550% stenosis in 1 or more major coronary arteries, determined by invasive angiography",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "\u226550% stenosis in 2 or more major coronary arteries, determined by computed tomography coronary angiography (CTCA)",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "History of surgical or percutaneous coronary revascularization procedure",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Cerebrovascular disease - any of the following:",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Documented history of ischemic stroke",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Carotid arterial disease with \u226550% stenosis, documented by carotid ultrasound, magnetic resonance imaging (MRI), or angiography",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Carotid stenting or surgical revascularization",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Peripheral arterial disease with either of the following:",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Intermittent claudication and ankle-brachial index <0.9",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Prior nontraumatic amputation or peripheral vascular procedure (eg, stenting or surgical revascularization), due to peripheral arterial ischemia",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Note: Supporting medical documentation is required in all instances",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "HbA1c \u22657% (\u226553 mmol/mol) and \u226410.5% (\u226491.3 mmol/mol) based on central laboratory assessment at screening",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Body mass index (BMI) \u226525 kg/m2",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "At the time of signing the informed consent: Contraceptive use by men or women should be consistent with local regulations regarding the methods of contraception for those participating in clinical trials.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Male patients: Men, regardless of their fertility status, with nonpregnant women of childbearing potential (WOCBP) partners must agree to either remain abstinent (if this is their preferred and usual lifestyle) or use condoms, as well as 1 additional highly effective (less than 1% failure rate) method of contraception (such as combination oral contraceptives, implanted contraceptives, or intrauterine devices) or effective method of contraception (such as diaphragms with spermicide or cervical sponges) for the duration of the study and until their plasma concentrations are below the level that could result in a relevant potential exposure to a possible fetus, predicted to be 90 days following the last dose of study drug.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Men and their partners may choose to use a double-barrier method of contraception. (Barrier protection methods without concomitant use of a spermicide are not an effective or acceptable method of contraception. Thus, each barrier method must include use of a spermicide. It should be noted, however, that the use of male and female condoms as a double barrier method is not considered acceptable due to the high failure rate when these barrier methods are combined).",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Periodic abstinence (eg, calendar, ovulation, symptothermal, or postovulation methods), declaration of abstinence just for the duration of a trial, and withdrawal are not acceptable methods of contraception.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Men with pregnant partners should use condoms during intercourse for the duration of the study and until the end of the estimated relevant potential exposure in WOCBP (90 days). Men should refrain from sperm donation for the duration of the study and until their plasma concentrations are below the level that could result in a relevant potential exposure to a possible fetus, predicted to be 90 days following the last dose of study drug. Men who are in exclusively same-sex relationships (as their preferred and usual lifestyle) are not required to use contraception.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Female patients: Women of childbearing potential who are abstinent (if this is complete abstinence, as their preferred and usual lifestyle) or in a same-sex relationship (as part of their preferred and usual lifestyle) must agree to either remain abstinent or stay in a same-sex relationship without sexual relationships with males. Periodic abstinence (eg, calendar, ovulation, symptothermal, or postovulation methods), declaration of abstinence just for the duration of a trial, and withdrawal are not acceptable methods of contraception. Otherwise, WOCBP participating must agree to use 2 forms of effective contraception, where at least 1 form is highly effective (less than 1% failure rate), for the entirety of the study. Contraception must continue following completion of study drug administration for the entirety of the study and for 30 days thereafter.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "WOCBP participating must test negative for pregnancy prior to initiation of treatment as indicated by a negative serum pregnancy test at the screening visit followed by a negative urine pregnancy test within 24 hours prior to exposure.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Two forms of effective contraception, where at least 1 form is highly effective, (such as combination oral contraceptives, implanted contraceptives, or intrauterine devices) will be used. Effective contraception (such as male or female condoms with spermicide, diaphragms with spermicide, or cervical sponges) may be used as the second therapy. Barrier protection methods without concomitant use of a spermicide are not a reliable or acceptable method. Thus, each barrier method must include use of a spermicide (ie, condom with spermicide, diaphragm with spermicide, or female condom with spermicide). It should be noted that the use of male and female condoms as a double barrier method is not considered acceptable due to the high failure rate when these methods are combined.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Women not of childbearing potential may participate and include those who are:",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "infertile due to surgical sterilization (hysterectomy, bilateral oophorectomy, or tubal ligation), congenital anomaly such as mullerian agenesis, or",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "postmenopausal - defined as either: A woman at least 40 years of age with an intact uterus, not on hormone therapy, who has cessation of menses for at least 1 year without an alternative medical cause, AND a follicle-stimulating hormone >40 mIU/mL; or ii. A woman 55 or older not on hormone therapy, who has had at least 12 months of spontaneous amenorrhea; or A woman at least 55 years of age with a diagnosis of menopause prior to starting hormone replacement therapy.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "In the investigator's opinion, are well motivated, capable, and willing to:",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "learn how to self-inject treatment (tirzepatide or dulaglutide), as required for this protocol (visually impaired persons who are not able to perform the injections must have the assistance of a sighted individual trained to inject the study drug; persons with physical limitations who are not able to perform the injections must have the assistance of an individual trained to inject the study drug),",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "inject study drug weekly,",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "have a sufficient understanding of 1 of the provided languages of the country such that they will be able to complete the patient questionnaires, and",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "make themselves available for the duration of the study, and who will comply with the required study visits.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Capable of giving signed informed consent",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Have type 1 diabetes mellitus",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have uncontrolled diabetes requiring immediate therapy (such as diabetic ketoacidosis) at screening or randomization, in the judgment of the physician",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have had 1 or more events of severe hypoglycemia and/or 1 or more events of hypoglycemia unawareness within 6 months prior to screening",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Are currently planning treatment for diabetic retinopathy and/or macular edema.",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have been hospitalized for congestive heart failure (CHF) within 2 months prior to screening",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have chronic New York Heart Association Functional Classification IV CHF",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Are currently planning a coronary, carotid, or peripheral artery revascularization",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Had chronic or acute pancreatitis any time prior to screening, irrespective of etiology",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have a known clinically significant gastric emptying abnormality such as severe gastroparesis or gastric outlet obstruction, or have undergone or currently planning any gastric bypass (bariatric) surgery or restrictive bariatric surgery",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have acute or chronic hepatitis, signs or symptoms of any other liver disease, an alanine aminotransferase (ALT) level \u22653 times the upper limit of normal (ULN) for the reference range, as determined by the central laboratory (Note: Patients with nonalcoholic fatty liver disease are eligible to participate if their ALT level is <3 times the ULN for the reference range)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have known chronic severe renal failure (defined as a known estimated glomerular filtration rate (eGFR) <15 mL/minute/1.73 m2) or are on chronic dialysis",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have evidence of a significant, uncontrolled endocrine abnormality (eg, thyrotoxicosis or adrenal crises)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have a family or personal history of multiple endocrine neoplasia type 2 (MEN2) or familial medullary thyroid carcinoma (MTC) or personal history of nonfamilial MTC",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have a serum calcitonin level at screening of: (based on central laboratory results)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "\u226520 ng/L at Visit 1, if eGFR \u226560 mL/min/1.73 m2, or",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "\u226535 ng/L at Visit 1, if eGFR <60 mL/min/1.73 m2",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have a history of an active or untreated malignancy or are in remission from a clinically significant malignancy for less than 5 years. An exception for this criterion is basal or squamous cell skin cancer, in situ carcinomas of the cervix, or in situ prostate cancer",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have a history of any other condition (such as known drug or alcohol abuse or psychiatric disorder) that, in the opinion of the investigator, may preclude the patient from following and completing the protocol",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have had a transplanted organ (corneal transplants [keratoplasty] allowed) or awaiting an organ transplant",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have any other condition (eg, hypersensitivity) that is a contraindication to any incretin or glucagon-like peptide-1 (GLP-1) receptor agonist (RA)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have had an MI, percutaneous coronary revascularization procedure, ischemic stroke, carotid stenting or surgical revascularization, nontraumatic amputation, or peripheral vascular procedure (eg, stenting or surgical revascularization) less than 60 days prior to screening",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have had coronary artery bypass graft surgery less than 5 years prior to screening",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have had a blood transfusion or severe blood loss within 90 days prior to screening or have known hematological conditions that may interfere with HbA1c measurement",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Treatment with GLP-1 RA or pramlintide, in a period of 3 months prior to Visit 1",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Discontinuation of GLP-1 RA or pramlintide, due to intolerability any time prior to Visit 1",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Are currently enrolled in any other clinical study involving an investigational product or any other type of medical research judged not to be scientifically or medically compatible with this study",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have participated within the last 30 days in a clinical trial involving an investigational product. If the previous investigational product has a long half-life, 3 months or 5 half-lives (whichever is longer) should have passed",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Have previously completed or withdrawn from this study or randomized into any other study investigating tirzepatide",
+        "kind": "exclusion"
+      }
+    ]
   }
 }
