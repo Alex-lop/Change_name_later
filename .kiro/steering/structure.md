@@ -18,7 +18,8 @@ backend/dryrun/
   api.py        FastAPI
 backend/tests/  property tests in test_properties.py
 frontend/src/   React UI
-.kiro/          steering, hooks, agents — commit this, never gitignore it
+.kiro/          steering, hooks, agents, specs — commit this, never gitignore it
+.kiro/specs/v2-trial-workbench/   the only allowed work beyond the README
 ```
 
 Put eligibility decisions in `engine.py`. Put unit math in `units.py`.

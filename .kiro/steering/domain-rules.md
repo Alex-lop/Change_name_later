@@ -41,6 +41,25 @@ Verified in `backend/tests/test_properties.py`. A change that breaks one of thes
 
 Prefer a new property test over a one-off example when you change the engine.
 
+## Population and fairness
+
+- The population is adults with the trial's condition. Fractions, enrollment months and price tags are relative to it.
+- Demographic deltas compare an excluded group with the cohort that criterion acts on. Hide them below 30 patients. No race deltas on generated data.
+
+## Criteria fidelity
+
+- source_sentence is verbatim from ClinicalTrials.gov. A shortened or paraphrased sentence is a bug.
+- A criterion the data cannot evaluate is shown as not evaluable with a reason and never changes a count.
+- Compound criteria use Kleene logic. Unknown never becomes meets.
+
+## Commits
+
+- One commit per completed spec task. Start the message with the task number.
+
 ## Scope
 
-Hard deadline 8 PM today. Fix correctness and demo risk. Do not add features that are not already in the README.
+Submissions are due 8 PM ET today. The README features must stay working and demoable after every commit.
+
+Allowed beyond the README: only the tasks in `.kiro/specs/v2-trial-workbench/`. That covers the population and demographics fixes, threshold sliders, compare-to-original, the two-column layout, the add-criterion form, OR/Kleene logic, and PIONEER 6. Nothing else.
+
+Do v2 tasks in spec order. Don't start a new task after 6:30 PM ET. Use the rest of the time for polish and the demo.

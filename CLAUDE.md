@@ -18,7 +18,7 @@ Before reviewing, read:
 - Missing data is `unknown`, never `meets`.
 - Normalize units before comparing.
 - Do not phrase output as medical advice.
-- Do not add features. Deadline is 8 PM today.
+- Do not add features outside `.kiro/specs/v2-trial-workbench/`. Submissions are due 8 PM ET today. README features must stay working. Don't start a new spec task after 6:30 PM ET.
 
 ## What to report
 

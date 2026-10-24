@@ -19,6 +19,10 @@ NCT01131676 (EMPA-REG OUTCOME).
 
 ## What "done" means today
 
-An eligibility funnel, per-criterion on/off toggles, a price tag per
-criterion, and an editable enrollment-cost model. Deadline is 8 PM today.
-Prefer the simplest version that already works. Do not add features.
+The README features stay: an eligibility funnel, per-criterion on/off toggles, a price tag per criterion, and an editable enrollment-cost model.
+
+Submissions are due 8 PM ET today. The README features must stay working and demoable after every commit.
+
+Allowed beyond the README: only the tasks in `.kiro/specs/v2-trial-workbench/`. That covers the population and demographics fixes, threshold sliders, compare-to-original, the two-column layout, the add-criterion form, OR/Kleene logic, and PIONEER 6. Nothing else.
+
+Do v2 tasks in spec order. Don't start a new task after 6:30 PM ET. Use the rest of the time for polish and the demo.
