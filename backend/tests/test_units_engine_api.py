@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import math
 
+import httpx
+import pytest
 from fastapi.testclient import TestClient
 
 from dryrun import units
@@ -391,3 +393,88 @@ def test_csv_area_column_is_the_home_model():
         rows = list(csv.DictReader(f))
     areas, _ = assign_areas(rows)
     assert [r["area"] for r in rows] == areas
+
+
+# --- live ClinicalTrials.gov load (no network: canned study, mock transport) --
+
+_CRITERIA = (
+    "Inclusion Criteria:\n\n* Age 50 years or older.\n"
+    "* Histologically confirmed glioblastoma\n\n"
+    "Exclusion Criteria:\n\n* Prior bevacizumab therapy\n"
+)
+
+
+def _study(acronym: str | None = None, criteria: str = _CRITERIA) -> dict:
+    ident = {"nctId": "NCT09999999", "briefTitle": "A canned oncology study"}
+    if acronym:
+        ident["acronym"] = acronym
+    return {"protocolSection": {
+        "identificationModule": ident,
+        "conditionsModule": {"conditions": ["Glioblastoma", "Brain tumor"]},
+        "eligibilityModule": {"eligibilityCriteria": criteria},
+    }}
+
+
+def _serve_ctgov(monkeypatch, study: dict, status: int = 200) -> list:
+    """Answer the API's live fetch with a canned study; return requested URLs."""
+    from dryrun import parser
+
+    calls: list[httpx.URL] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(request.url)
+        return httpx.Response(status, json=study)
+
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    real = parser.fetch_ctgov_study
+    monkeypatch.setattr(parser, "fetch_ctgov_study", lambda nct: real(nct, client))
+    return calls
+
+
+def test_parse_live_ctgov_returns_trial_meta_and_unparsed_kinds(monkeypatch):
+    calls = _serve_ctgov(monkeypatch, _study(acronym="CANNED"))
+    pr = TestClient(app).post("/api/parse", json={"nct_id": "nct09999999"}).json()
+    assert [u.path for u in calls] == ["/api/v2/studies/NCT09999999"]  # one fetch
+    assert pr["source"] == "ctgov"
+    assert pr["trial"] == {
+        "nct_id": "NCT09999999",
+        "title": "CANNED: A canned oncology study",
+        "condition": "Glioblastoma, Brain tumor",
+        "paraphrased": False,
+        "source": "ctgov",
+    }
+    # A cached sentence still translates; the rest are reported in order with
+    # the section header they sat under.
+    assert [r["source_sentence"] for r in pr["rules"]] == ["Age 50 years or older."]
+    assert pr["unparsed_items"] == [
+        {"sentence": "Histologically confirmed glioblastoma", "kind": "inclusion"},
+        {"sentence": "Prior bevacizumab therapy", "kind": "exclusion"},
+    ]
+    assert pr["unparsed"] == [u["sentence"] for u in pr["unparsed_items"]]
+
+
+@pytest.mark.parametrize("acronym, brief, title", [
+    (None, "A canned oncology study", "A canned oncology study"),
+    ("STEP 1", "STEP 1: Semaglutide in obesity", "STEP 1: Semaglutide in obesity"),
+])
+def test_fetch_ctgov_title_and_eligibility_text(acronym, brief, title):
+    from dryrun.parser import fetch_ctgov_eligibility, fetch_ctgov_study
+
+    study = _study(acronym)
+    study["protocolSection"]["identificationModule"]["briefTitle"] = brief
+    client = httpx.Client(transport=httpx.MockTransport(
+        lambda request: httpx.Response(200, json=study)))
+    raw, meta = fetch_ctgov_study("NCT09999999", client)
+    assert meta["title"] == title
+    assert raw == fetch_ctgov_eligibility("NCT09999999", client) == _CRITERIA
+
+
+@pytest.mark.parametrize("status, study, code, detail", [
+    (404, {}, 502, "Could not fetch NCT09999999 from ClinicalTrials.gov: "),
+    (200, _study(criteria=""), 404, "No eligibility criteria for NCT09999999"),
+])
+def test_parse_live_ctgov_errors_unchanged(monkeypatch, status, study, code, detail):
+    _serve_ctgov(monkeypatch, study, status)
+    resp = TestClient(app).post("/api/parse", json={"nct_id": "NCT09999999"})
+    assert resp.status_code == code
+    assert resp.json()["detail"].startswith(detail)
