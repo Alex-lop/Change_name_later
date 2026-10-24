@@ -206,5 +206,85 @@
         "kind": "exclusion"
       }
     ]
+  },
+  "NCT03036124": {
+    "nct_id": "NCT03036124",
+    "title": "DAPA-HF: Study to Evaluate the Effect of Dapagliflozin on the Incidence of Worsening Heart Failure or Cardiovascular Death in Patients With Chronic Heart Failure",
+    "condition": "heart failure with reduced ejection fraction, with or without type 2 diabetes",
+    "paraphrased": false,
+    "criteria": [
+      {
+        "sentence": "Provision of signed informed consent prior to any study specific procedures",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Male or female, aged \u226518 years",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Established documented diagnosis of symptomatic HFrEF (NYHA functional class II-IV), which has been present for at least 2 months",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "LVEF\u226440%",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Elevated NT-proBNP levels",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Patients should receive background standard of care for HFrEF and be treated according to locally recognized guidelines",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "eGFR \u226530 mL/min/1.73 m^2 (CKD-EPI formula) at enrolment (visit 1)",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Receiving therapy with an SGLT2 inhibitor within 8 weeks prior to enrolment or previous intolerance of an SGLT2 inhibitor",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Type 1 diabetes mellitus",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Symptomatic hypotension or systolic BP <95 mmHg at 2 out of 3 measurements either at visit 1 or visit 2",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Current acute decompensated HF or hospitalization due to decompensated HF <4 weeks prior to enrolment",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "MI, unstable angina, stroke or transient ischemic attack within 12 weeks prior to enrolment",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Coronary revascularization (percutaneous coronary intervention or coronary artery bypass grafting) or valvular repair/replacement within 12 weeks prior to enrolment or planned to undergo any of these operations after randomization",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Implantation of a CRT within 12 weeks prior to enrolment or intent to implant a CRT device",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Previous cardiac transplantation or implantation of a ventricular assistance device or similar device, or implantation expected after randomization",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "HF due to restrictive cardiomyopathy, active myocarditis, constrictive pericarditis, hypertrophic (obstructive) cardiomyopathy or uncorrected primary valvular disease",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Symptomatic bradycardia or second or third degree heart block without a pacemaker",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Severe (eGFR <30 mL/min/1.73 m^2 by CKD-EPI), unstable or rapidly progressing renal disease at the time of randomization",
+        "kind": "exclusion"
+      }
+    ]
   }
 }

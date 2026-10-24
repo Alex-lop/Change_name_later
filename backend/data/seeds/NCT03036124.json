@@ -1,0 +1,192 @@
+{
+  "nct_id": "NCT03036124",
+  "title": "DAPA-HF: Study to Evaluate the Effect of Dapagliflozin on the Incidence of Worsening Heart Failure or Cardiovascular Death in Patients With Chronic Heart Failure",
+  "condition": "heart failure with reduced ejection fraction, with or without type 2 diabetes",
+  "paraphrased": false,
+  "criteria": [
+    {
+      "sentence": "Provision of signed informed consent prior to any study specific procedures",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Informed consent is not in the synthetic records",
+        "label": "Signed informed consent"
+      }
+    },
+    {
+      "sentence": "Male or female, aged ≥18 years",
+      "rule": {
+        "field": "age",
+        "operator": ">=",
+        "value": 18,
+        "unit": "years",
+        "kind": "inclusion",
+        "label": "Age >= 18y"
+      }
+    },
+    {
+      "sentence": "Established documented diagnosis of symptomatic HFrEF (NYHA functional class II-IV), which has been present for at least 2 months",
+      "rule": {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "chf"
+        ],
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "NYHA class, ejection fraction and diagnosis dates are not in the synthetic data",
+        "label": "Symptomatic HFrEF (NYHA II-IV) for 2+ months"
+      }
+    },
+    {
+      "sentence": "LVEF≤40%",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "LVEF is not in the synthetic data",
+        "label": "LVEF <= 40%"
+      }
+    },
+    {
+      "sentence": "Elevated NT-proBNP levels",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "NT-proBNP is not in the synthetic data",
+        "label": "Elevated NT-proBNP"
+      }
+    },
+    {
+      "sentence": "Patients should receive background standard of care for HFrEF and be treated according to locally recognized guidelines",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Guideline heart failure therapy is not in the synthetic records",
+        "label": "On standard HFrEF care"
+      }
+    },
+    {
+      "sentence": "eGFR ≥30 mL/min/1.73 m^2 (CKD-EPI formula) at enrolment (visit 1)",
+      "rule": {
+        "field": "egfr",
+        "operator": ">=",
+        "value": 30,
+        "unit": "ml/min/1.73m2",
+        "kind": "inclusion",
+        "label": "eGFR >= 30"
+      }
+    },
+    {
+      "sentence": "Receiving therapy with an SGLT2 inhibitor within 8 weeks prior to enrolment or previous intolerance of an SGLT2 inhibitor",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "SGLT2 inhibitors are not in the synthetic medication list, and the 8-week window needs dates",
+        "label": "Exclude recent SGLT2 inhibitor use or intolerance"
+      }
+    },
+    {
+      "sentence": "Type 1 diabetes mellitus",
+      "rule": {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "t1d"
+        ],
+        "kind": "exclusion",
+        "label": "Exclude type 1 diabetes"
+      }
+    },
+    {
+      "sentence": "Symptomatic hypotension or systolic BP <95 mmHg at 2 out of 3 measurements either at visit 1 or visit 2",
+      "rule": {
+        "field": "systolic_bp",
+        "operator": "<",
+        "value": 95,
+        "unit": "mmhg",
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Symptoms and repeated visit BP readings are not in the synthetic data; it has one BP value",
+        "label": "Exclude symptomatic hypotension or SBP < 95"
+      }
+    },
+    {
+      "sentence": "Current acute decompensated HF or hospitalization due to decompensated HF <4 weeks prior to enrolment",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Acute decompensation and hospitalization dates are not in the synthetic data",
+        "label": "Exclude acute decompensated HF (4-week window)"
+      }
+    },
+    {
+      "sentence": "MI, unstable angina, stroke or transient ischemic attack within 12 weeks prior to enrolment",
+      "rule": {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "mi",
+          "stroke"
+        ],
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "12-week event window needs dates; the synthetic data has no dates",
+        "label": "Exclude recent MI/stroke/unstable angina/TIA (12-week window)"
+      }
+    },
+    {
+      "sentence": "Coronary revascularization (percutaneous coronary intervention or coronary artery bypass grafting) or valvular repair/replacement within 12 weeks prior to enrolment or planned to undergo any of these operations after randomization",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Procedures and their dates are not in the synthetic data",
+        "label": "Exclude recent or planned revascularization or valve surgery"
+      }
+    },
+    {
+      "sentence": "Implantation of a CRT within 12 weeks prior to enrolment or intent to implant a CRT device",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Device implants and their dates are not in the synthetic data",
+        "label": "Exclude recent or planned CRT implant"
+      }
+    },
+    {
+      "sentence": "Previous cardiac transplantation or implantation of a ventricular assistance device or similar device, or implantation expected after randomization",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Transplants and device implants are not in the synthetic data",
+        "label": "Exclude heart transplant or ventricular assist device"
+      }
+    },
+    {
+      "sentence": "HF due to restrictive cardiomyopathy, active myocarditis, constrictive pericarditis, hypertrophic (obstructive) cardiomyopathy or uncorrected primary valvular disease",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "The cause of heart failure is not in the synthetic data",
+        "label": "Exclude HF from restrictive/hypertrophic cardiomyopathy, myocarditis, pericarditis or valve disease"
+      }
+    },
+    {
+      "sentence": "Symptomatic bradycardia or second or third degree heart block without a pacemaker",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Heart rhythm and pacemaker status are not in the synthetic data",
+        "label": "Exclude symptomatic bradycardia or 2nd/3rd-degree heart block without pacemaker"
+      }
+    },
+    {
+      "sentence": "Severe (eGFR <30 mL/min/1.73 m^2 by CKD-EPI), unstable or rapidly progressing renal disease at the time of randomization",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Renal trends over time are not in the synthetic data; eGFR < 30 is counted by the eGFR >= 30 inclusion",
+        "label": "Exclude severe, unstable or rapidly progressing renal disease"
+      }
+    }
+  ]
+}

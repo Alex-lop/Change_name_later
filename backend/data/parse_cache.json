@@ -10,6 +10,16 @@
       "t1d"
     ]
   },
+  "0fd75bbd1214520b": {
+    "evaluable": false,
+    "field": "systolic_bp",
+    "kind": "exclusion",
+    "label": "Exclude symptomatic hypotension or SBP < 95",
+    "operator": "<",
+    "unevaluable_reason": "Symptoms and repeated visit BP readings are not in the synthetic data; it has one BP value",
+    "unit": "mmhg",
+    "value": 95
+  },
   "158dcc1e48af97ab": {
     "field": "bmi",
     "kind": "inclusion",
@@ -17,6 +27,18 @@
     "operator": "<=",
     "unit": "kg/m2",
     "value": 45
+  },
+  "1618d9b8a2a76f01": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude recent or planned CRT implant",
+    "unevaluable_reason": "Device implants and their dates are not in the synthetic data"
+  },
+  "1a61612c3aba3ce5": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "Signed informed consent",
+    "unevaluable_reason": "Informed consent is not in the synthetic records"
   },
   "1bbc0f6a13f1487b": {
     "field": "hba1c",
@@ -80,6 +102,12 @@
     "label": "Type 2 diabetes, HbA1c 6.5-12%, eGFR >= 30 and < 90",
     "logic": "all_of"
   },
+  "22aba3f2c9524212": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude recent SGLT2 inhibitor use or intolerance",
+    "unevaluable_reason": "SGLT2 inhibitors are not in the synthetic medication list, and the 8-week window needs dates"
+  },
   "2f06bc32cf7f9802": {
     "evaluable": false,
     "kind": "exclusion",
@@ -117,6 +145,18 @@
     "kind": "exclusion",
     "label": "Exclude chronic cystitis or recurrent UTIs",
     "unevaluable_reason": "Cystitis and urinary tract infections are not in the synthetic records"
+  },
+  "5a9f2bf10bcd7228": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude recent MI/stroke/unstable angina/TIA (12-week window)",
+    "operator": "has",
+    "unevaluable_reason": "12-week event window needs dates; the synthetic data has no dates",
+    "value": [
+      "mi",
+      "stroke"
+    ]
   },
   "5bbd65778f15ed33": {
     "evaluable": false,
@@ -156,6 +196,18 @@
     "label": "Exclude NYHA Class IV heart failure",
     "unevaluable_reason": "NYHA class is not recorded"
   },
+  "668f9d1364ac7439": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude acute decompensated HF (4-week window)",
+    "unevaluable_reason": "Acute decompensation and hospitalization dates are not in the synthetic data"
+  },
+  "6d08ea1cca65c2a9": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude HF from restrictive/hypertrophic cardiomyopathy, myocarditis, pericarditis or valve disease",
+    "unevaluable_reason": "The cause of heart failure is not in the synthetic data"
+  },
   "6ef856fce7b8ff1a": {
     "field": "conditions",
     "kind": "inclusion",
@@ -178,6 +230,12 @@
     "operator": ">=",
     "unit": "years",
     "value": 18
+  },
+  "79c8e95f1f24d685": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "Elevated NT-proBNP",
+    "unevaluable_reason": "NT-proBNP is not in the synthetic data"
   },
   "7fb66cfb294e77cd": {
     "field": "conditions",
@@ -278,6 +336,20 @@
       "t1d"
     ]
   },
+  "9e70ef6ea4928830": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "LVEF <= 40%",
+    "unevaluable_reason": "LVEF is not in the synthetic data"
+  },
+  "a5e74e5ea1fe68e7": {
+    "field": "egfr",
+    "kind": "inclusion",
+    "label": "eGFR >= 30",
+    "operator": ">=",
+    "unit": "ml/min/1.73m2",
+    "value": 30
+  },
   "a7625946d40c907c": {
     "field": "conditions",
     "kind": "inclusion",
@@ -286,6 +358,12 @@
     "value": [
       "t2d"
     ]
+  },
+  "aba3af3d2cd7d6cc": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude symptomatic bradycardia or 2nd/3rd-degree heart block without pacemaker",
+    "unevaluable_reason": "Heart rhythm and pacemaker status are not in the synthetic data"
   },
   "ac7bd6c7dec08b3f": {
     "evaluable": false,
@@ -298,6 +376,18 @@
     "kind": "exclusion",
     "label": "Exclude potassium > 5.5 mmol/L",
     "unevaluable_reason": "Blood potassium is not in the synthetic records"
+  },
+  "afc54bcd6dc0e5d9": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude severe, unstable or rapidly progressing renal disease",
+    "unevaluable_reason": "Renal trends over time are not in the synthetic data; eGFR < 30 is counted by the eGFR >= 30 inclusion"
+  },
+  "b05062909bcac72e": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude recent or planned revascularization or valve surgery",
+    "unevaluable_reason": "Procedures and their dates are not in the synthetic data"
   },
   "b062c48ba9fc4810": {
     "evaluable": false,
@@ -317,11 +407,40 @@
     "label": "Exclude significant liver disease",
     "unevaluable_reason": "Liver disease is not in the synthetic records"
   },
+  "c09f8d3917b6fb6c": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude heart transplant or ventricular assist device",
+    "unevaluable_reason": "Transplants and device implants are not in the synthetic data"
+  },
+  "c1482ada65a6dc2b": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "On standard HFrEF care",
+    "unevaluable_reason": "Guideline heart failure therapy is not in the synthetic records"
+  },
   "c19fd93229a97d88": {
     "evaluable": false,
     "kind": "exclusion",
     "label": "Exclude MEN 2 / MTC history",
     "unevaluable_reason": "Family history is not in the synthetic records"
+  },
+  "c67e3dbd9a6e6cf9": {
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude type 1 diabetes",
+    "operator": "has",
+    "value": [
+      "t1d"
+    ]
+  },
+  "c97336bde29a7d0a": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 18y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 18
   },
   "ca6d88ce5518b4cf": {
     "evaluable": false,
@@ -347,6 +466,17 @@
     "operator": "has",
     "value": [
       "pancreatitis"
+    ]
+  },
+  "f52956bf6d69bc12": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "inclusion",
+    "label": "Symptomatic HFrEF (NYHA II-IV) for 2+ months",
+    "operator": "has",
+    "unevaluable_reason": "NYHA class, ejection fraction and diagnosis dates are not in the synthetic data",
+    "value": [
+      "chf"
     ]
   }
 }
