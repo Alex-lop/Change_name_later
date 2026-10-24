@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
 import ProtocolColumn from "./ProtocolColumn";
 import ResultColumn from "./ResultColumn";
+import TrialLoader from "./TrialLoader";
 import { buildExportText, downloadText } from "./exportCriteria";
 import { fmtInt, fmtDelta } from "./format";
 import { MotionContext, usePrefersReducedMotion } from "./motion";
@@ -41,7 +42,9 @@ export default function App() {
   const [currentNct, setCurrentNct] = useState("");
   const [rules, setRules] = useState([]);
   const [originalRules, setOriginalRules] = useState([]);
-  const [unparsed, setUnparsed] = useState([]);
+  const [unparsed, setUnparsed] = useState([]); // [{sentence, kind}] not in the cache
+  const [loaderOpen, setLoaderOpen] = useState(false);
+  const [draft, setDraft] = useState(null); // the untranslated sentence being added by hand
   const [activeIds, setActiveIds] = useState([]);
   const [assumptions, setAssumptions] = useState(DEFAULT_ASSUMPTIONS);
   const [analysis, setAnalysis] = useState(null);
@@ -74,9 +77,9 @@ export default function App() {
   }, [originalRules]);
 
   // Edited = any threshold changed (nested ones too), a toggle changed, or a
-  // criterion added.
+  // criterion added. With nothing translated, any added criterion is an edit.
   const edited = useMemo(() => {
-    if (originalRules.length === 0) return false;
+    if (originalRules.length === 0) return rules.length > 0;
     const origIds = originalRules.map((r) => r.id);
     if (activeIds.length !== origIds.length) return true;
     for (const id of origIds) if (!activeIds.includes(id)) return true;
@@ -161,26 +164,36 @@ export default function App() {
     return base;
   }
 
-  async function loadTrial(nctId) {
+  // Load a seeded trial or any NCT ID (fetched live from ClinicalTrials.gov),
+  // or pasted criteria text. Cached sentences become rules; the rest are kept
+  // verbatim so they can be added by hand. A failed load keeps the current trial.
+  const loadTrial = (nctId) => loadParse({ nct_id: nctId }, nctId);
+  const loadText = (text) => loadParse({ criteria_text: text }, null);
+
+  async function loadParse(body, nctId) {
     setError(null);
     setLoading(true);
-    setHotIndex(null);
-    setSelectedRuleId(null);
     try {
-      const res = await api.parse({ nct_id: nctId });
+      const res = await api.parse(body);
       const loaded = res.rules.map((r) => JSON.parse(JSON.stringify(r)));
+      const pending =
+        res.unparsed_items || (res.unparsed || []).map((s) => ({ sentence: s, kind: null }));
+      if (loaded.length === 0 && pending.length === 0) {
+        throw new Error("No eligibility criteria were found in that text.");
+      }
+      setHotIndex(null);
+      setSelectedRuleId(null);
+      setDraft(null);
       setRules(loaded);
       setOriginalRules(loaded.map((r) => JSON.parse(JSON.stringify(r))));
-      setTrialMeta(res.trial || null);
-      setCurrentNct(nctId);
-      setUnparsed(res.unparsed || []);
+      setTrialMeta(res.trial || (nctId ? { nct_id: nctId } : { title: "Pasted criteria", source: "text" }));
+      setCurrentNct(nctId ? nctId.trim().toUpperCase() : "");
+      setUnparsed(pending);
       setActiveIds(loaded.map((r) => r.id));
       setBaseline(null);
+      setLoaderOpen(false);
     } catch (e) {
       setError(friendlyError(e, nctId));
-      setRules([]);
-      setOriginalRules([]);
-      setActiveIds([]);
     } finally {
       setLoading(false);
     }
@@ -251,6 +264,7 @@ export default function App() {
   function addRule(rule) {
     setRules((prev) => [...prev, rule]);
     setActiveIds((prev) => [...prev, rule.id]);
+    setDraft(null);
   }
 
   // Selecting a criterion maps where it keeps patients out; a second click on
@@ -278,6 +292,21 @@ export default function App() {
       : null;
 
   const showMap = MAP_ENABLED && geo != null;
+  // Untranslated sentences still waiting for a hand-made rule.
+  const pending = unparsed.filter(
+    (u) => !rules.some((r) => r.added && r.source_sentence === u.sentence)
+  );
+  const trialLoaded = rules.length > 0 || unparsed.length > 0;
+  const noProtocol = originalRules.length === 0;
+  const inRegistry = trials.some((t) => t.nct_id === currentNct);
+  const provenance =
+    trialMeta?.source === "text"
+      ? "Pasted criteria"
+      : trialMeta?.paraphrased === false
+        ? "Verbatim from ClinicalTrials.gov"
+        : trialMeta?.paraphrased
+          ? "Paraphrased, abridged"
+          : "";
   const onSelect = showMap ? selectRule : undefined;
 
   return (
@@ -293,24 +322,35 @@ export default function App() {
     )}
     <div ref={shellRef} className={`shell${motionOff ? " motion-off" : ""}`}>
       <header className="topbar">
-        <span className="wordmark">Sieve</span>
+        <img className="wordmark" src="/sieve-mark.png" alt="Sieve" />
         <select
           className="trial-picker"
           value={currentNct}
-          onChange={(e) => loadTrial(e.target.value)}
-          aria-label="Choose a demo trial"
+          onChange={(e) => e.target.value && loadTrial(e.target.value)}
+          aria-label="Choose a trial"
         >
           {trials.map((t) => (
             <option key={t.nct_id} value={t.nct_id}>
               {t.title.split(":")[0]} ({t.nct_id})
             </option>
           ))}
+          {trialLoaded && !inRegistry && (
+            <option value={currentNct}>
+              {currentNct
+                ? `${(trialMeta?.title || "").split(":")[0] || "Loaded"} (${currentNct})`
+                : "Pasted criteria"}
+            </option>
+          )}
         </select>
-        <span className="trial-provenance">
-          {trials.find((t) => t.nct_id === currentNct)?.paraphrased === false
-            ? "Verbatim from ClinicalTrials.gov"
-            : "Paraphrased, abridged"}
-        </span>
+        <button
+          type="button"
+          className="btn"
+          aria-expanded={loaderOpen}
+          onClick={() => setLoaderOpen((o) => !o)}
+        >
+          Load any trial
+        </button>
+        {provenance && <span className="trial-provenance">{provenance}</span>}
         <div className="topbar-actions">
           <button
             className="btn"
@@ -337,25 +377,36 @@ export default function App() {
           </span>
           <span className="mini-label">eligible</span>
           <span className="mini-delta">
-            {confDelta == null || confDelta === 0
-              ? "as written"
-              : `${fmtDelta(confDelta)} vs protocol`}
+            {noProtocol
+              ? "added by hand"
+              : confDelta == null || confDelta === 0
+                ? "as written"
+                : `${fmtDelta(confDelta)} vs protocol`}
           </span>
         </div>
       )}
 
-      {error && <div className="error">{error}</div>}
+      {loaderOpen && (
+        <TrialLoader
+          loading={loading}
+          onLoadNct={loadTrial}
+          onLoadText={loadText}
+          onClose={() => setLoaderOpen(false)}
+        />
+      )}
+
+      {error && <div className="error" role="alert">{error}</div>}
       {loading && <div className="loading">Loading trial…</div>}
-      {unparsed.length > 0 && (
+      {pending.length > 0 && (
         <div className="notice">
-          {unparsed.length} sentence
-          {unparsed.length > 1 ? "s" : ""} could not be translated from the
-          cache and {unparsed.length > 1 ? "are" : "is"} omitted rather than
-          guessed.
+          {pending.length} sentence{pending.length > 1 ? "s aren't" : " isn't"} in
+          Sieve's translation cache yet. {pending.length > 1 ? "They're" : "It's"}{" "}
+          listed under "Not translated yet" and change no count until you add
+          {pending.length > 1 ? " them" : " it"} by hand.
         </div>
       )}
 
-      {rules.length > 0 && (
+      {trialLoaded && (
         <div className="workbench">
           <div className="protocol-col">
             <ProtocolColumn
@@ -374,12 +425,28 @@ export default function App() {
               onHover={setHotIndex}
               selectedRuleId={selectedRuleId}
               onSelect={onSelect}
+              untranslated={pending}
+              draft={draft}
+              onTranslate={setDraft}
+              onDraftDone={() => setDraft(null)}
               assumptions={assumptions}
               onAssumptionsChange={setAssumptions}
             />
           </div>
 
           <div className="result-col">
+            {rules.length === 0 ? (
+              <div className="result-empty">
+                <p className="result-sentence">Nothing is counted yet.</p>
+                <p>
+                  None of this trial's sentences are in Sieve's translation
+                  cache. Choose "Add by hand" on the criteria you care about and
+                  the counts, the patient field and the map appear here, run on
+                  the {fmtInt(health?.population)} synthetic adults with type 2
+                  diabetes.
+                </p>
+              </div>
+            ) : (
             <ResultColumn
               analysis={analysis}
               baseline={baseline}
@@ -401,7 +468,9 @@ export default function App() {
               selectedRuleId={selectedRuleId}
               onSelect={onSelect}
               onClearSelection={() => setSelectedRuleId(null)}
+              noProtocol={noProtocol}
             />
+            )}
           </div>
         </div>
       )}
