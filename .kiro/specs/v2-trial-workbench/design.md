@@ -54,4 +54,7 @@ Property tests go in `backend/tests/test_properties.py` and use Hypothesis where
 
 ## Out of scope
 
-Live LLM parsing, deployment, renaming the repo, LOINC / SNOMED / RxNorm, real Synthea, and any feature not listed in `tasks.md`.
+Live LLM parsing (the `LLMBackend` seam exists but was deliberately skipped: a
+Bedrock backend is only wired when AWS credentials are present, and none were),
+renaming the repo, LOINC / SNOMED / RxNorm, real Synthea, and any feature not
+listed in `tasks.md` or its "Also shipped" note.

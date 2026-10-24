@@ -22,6 +22,9 @@ inclusion: always
 - Match on canonical field names already used by the engine: `age`, `hba1c`, `bmi`, `egfr`, `weight`, `systolic_bp`, `fasting_glucose`, `creatinine`, `sex`, `conditions`, `medications`. Do not match labs, conditions, or drugs by display name.
 - Do not switch the engine to LOINC, SNOMED, or RxNorm today. That is a rewrite, and the deadline is tonight.
 - Convert both the rule value and the patient value to the field's canonical unit in `units.py` before comparing. HbA1c `%` and `mmol/mol`, glucose `mg/dL` and `mmol/L`, and creatinine `mg/dL` and `umol/L` must produce the same verdict.
+- `has` means "has any of" the listed tokens: a multi-token value such as `["mi", "stroke"]` matches a patient who has myocardial infarction OR stroke.
+- Condition and medication lists are closed-world: no record of a condition or drug means the patient does not have it (so `has` returns `fails`, not `unknown`). Only missing numeric labs/vitals are `unknown`.
+- The four pre-seeded trials must keep working offline: NCT01179048 (LEADER), NCT01720446 (SUSTAIN-6), NCT01131676 (EMPA-REG OUTCOME), and NCT02692716 (PIONEER 6).
 
 ## Language
 
@@ -60,6 +63,6 @@ Prefer a new property test over a one-off example when you change the engine.
 
 Submissions are due 8 PM ET today. The README features must stay working and demoable after every commit.
 
-Allowed beyond the README: only the tasks in `.kiro/specs/v2-trial-workbench/`. That covers the population and demographics fixes, threshold sliders, compare-to-original, the two-column layout, the add-criterion form, OR/Kleene logic, and PIONEER 6. Nothing else.
+Allowed beyond the README: the tasks in `.kiro/specs/v2-trial-workbench/`. That covers the population and demographics fixes, threshold sliders, compare-to-original, the two-column layout, the add-criterion form, OR/Kleene logic, and PIONEER 6, plus section-aware splitting, export, deployment prep, and the v3 visual pass.
 
 Do v2 tasks in spec order. Don't start a new task after 6:30 PM ET. Use the rest of the time for polish and the demo.
