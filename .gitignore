@@ -1,0 +1,17 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+
+# Generated data (regenerate with `python -m dryrun.synthea` and `-m dryrun.seed`)
+backend/data/patients.csv
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store

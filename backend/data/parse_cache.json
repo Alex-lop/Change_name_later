@@ -1,0 +1,79 @@
+{
+  "20356b475c327953": {
+    "field": "egfr",
+    "kind": "exclusion",
+    "label": "Exclude eGFR < 30",
+    "operator": "<",
+    "unit": "ml/min/1.73m2",
+    "value": 30
+  },
+  "309be34a32ad1095": {
+    "field": "hba1c",
+    "kind": "inclusion",
+    "label": "HbA1c 7-10%",
+    "operator": "between",
+    "unit": "percent",
+    "value": [
+      7.0,
+      10.0
+    ]
+  },
+  "454a49ff3d451f2b": {
+    "field": "bmi",
+    "kind": "inclusion",
+    "label": "BMI >= 20",
+    "operator": ">=",
+    "unit": "kg/m2",
+    "value": 20
+  },
+  "4862a5275f27d661": {
+    "field": "bmi",
+    "kind": "inclusion",
+    "label": "BMI <= 45",
+    "operator": "<=",
+    "unit": "kg/m2",
+    "value": 45
+  },
+  "4989640330442e2d": {
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude type 1 diabetes",
+    "operator": "has",
+    "value": [
+      "t1d"
+    ]
+  },
+  "55547fdfd3a01ee4": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 18y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 18
+  },
+  "601d9817913bfa68": {
+    "field": "conditions",
+    "kind": "inclusion",
+    "label": "Has type 2 diabetes",
+    "operator": "has",
+    "value": [
+      "t2d"
+    ]
+  },
+  "cb203fb06afb9d1c": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 50y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 50
+  },
+  "ee85f216b4503d95": {
+    "field": "hba1c",
+    "kind": "inclusion",
+    "label": "HbA1c >= 7.0%",
+    "operator": ">=",
+    "unit": "percent",
+    "value": 7.0
+  }
+}
