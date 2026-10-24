@@ -1,0 +1,14 @@
+Inclusion Criteria:
+
+* Type 2 diabetes mellitus with a hemoglobin A1c (HbA1c) greater than or equal to (\>=) 6.5 percent (%) and less than or equal to (\<=) 12.0%, with an estimated glomerular filtration rate (eGFR) of \>= 30 milliliter (mL)/minute (min)/1.73meter (m)\^2 and less than (\<) 90 mL/min/1.73 m\^2
+* Participants need to be on a stable maximum tolerated labeled daily dose of an angiotensin-converting enzyme inhibitor (ACEi) or angiotensin receptor blocker (ARB) for at least 4 weeks prior to randomization
+* Must have a urine albumin to creatinine ratio (UACR) of greater than (\>) 300 milligram (mg)/gram (g) and \<= 5000 mg/g
+
+Exclusion Criteria:
+
+* History of diabetic ketoacidosis or type 1 diabetes mellitus
+* History of hereditary glucose-galactose malabsorption or primary renal glucosuria
+* Renal disease that required treatment with immunosuppressive therapy
+* Known significant liver disease
+* Current or history of New York Heart Association (NYHA) Class IV heart failure
+* Blood potassium level \>5.5 millimole (mmol)/liter (L) during Screening

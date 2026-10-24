@@ -162,5 +162,49 @@
         "kind": "exclusion"
       }
     ]
+  },
+  "NCT02065791": {
+    "nct_id": "NCT02065791",
+    "title": "CREDENCE: Evaluation of the Effects of Canagliflozin on Renal and Cardiovascular Outcomes in Participants With Diabetic Nephropathy",
+    "condition": "type 2 diabetes and chronic kidney disease",
+    "paraphrased": false,
+    "criteria": [
+      {
+        "sentence": "Type 2 diabetes mellitus with a hemoglobin A1c (HbA1c) greater than or equal to (>=) 6.5 percent (%) and less than or equal to (<=) 12.0%, with an estimated glomerular filtration rate (eGFR) of >= 30 milliliter (mL)/minute (min)/1.73meter (m)^2 and less than (<) 90 mL/min/1.73 m^2",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Participants need to be on a stable maximum tolerated labeled daily dose of an angiotensin-converting enzyme inhibitor (ACEi) or angiotensin receptor blocker (ARB) for at least 4 weeks prior to randomization",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Must have a urine albumin to creatinine ratio (UACR) of greater than (>) 300 milligram (mg)/gram (g) and <= 5000 mg/g",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "History of diabetic ketoacidosis or type 1 diabetes mellitus",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "History of hereditary glucose-galactose malabsorption or primary renal glucosuria",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Renal disease that required treatment with immunosuppressive therapy",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Known significant liver disease",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Current or history of New York Heart Association (NYHA) Class IV heart failure",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Blood potassium level >5.5 millimole (mmol)/liter (L) during Screening",
+        "kind": "exclusion"
+      }
+    ]
   }
 }

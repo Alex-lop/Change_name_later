@@ -1,0 +1,128 @@
+{
+  "nct_id": "NCT02065791",
+  "title": "CREDENCE: Evaluation of the Effects of Canagliflozin on Renal and Cardiovascular Outcomes in Participants With Diabetic Nephropathy",
+  "condition": "type 2 diabetes and chronic kidney disease",
+  "paraphrased": false,
+  "criteria": [
+    {
+      "sentence": "Type 2 diabetes mellitus with a hemoglobin A1c (HbA1c) greater than or equal to (>=) 6.5 percent (%) and less than or equal to (<=) 12.0%, with an estimated glomerular filtration rate (eGFR) of >= 30 milliliter (mL)/minute (min)/1.73meter (m)^2 and less than (<) 90 mL/min/1.73 m^2",
+      "rule": {
+        "kind": "inclusion",
+        "logic": "all_of",
+        "label": "Type 2 diabetes, HbA1c 6.5-12%, eGFR >= 30 and < 90",
+        "children": [
+          {
+            "field": "conditions",
+            "operator": "has",
+            "value": [
+              "t2d"
+            ]
+          },
+          {
+            "field": "hba1c",
+            "operator": "between",
+            "value": [
+              6.5,
+              12.0
+            ],
+            "unit": "percent"
+          },
+          {
+            "field": "egfr",
+            "operator": ">=",
+            "value": 30,
+            "unit": "ml/min/1.73m2"
+          },
+          {
+            "field": "egfr",
+            "operator": "<",
+            "value": 90,
+            "unit": "ml/min/1.73m2"
+          }
+        ]
+      }
+    },
+    {
+      "sentence": "Participants need to be on a stable maximum tolerated labeled daily dose of an angiotensin-converting enzyme inhibitor (ACEi) or angiotensin receptor blocker (ARB) for at least 4 weeks prior to randomization",
+      "rule": {
+        "field": "medications",
+        "operator": "has",
+        "value": [
+          "lisinopril"
+        ],
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Needs a stable maximum dose held for 4 weeks; the synthetic data has no doses or dates",
+        "label": "Stable max-dose ACE inhibitor or ARB for 4+ weeks"
+      }
+    },
+    {
+      "sentence": "Must have a urine albumin to creatinine ratio (UACR) of greater than (>) 300 milligram (mg)/gram (g) and <= 5000 mg/g",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "UACR is not in the synthetic records",
+        "label": "UACR > 300 and <= 5000 mg/g"
+      }
+    },
+    {
+      "sentence": "History of diabetic ketoacidosis or type 1 diabetes mellitus",
+      "rule": {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "t1d"
+        ],
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Diabetic ketoacidosis history is not in the synthetic records, so this either/or cannot be decided",
+        "label": "Exclude diabetic ketoacidosis or type 1 diabetes"
+      }
+    },
+    {
+      "sentence": "History of hereditary glucose-galactose malabsorption or primary renal glucosuria",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Glucose-galactose malabsorption and renal glucosuria are not in the synthetic records",
+        "label": "Exclude glucose-galactose malabsorption or renal glucosuria"
+      }
+    },
+    {
+      "sentence": "Renal disease that required treatment with immunosuppressive therapy",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Immunosuppressive treatment history is not in the synthetic records",
+        "label": "Exclude renal disease treated with immunosuppressants"
+      }
+    },
+    {
+      "sentence": "Known significant liver disease",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Liver disease is not in the synthetic records",
+        "label": "Exclude significant liver disease"
+      }
+    },
+    {
+      "sentence": "Current or history of New York Heart Association (NYHA) Class IV heart failure",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "NYHA class is not recorded",
+        "label": "Exclude NYHA Class IV heart failure"
+      }
+    },
+    {
+      "sentence": "Blood potassium level >5.5 millimole (mmol)/liter (L) during Screening",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Blood potassium is not in the synthetic records",
+        "label": "Exclude potassium > 5.5 mmol/L"
+      }
+    }
+  ]
+}

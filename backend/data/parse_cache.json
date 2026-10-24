@@ -1,4 +1,15 @@
 {
+  "04b7623ce7fd2b68": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude diabetic ketoacidosis or type 1 diabetes",
+    "operator": "has",
+    "unevaluable_reason": "Diabetic ketoacidosis history is not in the synthetic records, so this either/or cannot be decided",
+    "value": [
+      "t1d"
+    ]
+  },
   "158dcc1e48af97ab": {
     "field": "bmi",
     "kind": "inclusion",
@@ -33,6 +44,41 @@
       7.0,
       10.0
     ]
+  },
+  "224c1a711d5b7839": {
+    "children": [
+      {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "t2d"
+        ]
+      },
+      {
+        "field": "hba1c",
+        "operator": "between",
+        "unit": "percent",
+        "value": [
+          6.5,
+          12.0
+        ]
+      },
+      {
+        "field": "egfr",
+        "operator": ">=",
+        "unit": "ml/min/1.73m2",
+        "value": 30
+      },
+      {
+        "field": "egfr",
+        "operator": "<",
+        "unit": "ml/min/1.73m2",
+        "value": 90
+      }
+    ],
+    "kind": "inclusion",
+    "label": "Type 2 diabetes, HbA1c 6.5-12%, eGFR >= 30 and < 90",
+    "logic": "all_of"
   },
   "2f06bc32cf7f9802": {
     "evaluable": false,
@@ -98,6 +144,18 @@
     "label": "Exclude dialysis or eGFR < 30",
     "logic": "any_of"
   },
+  "5ead4e96d771e6e7": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude renal disease treated with immunosuppressants",
+    "unevaluable_reason": "Immunosuppressive treatment history is not in the synthetic records"
+  },
+  "5fcdb07712236b11": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude NYHA Class IV heart failure",
+    "unevaluable_reason": "NYHA class is not recorded"
+  },
   "6ef856fce7b8ff1a": {
     "field": "conditions",
     "kind": "inclusion",
@@ -106,6 +164,12 @@
     "value": [
       "t2d"
     ]
+  },
+  "70bbe99beb6d0819": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "UACR > 300 and <= 5000 mg/g",
+    "unevaluable_reason": "UACR is not in the synthetic records"
   },
   "793a33cc8dfb5f6c": {
     "field": "age",
@@ -182,6 +246,17 @@
     "label": "Age 50+ with CV disease, or 60+ with a CV risk factor",
     "logic": "any_of"
   },
+  "91a0d4d7327f693f": {
+    "evaluable": false,
+    "field": "medications",
+    "kind": "inclusion",
+    "label": "Stable max-dose ACE inhibitor or ARB for 4+ weeks",
+    "operator": "has",
+    "unevaluable_reason": "Needs a stable maximum dose held for 4 weeks; the synthetic data has no doses or dates",
+    "value": [
+      "lisinopril"
+    ]
+  },
   "94d6bc0b59d67882": {
     "evaluable": false,
     "field": "medications",
@@ -218,6 +293,12 @@
     "label": "Exclude major gastric surgery",
     "unevaluable_reason": "Procedures table not in the synthetic data"
   },
+  "acbc2e6970c73806": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude potassium > 5.5 mmol/L",
+    "unevaluable_reason": "Blood potassium is not in the synthetic records"
+  },
   "b062c48ba9fc4810": {
     "evaluable": false,
     "field": "conditions",
@@ -229,6 +310,12 @@
       "mi",
       "stroke"
     ]
+  },
+  "b420c333a63a9834": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude significant liver disease",
+    "unevaluable_reason": "Liver disease is not in the synthetic records"
   },
   "c19fd93229a97d88": {
     "evaluable": false,
@@ -246,6 +333,12 @@
     "value": [
       "cancer"
     ]
+  },
+  "cb48064219306477": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude glucose-galactose malabsorption or renal glucosuria",
+    "unevaluable_reason": "Glucose-galactose malabsorption and renal glucosuria are not in the synthetic records"
   },
   "f2860672251d6cce": {
     "field": "conditions",
