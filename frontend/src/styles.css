@@ -66,10 +66,9 @@ button { font-family: inherit; font-size: inherit; }
   flex-wrap: wrap;
 }
 .wordmark {
-  font-weight: 600;
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
+  height: 36px;
+  width: auto;
+  display: block;
 }
 .trial-picker {
   font-family: inherit;
@@ -273,6 +272,68 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
 }
 .add-actions { display: flex; gap: 8px; margin-top: 12px; }
 
+/* add-by-hand from an untranslated sentence */
+.add-draft { margin: 0 0 6px; font-size: 14px; }
+.add-draft-label { color: var(--ink-2); }
+.add-draft-sentence { font-family: var(--serif); font-size: 16px; }
+.add-suggested { margin: 0 0 12px; font-size: 13px; color: var(--ink-2); }
+.add-tokens {
+  border: 0; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 0 14px;
+  font-size: 14px; flex: 1 1 260px;
+}
+.add-tokens legend { padding: 0; margin-bottom: 4px; }
+.add-token { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; cursor: pointer; }
+.add-token input { width: 18px; height: 18px; margin: 0; accent-color: var(--accent); }
+
+/* ---- not translated yet --------------------------------------------------- */
+
+.section-note { font-size: 14px; color: var(--ink-2); margin: -4px 0 8px; }
+.criterion.untranslated { border-left-style: dashed; border-left-color: var(--rule); }
+.criterion.untranslated.drafting { border-left-style: solid; border-left-color: var(--accent); }
+.crit-untranslated-row { display: flex; align-items: center; gap: 14px; margin-top: 2px; }
+.crit-kind { font-size: 13px; color: var(--ink-2); }
+.crit-translate {
+  background: none; border: 0; padding: 0 2px;
+  min-height: 44px; color: var(--accent); cursor: pointer; font-size: 15px;
+}
+.crit-translate:hover { text-decoration: underline; }
+
+.population-note {
+  margin: 10px 0 0; padding-left: 10px;
+  border-left: 2px solid var(--rule);
+  font-size: 14px; color: var(--ink-2);
+}
+
+/* ---- load any trial ------------------------------------------------------- */
+
+.loader {
+  position: relative;
+  margin: 12px 0 0;
+  padding: 14px 14px 10px;
+  background: var(--paper-2);
+  border-radius: var(--radius);
+}
+.loader-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 12px; }
+.loader-field { display: flex; flex-direction: column; gap: 4px; font-size: 14px; flex: 0 1 260px; }
+.loader form > .loader-field { flex: none; margin-bottom: 10px; }
+.loader-field input, .loader-field textarea {
+  font-family: inherit; font-size: 15px; color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+.loader-field input { height: 40px; padding: 0 10px; }
+.loader-field textarea { width: 100%; padding: 8px 10px; line-height: 1.5; resize: vertical; }
+.loader .btn-text { margin-left: 0; }
+.loader-note { margin: 10px 0 0; font-size: 13px; color: var(--ink-2); max-width: 70ch; }
+.loader-close { position: absolute; top: 4px; right: 8px; }
+
+/* ---- nothing counted yet -------------------------------------------------- */
+
+.result-empty { color: var(--ink-2); font-size: 15px; max-width: 46ch; }
+.result-empty .result-sentence { color: var(--ink); }
+
 /* ---- assumptions drawer --------------------------------------------------- */
 
 .assumptions { margin-top: 28px; }
@@ -309,7 +370,6 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .result-sentence {
   font-family: var(--serif);
-  font-style: italic;
   font-size: clamp(22px, 2.2vw, 28px);
   line-height: 1.35;
   margin: 0 0 20px;
@@ -407,7 +467,7 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
 .cost-table td { padding: 10px 10px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
 .cost-crit { font-weight: 500; }
 .cost-demo { color: var(--ink-2); font-size: 13px; margin-top: 3px; }
-.cost-source { color: var(--ink-2); font-size: 12px; font-style: italic; margin-top: 2px; }
+.cost-source { color: var(--ink-2); font-size: 12px; margin-top: 2px; }
 .month-bar-cell { width: 120px; }
 .month-bar-track { height: 6px; background: var(--rule); border-radius: var(--radius); }
 .month-bar { height: 6px; background: var(--ink); border-radius: var(--radius); }
