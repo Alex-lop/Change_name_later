@@ -248,6 +248,23 @@ export default function App() {
                   {(analysis.confirmed_fraction * 100).toFixed(1)}% of population
                   confirmed
                 </p>
+                {analysis.coverage && analysis.coverage.total > 0 && (
+                  <div className="coverage">
+                    <strong>Coverage {Math.round(analysis.coverage.score * 100)}%</strong>
+                    {" "}— {analysis.coverage.evaluable} of{" "}
+                    {analysis.coverage.total} criteria are evaluable by this data
+                    {analysis.coverage.not_evaluable.length > 0 && (
+                      <ul className="uneval-list">
+                        {analysis.coverage.not_evaluable.map((u) => (
+                          <li key={u.rule_id}>
+                            <span className="uneval-tag">not evaluable</span>{" "}
+                            {u.label} — {u.reason}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
 
                 <section className="panel">
                   <h3>Eligibility funnel</h3>

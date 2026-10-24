@@ -172,8 +172,32 @@ def analyze_endpoint(req: AnalyzeRequest) -> dict:
     valid_ids = {r.id for r in req.rules}
     active_ids = [rid for rid in active_ids if rid in valid_ids]
 
+    # Not-evaluable rules never change a count: drop them from the active set
+    # used for the funnel, confirmed/possibly counts, and price tags. They are
+    # still returned so the UI can list them with their reason.
+    evaluable_ids = {r.id for r in req.rules if r.evaluable}
+    active_ids = [rid for rid in active_ids if rid in evaluable_ids]
+
     matrix = VerdictMatrix.build(req.rules, patients)
     result = analyze(req.rules, matrix, active_ids, store)
+
+    # Coverage score: evaluable criteria / total criteria across the rule set.
+    total_rules = len(req.rules)
+    n_evaluable = sum(1 for r in req.rules if r.evaluable)
+    result["coverage"] = {
+        "evaluable": n_evaluable,
+        "total": total_rules,
+        "score": round(n_evaluable / total_rules, 4) if total_rules else 0.0,
+        "not_evaluable": [
+            {
+                "rule_id": r.id,
+                "label": r.label or r.source_sentence,
+                "reason": r.unevaluable_reason,
+            }
+            for r in req.rules
+            if not r.evaluable
+        ],
+    }
 
     assumptions = Assumptions.from_dict(req.assumptions)
     frac = result["confirmed_fraction"]

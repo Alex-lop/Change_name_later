@@ -380,3 +380,32 @@ def test_v2_all_unknown_children_is_unknown(logic, n):
     rule = Rule(id="cmp", logic=logic, children=children)
     p = Patient(id="p", fields={}, units_={})  # no data at all
     assert _evaluate(rule, p) == Verdict.UNKNOWN
+
+
+# --- v2 Task 9: not-evaluable criteria never change a count -------------------
+
+
+@slow
+@given(
+    rule_list=st.lists(numeric_rules(), min_size=1, max_size=4),
+    extra=numeric_rules(),
+    pts=st.lists(patients(), min_size=1, max_size=30),
+)
+def test_v2_not_evaluable_never_changes_counts(rule_list, extra, pts):
+    for i, r in enumerate(rule_list):
+        r.id = f"r{i}"
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+    # A not-evaluable rule with any field/operator must not affect counts.
+    extra.id = "uneval"
+    extra.evaluable = False
+    extra.unevaluable_reason = "test"
+
+    ids = [r.id for r in rule_list]
+    with_uneval = rule_list + [extra]
+    # The matrix must omit the not-evaluable rule from active ids entirely.
+    active = [r.id for r in with_uneval if r.evaluable]
+    m1 = VerdictMatrix.build(rule_list, pts)
+    m2 = VerdictMatrix.build(with_uneval, pts)
+    assert len(confirmed_eligible(m1, ids)) == len(confirmed_eligible(m2, active))
+    assert len(possibly_eligible(m1, ids)) == len(possibly_eligible(m2, active))

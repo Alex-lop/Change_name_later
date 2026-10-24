@@ -41,8 +41,11 @@ CONDITION_CODES = {
     "t1d": "type 1 diabetes",
     "hypertension": "hypertension",
     "ckd": "chronic kidney disease",
+    "dialysis": "dependence on renal dialysis",
     "chf": "congestive heart failure",
     "mi": "myocardial infarction",
+    "stroke": "cerebrovascular accident",
+    "pancreatitis": "pancreatitis",
     "cancer": "malignant neoplasm",
 }
 
@@ -107,14 +110,25 @@ def generate_patient(rng: random.Random, i: int, diabetic: bool) -> Patient:
     egfr = _clamp(rng.gauss(90 - (age - 40) * 0.8, 15), 10, 120)
     if egfr < 60 and rng.random() < 0.7:
         conditions.append("ckd")
+    # Dialysis: a small subset of severe CKD (PIONEER 6 E8 token).
+    if egfr < 20 and rng.random() < 0.4:
+        conditions.append("dialysis")
     if rng.random() < 0.03:
         conditions.append("t1d")
     if rng.random() < 0.05:
         conditions.append("chf")
     if rng.random() < 0.04:
         conditions.append("mi")
+    if rng.random() < 0.03:
+        conditions.append("stroke")        # PIONEER 6 cardiovascular-disease token
+    if rng.random() < 0.02:
+        conditions.append("pancreatitis")  # PIONEER 6 E3 token
     if rng.random() < 0.05:
         conditions.append("cancer")
+
+    # Glucose-lowering drug classes PIONEER 6 excludes (E1 washout token).
+    if diabetic and rng.random() < 0.08:
+        medications.append("dpp4 inhibitor")
 
     weight = _clamp(bmi * (1.7 ** 2) + rng.gauss(0, 5), 40, 180)
     systolic = _clamp(

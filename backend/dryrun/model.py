@@ -77,7 +77,7 @@ class Rule(BaseModel):
       omitted from counts and shown with `unevaluable_reason`.
     """
 
-    id: str
+    id: str = ""
     field: str = ""
     operator: Operator | None = None
     value: Any = None

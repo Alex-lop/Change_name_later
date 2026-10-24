@@ -1,4 +1,31 @@
 {
+  "0a46c77d00a6d70d": {
+    "field": "conditions",
+    "kind": "inclusion",
+    "label": "Has type 2 diabetes",
+    "operator": "has",
+    "value": [
+      "t2d"
+    ]
+  },
+  "17843507775065a0": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude recent MI/stroke (60-day window)",
+    "operator": "not_has",
+    "unevaluable_reason": "60-day event window needs dates; the synthetic data has no dates",
+    "value": [
+      "mi",
+      "stroke"
+    ]
+  },
+  "1c33512b000966ef": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude major gastric surgery",
+    "unevaluable_reason": "Procedures table not in the synthetic data"
+  },
   "20356b475c327953": {
     "field": "egfr",
     "kind": "exclusion",
@@ -17,6 +44,56 @@
       7.0,
       10.0
     ]
+  },
+  "3674042af319ff4f": {
+    "children": [
+      {
+        "children": [
+          {
+            "field": "age",
+            "operator": ">=",
+            "unit": "years",
+            "value": 50
+          },
+          {
+            "field": "conditions",
+            "operator": "has",
+            "value": [
+              "mi",
+              "stroke"
+            ]
+          }
+        ],
+        "logic": "all_of"
+      },
+      {
+        "children": [
+          {
+            "field": "age",
+            "operator": ">=",
+            "unit": "years",
+            "value": 60
+          },
+          {
+            "field": "conditions",
+            "operator": "has",
+            "value": [
+              "hypertension"
+            ]
+          }
+        ],
+        "logic": "all_of"
+      }
+    ],
+    "kind": "inclusion",
+    "label": "Age 50+ with CV disease, or 60+ with a CV risk factor",
+    "logic": "any_of"
+  },
+  "3f9b9cf877b2b515": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude MEN 2 / MTC history",
+    "unevaluable_reason": "Family history is not in the synthetic records"
   },
   "454a49ff3d451f2b": {
     "field": "bmi",
@@ -43,6 +120,12 @@
       "t1d"
     ]
   },
+  "5209da741e4a56c2": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude planned revascularisation",
+    "unevaluable_reason": "Future plans are not in the records"
+  },
   "55547fdfd3a01ee4": {
     "field": "age",
     "kind": "inclusion",
@@ -60,6 +143,52 @@
       "t2d"
     ]
   },
+  "8f4a977833d77fd5": {
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude pancreatitis history",
+    "operator": "has",
+    "value": [
+      "pancreatitis"
+    ]
+  },
+  "a14c6dc96fc73957": {
+    "children": [
+      {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "dialysis"
+        ]
+      },
+      {
+        "field": "egfr",
+        "operator": "<",
+        "unit": "ml/min/1.73m2",
+        "value": 30
+      }
+    ],
+    "kind": "exclusion",
+    "label": "Exclude dialysis or eGFR < 30",
+    "logic": "any_of"
+  },
+  "aedee6ef7c2882a7": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude NYHA Class IV heart failure",
+    "unevaluable_reason": "NYHA class is not recorded"
+  },
+  "b6c262f067cbfbc1": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude malignancy in last 5 years",
+    "operator": "not_has",
+    "unevaluable_reason": "5-year neoplasm window needs dates; the synthetic data has no dates",
+    "value": [
+      "cancer"
+    ]
+  },
   "cb203fb06afb9d1c": {
     "field": "age",
     "kind": "inclusion",
@@ -75,5 +204,17 @@
     "operator": ">=",
     "unit": "percent",
     "value": 7.0
+  },
+  "efe803ed25d5879e": {
+    "evaluable": false,
+    "field": "medications",
+    "kind": "exclusion",
+    "label": "Exclude recent GLP-1/DPP-4/pramlintide (washout)",
+    "operator": "not_has",
+    "unevaluable_reason": "90-day medication washout needs dates; the synthetic data has no dates",
+    "value": [
+      "glp1 agonist",
+      "dpp4 inhibitor"
+    ]
   }
 }
