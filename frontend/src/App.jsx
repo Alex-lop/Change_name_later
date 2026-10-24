@@ -4,6 +4,7 @@ import FunnelChart from "./FunnelChart";
 import AssumptionsPanel from "./AssumptionsPanel";
 import PriceTags, { fmtMoney } from "./PriceTags";
 import CriterionRow from "./CriterionRow";
+import ResultsHeader from "./ResultsHeader";
 
 const DEFAULT_ASSUMPTIONS = {
   target_enrollment: 1000,
@@ -81,6 +82,8 @@ export default function App() {
   }
 
   // Re-analyze whenever rules, toggles, or assumptions change, debounced 150ms.
+  // Also recompute the original-protocol baseline with the SAME assumptions so
+  // the compare header reflects only rule/threshold changes, not assumption edits.
   useEffect(() => {
     if (rules.length === 0) {
       setAnalysis(null);
@@ -92,12 +95,22 @@ export default function App() {
         .analyze({ rules, active_rule_ids: activeIds, assumptions })
         .then((res) => !cancelled && setAnalysis(res))
         .catch((e) => !cancelled && setError(e.message));
+      if (originalRules.length > 0) {
+        api
+          .analyze({
+            rules: originalRules,
+            active_rule_ids: originalRules.map((r) => r.id),
+            assumptions,
+          })
+          .then((res) => !cancelled && setBaseline(res))
+          .catch(() => {});
+      }
     }, 150);
     return () => {
       cancelled = true;
       clearTimeout(handle);
     };
-  }, [rules, activeIds, assumptions]);
+  }, [rules, activeIds, assumptions, originalRules]);
 
   function toggle(id) {
     setActiveIds((prev) =>
@@ -213,47 +226,13 @@ export default function App() {
 
           {analysis && (
             <>
-              <section className="summary-cards">
-                <div className="card">
-                  <div className="card-num">
-                    {analysis.confirmed_eligible.toLocaleString()}
-                  </div>
-                  <div className="card-label">
-                    Confirmed eligible (meets all)
-                  </div>
-                  <div className="card-sub">
-                    {(analysis.confirmed_fraction * 100).toFixed(1)}% of
-                    population
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-num">
-                    {analysis.possibly_eligible.toLocaleString()}
-                  </div>
-                  <div className="card-label">
-                    Possibly eligible (meets or unknown)
-                  </div>
-                  <div className="card-sub">
-                    {(analysis.possibly_fraction * 100).toFixed(1)}% of
-                    population
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-num">
-                    {cost?.enrollment_months != null
-                      ? `${cost.enrollment_months} mo`
-                      : "—"}
-                  </div>
-                  <div className="card-label">Est. enrollment time</div>
-                  <div className="card-sub">
-                    delay cost {fmtMoney(cost?.delay_cost)}
-                  </div>
-                  <div className="card-note">
-                    {cost?.delay_cost_label ||
-                      "vs. enrolling any adult with type 2 diabetes"}
-                  </div>
-                </div>
-              </section>
+              <ResultsHeader analysis={analysis} baseline={baseline} />
+              <p className="possibly-note">
+                {analysis.possibly_eligible.toLocaleString()} possibly eligible
+                (meets or unknown) ·{" "}
+                {(analysis.confirmed_fraction * 100).toFixed(1)}% of population
+                confirmed
+              </p>
 
               <section className="panel">
                 <h3>Eligibility funnel</h3>

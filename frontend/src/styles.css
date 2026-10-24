@@ -169,6 +169,26 @@ details textarea { margin: 0.5rem 0; font-family: ui-monospace, monospace; }
 .card-sub { color: var(--muted); font-size: 0.85rem; }
 .card-note { color: var(--muted); font-size: 0.72rem; font-style: italic; margin-top: 0.15rem; }
 
+.results-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+.rh-metric { display: flex; flex-direction: column; gap: 0.1rem; }
+.rh-num { font-size: 1.7rem; font-weight: 700; color: var(--accent); }
+.rh-unit { font-size: 1rem; color: var(--muted); }
+.rh-label { font-weight: 600; font-size: 0.85rem; }
+.rh-note { color: var(--muted); font-weight: 400; font-size: 0.68rem; font-style: italic; }
+.delta { font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+.delta-good { color: var(--good); }
+.delta-bad { color: var(--bad); }
+.delta-zero { color: var(--muted); }
+.possibly-note { color: var(--muted); font-size: 0.82rem; margin: 0.5rem 0 1rem; }
+
 .funnel { display: flex; flex-direction: column; gap: 0.5rem; }
 .funnel-row { display: flex; align-items: center; gap: 0.75rem; }
 .funnel-label {
