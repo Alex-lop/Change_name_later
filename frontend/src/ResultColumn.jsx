@@ -29,6 +29,7 @@ export default function ResultColumn({
   selectedRuleId,
   onSelect,
   onClearSelection,
+  noProtocol, // nothing was translated: every criterion was added by hand
 }) {
   if (!analysis) return null;
 
@@ -53,7 +54,14 @@ export default function ResultColumn({
 
   // Result sentence: as-written vs after edits.
   let sentence;
-  if (!edited || confDelta == null || confDelta === 0) {
+  if (noProtocol) {
+    sentence = (
+      <>
+        With the criteria you added, {fmtInt(confirmed)} of {fmtInt(total)}{" "}
+        synthetic {label} are eligible.
+      </>
+    );
+  } else if (!edited || confDelta == null || confDelta === 0) {
     sentence = (
       <>
         As written, {fmtInt(confirmed)} of {fmtInt(total)} synthetic {label} are
@@ -99,9 +107,11 @@ export default function ResultColumn({
           </div>
           <div className="number-label">eligible patients</div>
           <div className="number-delta">
-            {confDelta == null || confDelta === 0
-              ? "same as the protocol"
-              : `${fmtDelta(confDelta)} vs the protocol`}
+            {noProtocol
+              ? "from criteria added by hand"
+              : confDelta == null || confDelta === 0
+                ? "same as the protocol"
+                : `${fmtDelta(confDelta)} vs the protocol`}
           </div>
         </div>
 
@@ -113,9 +123,11 @@ export default function ResultColumn({
           </div>
           <div className="number-label">months to enroll (estimate)</div>
           <div className="number-delta">
-            {monthsDeltaStr
-              ? `${monthsDeltaStr} mo vs the protocol`
-              : "same as the protocol"}
+            {noProtocol
+              ? "from criteria added by hand"
+              : monthsDeltaStr
+                ? `${monthsDeltaStr} mo vs the protocol`
+                : "same as the protocol"}
           </div>
         </div>
 
@@ -125,9 +137,11 @@ export default function ResultColumn({
           </div>
           <div className="number-label">delay cost (estimate)</div>
           <div className="number-delta">
-            {costDeltaStr
-              ? `${costDeltaStr} vs the protocol`
-              : "same as the protocol"}
+            {noProtocol
+              ? "from criteria added by hand"
+              : costDeltaStr
+                ? `${costDeltaStr} vs the protocol`
+                : "same as the protocol"}
           </div>
         </div>
       </div>
