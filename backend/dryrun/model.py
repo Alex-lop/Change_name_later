@@ -52,8 +52,17 @@ class Kind(str, Enum):
     EXCLUSION = "exclusion"
 
 
+class Logic(str, Enum):
+    ANY_OF = "any_of"  # Kleene OR
+    ALL_OF = "all_of"  # Kleene AND
+
+
 class Rule(BaseModel):
     """A single structured eligibility criterion.
+
+    A rule is either a LEAF (has `field`/`operator`/`value`) or a COMPOUND rule
+    (has `logic` and `children`). Compound rules combine child verdicts with
+    Kleene logic in the engine.
 
     - `field` is a canonical patient field name (e.g. "hba1c", "age",
       "conditions", "sex").
@@ -63,22 +72,33 @@ class Rule(BaseModel):
     - `source_sentence` is the exact text the LLM translated. Never inferred.
     - `kind` marks inclusion vs exclusion; the engine flips exclusion verdicts
       so that "meets" always means "this criterion is satisfied / patient kept".
+    - `logic` + `children` make a compound rule (any_of / all_of).
+    - `evaluable` false means the data cannot decide this criterion; it is
+      omitted from counts and shown with `unevaluable_reason`.
     """
 
     id: str
-    field: str
-    operator: Operator
-    value: Any
+    field: str = ""
+    operator: Operator | None = None
+    value: Any = None
     unit: str | None = None
     kind: Kind = Kind.INCLUSION
     source_sentence: str = ""
     label: str = ""
     added: bool = False  # True for criteria added by hand in the UI
+    logic: Logic | None = None
+    children: list["Rule"] = Field(default_factory=list)
+    evaluable: bool = True
+    unevaluable_reason: str = ""
 
     @field_validator("field")
     @classmethod
     def _norm_field(cls, v: str) -> str:
         return v.strip().lower()
+
+    @property
+    def is_compound(self) -> bool:
+        return self.logic is not None
 
     def canonical_value(self) -> Any:
         """Return `value` converted to the field's canonical unit.

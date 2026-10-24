@@ -23,10 +23,77 @@ export default function CriterionRow({
   onToggle,
   onValueChange,
 }) {
-  const numeric = isNumeric(rule.operator) && bounds && !Array.isArray(rule.value);
+  const numeric =
+    !rule.logic &&
+    isNumeric(rule.operator) &&
+    bounds &&
+    !Array.isArray(rule.value);
   const changed =
     original != null &&
     JSON.stringify(original.value) !== JSON.stringify(rule.value);
+
+  // Compound rule: render logic + children, read-only (engine decides).
+  if (rule.logic) {
+    return (
+      <li className={rule.evaluable === false ? "crit-uneval" : undefined}>
+        <label className="crit-head">
+          <input
+            type="checkbox"
+            checked={active}
+            disabled={rule.evaluable === false}
+            onChange={() => onToggle(rule.id)}
+          />
+          <span className={`kind kind-${rule.kind}`}>{rule.kind}</span>
+          <span className="crit-label">{rule.label || rule.source_sentence}</span>
+          <span className="logic-tag">{rule.logic}</span>
+        </label>
+        <ul className="children">
+          {(rule.children || []).map((c, i) => (
+            <li key={i} className={c.evaluable === false ? "crit-uneval" : undefined}>
+              {c.logic ? (
+                <span className="logic-tag">{c.logic}</span>
+              ) : (
+                <code>
+                  {c.field} {c.operator}{" "}
+                  {Array.isArray(c.value) ? c.value.join(", ") : String(c.value)}
+                  {c.unit ? ` ${c.unit}` : ""}
+                </code>
+              )}
+              {c.logic &&
+                (c.children || []).map((gc, j) => (
+                  <code key={j} className="grandchild">
+                    {gc.field} {gc.operator}{" "}
+                    {Array.isArray(gc.value)
+                      ? gc.value.join(", ")
+                      : String(gc.value)}
+                    {gc.unit ? ` ${gc.unit}` : ""}
+                  </code>
+                ))}
+              {c.evaluable === false && (
+                <span className="uneval-reason">
+                  not evaluable — {c.unevaluable_reason}
+                </span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </li>
+    );
+  }
+
+  // Not-evaluable leaf rule: shown with its reason, changes no count.
+  if (rule.evaluable === false) {
+    return (
+      <li className="crit-uneval">
+        <label className="crit-head">
+          <span className={`kind kind-${rule.kind}`}>{rule.kind}</span>
+          <span className="crit-label">{rule.label || rule.source_sentence}</span>
+          <span className="uneval-tag">not evaluable</span>
+        </label>
+        <div className="uneval-reason">{rule.unevaluable_reason}</div>
+      </li>
+    );
+  }
 
   return (
     <li className={rule.added ? "crit-added" : undefined}>

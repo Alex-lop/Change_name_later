@@ -16,7 +16,15 @@ from __future__ import annotations
 from typing import Any
 
 from . import units
-from .model import Kind, NUMERIC_OPERATORS, Operator, Patient, Rule, Verdict
+from .model import (
+    Kind,
+    Logic,
+    NUMERIC_OPERATORS,
+    Operator,
+    Patient,
+    Rule,
+    Verdict,
+)
 
 
 def _as_float(x: Any) -> float | None:
@@ -67,30 +75,78 @@ def _eval_categorical(op: Operator, patient_val: Any, rule_val: Any) -> Verdict:
     if op is Operator.NOT_IN:
         return Verdict.MEETS if not (pset & rset) else Verdict.FAILS
     if op is Operator.HAS:
-        return Verdict.MEETS if (rset & pset) == rset and rset else Verdict.FAILS
+        # "has any of" the listed tokens (non-empty intersection). A multi-token
+        # value like ["mi", "stroke"] means the patient has MI OR stroke.
+        return Verdict.MEETS if (rset & pset) else Verdict.FAILS
     if op is Operator.NOT_HAS:
         return Verdict.MEETS if not (rset & pset) else Verdict.FAILS
     raise ValueError(f"Not a categorical operator: {op}")
 
 
-def evaluate(rule: Rule, patient: Patient) -> Verdict:
-    """Evaluate a single rule against a single patient."""
+def _kleene_any(verdicts: list[Verdict]) -> Verdict:
+    """any_of: MEETS if any child meets, FAILS if all fail, else UNKNOWN."""
+    if any(v is Verdict.MEETS for v in verdicts):
+        return Verdict.MEETS
+    if verdicts and all(v is Verdict.FAILS for v in verdicts):
+        return Verdict.FAILS
+    return Verdict.UNKNOWN
+
+
+def _kleene_all(verdicts: list[Verdict]) -> Verdict:
+    """all_of: FAILS if any child fails, MEETS if all meet, else UNKNOWN."""
+    if any(v is Verdict.FAILS for v in verdicts):
+        return Verdict.FAILS
+    if verdicts and all(v is Verdict.MEETS for v in verdicts):
+        return Verdict.MEETS
+    return Verdict.UNKNOWN
+
+
+def _eval_leaf(rule: Rule, patient: Patient) -> Verdict:
+    """Evaluate a leaf rule WITHOUT the exclusion flip."""
     datum = patient.get(rule.field)
     if datum is None:
-        # Missing data: can never be MEETS. Exclusion flip preserves UNKNOWN.
         return Verdict.UNKNOWN
     raw_value, raw_unit = datum
-
     if rule.operator in NUMERIC_OPERATORS:
         pv = _as_float(raw_value)
         if pv is None:
             return Verdict.UNKNOWN
         patient_canon = units.to_canonical(rule.field, pv, raw_unit)
         rule_canon = rule.canonical_value()
-        base = _eval_numeric(rule.operator, patient_canon, rule_canon)
-    else:
-        base = _eval_categorical(rule.operator, raw_value, rule.value)
+        return _eval_numeric(rule.operator, patient_canon, rule_canon)
+    return _eval_categorical(rule.operator, raw_value, rule.value)
 
+
+def _eval_base(rule: Rule, patient: Patient) -> Verdict:
+    """Base verdict (before exclusion flip) for leaf OR compound rules.
+
+    Compound rules combine child verdicts with Kleene logic. A child that is
+    marked not-evaluable contributes nothing (it is dropped), so e.g. an
+    any_of where one branch cannot be decided still lets the other branch
+    decide. Kleene logic guarantees UNKNOWN never silently becomes MEETS.
+    """
+    if rule.is_compound:
+        child_verdicts = [
+            _eval_base(child, patient)
+            for child in rule.children
+            if child.evaluable
+        ]
+        if rule.logic is Logic.ANY_OF:
+            return _kleene_any(child_verdicts)
+        return _kleene_all(child_verdicts)
+    return _eval_leaf(rule, patient)
+
+
+def evaluate(rule: Rule, patient: Patient) -> Verdict:
+    """Evaluate a single rule (leaf or compound) against a single patient.
+
+    Not-evaluable rules return UNKNOWN; callers (analysis) exclude them from
+    counts entirely. The exclusion flip is applied once at the top and leaves
+    UNKNOWN unchanged.
+    """
+    if not rule.evaluable:
+        return Verdict.UNKNOWN
+    base = _eval_base(rule, patient)
     if rule.kind is Kind.EXCLUSION:
         return _flip(base)
     return base

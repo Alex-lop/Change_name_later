@@ -315,3 +315,68 @@ def test_v2_reset_reproduces_original_counts(rule_list, pts):
     restored = [r.model_copy(deep=True) for r in original]
     m2 = VerdictMatrix.build(restored, pts)
     assert len(confirmed_eligible(m2, ids)) == baseline
+
+
+# --- v2 Task 8: Kleene any_of / all_of monotonicity + all-unknown -------------
+
+from dryrun.model import Logic  # noqa: E402
+from dryrun.engine import evaluate as _evaluate  # noqa: E402
+
+
+def _meets_set(rule, pts):
+    return {p.id for p in pts if _evaluate(rule, p) is Verdict.MEETS}
+
+
+@slow
+@given(
+    children=st.lists(numeric_rules(), min_size=1, max_size=4),
+    extra=numeric_rules(),
+    pts=st.lists(patients(), min_size=1, max_size=30),
+)
+def test_v2_any_of_adding_child_never_shrinks_meets(children, extra, pts):
+    for i, c in enumerate(children):
+        c.id = f"c{i}"
+        c.kind = Kind.INCLUSION
+    extra.id = "extra"
+    extra.kind = Kind.INCLUSION
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+    before = Rule(id="any", logic=Logic.ANY_OF, children=children)
+    after = Rule(id="any", logic=Logic.ANY_OF, children=children + [extra])
+    assert _meets_set(before, pts) <= _meets_set(after, pts)
+
+
+@slow
+@given(
+    children=st.lists(numeric_rules(), min_size=1, max_size=4),
+    extra=numeric_rules(),
+    pts=st.lists(patients(), min_size=1, max_size=30),
+)
+def test_v2_all_of_adding_child_never_grows_meets(children, extra, pts):
+    for i, c in enumerate(children):
+        c.id = f"c{i}"
+        c.kind = Kind.INCLUSION
+    extra.id = "extra"
+    extra.kind = Kind.INCLUSION
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+    before = Rule(id="all", logic=Logic.ALL_OF, children=children)
+    after = Rule(id="all", logic=Logic.ALL_OF, children=children + [extra])
+    assert _meets_set(after, pts) <= _meets_set(before, pts)
+
+
+@slow
+@given(
+    logic=st.sampled_from([Logic.ANY_OF, Logic.ALL_OF]),
+    n=st.integers(min_value=1, max_value=4),
+)
+def test_v2_all_unknown_children_is_unknown(logic, n):
+    # Children all reference a field the patient lacks -> all UNKNOWN.
+    children = [
+        Rule(id=f"c{i}", field="hba1c", operator=Operator.GTE, value=7.0,
+             unit="percent")
+        for i in range(n)
+    ]
+    rule = Rule(id="cmp", logic=logic, children=children)
+    p = Patient(id="p", fields={}, units_={})  # no data at all
+    assert _evaluate(rule, p) == Verdict.UNKNOWN
