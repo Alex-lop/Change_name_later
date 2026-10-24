@@ -123,7 +123,7 @@ npm run dev      # http://localhost:5173  (proxies /api to :8000)
 npm run build    # frontend/dist
 ```
 
-`backend/data/patients.csv` is generated, not committed. The seeded cache and trial registry are.
+`backend/data/patients.csv` is committed, along with the seeded cache and trial registry, so a fresh clone runs without the first-run step. Regenerating it from the fixed seed gives the same file.
 
 In one process, the API serves the built frontend:
 
@@ -136,7 +136,7 @@ Open http://localhost:8000.
 
 ### Docker
 
-The image builds the frontend with Node and runs the API with Python on port 8000. The population is generated from the fixed seed at startup. The seeded cache ships in the image, so the four demo protocols load with no network call.
+The image builds the frontend with Node and runs the API with Python on port 8000. The committed population ships in the image; it is regenerated from the fixed seed at startup only if missing. The seeded cache ships in the image, so the four demo protocols load with no network call.
 
 ```bash
 docker build -t sieve .
@@ -165,15 +165,15 @@ docs/images/     Sieve logo and other README figures
 
 ## Built with Kiro
 
-The workbench was specified in [Kiro](https://kiro.dev) before the code landed. Those files are the constraints the implementation is held to.
+v1 was built in [Kiro](https://kiro.dev) CLI from a single brief. v2 was specified in Kiro before its code landed. These files are the constraints the implementation is held to.
 
 | Path | What it does |
 | --- | --- |
 | `.kiro/steering/` | Product, stack, domain rules, and repository layout. Loaded with every task. |
 | `.kiro/specs/v2-trial-workbench/` | Requirements, design, and task list: population, sliders, compare, layout, add-a-criterion, Kleene logic, PIONEER 6, section-aware splitting, export. |
-| `.kiro/hooks/property-tests.json` | Re-runs the Hypothesis properties when the engine, units, model, analysis, or cost code is saved. |
+| `.kiro/hooks/property-tests.json` | Re-runs the full test suite when the engine, units, model, analysis, cost, or API code, or the property tests, are saved. |
 | `.kiro/agents/reviewer.md` | Read-only reviewer for verdict bugs and claims the code does not meet. |
-| `.kiro/settings/mcp.json` | Fetch MCP, used to pull the PIONEER 6 eligibility text from ClinicalTrials.gov. |
+| `.kiro/settings/mcp.json` | Fetch MCP server for ClinicalTrials.gov. It was added mid-session, so the PIONEER 6 text was pulled with Kiro's built-in web fetch. |
 
 ## Limitations
 
