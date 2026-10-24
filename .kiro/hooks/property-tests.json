@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Property tests on engine save",
+      "description": "Re-run the six Hypothesis properties when the eligibility engine or those tests change.",
+      "trigger": "PostFileSave",
+      "matcher": "backend/(dryrun/(engine|units|model|analysis|cost)\\.py|tests/(test_properties|strategies)\\.py)$",
+      "action": {
+        "type": "command",
+        "command": "cd backend && uv run pytest -q tests/test_properties.py"
+      },
+      "timeout": 180
+    }
+  ]
+}
