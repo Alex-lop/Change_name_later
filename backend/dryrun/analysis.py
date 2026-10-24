@@ -139,14 +139,14 @@ def price_tags(
         unknown_here = base & matrix.unknown[rid]
         kept = base & matrix.meets[rid]
         excl_demo = store.demographics(sorted(excluded)) if excluded else {
-            "n": 0, "mean_age": None, "sex": {}, "race": {}
+            "n": 0, "mean_age": None, "sex": {}
         }
         # Compare the excluded group against the cohort the criterion acts on
         # (the base cohort), not the whole population. Hide deltas for small
         # excluded groups so noise cannot look like a disparity finding.
         if len(excluded) >= MIN_GROUP:
             base_demo = store.demographics(sorted(base)) if base else {
-                "n": 0, "mean_age": None, "sex": {}, "race": {}
+                "n": 0, "mean_age": None, "sex": {}
             }
             demographic_deltas = _demo_deltas(base_demo, excl_demo)
         else:

@@ -101,16 +101,6 @@ export default function App() {
       setUnparsed(res.unparsed || []);
       setActiveIds(loaded.map((r) => r.id));
       setBaseline(null);
-      try {
-        const base = await api.analyze({
-          rules: loaded,
-          active_rule_ids: loaded.map((r) => r.id),
-          assumptions,
-        });
-        setBaseline(base);
-      } catch {
-        /* non-fatal */
-      }
     } catch (e) {
       setError(friendlyError(e, nctId));
       setRules([]);
@@ -121,8 +111,7 @@ export default function App() {
     }
   }
 
-  // Re-analyze on any change, debounced. The original-protocol baseline is
-  // recomputed with the SAME assumptions so deltas reflect only rule edits.
+  // Re-analyze the current protocol on rule/toggle/assumption changes, debounced.
   useEffect(() => {
     if (rules.length === 0) {
       setAnalysis(null);
@@ -134,22 +123,37 @@ export default function App() {
         .analyze({ rules, active_rule_ids: activeIds, assumptions })
         .then((res) => !cancelled && setAnalysis(res))
         .catch((e) => !cancelled && setError(e.message));
-      if (originalRules.length > 0) {
-        api
-          .analyze({
-            rules: originalRules,
-            active_rule_ids: originalRules.map((r) => r.id),
-            assumptions,
-          })
-          .then((res) => !cancelled && setBaseline(res))
-          .catch(() => {});
-      }
     }, 150);
     return () => {
       cancelled = true;
       clearTimeout(handle);
     };
-  }, [rules, activeIds, assumptions, originalRules]);
+  }, [rules, activeIds, assumptions]);
+
+  // Recompute the original-protocol baseline only when the loaded protocol or
+  // the assumptions change — NOT on every rule edit — so deltas reflect only
+  // rule edits and we don't fire a second /api/analyze on each slider move.
+  useEffect(() => {
+    if (originalRules.length === 0) {
+      setBaseline(null);
+      return;
+    }
+    let cancelled = false;
+    const handle = setTimeout(() => {
+      api
+        .analyze({
+          rules: originalRules,
+          active_rule_ids: originalRules.map((r) => r.id),
+          assumptions,
+        })
+        .then((res) => !cancelled && setBaseline(res))
+        .catch(() => {});
+    }, 150);
+    return () => {
+      cancelled = true;
+      clearTimeout(handle);
+    };
+  }, [originalRules, assumptions]);
 
   function toggle(id) {
     setActiveIds((prev) =>

@@ -422,7 +422,7 @@ class _StubStore:
     hit, but we return a well-formed empty aggregate just in case."""
 
     def demographics(self, patient_ids=None):
-        return {"n": 0, "mean_age": None, "sex": {}, "race": {}}
+        return {"n": 0, "mean_age": None, "sex": {}}
 
 
 @slow

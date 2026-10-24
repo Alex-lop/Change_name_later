@@ -173,3 +173,101 @@ def test_added_rule_evaluated_by_engine():
             assert dd is not None
             assert "race" not in dd  # no race deltas on generated data
             assert set(dd.keys()) <= {"mean_age_delta", "sex"}
+
+
+# --- concurrency + performance regression tests ------------------------------
+
+
+def test_subset_demographics_match_duckdb():
+    # 1. Python-computed subset demographics equal a direct DuckDB query for a
+    #    fixed list of 500 ids.
+    import duckdb
+
+    from dryrun.store import get_store
+
+    store = get_store()
+    ids = [p.id for p in store.patients()[:500]]
+
+    got = store.demographics(ids)
+
+    con = duckdb.connect(database=":memory:")
+    con.execute(
+        "CREATE TABLE patients AS SELECT * FROM read_csv_auto(?, header=true, "
+        "all_varchar=true)",
+        [str(store.csv_path)],
+    )
+    placeholders = ",".join("?" for _ in ids)
+    n = con.execute(
+        f"SELECT COUNT(*) FROM patients WHERE id IN ({placeholders})", ids
+    ).fetchone()[0]
+    mean_age = con.execute(
+        f"SELECT AVG(TRY_CAST(age AS DOUBLE)) FROM patients WHERE id IN "
+        f"({placeholders})",
+        ids,
+    ).fetchone()[0]
+    sex_rows = con.execute(
+        f"SELECT sex, COUNT(*) FROM patients WHERE id IN ({placeholders}) "
+        f"GROUP BY sex",
+        ids,
+    ).fetchall()
+    con.close()
+
+    assert got["n"] == n
+    assert got["mean_age"] == (round(mean_age, 1) if mean_age is not None else None)
+    assert got["sex"] == {k: v for k, v in sex_rows}
+    assert "race" not in got
+
+
+def test_demographics_concurrent_consistency():
+    # 2. Four threads call store.demographics(ids) five times each with 6,000
+    #    ids: no exception, and all results are equal.
+    import threading
+
+    from dryrun.store import get_store
+
+    store = get_store()
+    ids = [p.id for p in store.patients()[:6000]]
+    assert len(ids) == 6000
+
+    results: list[dict] = []
+    errors: list[Exception] = []
+    lock = threading.Lock()
+
+    def worker():
+        try:
+            for _ in range(5):
+                r = store.demographics(ids)
+                with lock:
+                    results.append(r)
+        except Exception as e:  # pragma: no cover - failure path
+            with lock:
+                errors.append(e)
+
+    threads = [threading.Thread(target=worker) for _ in range(4)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    assert errors == []
+    assert len(results) == 4 * 5
+    first = results[0]
+    for r in results[1:]:
+        assert r == first
+
+
+def test_analyze_endpoint_under_200ms():
+    # 3. /api/analyze for NCT01179048 takes under 200 ms.
+    import time
+
+    c = TestClient(app)
+    pr = c.post("/api/parse", json={"nct_id": "NCT01179048"}).json()
+    body = {"rules": pr["rules"]}
+    # Warm the store/materialization so we time the analyze path, not CSV load.
+    c.post("/api/analyze", json=body)
+
+    start = time.perf_counter()
+    resp = c.post("/api/analyze", json=body)
+    elapsed = time.perf_counter() - start
+    assert resp.status_code == 200
+    assert elapsed < 0.2, f"/api/analyze took {elapsed * 1000:.0f} ms"
