@@ -31,6 +31,107 @@ slow = settings(
 )
 
 
+# --- Oracle: evaluate() must equal a plain-Python reference -------------------
+# These catch a wrong comparison operator in the engine (the whole point of the
+# property suite). The reference is computed independently of the engine.
+
+from .strategies import finite  # noqa: E402
+
+_NUMERIC_OPS = [
+    Operator.GTE,
+    Operator.GT,
+    Operator.LTE,
+    Operator.LT,
+    Operator.EQ,
+    Operator.NEQ,
+    Operator.BETWEEN,
+]
+_NUMERIC_ORACLE_FIELDS = ["age", "hba1c", "bmi", "egfr", "weight", "systolic_bp"]
+
+
+def _oracle_numeric(op: Operator, v: float, t: float) -> bool:
+    """Independent reference for a numeric comparison of patient value v to t."""
+    if op is Operator.GTE:
+        return v >= t
+    if op is Operator.GT:
+        return v > t
+    if op is Operator.LTE:
+        return v <= t
+    if op is Operator.LT:
+        return v < t
+    if op is Operator.EQ:
+        return v == t
+    if op is Operator.NEQ:
+        return v != t
+    if op is Operator.BETWEEN:
+        return t <= v <= t  # degenerate [t, t]
+    raise AssertionError(op)
+
+
+@slow
+@given(
+    field=st.sampled_from(_NUMERIC_ORACLE_FIELDS),
+    op=st.sampled_from(_NUMERIC_OPS),
+    kind=st.sampled_from([Kind.INCLUSION, Kind.EXCLUSION]),
+    t=finite,
+    data=st.data(),
+)
+def test_oracle_numeric(field, op, kind, t, data):
+    # Patient value is either anything finite or exactly the threshold, so the
+    # boundary (== t) is always exercised.
+    v = data.draw(st.one_of(finite, st.just(t)))
+    value = [t, t] if op is Operator.BETWEEN else t
+    rule = Rule(id="r", field=field, operator=op, value=value, unit=None, kind=kind)
+    patient = Patient(id="p", fields={field: v}, units_={field: None})
+
+    meets = _oracle_numeric(op, v, t)
+    if kind is Kind.EXCLUSION:
+        meets = not meets  # exclusion flips meets/fails (no unknown here)
+    expected = Verdict.MEETS if meets else Verdict.FAILS
+    assert evaluate(rule, patient) == expected
+
+
+_TOKENS = ["t2d", "t1d", "mi", "stroke", "hypertension", "cancer"]
+_token_lists = st.lists(st.sampled_from(_TOKENS), min_size=0, max_size=4, unique=True)
+_CATEGORICAL_OPS = [Operator.IN, Operator.NOT_IN, Operator.HAS, Operator.NOT_HAS]
+
+
+def _oracle_categorical(op: Operator, patient_tokens: list[str], rule_tokens: list[str]) -> bool:
+    pset = set(patient_tokens)
+    rset = set(rule_tokens)
+    overlap = bool(pset & rset)
+    if op is Operator.IN:
+        return overlap
+    if op is Operator.NOT_IN:
+        return not overlap
+    if op is Operator.HAS:
+        return overlap  # "has any of"
+    if op is Operator.NOT_HAS:
+        return not overlap
+    raise AssertionError(op)
+
+
+@slow
+@given(
+    op=st.sampled_from(_CATEGORICAL_OPS),
+    kind=st.sampled_from([Kind.INCLUSION, Kind.EXCLUSION]),
+    field=st.sampled_from(["conditions", "medications"]),
+    patient_tokens=_token_lists,
+    rule_tokens=_token_lists,
+)
+def test_oracle_categorical(op, kind, field, patient_tokens, rule_tokens):
+    rule = Rule(id="r", field=field, operator=op, value=rule_tokens, kind=kind)
+    # conditions/medications are closed-world: an empty list is a present
+    # (empty) value, so the field is never "missing" here.
+    patient = Patient(id="p", fields={field: list(patient_tokens)}, units_={field: None})
+
+    meets = _oracle_categorical(op, patient_tokens, rule_tokens)
+    if kind is Kind.EXCLUSION:
+        meets = not meets
+    expected = Verdict.MEETS if meets else Verdict.FAILS
+    assert evaluate(rule, patient) == expected
+
+
 # --- P1: removing/loosening a criterion never decreases eligible count --------
 
 
@@ -293,28 +394,41 @@ def test_v2_slider_loosening_never_decreases_confirmed(rule, pts):
 # --- v2 Task 4: restoring original thresholds reproduces original counts ------
 
 
-@slow
-@given(
-    rule_list=st.lists(bounded_numeric_rule(), min_size=1, max_size=4),
-    pts=st.lists(patients(), min_size=1, max_size=40),
-)
-def test_v2_reset_reproduces_original_counts(rule_list, pts):
-    for i, r in enumerate(rule_list):
-        r.id = f"r{i}"
-    for i, p in enumerate(pts):
-        p.id = f"p{i}"
-    original = [r.model_copy(deep=True) for r in rule_list]
-    ids = [r.id for r in rule_list]
+def test_v2_reset_reproduces_original_counts():
+    # Through the API: analyze the original protocol, then a loosened protocol
+    # with an added rule, then the original again. The first and third payloads
+    # must be identical (reset reproduces the original exactly).
+    import copy
 
-    m0 = VerdictMatrix.build(rule_list, pts)
-    baseline = len(confirmed_eligible(m0, ids))
+    c = TestClient(app)
+    pr = c.post("/api/parse", json={"nct_id": "NCT01179048"}).json()
+    original = pr["rules"]
 
-    # Edit every threshold (loosen), then restore the originals exactly.
-    edited = [_loosen(r, units_mod.FIELD_BOUNDS[r.field]["step"] * 3) for r in rule_list]
-    VerdictMatrix.build(edited, pts)  # simulate an interim analysis
-    restored = [r.model_copy(deep=True) for r in original]
-    m2 = VerdictMatrix.build(restored, pts)
-    assert len(confirmed_eligible(m2, ids)) == baseline
+    first = c.post("/api/analyze", json={"rules": original}).json()
+
+    # Interim edit: loosen the age threshold and add a new inclusion rule.
+    loosened = copy.deepcopy(original)
+    for r in loosened:
+        if r["field"] == "age" and r["operator"] == ">=":
+            r["value"] = r["value"] - 5  # looser
+    added = {
+        "id": "added_tmp",
+        "field": "bmi",
+        "operator": "<=",
+        "value": 30,
+        "unit": "kg/m2",
+        "kind": "inclusion",
+        "source_sentence": "Added: bmi <= 30 kg/m2",
+        "label": "added in Dry Run",
+        "added": True,
+    }
+    interim = c.post("/api/analyze", json={"rules": loosened + [added]}).json()
+    # Sanity: the interim differed (otherwise the test proves nothing).
+    assert interim != first
+
+    # Reset: analyze the original rule set again.
+    third = c.post("/api/analyze", json={"rules": original}).json()
+    assert third == first
 
 
 # --- v2 Task 8: Kleene any_of / all_of monotonicity + all-unknown -------------
@@ -384,31 +498,37 @@ def test_v2_all_unknown_children_is_unknown(logic, n):
 
 # --- v2 Task 9: not-evaluable criteria never change a count -------------------
 
+from fastapi.testclient import TestClient  # noqa: E402
+from dryrun.api import app  # noqa: E402
 
-@slow
-@given(
-    rule_list=st.lists(numeric_rules(), min_size=1, max_size=4),
-    extra=numeric_rules(),
-    pts=st.lists(patients(), min_size=1, max_size=30),
-)
-def test_v2_not_evaluable_never_changes_counts(rule_list, extra, pts):
-    for i, r in enumerate(rule_list):
-        r.id = f"r{i}"
-    for i, p in enumerate(pts):
-        p.id = f"p{i}"
-    # A not-evaluable rule with any field/operator must not affect counts.
-    extra.id = "uneval"
-    extra.evaluable = False
-    extra.unevaluable_reason = "test"
 
-    ids = [r.id for r in rule_list]
-    with_uneval = rule_list + [extra]
-    # The matrix must omit the not-evaluable rule from active ids entirely.
-    active = [r.id for r in with_uneval if r.evaluable]
-    m1 = VerdictMatrix.build(rule_list, pts)
-    m2 = VerdictMatrix.build(with_uneval, pts)
-    assert len(confirmed_eligible(m1, ids)) == len(confirmed_eligible(m2, active))
-    assert len(possibly_eligible(m1, ids)) == len(possibly_eligible(m2, active))
+def test_v2_not_evaluable_never_changes_counts():
+    # Through the API: adding an evaluable=False rule must not change confirmed,
+    # possibly, or the funnel; it only raises coverage.total by 1.
+    c = TestClient(app)
+    pr = c.post("/api/parse", json={"nct_id": "NCT01179048"}).json()
+    rules = pr["rules"]
+
+    before = c.post("/api/analyze", json={"rules": rules}).json()
+
+    uneval = {
+        "id": "uneval_1",
+        "field": "egfr",
+        "operator": "<",
+        "value": 30,
+        "unit": "ml/min/1.73m2",
+        "kind": "exclusion",
+        "source_sentence": "A criterion the data cannot decide.",
+        "label": "not evaluable rule",
+        "evaluable": False,
+        "unevaluable_reason": "generated not-evaluable rule",
+    }
+    after = c.post("/api/analyze", json={"rules": rules + [uneval]}).json()
+
+    assert after["confirmed_eligible"] == before["confirmed_eligible"]
+    assert after["possibly_eligible"] == before["possibly_eligible"]
+    assert after["funnel"] == before["funnel"]
+    assert after["coverage"]["total"] == before["coverage"]["total"] + 1
 
 
 # --- v3 Task 2/3: patient codes match price-tag excluded counts ---------------

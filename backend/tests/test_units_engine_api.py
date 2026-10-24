@@ -156,9 +156,15 @@ def test_added_rule_evaluated_by_engine():
         "added": True,
     }
     an_after = c.post("/api/analyze", json={"rules": rules + [added]}).json()
-    assert an_after["confirmed_eligible"] <= an_before["confirmed_eligible"]
-    # The added rule appears in its own price tag, marked and evaluated.
-    assert any(t["rule_id"] == "added_1" for t in an_after["price_tags"])
+    # Strict: adding bmi <= 30 to LEADER must LOWER confirmed-eligible.
+    assert an_after["confirmed_eligible"] < an_before["confirmed_eligible"]
+    # The added rule appears in its own price tag, marked and evaluated, and it
+    # actually excludes patients.
+    added_tag = next(
+        (t for t in an_after["price_tags"] if t["rule_id"] == "added_1"), None
+    )
+    assert added_tag is not None
+    assert added_tag["excluded"] > 0
     # Task 2: deltas compare vs the acted-on cohort, are age+sex only (no race),
     # and are hidden when the excluded group is under 30 patients.
     c = TestClient(app)
