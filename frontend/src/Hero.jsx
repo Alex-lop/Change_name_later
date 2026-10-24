@@ -219,7 +219,7 @@ export default function Hero({ excludedFraction, onEnter }) {
   return (
     <section className={`hero${leaving ? " is-leaving" : ""}`} aria-label="Sieve">
       <canvas ref={canvasRef} className="hero-field" aria-hidden="true" />
-      <p className="hero-mark">Sieve</p>
+      <img className="hero-mark" src="/sieve-mark.png" alt="Sieve" />
       <div className="hero-card">
         <h1>Every eligibility criterion has a price. Sieve shows it.</h1>
         <button type="button" className="hero-enter" onClick={enter} disabled={clicked}>

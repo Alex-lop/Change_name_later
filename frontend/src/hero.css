@@ -25,10 +25,11 @@
   position: absolute;
   top: 16px;
   left: 16px;
+  z-index: 1;
+  height: 48px;
+  width: auto;
   margin: 0;
-  padding: 2px 4px;
-  font-size: 14px;
-  color: var(--ink-2);
+  padding: 6px 8px;
   background: var(--paper);
 }
 
