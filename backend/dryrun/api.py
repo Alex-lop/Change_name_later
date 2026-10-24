@@ -86,6 +86,8 @@ class ParseResponse(BaseModel):
     trial: dict | None = None
     rules: list[Rule]
     unparsed: list[str] = []
+    # Same sentences as `unparsed`, in order, with their section.
+    unparsed_items: list[dict[str, str]] = []  # {"sentence", "kind"}
 
 
 class AnalyzeRequest(BaseModel):
@@ -140,9 +142,9 @@ def parse(req: ParseRequest) -> ParseResponse:
                 sections.append((c["sentence"], c.get("kind", "inclusion")))
             source = "registry"
         else:
-            # Not seeded: try a live ClinicalTrials.gov v2 fetch.
+            # Not seeded: try a live ClinicalTrials.gov v2 fetch (one request).
             try:
-                raw = parser_mod.fetch_ctgov_eligibility(key)
+                raw, trial_meta = parser_mod.fetch_ctgov_study(key)
             except (httpx.HTTPError, httpx.InvalidURL) as e:
                 raise HTTPException(
                     status_code=502,
@@ -163,16 +165,20 @@ def parse(req: ParseRequest) -> ParseResponse:
         )
 
     rules: list[Rule] = []
-    unparsed: list[str] = []
+    unparsed_items: list[dict[str, str]] = []
     for i, (s, kind) in enumerate(sections):
         try:
             rules.append(_parser.parse_sentence(s, rule_id=f"r{i}", kind=kind))
         except LookupError:
             # No cached parse and no LLM backend: report it, don't fabricate.
-            unparsed.append(s)
+            unparsed_items.append({"sentence": s, "kind": kind})
 
     return ParseResponse(
-        source=source, trial=trial_meta, rules=rules, unparsed=unparsed
+        source=source,
+        trial=trial_meta,
+        rules=rules,
+        unparsed=[u["sentence"] for u in unparsed_items],
+        unparsed_items=unparsed_items,
     )
 
 
