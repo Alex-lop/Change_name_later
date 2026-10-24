@@ -114,6 +114,12 @@
     "label": "Exclude recent SGLT2 inhibitor use or intolerance",
     "unevaluable_reason": "SGLT2 inhibitors are not in the synthetic medication list, and the 8-week window needs dates"
   },
+  "2c3b8f447e42fd0a": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "eGFR 25 to <50 and UACR >100 to <5000 mg/g",
+    "unevaluable_reason": "Needs UACR, which the synthetic data lacks; part of the renal impairment criterion above"
+  },
   "2f06bc32cf7f9802": {
     "evaluable": false,
     "kind": "exclusion",
@@ -156,6 +162,12 @@
     "operator": ">=",
     "unit": "years",
     "value": 40
+  },
+  "3eda041675f3a1ee": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude planned revascularisation",
+    "unevaluable_reason": "Future plans are not in the records"
   },
   "49ae5682b3f4135e": {
     "evaluable": false,
@@ -231,6 +243,15 @@
     "label": "Exclude NYHA Class IV heart failure",
     "unevaluable_reason": "NYHA class is not recorded"
   },
+  "6007078b8f0aabf1": {
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude current dialysis (90-day history not checked)",
+    "operator": "has",
+    "value": [
+      "dialysis"
+    ]
+  },
   "611762cb5e501c91": {
     "evaluable": false,
     "kind": "inclusion",
@@ -242,6 +263,12 @@
     "kind": "exclusion",
     "label": "Exclude acute decompensated HF (4-week window)",
     "unevaluable_reason": "Acute decompensation and hospitalization dates are not in the synthetic data"
+  },
+  "6b027413637ad7de": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "eGFR 50-75 and UACR >300 to <5000 mg/g",
+    "unevaluable_reason": "Needs UACR, which the synthetic data lacks; part of the renal impairment criterion above"
   },
   "6d08ea1cca65c2a9": {
     "evaluable": false,
@@ -278,6 +305,14 @@
     "label": "Elevated NT-proBNP",
     "unevaluable_reason": "NT-proBNP is not in the synthetic data"
   },
+  "7df0c739045d8c04": {
+    "field": "hba1c",
+    "kind": "inclusion",
+    "label": "HbA1c <= 10%",
+    "operator": "<=",
+    "unit": "percent",
+    "value": 10
+  },
   "7fb66cfb294e77cd": {
     "field": "conditions",
     "kind": "inclusion",
@@ -292,6 +327,17 @@
     "kind": "inclusion",
     "label": "High cardiovascular risk",
     "unevaluable_reason": "The registry text does not define high cardiovascular risk, so the data cannot decide it"
+  },
+  "86a3408c3ce92208": {
+    "evaluable": false,
+    "field": "medications",
+    "kind": "exclusion",
+    "label": "Exclude GLP-1 receptor agonist use in last 30 days",
+    "operator": "has",
+    "unevaluable_reason": "30-day medication window needs dates; the synthetic data has no dates",
+    "value": [
+      "glp1 agonist"
+    ]
   },
   "8b73fc4575c7b488": {
     "field": "egfr",
@@ -368,6 +414,15 @@
       "dpp4 inhibitor"
     ]
   },
+  "9b8fd58734e3e2fd": {
+    "field": "conditions",
+    "kind": "inclusion",
+    "label": "Has type 2 diabetes",
+    "operator": "has",
+    "value": [
+      "t2d"
+    ]
+  },
   "9d25c6ffde18986a": {
     "field": "conditions",
     "kind": "exclusion",
@@ -382,6 +437,12 @@
     "kind": "inclusion",
     "label": "LVEF <= 40%",
     "unevaluable_reason": "LVEF is not in the synthetic data"
+  },
+  "9ed463b7af8289ce": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude NYHA Class IV heart failure",
+    "unevaluable_reason": "NYHA class is not recorded"
   },
   "a5e74e5ea1fe68e7": {
     "field": "egfr",
@@ -398,6 +459,18 @@
     "operator": "has",
     "value": [
       "t2d"
+    ]
+  },
+  "a776537bce4de643": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude MI, stroke, unstable angina or TIA in last 60 days",
+    "operator": "has",
+    "unevaluable_reason": "60-day event window needs dates; the synthetic data has no dates",
+    "value": [
+      "mi",
+      "stroke"
     ]
   },
   "aba3af3d2cd7d6cc": {
@@ -466,6 +539,12 @@
     "label": "Exclude MEN 2 / MTC history",
     "unevaluable_reason": "Family history is not in the synthetic records"
   },
+  "c39f3eeec93fabe8": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "On max-tolerated RAAS blocker unless contraindicated",
+    "unevaluable_reason": "Needs the dose, 4-week dose stability and contraindication status; the synthetic data has none of these"
+  },
   "c67e3dbd9a6e6cf9": {
     "field": "conditions",
     "kind": "exclusion",
@@ -474,6 +553,12 @@
     "value": [
       "t1d"
     ]
+  },
+  "c7a40f02f1b38d4a": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude hereditary, autoimmune or congenital kidney disease",
+    "unevaluable_reason": "Cause of kidney disease is not recorded; the data only has a general CKD flag"
   },
   "c97336bde29a7d0a": {
     "field": "age",
@@ -500,6 +585,12 @@
     "label": "Exclude glucose-galactose malabsorption or renal glucosuria",
     "unevaluable_reason": "Glucose-galactose malabsorption and renal glucosuria are not in the synthetic records"
   },
+  "ccb96483ed167ffb": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "Renal impairment by eGFR and UACR",
+    "unevaluable_reason": "Both definitions need UACR (urine albumin-to-creatinine ratio); the synthetic data has no UACR"
+  },
   "cd737a2abbad38b2": {
     "field": "age",
     "kind": "inclusion",
@@ -507,6 +598,20 @@
     "operator": ">=",
     "unit": "years",
     "value": 18
+  },
+  "e45a561ba9023028": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 18y (Japan's >= 20y variant not applied)",
+    "operator": ">=",
+    "unit": "years",
+    "value": 18
+  },
+  "ee3072cdddaa05fb": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude uncontrolled diabetic retinopathy or maculopathy",
+    "unevaluable_reason": "Retinopathy and eye exam results are not in the synthetic data"
   },
   "f2860672251d6cce": {
     "field": "conditions",

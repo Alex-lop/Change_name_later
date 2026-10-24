@@ -1,0 +1,20 @@
+Inclusion Criteria:
+
+* Male or female, age above or equal to 18 years at the time of signing informed consent. Japan: Male or female, age above or equal to 20 years at the time of signing informed consent
+* Diagnosed with type 2 diabetes mellitus
+* HbA1c less than or equal to 10% (less than or equal to 86 mmol/mol)
+* Renal impairment defined either by:
+
+  1. serum creatinine-based eGFR greater than or equal to 50 and less than or equal to 75 mL/min/1.73 m\^2 (CKD-EPI) and UACR greater than 300 and less than 5000 mg/g or
+  2. serum creatinine-based eGFR greater than or equal to 25 and less than 50 mL/min/1.73 m\^2 (CKD-EPI) and UACR greater than 100 and less than 5000 mg/g
+* Treatment with maximum labelled or tolerated dose of a renin-angiotensin-aldosterone system (RAAS) blocking agent including an angiotensin converting enzyme (ACE) inhibitor or an angiotensin II receptor blocker (ARB), unless such treatment is contraindicated or not tolerated. Treatment dose must be stable for at least 4 weeks prior to the date of the laboratory assessments used for determination of the inclusion criteria for renal impairment and kept stable until screening
+
+Exclusion Criteria:
+
+* Congenital or hereditary kidney diseases including polycystic kidney disease, autoimmune kidney diseases including glomerulonephritis or congenital urinary tract malformations
+* Use of any glucagon-like peptide-1 (GLP-1) receptor agonist within 30 days prior to screening
+* Myocardial infarction, stroke, hospitalisation for unstable angina pectoris or transient ischaemic attack within 60 days prior to the day of screening
+* Presently classified as being in New York Heart Association (NYHA) Class IV heart failure
+* Planned coronary, carotid or peripheral artery revascularisation
+* Current (or within 90 days) chronic or intermittent haemodialysis or peritoneal dialysis
+* Uncontrolled and potentially unstable diabetic retinopathy or maculopathy. Verified by a fundus examination performed within the past 90 days prior to screening or in the period between screening and randomisation. Pharmacological pupil-dilation is a requirement unless using a digital fundus photography camera specified for non-dilated examination
