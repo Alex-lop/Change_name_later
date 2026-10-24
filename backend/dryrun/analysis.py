@@ -92,21 +92,28 @@ def funnel(matrix: VerdictMatrix, active_ids: list[str]) -> list[dict]:
     return steps
 
 
-def _demo_deltas(whole: dict, subset: dict) -> dict:
-    """Demographic deltas of an excluded subset vs the whole cohort."""
+def _demo_deltas(reference: dict, subset: dict) -> dict:
+    """Demographic deltas of an excluded subset vs its reference cohort.
+
+    The reference is the cohort the criterion acts on (patients passing every
+    other active criterion), NOT the whole population, so a small excluded
+    group cannot masquerade as a population-level disparity.
+
+    Age and sex only. Race deltas are intentionally omitted on generated data.
+    """
     out: dict = {}
-    if whole.get("mean_age") is not None and subset.get("mean_age") is not None:
-        out["mean_age_delta"] = round(subset["mean_age"] - whole["mean_age"], 1)
-    for dim in ("sex", "race"):
-        wtot = sum(whole.get(dim, {}).values()) or 1
-        stot = sum(subset.get(dim, {}).values()) or 1
-        deltas = {}
-        keys = set(whole.get(dim, {})) | set(subset.get(dim, {}))
-        for k in keys:
-            wpct = whole.get(dim, {}).get(k, 0) / wtot
-            spct = subset.get(dim, {}).get(k, 0) / stot
-            deltas[k] = round((spct - wpct) * 100, 1)  # percentage points
-        out[dim] = deltas
+    if reference.get("mean_age") is not None and subset.get("mean_age") is not None:
+        out["mean_age_delta"] = round(subset["mean_age"] - reference["mean_age"], 1)
+    # Sex only. (No race deltas on generated data.)
+    wtot = sum(reference.get("sex", {}).values()) or 1
+    stot = sum(subset.get("sex", {}).values()) or 1
+    deltas = {}
+    keys = set(reference.get("sex", {})) | set(subset.get("sex", {}))
+    for k in keys:
+        wpct = reference.get("sex", {}).get(k, 0) / wtot
+        spct = subset.get("sex", {}).get(k, 0) / stot
+        deltas[k] = round((spct - wpct) * 100, 1)  # percentage points
+    out["sex"] = deltas
     return out
 
 
@@ -123,8 +130,8 @@ def price_tags(
     (verdict FAILS) and how that excluded group differs demographically.
     """
     rules_by_id = {r.id: r for r in rules}
-    whole_demo = store.demographics(None)
     tags = []
+    MIN_GROUP = 30  # hide demographic deltas for excluded groups smaller than this
     for rid in active_ids:
         others = [x for x in active_ids if x != rid]
         base = confirmed_eligible(matrix, others)  # passes everything else
@@ -134,6 +141,16 @@ def price_tags(
         excl_demo = store.demographics(sorted(excluded)) if excluded else {
             "n": 0, "mean_age": None, "sex": {}, "race": {}
         }
+        # Compare the excluded group against the cohort the criterion acts on
+        # (the base cohort), not the whole population. Hide deltas for small
+        # excluded groups so noise cannot look like a disparity finding.
+        if len(excluded) >= MIN_GROUP:
+            base_demo = store.demographics(sorted(base)) if base else {
+                "n": 0, "mean_age": None, "sex": {}, "race": {}
+            }
+            demographic_deltas = _demo_deltas(base_demo, excl_demo)
+        else:
+            demographic_deltas = None
         r = rules_by_id[rid]
         tags.append(
             {
@@ -149,8 +166,7 @@ def price_tags(
                 "excluded_fraction": round(len(excluded) / len(base), 4)
                 if base
                 else 0.0,
-                "excluded_demographics": excl_demo,
-                "demographic_deltas": _demo_deltas(whole_demo, excl_demo),
+                "demographic_deltas": demographic_deltas,
             }
         )
     return tags

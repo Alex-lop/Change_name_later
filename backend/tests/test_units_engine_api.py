@@ -84,3 +84,20 @@ def test_api_full_flow():
 def test_api_parse_requires_input():
     c = TestClient(app)
     assert c.post("/api/parse", json={}).status_code == 400
+
+
+def test_price_tag_demographics_are_fair():
+    # Task 2: deltas compare vs the acted-on cohort, are age+sex only (no race),
+    # and are hidden when the excluded group is under 30 patients.
+    c = TestClient(app)
+    pr = c.post("/api/parse", json={"nct_id": "NCT01179048"}).json()
+    an = c.post("/api/analyze", json={"rules": pr["rules"]}).json()
+    for t in an["price_tags"]:
+        assert "excluded_demographics" not in t
+        dd = t["demographic_deltas"]
+        if t["excluded"] < 30:
+            assert dd is None  # hidden for small groups
+        else:
+            assert dd is not None
+            assert "race" not in dd  # no race deltas on generated data
+            assert set(dd.keys()) <= {"mean_age_delta", "sex"}

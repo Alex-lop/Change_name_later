@@ -11,17 +11,16 @@ function fmtMonths(x) {
 }
 
 // Top demographic skews of the excluded group (largest absolute deltas).
+// Sex only — race deltas are not shown on generated data.
 function topDeltas(deltas) {
   if (!deltas) return [];
   const out = [];
-  for (const dim of ["sex", "race"]) {
-    const d = deltas[dim] || {};
-    for (const [k, v] of Object.entries(d)) {
-      out.push({ label: `${k}`, value: v });
-    }
+  const d = deltas.sex || {};
+  for (const [k, v] of Object.entries(d)) {
+    out.push({ label: `${k}`, value: v });
   }
   out.sort((a, b) => Math.abs(b.value) - Math.abs(a.value));
-  return out.slice(0, 3);
+  return out.slice(0, 2);
 }
 
 export default function PriceTags({ priceTags, perRuleCost, baselineMonths }) {
@@ -62,12 +61,17 @@ export default function PriceTags({ priceTags, perRuleCost, baselineMonths }) {
                   <span>months it adds</span>
                 </div>
               </div>
-              {t.demographic_deltas &&
+              {t.demographic_deltas == null ? (
+                <div className="pt-demo pt-demo-hidden">
+                  Demographic deltas hidden (excluded group under 30 patients)
+                </div>
+              ) : (
                 t.demographic_deltas.mean_age_delta != null && (
                   <div className="pt-demo">
                     Excluded group age{" "}
                     {t.demographic_deltas.mean_age_delta >= 0 ? "+" : ""}
-                    {t.demographic_deltas.mean_age_delta}y vs population
+                    {t.demographic_deltas.mean_age_delta}y vs the cohort this
+                    criterion acts on
                     {topDeltas(t.demographic_deltas).map((d, i) => (
                       <span className="demo-chip" key={i}>
                         {d.label} {d.value >= 0 ? "+" : ""}
@@ -75,7 +79,8 @@ export default function PriceTags({ priceTags, perRuleCost, baselineMonths }) {
                       </span>
                     ))}
                   </div>
-                )}
+                )
+              )}
               <div className="pt-source">“{t.source_sentence}”</div>
             </div>
           );
