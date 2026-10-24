@@ -88,8 +88,12 @@ class RuleParser:
                 f"Sentence not in cache and no LLM backend configured: {sentence!r}"
             )
         kwargs = self.backend.translate(sentence, kind)
+        # Validate against the Rule schema BEFORE caching. If the backend's
+        # output is invalid, this raises and nothing is cached or returned:
+        # an invalid response never becomes a (guessed) rule.
+        rule = Rule(id=rule_id, source_sentence=sentence, **kwargs)
         self.cache.put(sentence, kwargs, kind)
-        return Rule(id=rule_id, source_sentence=sentence, **kwargs)
+        return rule
 
     def parse_criteria(
         self, sentences: list[str], prefix: str = "r", kind: str = "inclusion"

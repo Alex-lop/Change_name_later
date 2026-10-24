@@ -409,3 +409,50 @@ def test_v2_not_evaluable_never_changes_counts(rule_list, extra, pts):
     m2 = VerdictMatrix.build(with_uneval, pts)
     assert len(confirmed_eligible(m1, ids)) == len(confirmed_eligible(m2, active))
     assert len(possibly_eligible(m1, ids)) == len(possibly_eligible(m2, active))
+
+
+# --- v2: a backend response that fails schema validation never becomes a rule -
+# (Applies to any LLM backend, including the skipped Bedrock one: the parser
+# contract is that an un-cached sentence is only ever turned into a Rule via a
+# backend whose output validates against the Rule schema. Invalid output must
+# raise, never yield a fabricated/guessed rule.)
+
+from dryrun.parser import ParseCache, RuleParser  # noqa: E402
+
+
+class _BadBackend:
+    """A backend that returns schema-invalid kwargs."""
+
+    def __init__(self, payload):
+        self.payload = payload
+        self.calls = 0
+
+    def translate(self, sentence, kind="inclusion"):
+        self.calls += 1
+        return self.payload
+
+
+@slow
+@given(
+    payload=st.sampled_from([
+        {"operator": "!!bogus!!", "value": 1},       # invalid operator
+        {"logic": "xor_of", "children": []},           # invalid logic enum
+        {"kind": "maybe", "field": "age"},             # invalid kind
+    ]),
+)
+def test_v2_invalid_backend_response_never_becomes_rule(payload):
+    import pathlib, tempfile
+
+    with tempfile.TemporaryDirectory() as d:
+        cache = ParseCache(pathlib.Path(d) / "c.json")
+        backend = _BadBackend(payload)
+        parser = RuleParser(cache=cache, backend=backend)
+        produced_rule = True
+        try:
+            parser.parse_sentence("A totally novel uncached sentence.", "r0")
+        except Exception:
+            produced_rule = False
+        assert produced_rule is False, "invalid backend output must not become a rule"
+        # Nothing invalid was cached as if it were a valid parse.
+        assert cache.get("A totally novel uncached sentence.") is None
+        assert cache.get("A totally novel uncached sentence.", "exclusion") is None
