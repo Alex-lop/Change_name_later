@@ -24,6 +24,7 @@ from pydantic import BaseModel
 
 from . import parser as parser_mod
 from . import synthea
+from . import units
 from .analysis import VerdictMatrix, analyze
 from .cost import Assumptions, cost_model
 from .model import Rule
@@ -78,6 +79,12 @@ def health() -> dict:
 @app.get("/api/trials")
 def trials() -> dict:
     return {"trials": list(load_registry().values())}
+
+
+@app.get("/api/field-bounds")
+def field_bounds() -> dict:
+    """Clinical slider bounds per numeric field (canonical units)."""
+    return {"bounds": units.FIELD_BOUNDS}
 
 
 @app.post("/api/parse", response_model=ParseResponse)

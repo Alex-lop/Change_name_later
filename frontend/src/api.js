@@ -22,6 +22,7 @@ async function get(path) {
 export const api = {
   health: () => get("/health"),
   trials: () => get("/trials"),
+  fieldBounds: () => get("/field-bounds"),
   parse: (body) => post("/parse", body),
   analyze: (body) => post("/analyze", body),
 };

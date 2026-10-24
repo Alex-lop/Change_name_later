@@ -3,6 +3,7 @@ import { api } from "./api";
 import FunnelChart from "./FunnelChart";
 import AssumptionsPanel from "./AssumptionsPanel";
 import PriceTags, { fmtMoney } from "./PriceTags";
+import CriterionRow from "./CriterionRow";
 
 const DEFAULT_ASSUMPTIONS = {
   target_enrollment: 1000,
@@ -15,13 +16,16 @@ const DEFAULT_ASSUMPTIONS = {
 export default function App() {
   const [trials, setTrials] = useState([]);
   const [health, setHealth] = useState(null);
+  const [bounds, setBounds] = useState({});
   const [nctId, setNctId] = useState("");
   const [criteriaText, setCriteriaText] = useState("");
   const [rules, setRules] = useState([]);
+  const [originalRules, setOriginalRules] = useState([]);
   const [unparsed, setUnparsed] = useState([]);
   const [activeIds, setActiveIds] = useState([]);
   const [assumptions, setAssumptions] = useState(DEFAULT_ASSUMPTIONS);
   const [analysis, setAnalysis] = useState(null);
+  const [baseline, setBaseline] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,9 +35,16 @@ export default function App() {
     return m;
   }, [rules]);
 
+  const originalById = useMemo(() => {
+    const m = {};
+    originalRules.forEach((r) => (m[r.id] = r));
+    return m;
+  }, [originalRules]);
+
   useEffect(() => {
     api.health().then(setHealth).catch(() => {});
     api.trials().then((d) => setTrials(d.trials)).catch(() => {});
+    api.fieldBounds().then((d) => setBounds(d.bounds || {})).catch(() => {});
   }, []);
 
   async function loadParse(body) {
@@ -41,31 +52,50 @@ export default function App() {
     setLoading(true);
     try {
       const res = await api.parse(body);
-      setRules(res.rules);
+      // Deep copy so the baseline is immune to later slider edits.
+      const loaded = res.rules.map((r) => JSON.parse(JSON.stringify(r)));
+      setRules(loaded);
+      setOriginalRules(loaded.map((r) => JSON.parse(JSON.stringify(r))));
       setUnparsed(res.unparsed || []);
       setActiveIds(res.rules.map((r) => r.id));
+      setBaseline(null);
+      // Capture the original-protocol analysis once, for the compare header.
+      try {
+        const base = await api.analyze({
+          rules: loaded,
+          active_rule_ids: loaded.map((r) => r.id),
+          assumptions,
+        });
+        setBaseline(base);
+      } catch {
+        /* non-fatal */
+      }
     } catch (e) {
       setError(e.message);
       setRules([]);
+      setOriginalRules([]);
       setActiveIds([]);
     } finally {
       setLoading(false);
     }
   }
 
-  // Re-analyze whenever rules, toggles, or assumptions change.
+  // Re-analyze whenever rules, toggles, or assumptions change, debounced 150ms.
   useEffect(() => {
     if (rules.length === 0) {
       setAnalysis(null);
       return;
     }
     let cancelled = false;
-    api
-      .analyze({ rules, active_rule_ids: activeIds, assumptions })
-      .then((res) => !cancelled && setAnalysis(res))
-      .catch((e) => !cancelled && setError(e.message));
+    const handle = setTimeout(() => {
+      api
+        .analyze({ rules, active_rule_ids: activeIds, assumptions })
+        .then((res) => !cancelled && setAnalysis(res))
+        .catch((e) => !cancelled && setError(e.message));
+    }, 150);
     return () => {
       cancelled = true;
+      clearTimeout(handle);
     };
   }, [rules, activeIds, assumptions]);
 
@@ -73,6 +103,18 @@ export default function App() {
     setActiveIds((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
+  }
+
+  function setRuleValue(id, value) {
+    setRules((prev) =>
+      prev.map((r) => (r.id === id ? { ...r, value } : r))
+    );
+  }
+
+  function resetToOriginal() {
+    const restored = originalRules.map((r) => JSON.parse(JSON.stringify(r)));
+    setRules(restored);
+    setActiveIds(restored.map((r) => r.id));
   }
 
   const cost = analysis?.cost;
@@ -148,27 +190,23 @@ export default function App() {
       {rules.length > 0 && (
         <>
           <section className="panel">
-            <h3>2. Criteria ({activeIds.length}/{rules.length} active)</h3>
+            <div className="panel-head">
+              <h3>2. Criteria ({activeIds.length}/{rules.length} active)</h3>
+              <button className="chip-btn" onClick={resetToOriginal}>
+                Reset to original protocol
+              </button>
+            </div>
             <ul className="criteria-list">
               {rules.map((r) => (
-                <li key={r.id}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      checked={activeIds.includes(r.id)}
-                      onChange={() => toggle(r.id)}
-                    />
-                    <span className={`kind kind-${r.kind}`}>{r.kind}</span>
-                    <span className="crit-label">
-                      {r.label || r.source_sentence}
-                    </span>
-                    <code>
-                      {r.field} {r.operator}{" "}
-                      {Array.isArray(r.value) ? r.value.join("–") : String(r.value)}
-                      {r.unit ? ` ${r.unit}` : ""}
-                    </code>
-                  </label>
-                </li>
+                <CriterionRow
+                  key={r.id}
+                  rule={r}
+                  original={originalById[r.id]}
+                  bounds={bounds[r.field]}
+                  active={activeIds.includes(r.id)}
+                  onToggle={toggle}
+                  onValueChange={setRuleValue}
+                />
               ))}
             </ul>
           </section>

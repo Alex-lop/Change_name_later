@@ -105,3 +105,18 @@ def to_canonical(field: str, value: float, unit: str | None) -> float:
 
 def known_units(field: str) -> list[str]:
     return [u for (f, u) in _CONVERSIONS if f == field]
+
+
+# Clinical slider bounds per numeric field, in the field's canonical unit.
+# Single source of truth shared with the frontend via GET /api/field-bounds.
+FIELD_BOUNDS: dict[str, dict[str, float]] = {
+    "age": {"min": 18, "max": 90, "step": 1},
+    "hba1c": {"min": 5, "max": 12, "step": 0.1},
+    "bmi": {"min": 15, "max": 60, "step": 0.5},
+    "egfr": {"min": 10, "max": 120, "step": 1},
+    "systolic_bp": {"min": 90, "max": 200, "step": 1},
+}
+
+
+def field_bounds(field: str) -> dict[str, float] | None:
+    return FIELD_BOUNDS.get(field)

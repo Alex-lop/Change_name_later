@@ -235,3 +235,83 @@ def test_p6_confirmed_eligible_excludes_missing(rule_list, pts):
             assert pid in m.meets[rid]
     # Confirmed is always a subset of possibly.
     assert conf <= poss
+
+
+# =============================================================================
+# v2 correctness properties
+# =============================================================================
+
+from dryrun import units as units_mod  # noqa: E402
+
+
+def _loosen(rule: Rule, step: float) -> Rule:
+    """Return a copy of a numeric inclusion rule loosened by one step."""
+    if rule.operator in {Operator.GTE, Operator.GT}:
+        return rule.model_copy(update={"value": rule.value - step})
+    if rule.operator in {Operator.LTE, Operator.LT}:
+        return rule.model_copy(update={"value": rule.value + step})
+    # between: widen both ends
+    lo, hi = rule.value
+    return rule.model_copy(update={"value": [lo - step, hi + step]})
+
+
+# --- v2 Task 3: moving a slider toward loosening never lowers confirmed -------
+
+
+BOUNDED_FIELDS = sorted(units_mod.FIELD_BOUNDS)
+
+
+@st.composite
+def bounded_numeric_rule(draw):
+    field = draw(st.sampled_from(BOUNDED_FIELDS))
+    b = units_mod.FIELD_BOUNDS[field]
+    op = draw(st.sampled_from([Operator.GTE, Operator.GT, Operator.LTE, Operator.LT]))
+    value = draw(
+        st.floats(min_value=b["min"], max_value=b["max"], allow_nan=False)
+    )
+    return Rule(id="r0", field=field, operator=op, value=value,
+                unit=units_mod.canonical_unit(field), source_sentence="s")
+
+
+@slow
+@given(
+    rule=bounded_numeric_rule(),
+    pts=st.lists(patients(), min_size=1, max_size=40),
+)
+def test_v2_slider_loosening_never_decreases_confirmed(rule, pts):
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+    b = units_mod.FIELD_BOUNDS[rule.field]
+    loose = _loosen(rule, b["step"])
+    m_before = VerdictMatrix.build([rule], pts)
+    m_after = VerdictMatrix.build([loose], pts)
+    assert len(confirmed_eligible(m_after, ["r0"])) >= len(
+        confirmed_eligible(m_before, ["r0"])
+    )
+
+
+# --- v2 Task 4: restoring original thresholds reproduces original counts ------
+
+
+@slow
+@given(
+    rule_list=st.lists(bounded_numeric_rule(), min_size=1, max_size=4),
+    pts=st.lists(patients(), min_size=1, max_size=40),
+)
+def test_v2_reset_reproduces_original_counts(rule_list, pts):
+    for i, r in enumerate(rule_list):
+        r.id = f"r{i}"
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+    original = [r.model_copy(deep=True) for r in rule_list]
+    ids = [r.id for r in rule_list]
+
+    m0 = VerdictMatrix.build(rule_list, pts)
+    baseline = len(confirmed_eligible(m0, ids))
+
+    # Edit every threshold (loosen), then restore the originals exactly.
+    edited = [_loosen(r, units_mod.FIELD_BOUNDS[r.field]["step"] * 3) for r in rule_list]
+    VerdictMatrix.build(edited, pts)  # simulate an interim analysis
+    restored = [r.model_copy(deep=True) for r in original]
+    m2 = VerdictMatrix.build(restored, pts)
+    assert len(confirmed_eligible(m2, ids)) == baseline
