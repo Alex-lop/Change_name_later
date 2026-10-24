@@ -81,7 +81,24 @@ def test_api_full_flow():
     assert an2["confirmed_eligible"] >= an["confirmed_eligible"]
 
 
-def test_api_parse_requires_input():
+def test_api_returns_patient_codes_matching_price_tags():
+    # v3 Task 2: /api/analyze returns one code per patient, age-sorted, and
+    # the count of code k equals active price tag k's excluded count.
+    c = TestClient(app)
+    pr = c.post("/api/parse", json={"nct_id": "NCT02692716"}).json()
+    an = c.post("/api/analyze", json={"rules": pr["rules"]}).json()
+    codes = an["patient_codes"]
+    assert len(codes) == an["total_patients"] == 10000
+
+    active_ids = an["active_rule_ids"]
+    tags = an["price_tags"]
+    assert len(tags) == len(active_ids)
+    # tags are returned in active_ids order, so tag index k <-> code k.
+    for k, tag in enumerate(tags):
+        assert codes.count(k) == tag["excluded"]
+    assert codes.count(-2) == an["confirmed_eligible"]
+    assert codes.count(-1) == an["possibly_eligible"] - an["confirmed_eligible"]
+
     c = TestClient(app)
     assert c.post("/api/parse", json={}).status_code == 400
 

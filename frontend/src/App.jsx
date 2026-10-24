@@ -1,12 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
-import FunnelChart from "./FunnelChart";
-import AssumptionsPanel from "./AssumptionsPanel";
-import PriceTags, { fmtMoney } from "./PriceTags";
-import CriterionRow from "./CriterionRow";
-import ResultsHeader from "./ResultsHeader";
-import AddCriterion from "./AddCriterion";
+import ProtocolColumn from "./ProtocolColumn";
+import ResultColumn from "./ResultColumn";
 import { buildExportText, downloadText } from "./exportCriteria";
+import { fmtInt, fmtDelta } from "./format";
 
 const DEFAULT_ASSUMPTIONS = {
   target_enrollment: 1000,
@@ -16,12 +13,14 @@ const DEFAULT_ASSUMPTIONS = {
   cost_per_day: 40000,
 };
 
+// Hero demo trial loaded on first visit so nobody lands on an empty screen.
+const HERO_NCT = "NCT02692716"; // PIONEER 6
+
 export default function App() {
   const [trials, setTrials] = useState([]);
   const [health, setHealth] = useState(null);
   const [bounds, setBounds] = useState({});
-  const [nctId, setNctId] = useState("");
-  const [criteriaText, setCriteriaText] = useState("");
+  const [currentNct, setCurrentNct] = useState("");
   const [rules, setRules] = useState([]);
   const [originalRules, setOriginalRules] = useState([]);
   const [unparsed, setUnparsed] = useState([]);
@@ -32,6 +31,8 @@ export default function App() {
   const [trialMeta, setTrialMeta] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const [hotIndex, setHotIndex] = useState(null);
 
   const rulesById = useMemo(() => {
     const m = {};
@@ -45,26 +46,61 @@ export default function App() {
     return m;
   }, [originalRules]);
 
+  // Edited = any threshold changed, a toggle changed, or a criterion added.
+  const edited = useMemo(() => {
+    if (originalRules.length === 0) return false;
+    const origIds = originalRules.map((r) => r.id);
+    const origActive = new Set(origIds);
+    if (activeIds.length !== origIds.length) return true;
+    for (const id of origIds) if (!activeIds.includes(id)) return true;
+    for (const r of rules) {
+      if (r.added) return true;
+      const o = originalById[r.id];
+      if (o && JSON.stringify(o.value) !== JSON.stringify(r.value)) return true;
+    }
+    return false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rules, activeIds, originalRules, originalById]);
+
   useEffect(() => {
     api.health().then(setHealth).catch(() => {});
-    api.trials().then((d) => setTrials(d.trials)).catch(() => {});
     api.fieldBounds().then((d) => setBounds(d.bounds || {})).catch(() => {});
+    api
+      .trials()
+      .then((d) => {
+        setTrials(d.trials || []);
+        // Load the hero trial (PIONEER 6) if present, else the first trial.
+        const hero =
+          (d.trials || []).find((t) => t.nct_id === HERO_NCT) ||
+          (d.trials || [])[0];
+        if (hero) loadTrial(hero.nct_id);
+      })
+      .catch((e) => setError(friendlyError(e, null)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  async function loadParse(body) {
+  function friendlyError(e, nct) {
+    const base = e?.message || "Something went wrong.";
+    if (nct) {
+      return `Couldn't load ${nct} from ClinicalTrials.gov. Check the ID, or pick a demo trial. (${base})`;
+    }
+    return base;
+  }
+
+  async function loadTrial(nctId) {
     setError(null);
     setLoading(true);
+    setHotIndex(null);
     try {
-      const res = await api.parse(body);
-      // Deep copy so the baseline is immune to later slider edits.
+      const res = await api.parse({ nct_id: nctId });
       const loaded = res.rules.map((r) => JSON.parse(JSON.stringify(r)));
       setRules(loaded);
       setOriginalRules(loaded.map((r) => JSON.parse(JSON.stringify(r))));
       setTrialMeta(res.trial || null);
+      setCurrentNct(nctId);
       setUnparsed(res.unparsed || []);
-      setActiveIds(res.rules.map((r) => r.id));
+      setActiveIds(loaded.map((r) => r.id));
       setBaseline(null);
-      // Capture the original-protocol analysis once, for the compare header.
       try {
         const base = await api.analyze({
           rules: loaded,
@@ -76,7 +112,7 @@ export default function App() {
         /* non-fatal */
       }
     } catch (e) {
-      setError(e.message);
+      setError(friendlyError(e, nctId));
       setRules([]);
       setOriginalRules([]);
       setActiveIds([]);
@@ -85,9 +121,8 @@ export default function App() {
     }
   }
 
-  // Re-analyze whenever rules, toggles, or assumptions change, debounced 150ms.
-  // Also recompute the original-protocol baseline with the SAME assumptions so
-  // the compare header reflects only rule/threshold changes, not assumption edits.
+  // Re-analyze on any change, debounced. The original-protocol baseline is
+  // recomputed with the SAME assumptions so deltas reflect only rule edits.
   useEffect(() => {
     if (rules.length === 0) {
       setAnalysis(null);
@@ -123,25 +158,22 @@ export default function App() {
   }
 
   function setRuleValue(id, value) {
-    setRules((prev) =>
-      prev.map((r) => (r.id === id ? { ...r, value } : r))
-    );
+    setRules((prev) => prev.map((r) => (r.id === id ? { ...r, value } : r)));
   }
 
-  function resetToOriginal() {
+  function resetToProtocol() {
     const restored = originalRules.map((r) => JSON.parse(JSON.stringify(r)));
     setRules(restored);
     setActiveIds(restored.map((r) => r.id));
+    setHotIndex(null);
   }
 
   function addRule(rule) {
-    // Added rules are NOT part of the original protocol baseline, so reset
-    // removes them. They are evaluated by the same engine as seeded rules.
     setRules((prev) => [...prev, rule]);
     setActiveIds((prev) => [...prev, rule.id]);
   }
 
-  function exportModified() {
+  function exportChanges() {
     const text = buildExportText({
       trialTitle: trialMeta?.title,
       rules,
@@ -149,165 +181,116 @@ export default function App() {
       activeIds,
       analysis,
     });
-    const name = (trialMeta?.nct_id || "dry-run") + "-modified-criteria.txt";
+    const name = (trialMeta?.nct_id || "dry-run") + "-amended-criteria.txt";
     downloadText(name, text);
   }
 
-  const cost = analysis?.cost;
+  const confDelta =
+    analysis && baseline
+      ? analysis.confirmed_eligible - baseline.confirmed_eligible
+      : null;
 
   return (
-    <div className="app">
-      <header>
-        <h1>Dry Run</h1>
-        <p className="tagline">
-          Test a trial&apos;s eligibility criteria on a synthetic patient
-          population before launch — and see what each criterion costs.
-        </p>
-        {health && (
-          <p className="pop">
-            Synthetic population:{" "}
-            <strong>{health.population.toLocaleString()}</strong>{" "}
-            {health.population_label || "patients"}
-          </p>
-        )}
+    <div className="shell">
+      <header className="topbar">
+        <span className="wordmark">Dry Run</span>
+        <select
+          className="trial-picker"
+          value={currentNct}
+          onChange={(e) => loadTrial(e.target.value)}
+          aria-label="Choose a demo trial"
+        >
+          {trials.map((t) => (
+            <option key={t.nct_id} value={t.nct_id}>
+              {t.title.split(":")[0]} ({t.nct_id})
+            </option>
+          ))}
+        </select>
+        <div className="topbar-actions">
+          <button
+            className="btn"
+            onClick={resetToProtocol}
+            disabled={!edited}
+          >
+            Reset to protocol
+          </button>
+          <button
+            className="btn btn-primary"
+            onClick={exportChanges}
+            disabled={!analysis}
+          >
+            Export changes
+          </button>
+        </div>
       </header>
 
-      <section className="loader panel">
-        <h3>1. Load a trial</h3>
-        <div className="demo-trials">
-          {trials.map((t) => (
-            <button
-              key={t.nct_id}
-              className="chip-btn"
-              onClick={() => loadParse({ nct_id: t.nct_id })}
-            >
-              {t.nct_id} — {t.title.split(":")[0]}
-            </button>
-          ))}
+      {/* Mobile sticky mini-bar: eligible count + its change. */}
+      {analysis && (
+        <div className="mini-bar">
+          <span className="mini-num">
+            {fmtInt(analysis.confirmed_eligible)}
+          </span>
+          <span className="mini-label">eligible</span>
+          <span className="mini-delta">
+            {confDelta == null || confDelta === 0
+              ? "as written"
+              : `${fmtDelta(confDelta)} vs protocol`}
+          </span>
         </div>
-        <div className="load-row">
-          <input
-            placeholder="ClinicalTrials.gov NCT ID (e.g. NCT01179048)"
-            value={nctId}
-            onChange={(e) => setNctId(e.target.value)}
-          />
-          <button
-            disabled={!nctId}
-            onClick={() => loadParse({ nct_id: nctId })}
-          >
-            Load NCT
-          </button>
+      )}
+
+      {error && <div className="error">{error}</div>}
+      {loading && <div className="loading">Loading trial…</div>}
+      {unparsed.length > 0 && (
+        <div className="notice">
+          {unparsed.length} sentence
+          {unparsed.length > 1 ? "s" : ""} could not be translated from the
+          cache and {unparsed.length > 1 ? "are" : "is"} omitted rather than
+          guessed.
         </div>
-        <details>
-          <summary>Or paste eligibility criteria text</summary>
-          <textarea
-            rows={5}
-            placeholder={"HbA1c of at least 7.0 %.\nAge 50 years or older."}
-            value={criteriaText}
-            onChange={(e) => setCriteriaText(e.target.value)}
-          />
-          <button
-            disabled={!criteriaText.trim()}
-            onClick={() => loadParse({ criteria_text: criteriaText })}
-          >
-            Parse text
-          </button>
-        </details>
-        {loading && <p>Loading…</p>}
-        {error && <p className="error">{error}</p>}
-        {unparsed.length > 0 && (
-          <div className="warn">
-            {unparsed.length} sentence(s) could not be translated (no cached
-            parse). They are omitted rather than guessed.
-          </div>
-        )}
-      </section>
+      )}
 
       {rules.length > 0 && (
         <div className="workbench">
-          <div className="col-left">
-            <section className="panel">
-              <div className="panel-head">
-                <h3>Criteria ({activeIds.length}/{rules.length} active)</h3>
-                <div className="head-btns">
-                  <button className="chip-btn" onClick={exportModified}>
-                    Export as text
-                  </button>
-                  <button className="chip-btn" onClick={resetToOriginal}>
-                    Reset to original protocol
-                  </button>
-                </div>
-              </div>
-              <ul className="criteria-list">
-                {rules.map((r) => (
-                  <CriterionRow
-                    key={r.id}
-                    rule={r}
-                    original={originalById[r.id]}
-                    bounds={bounds[r.field]}
-                    active={activeIds.includes(r.id)}
-                    onToggle={toggle}
-                    onValueChange={setRuleValue}
-                  />
-                ))}
-              </ul>
-            </section>
-
-            <AddCriterion onAdd={addRule} />
-
-            <AssumptionsPanel assumptions={assumptions} onChange={setAssumptions} />
+          <div className="protocol-col">
+            <ProtocolColumn
+              trialMeta={trialMeta}
+              rules={rules}
+              originalById={originalById}
+              bounds={bounds}
+              activeIds={activeIds}
+              activeRuleIds={analysis?.active_rule_ids}
+              coverage={analysis?.coverage}
+              onToggle={toggle}
+              onValueChange={setRuleValue}
+              onAddRule={addRule}
+              onDragStart={() => setDragging(true)}
+              onDragEnd={() => setDragging(false)}
+              onHover={setHotIndex}
+              assumptions={assumptions}
+              onAssumptionsChange={setAssumptions}
+            />
           </div>
 
-          <div className="col-right">
-            {analysis && (
-              <>
-                <ResultsHeader analysis={analysis} baseline={baseline} />
-                <p className="possibly-note">
-                  {analysis.possibly_eligible.toLocaleString()} possibly eligible
-                  (meets or unknown) ·{" "}
-                  {(analysis.confirmed_fraction * 100).toFixed(1)}% of population
-                  confirmed
-                </p>
-                {analysis.coverage && analysis.coverage.total > 0 && (
-                  <div className="coverage">
-                    <strong>Coverage {Math.round(analysis.coverage.score * 100)}%</strong>
-                    {" "}— {analysis.coverage.evaluable} of{" "}
-                    {analysis.coverage.total} criteria are evaluable by this data
-                    {analysis.coverage.not_evaluable.length > 0 && (
-                      <ul className="uneval-list">
-                        {analysis.coverage.not_evaluable.map((u) => (
-                          <li key={u.rule_id}>
-                            <span className="uneval-tag">not evaluable</span>{" "}
-                            {u.label} — {u.reason}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                )}
-
-                <section className="panel">
-                  <h3>Eligibility funnel</h3>
-                  <FunnelChart funnel={analysis.funnel} rulesById={rulesById} />
-                </section>
-
-                <PriceTags
-                  priceTags={analysis.price_tags}
-                  perRuleCost={analysis.per_rule_cost}
-                  baselineMonths={cost?.enrollment_months}
-                />
-              </>
-            )}
+          <div className="result-col">
+            <ResultColumn
+              analysis={analysis}
+              baseline={baseline}
+              edited={edited}
+              populationLabel={analysis?.population_label}
+              rulesById={rulesById}
+              assumptions={assumptions}
+              dragging={dragging}
+              hotIndex={hotIndex}
+              onHover={setHotIndex}
+            />
           </div>
         </div>
       )}
 
-      <footer>
-        <p>
-          LLM translates criteria only; a deterministic engine decides every
-          verdict. Parses are cached so the demo runs offline. All cost figures
-          are labeled estimates.
-        </p>
+      <footer className="footer">
+        Synthetic patients only. Figures are planning estimates, not medical
+        advice.
       </footer>
     </div>
   );

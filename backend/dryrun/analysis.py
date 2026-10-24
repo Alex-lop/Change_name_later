@@ -172,16 +172,77 @@ def price_tags(
     return tags
 
 
+def patient_codes(
+    matrix: VerdictMatrix,
+    active_ids: list[str],
+    patients: list[Patient],
+) -> list[int]:
+    """One small integer per patient, in a stable age-sorted order.
+
+    The order is: age ascending (youngest first), patients with missing age
+    last, ties broken by patient id. The visual field renders marks in exactly
+    this order, so an age threshold sweeps visibly across the field.
+
+    Code meaning, relative to the ACTIVE criteria (`active_ids`, already the
+    evaluable ones in the API):
+
+      -2  eligible            MEETS every active criterion
+      -1  possibly eligible   no active criterion FAILS, but >= 1 UNKNOWN
+      -3  excluded, but not cleanly by a single criterion: either FAILS two or
+          more active criteria, or FAILS exactly one while being UNKNOWN on
+          another (so it is not in that criterion's price-tag set)
+       k  excluded only by active criterion k: MEETS every OTHER active
+          criterion and FAILS criterion k, where k is that criterion's index
+          into `active_ids`
+
+    Invariant tied to price tags: the number of patients with code k equals
+    price tag k's `excluded` count. A price tag counts patients who pass every
+    OTHER active criterion (MEETS them) and FAIL this one, which is exactly
+    code k.
+    """
+
+    def sort_key(p: Patient) -> tuple:
+        datum = p.get("age")
+        if datum is None or datum[0] is None:
+            return (1, 0.0, p.id)  # missing age sorts last, stable by id
+        return (0, float(datum[0]), p.id)
+
+    codes: list[int] = []
+    for p in sorted(patients, key=sort_key):
+        pid = p.id
+        # Indices of active criteria this patient FAILS.
+        failed = [k for k, rid in enumerate(active_ids) if pid in matrix.fails[rid]]
+        if not failed:
+            # No fails: eligible if MEETS all active, else possibly (some unknown).
+            if all(pid in matrix.meets[rid] for rid in active_ids):
+                codes.append(-2)
+            else:
+                codes.append(-1)
+        elif len(failed) == 1:
+            k = failed[0]
+            # Cleanly attributable only if the patient MEETS every OTHER active
+            # criterion (matches price tag k's base cohort). Otherwise -3.
+            others = [rid for j, rid in enumerate(active_ids) if j != k]
+            if all(pid in matrix.meets[rid] for rid in others):
+                codes.append(k)
+            else:
+                codes.append(-3)
+        else:
+            codes.append(-3)
+    return codes
+
+
 def analyze(
     rules: list[Rule],
     matrix: VerdictMatrix,
     active_ids: list[str],
     store: PatientStore,
+    patients: list[Patient] | None = None,
 ) -> dict:
     conf = confirmed_eligible(matrix, active_ids)
     poss = possibly_eligible(matrix, active_ids)
     total = len(matrix.all_ids)
-    return {
+    result = {
         "total_patients": total,
         "confirmed_eligible": len(conf),
         "possibly_eligible": len(poss),
@@ -190,3 +251,6 @@ def analyze(
         "funnel": funnel(matrix, active_ids),
         "price_tags": price_tags(rules, matrix, active_ids, store),
     }
+    if patients is not None:
+        result["patient_codes"] = patient_codes(matrix, active_ids, patients)
+    return result

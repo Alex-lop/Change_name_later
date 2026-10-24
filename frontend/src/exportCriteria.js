@@ -20,13 +20,13 @@ function ruleLine(rule, original) {
   }
   let line = `- [${rule.kind}] ${label}: ${expr}`;
   if (rule.added) line += "  (added in Dry Run)";
-  // before -> after for a changed threshold
+  // Redline a changed threshold: struck original, new value, Dry Run wording.
   if (
     original &&
     !rule.logic &&
     JSON.stringify(original.value) !== JSON.stringify(rule.value)
   ) {
-    line += `  (was ${fmtVal(original.value)}, now ${fmtVal(rule.value)})`;
+    line += `  (amended in Dry Run: ~~${fmtVal(original.value)}~~ ${fmtVal(rule.value)})`;
   }
   return line;
 }

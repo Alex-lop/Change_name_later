@@ -181,7 +181,7 @@ def analyze_endpoint(req: AnalyzeRequest) -> dict:
     active_ids = [rid for rid in active_ids if rid in evaluable_ids]
 
     matrix = VerdictMatrix.build(req.rules, patients)
-    result = analyze(req.rules, matrix, active_ids, store)
+    result = analyze(req.rules, matrix, active_ids, store, patients=patients)
 
     # Coverage score: evaluable criteria / total criteria across the rule set.
     total_rules = len(req.rules)

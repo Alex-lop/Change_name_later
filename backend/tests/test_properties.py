@@ -411,7 +411,57 @@ def test_v2_not_evaluable_never_changes_counts(rule_list, extra, pts):
     assert len(possibly_eligible(m1, ids)) == len(possibly_eligible(m2, active))
 
 
-# --- v2: a backend response that fails schema validation never becomes a rule -
+# --- v3 Task 2/3: patient codes match price-tag excluded counts ---------------
+
+from dryrun.analysis import patient_codes, price_tags  # noqa: E402
+
+
+class _StubStore:
+    """Minimal PatientStore stand-in: price_tags only calls demographics for
+    excluded groups of 30+; property-test cohorts are tiny, so this is never
+    hit, but we return a well-formed empty aggregate just in case."""
+
+    def demographics(self, patient_ids=None):
+        return {"n": 0, "mean_age": None, "sex": {}, "race": {}}
+
+
+@slow
+@given(
+    rule_list=st.lists(numeric_rules(), min_size=1, max_size=5),
+    pts=st.lists(patients(), min_size=1, max_size=40),
+)
+def test_v3_patient_code_k_count_equals_price_tag_excluded(rule_list, pts):
+    for i, r in enumerate(rule_list):
+        r.id = f"r{i}"
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+    m = VerdictMatrix.build(rule_list, pts)
+    active_ids = [r.id for r in rule_list]
+
+    codes = patient_codes(m, active_ids, pts)
+    tags = price_tags(rule_list, m, active_ids, _StubStore())
+
+    # One code per patient, all in the valid vocabulary.
+    assert len(codes) == len(pts)
+    valid = {-3, -2, -1} | set(range(len(active_ids)))
+    assert all(c in valid for c in codes)
+
+    # Price tags come back in active_ids order, so tag index k <-> code k.
+    assert len(tags) == len(active_ids)
+    for k, tag in enumerate(tags):
+        assert codes.count(k) == tag["excluded"], (
+            f"code {k} count {codes.count(k)} != price tag excluded {tag['excluded']}"
+        )
+
+    # Totals reconcile: codes partition the whole cohort.
+    conf = confirmed_eligible(m, active_ids)
+    poss = possibly_eligible(m, active_ids)
+    assert codes.count(-2) == len(conf)
+    assert codes.count(-1) == len(poss) - len(conf)  # possibly-but-not-confirmed
+    excluded_total = len(pts) - len(poss)
+    single = sum(codes.count(k) for k in range(len(active_ids)))
+    assert codes.count(-3) + single == excluded_total
+
 # (Applies to any LLM backend, including the skipped Bedrock one: the parser
 # contract is that an un-cached sentence is only ever turned into a Rule via a
 # backend whose output validates against the Rule schema. Invalid output must
