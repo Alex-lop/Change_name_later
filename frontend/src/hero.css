@@ -41,17 +41,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
   text-align: center;
   background: var(--paper);
-}
-.hero-card h1 {
-  margin: 0;
-  max-width: 14ch;
-  font-size: clamp(30px, 5vw, 60px);
-  font-weight: 600;
-  line-height: 1.15;
-  text-wrap: balance;
 }
 
 .hero-enter {

@@ -221,7 +221,6 @@ export default function Hero({ excludedFraction, onEnter }) {
       <canvas ref={canvasRef} className="hero-field" aria-hidden="true" />
       <img className="hero-mark" src="/sieve-mark.png" alt="Sieve" />
       <div className="hero-card">
-        <h1>See what each criterion costs.</h1>
         <button type="button" className="hero-enter" onClick={enter} disabled={clicked}>
           Open PIONEER 6
         </button>
