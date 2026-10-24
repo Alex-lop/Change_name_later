@@ -126,5 +126,41 @@
         "kind": "exclusion"
       }
     ]
+  },
+  "NCT01730534": {
+    "nct_id": "NCT01730534",
+    "title": "DECLARE-TIMI58: Multicenter Trial to Evaluate the Effect of Dapagliflozin on the Incidence of Cardiovascular Events",
+    "condition": "type 2 diabetes with high cardiovascular risk",
+    "paraphrased": false,
+    "criteria": [
+      {
+        "sentence": "Provision of informed consent prior to any study specific procedures",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Female or male aged \u226540 years",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Diagnosed with Type 2 Diabetes",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "High Risk for Cardiovascular events",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Diagnosis of Type 1 diabetes mellitus History of bladder cancer or history of radiation therapy to the lower abdomen or pelvis at any time",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Chronic cystitis and/or recurrent urinary tract infections",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Pregnant or breast-feeding patients",
+        "kind": "exclusion"
+      }
+    ]
   }
 }

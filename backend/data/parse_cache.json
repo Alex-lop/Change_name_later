@@ -40,11 +40,43 @@
     "label": "Exclude NYHA Class IV heart failure",
     "unevaluable_reason": "NYHA class is not recorded"
   },
+  "3aea2613e7165140": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude type 1 diabetes, bladder cancer, or pelvic radiation",
+    "unevaluable_reason": "Radiation history and cancer site are not recorded; the type 1 diabetes part shares this line, so it is not counted either"
+  },
+  "3b681d5226ec37ee": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "Informed consent",
+    "unevaluable_reason": "Informed consent is not in the synthetic records"
+  },
+  "3e76b1c013b593f8": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 40y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 40
+  },
   "49ae5682b3f4135e": {
     "evaluable": false,
     "kind": "exclusion",
     "label": "Exclude planned revascularisation",
     "unevaluable_reason": "Future plans are not in the records"
+  },
+  "4d459088fdd6539c": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude chronic cystitis or recurrent UTIs",
+    "unevaluable_reason": "Cystitis and urinary tract infections are not in the synthetic records"
+  },
+  "5bbd65778f15ed33": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude pregnancy or breast-feeding",
+    "unevaluable_reason": "Pregnancy and breast-feeding are not in the synthetic records"
   },
   "5cd5264043ff2274": {
     "children": [
@@ -82,6 +114,21 @@
     "operator": ">=",
     "unit": "years",
     "value": 18
+  },
+  "7fb66cfb294e77cd": {
+    "field": "conditions",
+    "kind": "inclusion",
+    "label": "Has type 2 diabetes",
+    "operator": "has",
+    "value": [
+      "t2d"
+    ]
+  },
+  "83bbf0e39fecf08a": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "High cardiovascular risk",
+    "unevaluable_reason": "The registry text does not define high cardiovascular risk, so the data cannot decide it"
   },
   "8b73fc4575c7b488": {
     "field": "egfr",
