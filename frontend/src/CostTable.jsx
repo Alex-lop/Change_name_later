@@ -1,11 +1,14 @@
-import React, { useMemo, useRef } from "react";
+import React, { useLayoutEffect, useMemo, useRef } from "react";
 import { fmtInt, fmtMoney, fmtMonths } from "./format";
+import { useMotionOff } from "./motion";
+import "./cost.css";
 
 const DAYS_PER_MONTH = 30.4375;
 
 // "What each criterion costs" as a real table, sorted by months added.
 // Columns: criterion, patients kept out, months added, delay cost, with a thin
-// ink bar for months. Re-sort when a slider is released, not during a drag.
+// ink bar for months. Re-sort when a slider is released, not during a drag;
+// on a re-sort, rows that moved slide to their new place (FLIP, 300ms).
 // A demographic note appears only when the excluded group has >= 30 patients.
 //
 // Props:
@@ -16,6 +19,8 @@ const DAYS_PER_MONTH = 30.4375;
 //   dragging: when true, the sort order is frozen (re-sort on release)
 //   onHover(codeIndex|null): drives the patient-field highlight
 //   hotIndex: currently highlighted code index (for row emphasis)
+//   selectedRuleId: rule_id of the selected row, or null
+//   onSelect(ruleId): optional; row click / Enter / Space (caller toggles)
 export default function CostTable({
   priceTags,
   perRuleCost,
@@ -26,7 +31,11 @@ export default function CostTable({
   dragging,
   onHover,
   hotIndex,
+  selectedRuleId,
+  onSelect,
 }) {
+  const motionOff = useMotionOff();
+
   const costById = useMemo(() => {
     const m = {};
     (perRuleCost || []).forEach((c) => (m[c.rule_id] = c));
@@ -68,6 +77,53 @@ export default function CostTable({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [priceTags, perRuleCost, baselineMonths, dragging]);
 
+  // FLIP on re-sort. After every render, remember each row's layout top
+  // (offsetTop ignores transforms and page scroll). When the order changes,
+  // rows whose top moved start at their old place and slide to 0. First
+  // render, a different set of rule_ids (another trial), or motion off: snap.
+  const tbodyRef = useRef(null);
+  const flipRef = useRef({ tops: {}, order: null, set: null });
+  useLayoutEffect(() => {
+    const rows = tbodyRef.current ? [...tbodyRef.current.children] : [];
+    const ids = rows.map((el) => el.dataset.id);
+    const order = ids.join("\n");
+    const set = [...ids].sort().join("\n");
+    const prev = flipRef.current;
+    if (motionOff || set !== prev.set) {
+      rows.forEach((el) => {
+        el.style.transition = "";
+        el.style.transform = "";
+      });
+    } else if (order !== prev.order) {
+      const moved = [];
+      rows.forEach((el) => {
+        const shift = prev.tops[el.dataset.id] - el.offsetTop;
+        if (!(Math.abs(shift) >= 1)) return;
+        // Continue from where an interrupted slide currently is.
+        const now = new DOMMatrixReadOnly(getComputedStyle(el).transform).m42;
+        el.style.transition = "none";
+        el.style.transform = `translateY(${shift + now}px)`;
+        moved.push(el);
+      });
+      if (moved.length) {
+        void tbodyRef.current.offsetHeight; // reflow: commit the start position
+        moved.forEach((el) => {
+          el.style.transition = "transform 300ms ease";
+          el.style.transform = "";
+        });
+      }
+    }
+    const tops = {};
+    rows.forEach((el) => (tops[el.dataset.id] = el.offsetTop));
+    flipRef.current = { tops, order, set };
+  });
+
+  const onSlideEnd = (e) => {
+    if (e.propertyName === "transform" && e.target.parentNode === e.currentTarget) {
+      e.target.style.transition = "";
+    }
+  };
+
   const maxAdded = Math.max(
     0.0001,
     ...sorted.map((x) => x.added)
@@ -77,8 +133,15 @@ export default function CostTable({
 
   return (
     <div className="cost-table-wrap">
-      <table className="cost-table">
-        <caption>What each criterion costs</caption>
+      <table className={`cost-table${onSelect ? " selectable" : ""}`}>
+        <caption>
+          What each criterion costs
+          {onSelect && (
+            <span className="cost-hint">
+              Select a row to map where it keeps patients out.
+            </span>
+          )}
+        </caption>
         <thead>
           <tr>
             <th scope="col">Criterion</th>
@@ -87,17 +150,35 @@ export default function CostTable({
             <th scope="col" className="num">Delay cost</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody ref={tbodyRef} onTransitionEnd={onSlideEnd}>
           {sorted.map(({ tag, added }) => {
             const idx = indexOf[tag.rule_id];
             const daysAdded = added * DAYS_PER_MONTH;
             const delay = costPerDay != null ? daysAdded * costPerDay : null;
             const dd = tag.demographic_deltas;
             const ageDelta = dd && dd.mean_age_delta;
+            const selected =
+              selectedRuleId != null && tag.rule_id === selectedRuleId;
             return (
               <tr
                 key={tag.rule_id}
-                className={`cost-row ${hotIndex === idx ? "hot" : ""}`}
+                data-id={tag.rule_id}
+                className={`cost-row${hotIndex === idx ? " hot" : ""}${
+                  selected ? " selected" : ""
+                }`}
+                aria-current={selected ? "true" : undefined}
+                onClick={onSelect ? () => onSelect(tag.rule_id) : undefined}
+                onKeyDown={
+                  onSelect
+                    ? (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          // A held key would toggle the selection on every repeat.
+                          if (!e.repeat) onSelect(tag.rule_id);
+                        }
+                      }
+                    : undefined
+                }
                 onMouseEnter={() => onHover && onHover(idx)}
                 onMouseLeave={() => onHover && onHover(null)}
                 onFocus={() => onHover && onHover(idx)}
@@ -116,7 +197,7 @@ export default function CostTable({
                   <div className="cost-source">
                     {paraphrased
                       ? tag.source_sentence
-                      : `\u201c${tag.source_sentence}\u201d`}
+                      : `“${tag.source_sentence}”`}
                   </div>
                 </td>
                 <td className="num">{fmtInt(tag.excluded)}</td>

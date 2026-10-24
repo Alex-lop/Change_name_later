@@ -19,7 +19,7 @@ const NUM_OPS = [">=", ">", "<=", "<", "between"];
 
 // Add a criterion by hand. One inline row on --paper-2 with four controls:
 // field, comparison, value with unit, inclusion or exclusion. Builds a Rule the
-// same engine evaluates, tagged "added in Dry Run".
+// same engine evaluates, tagged "added in Sieve".
 export default function AddCriterion({ onAdd }) {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState("numeric");

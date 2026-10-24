@@ -4,6 +4,9 @@ import ProtocolColumn from "./ProtocolColumn";
 import ResultColumn from "./ResultColumn";
 import { buildExportText, downloadText } from "./exportCriteria";
 import { fmtInt, fmtDelta } from "./format";
+import { MotionContext, usePrefersReducedMotion } from "./motion";
+import { MAP_ENABLED, HERO_ENABLED } from "./flags";
+import Hero from "./Hero";
 
 const DEFAULT_ASSUMPTIONS = {
   target_enrollment: 1000,
@@ -15,6 +18,21 @@ const DEFAULT_ASSUMPTIONS = {
 
 // Hero demo trial loaded on first visit so nobody lands on an empty screen.
 const HERO_NCT = "NCT02692716"; // PIONEER 6
+
+// The map shows only live geo data. Until /api/geo answers, the field shows
+// without the "By place" view and this interval retries.
+const GEO_RETRY_MS = 10000;
+
+// Immutably set the value at a child path inside a (possibly compound) rule.
+// path [] is the rule's own value; [1, 0] is children[1].children[0].value.
+function setAtPath(rule, path, value) {
+  if (path.length === 0) return { ...rule, value };
+  const [i, ...rest] = path;
+  return {
+    ...rule,
+    children: rule.children.map((c, j) => (j === i ? setAtPath(c, rest, value) : c)),
+  };
+}
 
 export default function App() {
   const [trials, setTrials] = useState([]);
@@ -33,6 +51,15 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [hotIndex, setHotIndex] = useState(null);
+  const [geo, setGeo] = useState(null);
+  const [geoLive, setGeoLive] = useState(false);
+  const [selectedRuleId, setSelectedRuleId] = useState(null);
+  const [fieldView, setFieldView] = useState("age");
+  const [paused, setPaused] = useState(false);
+  const [showHero, setShowHero] = useState(HERO_ENABLED);
+  const shellRef = useRef(null);
+  const reducedMotion = usePrefersReducedMotion();
+  const motionOff = reducedMotion || paused;
 
   const rulesById = useMemo(() => {
     const m = {};
@@ -46,20 +73,20 @@ export default function App() {
     return m;
   }, [originalRules]);
 
-  // Edited = any threshold changed, a toggle changed, or a criterion added.
+  // Edited = any threshold changed (nested ones too), a toggle changed, or a
+  // criterion added.
   const edited = useMemo(() => {
     if (originalRules.length === 0) return false;
     const origIds = originalRules.map((r) => r.id);
-    const origActive = new Set(origIds);
     if (activeIds.length !== origIds.length) return true;
     for (const id of origIds) if (!activeIds.includes(id)) return true;
     for (const r of rules) {
       if (r.added) return true;
       const o = originalById[r.id];
       if (o && JSON.stringify(o.value) !== JSON.stringify(r.value)) return true;
+      if (o && JSON.stringify(o.children) !== JSON.stringify(r.children)) return true;
     }
     return false;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rules, activeIds, originalRules, originalById]);
 
   useEffect(() => {
@@ -79,6 +106,53 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Area shapes, context, sites and per-patient homes (the field tooltip uses
+  // those even when the map is switched off).
+  useEffect(() => {
+    let timer;
+    let stopped = false;
+    const tryLive = () =>
+      api
+        .geo()
+        .then((g) => {
+          if (stopped) return;
+          setGeo(g);
+          setGeoLive(true);
+        })
+        .catch(() => {
+          if (!stopped) timer = setTimeout(tryLive, GEO_RETRY_MS);
+        });
+    tryLive();
+    return () => {
+      stopped = true;
+      clearTimeout(timer);
+    };
+  }, []);
+
+  // While the hero covers the page, the workbench underneath is inert and the
+  // page doesn't scroll behind it.
+  // Focus moves into the workbench once it is no longer inert.
+  useEffect(() => {
+    if (shellRef.current) shellRef.current.inert = showHero;
+    document.body.style.overflow = showHero ? "hidden" : "";
+    if (!showHero && HERO_ENABLED) document.querySelector(".trial-picker")?.focus();
+  }, [showHero]);
+
+  // Escape returns the map from a criterion to eligibility.
+  useEffect(() => {
+    if (!selectedRuleId) return;
+    const onKey = (e) => e.key === "Escape" && setSelectedRuleId(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [selectedRuleId]);
+
+  // A criterion that is switched off (or a new trial) can't stay selected.
+  useEffect(() => {
+    if (selectedRuleId && analysis && !analysis.active_rule_ids?.includes(selectedRuleId)) {
+      setSelectedRuleId(null);
+    }
+  }, [analysis, selectedRuleId]);
+
   function friendlyError(e, nct) {
     const base = e?.message || "Something went wrong.";
     if (nct) {
@@ -91,6 +165,7 @@ export default function App() {
     setError(null);
     setLoading(true);
     setHotIndex(null);
+    setSelectedRuleId(null);
     try {
       const res = await api.parse({ nct_id: nctId });
       const loaded = res.rules.map((r) => JSON.parse(JSON.stringify(r)));
@@ -128,7 +203,8 @@ export default function App() {
       cancelled = true;
       clearTimeout(handle);
     };
-  }, [rules, activeIds, assumptions]);
+    // geoLive: re-fetch once when the geo API comes up, so area counts appear.
+  }, [rules, activeIds, assumptions, geoLive]);
 
   // Recompute the original-protocol baseline only when the loaded protocol or
   // the assumptions change — NOT on every rule edit — so deltas reflect only
@@ -153,7 +229,7 @@ export default function App() {
       cancelled = true;
       clearTimeout(handle);
     };
-  }, [originalRules, assumptions]);
+  }, [originalRules, assumptions, geoLive]);
 
   function toggle(id) {
     setActiveIds((prev) =>
@@ -161,8 +237,8 @@ export default function App() {
     );
   }
 
-  function setRuleValue(id, value) {
-    setRules((prev) => prev.map((r) => (r.id === id ? { ...r, value } : r)));
+  function setRuleValue(id, value, path = []) {
+    setRules((prev) => prev.map((r) => (r.id === id ? setAtPath(r, path, value) : r)));
   }
 
   function resetToProtocol() {
@@ -177,6 +253,13 @@ export default function App() {
     setActiveIds((prev) => [...prev, rule.id]);
   }
 
+  // Selecting a criterion maps where it keeps patients out; a second click on
+  // the same criterion returns the map to eligibility.
+  function selectRule(id) {
+    setSelectedRuleId((prev) => (prev === id ? null : id));
+    if (selectedRuleId !== id) setFieldView("place");
+  }
+
   function exportChanges() {
     const text = buildExportText({
       trialTitle: trialMeta?.title,
@@ -185,7 +268,7 @@ export default function App() {
       activeIds,
       analysis,
     });
-    const name = (trialMeta?.nct_id || "dry-run") + "-amended-criteria.txt";
+    const name = (trialMeta?.nct_id || "sieve") + "-amended-criteria.txt";
     downloadText(name, text);
   }
 
@@ -194,10 +277,23 @@ export default function App() {
       ? analysis.confirmed_eligible - baseline.confirmed_eligible
       : null;
 
+  const showMap = MAP_ENABLED && geo != null;
+  const onSelect = showMap ? selectRule : undefined;
+
   return (
-    <div className="shell">
+    <MotionContext.Provider value={motionOff}>
+    {showHero && (
+      <Hero
+        // Share of patients the protocol as written excludes (fallen marks).
+        excludedFraction={
+          baseline && currentNct === HERO_NCT ? 1 - baseline.possibly_fraction : null
+        }
+        onEnter={() => setShowHero(false)}
+      />
+    )}
+    <div ref={shellRef} className={`shell${motionOff ? " motion-off" : ""}`}>
       <header className="topbar">
-        <span className="wordmark">Dry Run</span>
+        <span className="wordmark">Sieve</span>
         <select
           className="trial-picker"
           value={currentNct}
@@ -276,6 +372,8 @@ export default function App() {
               onDragStart={() => setDragging(true)}
               onDragEnd={() => setDragging(false)}
               onHover={setHotIndex}
+              selectedRuleId={selectedRuleId}
+              onSelect={onSelect}
               assumptions={assumptions}
               onAssumptionsChange={setAssumptions}
             />
@@ -293,15 +391,35 @@ export default function App() {
               dragging={dragging}
               hotIndex={hotIndex}
               onHover={setHotIndex}
+              geo={geo}
+              showMap={showMap}
+              areas={analysis?.areas ?? null}
+              baselineAreas={baseline?.areas ?? null}
+              nctId={currentNct}
+              fieldView={fieldView}
+              onFieldViewChange={setFieldView}
+              selectedRuleId={selectedRuleId}
+              onSelect={onSelect}
+              onClearSelection={() => setSelectedRuleId(null)}
             />
           </div>
         </div>
       )}
 
       <footer className="footer">
-        Synthetic patients only. Figures are planning estimates, not medical
-        advice.
+        <span>
+          Synthetic patients only. Figures are planning estimates, not medical
+          advice.
+        </span>
+        <button
+          type="button"
+          className="btn-text"
+          onClick={() => setPaused((p) => !p)}
+        >
+          {paused ? "Resume motion" : "Pause motion"}
+        </button>
       </footer>
     </div>
+    </MotionContext.Provider>
   );
 }

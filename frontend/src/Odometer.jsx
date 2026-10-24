@@ -1,19 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React from "react";
+import { useMotionOff } from "./motion";
 
 // A rolling-digit odometer for the eligible count. Each digit column holds
 // 0-9 stacked vertically; changing the value slides the column to the new
 // digit (~600ms). Thousands separators are rendered as static glyphs.
-// prefers-reduced-motion: value changes snap with no transition.
-
-function useReducedMotion() {
-  return useMemo(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    []
-  );
-}
+// prefers-reduced-motion or "Pause motion": value changes snap with no transition.
 
 function Digit({ value, reduce }) {
   // value is 0-9; translate the strip up by value * 1em.
@@ -37,7 +28,7 @@ function Digit({ value, reduce }) {
 }
 
 export default function Odometer({ value }) {
-  const reduce = useReducedMotion();
+  const reduce = useMotionOff();
   const safe = Number.isFinite(value) ? Math.max(0, Math.round(value)) : 0;
   const str = safe.toLocaleString("en-US"); // e.g. "1,529"
 

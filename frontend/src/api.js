@@ -23,6 +23,7 @@ export const api = {
   health: () => get("/health"),
   trials: () => get("/trials"),
   fieldBounds: () => get("/field-bounds"),
+  geo: () => get("/geo"),
   parse: (body) => post("/parse", body),
   analyze: (body) => post("/analyze", body),
 };

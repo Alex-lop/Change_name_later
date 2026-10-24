@@ -1,0 +1,25 @@
+/* Cost table additions. This file loads before styles.css, so every selector
+   starts with .cost-table-wrap to win over the base .cost-table rules. */
+
+/* Separate borders (spacing 0 looks identical) so each row's hairline is
+   painted by its own cells and slides with the row during a re-sort. */
+.cost-table-wrap .cost-table { border-collapse: separate; border-spacing: 0; }
+
+.cost-table-wrap .cost-hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.cost-table-wrap .cost-table.selectable .cost-row { cursor: pointer; }
+
+/* Selected row: a 2px accent rule on the left edge of the first cell. The
+   header cell gets the same indent so the column stays aligned. */
+.cost-table-wrap .cost-table th:first-child,
+.cost-table-wrap .cost-table td:first-child {
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+}
+.cost-table-wrap .cost-row.selected td:first-child { border-left-color: var(--accent); }

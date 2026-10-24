@@ -1,0 +1,712 @@
+{
+ "acs_year": "2020-2024",
+ "places_release": "2025",
+ "age_bands": [
+  [
+   18,
+   24
+  ],
+  [
+   25,
+   34
+  ],
+  [
+   35,
+   44
+  ],
+  [
+   45,
+   54
+  ],
+  [
+   55,
+   64
+  ],
+  [
+   65,
+   74
+  ],
+  [
+   75,
+   84
+  ],
+  [
+   85,
+   null
+  ]
+ ],
+ "counties": {
+  "25001": {
+   "name": "Barnstable County",
+   "area_id": "cape_islands",
+   "adults_18plus": 198964,
+   "adults_by_band": [
+    15232,
+    20988,
+    21452,
+    23911,
+    40626,
+    44028,
+    23265,
+    9462
+   ],
+   "places": {
+    "OBESITY": {
+     "year": "2023",
+     "crude": 26.3,
+     "age_adjusted": 26.8
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.7,
+     "age_adjusted": 7.1
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 38.2,
+     "age_adjusted": 27.5
+    },
+    "CHD": {
+     "year": "2023",
+     "age_adjusted": 4.7,
+     "crude": 8.0
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.8,
+     "age_adjusted": 2.4
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.5,
+     "crude": 3.7
+    }
+   }
+  },
+  "25003": {
+   "name": "Berkshire County",
+   "area_id": "berkshire",
+   "adults_18plus": 108768,
+   "adults_by_band": [
+    12681,
+    13537,
+    14887,
+    14781,
+    20465,
+    18565,
+    9757,
+    4095
+   ],
+   "places": {
+    "BPHIGH": {
+     "year": "2023",
+     "age_adjusted": 27.7,
+     "crude": 34.8
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 7.8,
+     "age_adjusted": 5.3
+    },
+    "OBESITY": {
+     "year": "2023",
+     "crude": 31.2,
+     "age_adjusted": 31.5
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.9,
+     "age_adjusted": 8.2
+    },
+    "STROKE": {
+     "year": "2023",
+     "age_adjusted": 2.7,
+     "crude": 3.7
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.6,
+     "crude": 3.5
+    }
+   }
+  },
+  "25005": {
+   "name": "Bristol County",
+   "area_id": "bristol",
+   "adults_18plus": 462781,
+   "adults_by_band": [
+    50258,
+    75130,
+    75562,
+    75810,
+    82553,
+    61080,
+    30231,
+    12157
+   ],
+   "places": {
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.5,
+     "age_adjusted": 2.9
+    },
+    "CHD": {
+     "year": "2023",
+     "age_adjusted": 5.6,
+     "crude": 6.8
+    },
+    "OBESITY": {
+     "year": "2023",
+     "crude": 32.1,
+     "age_adjusted": 32.0
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.8,
+     "age_adjusted": 9.1
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 33.5,
+     "age_adjusted": 29.7
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "crude": 3.1,
+     "age_adjusted": 2.7
+    }
+   }
+  },
+  "25007": {
+   "name": "Dukes County",
+   "area_id": "cape_islands",
+   "adults_18plus": 17420,
+   "adults_by_band": [
+    878,
+    2508,
+    2450,
+    2418,
+    3628,
+    3249,
+    1437,
+    852
+   ],
+   "places": {
+    "OBESITY": {
+     "year": "2023",
+     "crude": 25.5,
+     "age_adjusted": 25.3
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 7.3,
+     "age_adjusted": 4.7
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.6,
+     "age_adjusted": 7.3
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "age_adjusted": 27.1,
+     "crude": 36.0
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.5,
+     "age_adjusted": 2.4
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "crude": 3.4,
+     "age_adjusted": 2.5
+    }
+   }
+  },
+  "25009": {
+   "name": "Essex County",
+   "area_id": "essex",
+   "adults_18plus": 643569,
+   "adults_by_band": [
+    71532,
+    101254,
+    104252,
+    101635,
+    114790,
+    88287,
+    43540,
+    18279
+   ],
+   "places": {
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 32.1,
+     "age_adjusted": 28.0
+    },
+    "CHD": {
+     "year": "2023",
+     "age_adjusted": 5.0,
+     "crude": 6.2
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.1,
+     "age_adjusted": 2.6
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.3,
+     "age_adjusted": 8.7
+    },
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 30.0,
+     "crude": 30.0
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.6,
+     "crude": 3.1
+    }
+   }
+  },
+  "25011": {
+   "name": "Franklin County",
+   "area_id": "franklin",
+   "adults_18plus": 59141,
+   "adults_by_band": [
+    4736,
+    8047,
+    9253,
+    8566,
+    11079,
+    11071,
+    4646,
+    1743
+   ],
+   "places": {
+    "DIABETES": {
+     "year": "2023",
+     "age_adjusted": 8.1,
+     "crude": 10.8
+    },
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 26.1,
+     "crude": 26.3
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 7.3,
+     "age_adjusted": 5.2
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.6,
+     "age_adjusted": 2.7
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 36.3,
+     "age_adjusted": 29.1
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.6,
+     "crude": 3.3
+    }
+   }
+  },
+  "25013": {
+   "name": "Hampden County",
+   "area_id": "hampden",
+   "adults_18plus": 366054,
+   "adults_by_band": [
+    45123,
+    61414,
+    57623,
+    54920,
+    62451,
+    49962,
+    23765,
+    10796
+   ],
+   "places": {
+    "DIABETES": {
+     "year": "2023",
+     "crude": 12.1,
+     "age_adjusted": 10.5
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.7,
+     "age_adjusted": 3.1
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 34.7,
+     "age_adjusted": 31.2
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 7.0,
+     "age_adjusted": 5.8
+    },
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 35.2,
+     "crude": 34.9
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "crude": 3.4,
+     "age_adjusted": 2.9
+    }
+   }
+  },
+  "25015": {
+   "name": "Hampshire County",
+   "area_id": "hampshire",
+   "adults_18plus": 138986,
+   "adults_by_band": [
+    38154,
+    16043,
+    16443,
+    16524,
+    20384,
+    19198,
+    9233,
+    3007
+   ],
+   "places": {
+    "DIABETES": {
+     "year": "2023",
+     "crude": 8.2,
+     "age_adjusted": 7.8
+    },
+    "OBESITY": {
+     "year": "2023",
+     "crude": 22.2,
+     "age_adjusted": 24.4
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 5.5,
+     "age_adjusted": 4.9
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "age_adjusted": 25.9,
+     "crude": 26.7
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 2.7,
+     "age_adjusted": 2.5
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "crude": 2.7,
+     "age_adjusted": 2.5
+    }
+   }
+  },
+  "25017": {
+   "name": "Middlesex County",
+   "area_id": "middlesex",
+   "adults_18plus": 1319500,
+   "adults_by_band": [
+    159380,
+    247263,
+    228933,
+    206285,
+    210632,
+    154624,
+    79267,
+    33116
+   ],
+   "places": {
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 23.8,
+     "crude": 23.8
+    },
+    "DIABETES": {
+     "year": "2023",
+     "age_adjusted": 7.7,
+     "crude": 8.5
+    },
+    "STROKE": {
+     "year": "2023",
+     "age_adjusted": 2.3,
+     "crude": 2.5
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 4.9,
+     "age_adjusted": 4.3
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 27.6,
+     "age_adjusted": 25.6
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "crude": 2.6,
+     "age_adjusted": 2.4
+    }
+   }
+  },
+  "25019": {
+   "name": "Nantucket County",
+   "area_id": "cape_islands",
+   "adults_18plus": 11508,
+   "adults_by_band": [
+    979,
+    1519,
+    2430,
+    2322,
+    1931,
+    1428,
+    690,
+    209
+   ],
+   "places": {
+    "STROKE": {
+     "year": "2023",
+     "crude": 2.5,
+     "age_adjusted": 2.2
+    },
+    "OBESITY": {
+     "year": "2023",
+     "crude": 27.7,
+     "age_adjusted": 26.9
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 8.6,
+     "age_adjusted": 7.2
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 29.4,
+     "age_adjusted": 25.8
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 5.1,
+     "age_adjusted": 4.3
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.5,
+     "crude": 2.7
+    }
+   }
+  },
+  "25021": {
+   "name": "Norfolk County",
+   "area_id": "norfolk",
+   "adults_18plus": 580769,
+   "adults_by_band": [
+    62666,
+    94088,
+    98244,
+    95084,
+    101042,
+    74383,
+    37403,
+    17859
+   ],
+   "places": {
+    "STROKE": {
+     "year": "2023",
+     "crude": 2.7,
+     "age_adjusted": 2.3
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 5.2,
+     "age_adjusted": 4.3
+    },
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 23.4,
+     "crude": 23.5
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 29.8,
+     "age_adjusted": 26.3
+    },
+    "DIABETES": {
+     "year": "2023",
+     "age_adjusted": 7.7,
+     "crude": 9.0
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "crude": 2.7,
+     "age_adjusted": 2.4
+    }
+   }
+  },
+  "25023": {
+   "name": "Plymouth County",
+   "area_id": "plymouth",
+   "adults_18plus": 424239,
+   "adults_by_band": [
+    43928,
+    59840,
+    65467,
+    69162,
+    80102,
+    62862,
+    31940,
+    10938
+   ],
+   "places": {
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 32.6,
+     "age_adjusted": 27.5
+    },
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 29.7,
+     "crude": 29.7
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.3,
+     "age_adjusted": 8.2
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.2,
+     "age_adjusted": 2.5
+    },
+    "CHD": {
+     "year": "2023",
+     "age_adjusted": 4.8,
+     "crude": 6.2
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.5,
+     "crude": 3.0
+    }
+   }
+  },
+  "25025": {
+   "name": "Suffolk County",
+   "area_id": "suffolk",
+   "adults_18plus": 659309,
+   "adults_by_band": [
+    107208,
+    174752,
+    107941,
+    82372,
+    82877,
+    61365,
+    29457,
+    13337
+   ],
+   "places": {
+    "CHD": {
+     "year": "2023",
+     "crude": 4.8,
+     "age_adjusted": 5.2
+    },
+    "OBESITY": {
+     "year": "2023",
+     "age_adjusted": 25.2,
+     "crude": 24.2
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "crude": 27.4,
+     "age_adjusted": 29.4
+    },
+    "DIABETES": {
+     "year": "2023",
+     "age_adjusted": 10.1,
+     "crude": 9.3
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 2.8,
+     "age_adjusted": 3.0
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.9,
+     "crude": 2.7
+    }
+   }
+  },
+  "25027": {
+   "name": "Worcester County",
+   "area_id": "worcester",
+   "adults_18plus": 688867,
+   "adults_by_band": [
+    79818,
+    113063,
+    113074,
+    111917,
+    123305,
+    89127,
+    41995,
+    16568
+   ],
+   "places": {
+    "OBESITY": {
+     "year": "2023",
+     "crude": 32.6,
+     "age_adjusted": 32.5
+    },
+    "DIABETES": {
+     "year": "2023",
+     "crude": 10.4,
+     "age_adjusted": 9.0
+    },
+    "BPHIGH": {
+     "year": "2023",
+     "age_adjusted": 29.9,
+     "crude": 33.2
+    },
+    "STROKE": {
+     "year": "2023",
+     "crude": 3.1,
+     "age_adjusted": 2.6
+    },
+    "CHD": {
+     "year": "2023",
+     "crude": 6.0,
+     "age_adjusted": 5.0
+    },
+    "KIDNEY": {
+     "year": "2021",
+     "release": "2023",
+     "age_adjusted": 2.6,
+     "crude": 2.9
+    }
+   }
+  }
+ }
+}

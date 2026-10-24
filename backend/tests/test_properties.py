@@ -626,3 +626,163 @@ def test_v2_invalid_backend_response_never_becomes_rule(payload):
         # Nothing invalid was cached as if it were a valid parse.
         assert cache.get("A totally novel uncached sentence.") is None
         assert cache.get("A totally novel uncached sentence.", "exclusion") is None
+
+
+# --- v4 map: area rows split the analysis's own sets --------------------------
+# Every area number is a slice of a set the funnel and price tags already use,
+# so these properties pin the split, the suppression bucket and the home model.
+
+from dryrun.analysis import analyze, area_breakdown, marginals  # noqa: E402
+from dryrun.geo import area_ids, assign_areas  # noqa: E402
+
+AREAS = ["a0", "a1", "a2"]
+
+
+def _ids(rule_list, pts):
+    for i, r in enumerate(rule_list):
+        r.id = f"r{i}"
+    for i, p in enumerate(pts):
+        p.id = f"p{i}"
+
+
+def _area_rows(rules, pts, area_of, ids, min_group):
+    # Exactly the sets analyze() hands to area_breakdown.
+    m = VerdictMatrix.build(rules, pts)
+    active = [r.id for r in rules]
+    excluded = {rid: mg.excluded for rid, mg in marginals(m, active).items()}
+    return area_breakdown(
+        m.all_ids, confirmed_eligible(m, active), possibly_eligible(m, active),
+        excluded, area_of, ids, min_group,
+    )
+
+
+@slow
+@given(
+    rule_list=st.lists(numeric_rules(), min_size=1, max_size=5),
+    pts=st.lists(patients(), min_size=1, max_size=60),
+    min_group=st.integers(min_value=0, max_value=40),
+    data=st.data(),
+)
+def test_v4_area_rows_plus_suppressed_bucket_equal_totals(rule_list, pts, min_group, data):
+    _ids(rule_list, pts)
+    area_of = {p.id: data.draw(st.sampled_from(AREAS)) for p in pts}
+    m = VerdictMatrix.build(rule_list, pts)
+    active = [r.id for r in rule_list]
+    out = _area_rows(rule_list, pts, area_of, AREAS, min_group)
+    expected = {
+        "patients": len(pts),
+        "confirmed": len(confirmed_eligible(m, active)),
+        "possibly": len(possibly_eligible(m, active)),
+    }
+    shown = [r for r in out["rows"] if not r["suppressed"]]
+    for key, total in expected.items():
+        assert sum(r[key] for r in shown) + out["suppressed"][key] == total
+        assert out["totals"][key] == total
+    for r in out["rows"]:
+        assert r["suppressed"] == (r["patients"] < max(min_group, 1))
+        if r["suppressed"]:
+            assert r["confirmed"] is r["possibly"] is r["excluded_by"] is None
+
+
+def _loosen_any(rule: Rule, step: float) -> Rule:
+    """Loosen a numeric criterion of either kind by one step."""
+    if rule.kind is Kind.INCLUSION:
+        return _loosen(rule, step)
+    # An exclusion is looser when its predicate matches fewer patients.
+    if rule.operator in {Operator.GTE, Operator.GT}:
+        return rule.model_copy(update={"value": rule.value + step})
+    if rule.operator in {Operator.LTE, Operator.LT}:
+        return rule.model_copy(update={"value": rule.value - step})
+    lo, hi = rule.value
+    return rule.model_copy(update={"value": [lo + step, hi - step]})
+
+
+@slow
+@given(
+    rule_list=st.lists(numeric_rules(), min_size=1, max_size=4),
+    pts=st.lists(patients(), min_size=1, max_size=40),
+    which=st.integers(min_value=0, max_value=3),
+    step=st.floats(min_value=0.01, max_value=100, allow_nan=False),
+    data=st.data(),
+)
+def test_v4_loosening_never_lowers_any_area(rule_list, pts, which, step, data):
+    _ids(rule_list, pts)
+    area_of = {p.id: data.draw(st.sampled_from(AREAS)) for p in pts}
+    k = which % len(rule_list)
+    loosened = list(rule_list)
+    loosened[k] = _loosen_any(rule_list[k], step)
+    dropped = rule_list[:k] + rule_list[k + 1:]
+    before = _area_rows(rule_list, pts, area_of, AREAS, 0)["rows"]
+    for after in (loosened, dropped):
+        rows = _area_rows(after, pts, area_of, AREAS, 0)["rows"]
+        for b, a in zip(before, rows):
+            assert a["suppressed"] == b["suppressed"]  # depends on patients only
+            if not b["suppressed"]:  # only empty areas are, at min_group 0
+                assert a["confirmed"] >= b["confirmed"], (b["id"], b, a)
+
+
+@slow
+@given(
+    rule_list=st.lists(numeric_rules(), min_size=1, max_size=5),
+    pts=st.lists(patients(), min_size=1, max_size=40),
+)
+def test_v4_missing_data_is_never_confirmed_in_any_area(rule_list, pts):
+    _ids(rule_list, pts)
+    # One patient per area, nothing suppressed: each row is one patient.
+    own = {p.id: p.id for p in pts}
+    rows = _area_rows(rule_list, pts, own, list(own), 0)["rows"]
+    confirmed = {r["id"]: r["confirmed"] for r in rows}
+    for p in pts:
+        if any(r.field not in p.fields for r in rule_list):
+            assert confirmed[p.id] == 0
+
+
+@slow
+@given(
+    rule_list=st.lists(numeric_rules(), min_size=1, max_size=5),
+    pts=st.lists(patients(), min_size=1, max_size=60),
+    data=st.data(),
+)
+def test_v4_excluded_by_sums_to_price_tag_excluded(rule_list, pts, data):
+    _ids(rule_list, pts)
+    area_of = {p.id: data.draw(st.sampled_from(AREAS)) for p in pts}
+    m = VerdictMatrix.build(rule_list, pts)
+    active = [r.id for r in rule_list]
+    res = analyze(rule_list, m, active, _StubStore(), area_of=area_of, area_ids=AREAS)
+    areas = res["areas"]
+    assert areas["totals"] == {
+        "patients": res["total_patients"],
+        "confirmed": res["confirmed_eligible"],
+        "possibly": res["possibly_eligible"],
+    }
+    for tag in res["price_tags"]:
+        rid = tag["rule_id"]
+        shown = sum(r["excluded_by"][rid] for r in areas["rows"] if not r["suppressed"])
+        assert shown + areas["suppressed"]["excluded_by"][rid] == tag["excluded"]
+
+
+@st.composite
+def home_records(draw):
+    n = draw(st.integers(min_value=1, max_value=30))
+    return [
+        {
+            "id": f"p{i}",
+            "age": draw(st.one_of(st.none(), st.floats(min_value=18, max_value=90))),
+            "conditions": draw(st.lists(
+                st.sampled_from(["t2d", "hypertension", "mi", "stroke", "ckd", "chf"]),
+                unique=True,
+            )),
+            "bmi": draw(st.one_of(st.none(), st.floats(min_value=15, max_value=60))),
+        }
+        for i in range(n)
+    ]
+
+
+@settings(max_examples=50, deadline=None)
+@given(recs=home_records())
+def test_v4_home_assignment_is_deterministic_and_total(recs):
+    first, _ = assign_areas(recs)
+    again, _ = assign_areas([dict(r) for r in recs])
+    assert first == again
+    assert len(first) == len(recs)  # exactly one area per patient
+    assert set(first) <= set(area_ids())

@@ -1,0 +1,3590 @@
+{
+ "protocolSection": {
+  "identificationModule": {
+   "nctId": "NCT01179048",
+   "briefTitle": "Liraglutide Effect and Action in Diabetes: Evaluation of Cardiovascular Outcome Results"
+  },
+  "statusModule": {
+   "overallStatus": "COMPLETED"
+  },
+  "contactsLocationsModule": {
+   "locations": [
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Alabaster",
+     "state": "Alabama",
+     "geoPoint": {
+      "lat": 33.24428,
+      "lon": -86.81638
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Birmingham",
+     "state": "Alabama",
+     "geoPoint": {
+      "lat": 33.52066,
+      "lon": -86.80249
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Birmingham",
+     "state": "Alabama",
+     "geoPoint": {
+      "lat": 33.52066,
+      "lon": -86.80249
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Huntsville",
+     "state": "Alabama",
+     "geoPoint": {
+      "lat": 34.7304,
+      "lon": -86.58594
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mobile",
+     "state": "Alabama",
+     "geoPoint": {
+      "lat": 30.69436,
+      "lon": -88.04305
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tempe",
+     "state": "Arizona",
+     "geoPoint": {
+      "lat": 33.41477,
+      "lon": -111.90931
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Little Rock",
+     "state": "Arkansas",
+     "geoPoint": {
+      "lat": 34.74648,
+      "lon": -92.28959
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Little Rock",
+     "state": "Arkansas",
+     "geoPoint": {
+      "lat": 34.74648,
+      "lon": -92.28959
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Anaheim",
+     "state": "California",
+     "geoPoint": {
+      "lat": 33.83529,
+      "lon": -117.9145
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cerritos",
+     "state": "California",
+     "geoPoint": {
+      "lat": 33.85835,
+      "lon": -118.06479
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Escondido",
+     "state": "California",
+     "geoPoint": {
+      "lat": 33.11921,
+      "lon": -117.08642
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fresno",
+     "state": "California",
+     "geoPoint": {
+      "lat": 36.74773,
+      "lon": -119.77237
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Los Angeles",
+     "state": "California",
+     "geoPoint": {
+      "lat": 34.05223,
+      "lon": -118.24368
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Los Banos",
+     "state": "California",
+     "geoPoint": {
+      "lat": 37.05828,
+      "lon": -120.84992
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mission Hills",
+     "state": "California",
+     "geoPoint": {
+      "lat": 34.68609,
+      "lon": -120.43683
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Montclair",
+     "state": "California",
+     "geoPoint": {
+      "lat": 34.07751,
+      "lon": -117.68978
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "San Diego",
+     "state": "California",
+     "geoPoint": {
+      "lat": 32.71571,
+      "lon": -117.16472
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tustin",
+     "state": "California",
+     "geoPoint": {
+      "lat": 33.74585,
+      "lon": -117.82617
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Walnut Creek",
+     "state": "California",
+     "geoPoint": {
+      "lat": 37.90631,
+      "lon": -122.06496
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Watsonville",
+     "state": "California",
+     "geoPoint": {
+      "lat": 36.91023,
+      "lon": -121.75689
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aurora",
+     "state": "Colorado",
+     "geoPoint": {
+      "lat": 39.72943,
+      "lon": -104.83192
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Denver",
+     "state": "Colorado",
+     "geoPoint": {
+      "lat": 39.73915,
+      "lon": -104.9847
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Newark",
+     "state": "Delaware",
+     "geoPoint": {
+      "lat": 39.68372,
+      "lon": -75.74966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bradenton",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 27.49893,
+      "lon": -82.57482
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Clearwater",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 27.96585,
+      "lon": -82.8001
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "DeLand",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 29.02832,
+      "lon": -81.30312
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fort Lauderdale",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 26.12231,
+      "lon": -80.14338
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kissimmee",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 28.30468,
+      "lon": -81.41667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Miami",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 25.77427,
+      "lon": -80.19366
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Orlando",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 28.53834,
+      "lon": -81.37924
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "St. Petersburg",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 27.77086,
+      "lon": -82.67927
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tampa",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 27.94752,
+      "lon": -82.45843
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "West Palm Beach",
+     "state": "Florida",
+     "geoPoint": {
+      "lat": 26.71534,
+      "lon": -80.05337
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lawrenceville",
+     "state": "Georgia",
+     "geoPoint": {
+      "lat": 33.95621,
+      "lon": -83.98796
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Roswell",
+     "state": "Georgia",
+     "geoPoint": {
+      "lat": 34.02316,
+      "lon": -84.36159
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chicago",
+     "state": "Illinois",
+     "geoPoint": {
+      "lat": 41.85003,
+      "lon": -87.65005
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chicago",
+     "state": "Illinois",
+     "geoPoint": {
+      "lat": 41.85003,
+      "lon": -87.65005
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chicago",
+     "state": "Illinois",
+     "geoPoint": {
+      "lat": 41.85003,
+      "lon": -87.65005
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Crystal Lake",
+     "state": "Illinois",
+     "geoPoint": {
+      "lat": 42.24113,
+      "lon": -88.3162
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Indianapolis",
+     "state": "Indiana",
+     "geoPoint": {
+      "lat": 39.76838,
+      "lon": -86.15804
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Michigan City",
+     "state": "Indiana",
+     "geoPoint": {
+      "lat": 41.70754,
+      "lon": -86.89503
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "West Des Moines",
+     "state": "Iowa",
+     "geoPoint": {
+      "lat": 41.57721,
+      "lon": -93.71133
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lexington",
+     "state": "Kentucky",
+     "geoPoint": {
+      "lat": 37.98869,
+      "lon": -84.47772
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Louisville",
+     "state": "Kentucky",
+     "geoPoint": {
+      "lat": 38.25424,
+      "lon": -85.75941
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Louisville",
+     "state": "Kentucky",
+     "geoPoint": {
+      "lat": 38.25424,
+      "lon": -85.75941
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Metairie",
+     "state": "Louisiana",
+     "geoPoint": {
+      "lat": 29.98409,
+      "lon": -90.15285
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Monroe",
+     "state": "Louisiana",
+     "geoPoint": {
+      "lat": 32.50931,
+      "lon": -92.1193
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Natchitoches",
+     "state": "Louisiana",
+     "geoPoint": {
+      "lat": 31.76072,
+      "lon": -93.08627
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "New Orleans",
+     "state": "Louisiana",
+     "geoPoint": {
+      "lat": 29.95465,
+      "lon": -90.07507
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Baltimore",
+     "state": "Maryland",
+     "geoPoint": {
+      "lat": 39.29038,
+      "lon": -76.61219
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Baltimore",
+     "state": "Maryland",
+     "geoPoint": {
+      "lat": 39.29038,
+      "lon": -76.61219
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bloomfield Hills",
+     "state": "Michigan",
+     "geoPoint": {
+      "lat": 42.58364,
+      "lon": -83.24549
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dearborn",
+     "state": "Michigan",
+     "geoPoint": {
+      "lat": 42.32226,
+      "lon": -83.17631
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Interlochen",
+     "state": "Michigan",
+     "geoPoint": {
+      "lat": 44.64472,
+      "lon": -85.7673
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Troy",
+     "state": "Michigan",
+     "geoPoint": {
+      "lat": 42.60559,
+      "lon": -83.14993
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Minneapolis",
+     "state": "Minnesota",
+     "geoPoint": {
+      "lat": 44.97997,
+      "lon": -93.26384
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Springfield",
+     "state": "Missouri",
+     "geoPoint": {
+      "lat": 37.21533,
+      "lon": -93.29824
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "St Louis",
+     "state": "Missouri",
+     "geoPoint": {
+      "lat": 38.62727,
+      "lon": -90.19789
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Great Falls",
+     "state": "Montana",
+     "geoPoint": {
+      "lat": 47.50024,
+      "lon": -111.30081
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Omaha",
+     "state": "Nebraska",
+     "geoPoint": {
+      "lat": 41.25626,
+      "lon": -95.94043
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lebanon",
+     "state": "New Hampshire",
+     "geoPoint": {
+      "lat": 43.64229,
+      "lon": -72.25176
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Nashua",
+     "state": "New Hampshire",
+     "geoPoint": {
+      "lat": 42.76537,
+      "lon": -71.46757
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mine Hill",
+     "state": "New Jersey",
+     "geoPoint": {
+      "lat": 40.87788,
+      "lon": -74.59377
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Neptune City",
+     "state": "New Jersey",
+     "geoPoint": {
+      "lat": 40.20011,
+      "lon": -74.02792
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Albany",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 42.65258,
+      "lon": -73.75623
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Buffalo",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 42.88645,
+      "lon": -78.87837
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "New York",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 40.71427,
+      "lon": -74.00597
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "New York",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 40.71427,
+      "lon": -74.00597
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "New York",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 40.71427,
+      "lon": -74.00597
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Smithtown",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 40.85593,
+      "lon": -73.20067
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Syracuse",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 43.04812,
+      "lon": -76.14742
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Westfield",
+     "state": "New York",
+     "geoPoint": {
+      "lat": 42.32228,
+      "lon": -79.5781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Asheville",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 35.60095,
+      "lon": -82.55402
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Burlington",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 36.09569,
+      "lon": -79.4378
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chapel Hill",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 35.9132,
+      "lon": -79.05584
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Greensboro",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 36.07264,
+      "lon": -79.79198
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Greenville",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 35.61266,
+      "lon": -77.36635
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Monroe",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 34.98543,
+      "lon": -80.54951
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mooresville",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 35.58486,
+      "lon": -80.81007
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Morehead City",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 34.72294,
+      "lon": -76.72604
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Whiteville",
+     "state": "North Carolina",
+     "geoPoint": {
+      "lat": 34.33878,
+      "lon": -78.70307
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cadiz",
+     "state": "Ohio",
+     "geoPoint": {
+      "lat": 40.27285,
+      "lon": -80.99676
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cincinnati",
+     "state": "Ohio",
+     "geoPoint": {
+      "lat": 39.12711,
+      "lon": -84.51439
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cincinnati",
+     "state": "Ohio",
+     "geoPoint": {
+      "lat": 39.12711,
+      "lon": -84.51439
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cleveland",
+     "state": "Ohio",
+     "geoPoint": {
+      "lat": 41.4995,
+      "lon": -81.69541
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Marion",
+     "state": "Ohio",
+     "geoPoint": {
+      "lat": 40.58867,
+      "lon": -83.12852
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Middleburg Heights",
+     "state": "Ohio",
+     "geoPoint": {
+      "lat": 41.36144,
+      "lon": -81.81291
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oklahoma City",
+     "state": "Oklahoma",
+     "geoPoint": {
+      "lat": 35.46756,
+      "lon": -97.51643
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oklahoma City",
+     "state": "Oklahoma",
+     "geoPoint": {
+      "lat": 35.46756,
+      "lon": -97.51643
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Altoona",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 40.51868,
+      "lon": -78.39474
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Beaver",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 40.69534,
+      "lon": -80.30478
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hatfield",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 40.27983,
+      "lon": -75.29934
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Philadelphia",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 39.95238,
+      "lon": -75.16362
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Philadelphia",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 39.95238,
+      "lon": -75.16362
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pittsburgh",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 40.44062,
+      "lon": -79.99589
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Uniontown",
+     "state": "Pennsylvania",
+     "geoPoint": {
+      "lat": 39.90008,
+      "lon": -79.71643
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Charleston",
+     "state": "South Carolina",
+     "geoPoint": {
+      "lat": 32.77632,
+      "lon": -79.93275
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Columbia",
+     "state": "South Carolina",
+     "geoPoint": {
+      "lat": 34.00071,
+      "lon": -81.03481
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Greenville",
+     "state": "South Carolina",
+     "geoPoint": {
+      "lat": 34.85262,
+      "lon": -82.39401
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Greer",
+     "state": "South Carolina",
+     "geoPoint": {
+      "lat": 34.93873,
+      "lon": -82.22706
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Murrells Inlet",
+     "state": "South Carolina",
+     "geoPoint": {
+      "lat": 33.551,
+      "lon": -79.04143
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Myrtle Beach",
+     "state": "South Carolina",
+     "geoPoint": {
+      "lat": 33.68906,
+      "lon": -78.88669
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bartlett",
+     "state": "Tennessee",
+     "geoPoint": {
+      "lat": 35.20453,
+      "lon": -89.87398
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kingsport",
+     "state": "Tennessee",
+     "geoPoint": {
+      "lat": 36.54843,
+      "lon": -82.56182
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Memphis",
+     "state": "Tennessee",
+     "geoPoint": {
+      "lat": 35.14953,
+      "lon": -90.04898
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Nashville",
+     "state": "Tennessee",
+     "geoPoint": {
+      "lat": 36.16589,
+      "lon": -86.78444
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Arlington",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 32.73569,
+      "lon": -97.10807
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Corpus Christi",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 27.80058,
+      "lon": -97.39638
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dallas",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 32.78306,
+      "lon": -96.80667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dallas",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 32.78306,
+      "lon": -96.80667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dallas",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 32.78306,
+      "lon": -96.80667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dallas",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 32.78306,
+      "lon": -96.80667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Houston",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 29.76328,
+      "lon": -95.36327
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Houston",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 29.76328,
+      "lon": -95.36327
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Longview",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 32.5007,
+      "lon": -94.74049
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lubbock",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 33.57786,
+      "lon": -101.85517
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Odessa",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 31.84568,
+      "lon": -102.36764
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "San Antonio",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 29.42412,
+      "lon": -98.49363
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "San Antonio",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 29.42412,
+      "lon": -98.49363
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Schertz",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 29.55217,
+      "lon": -98.26973
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tomball",
+     "state": "Texas",
+     "geoPoint": {
+      "lat": 30.09716,
+      "lon": -95.61605
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Salt Lake City",
+     "state": "Utah",
+     "geoPoint": {
+      "lat": 40.76078,
+      "lon": -111.89105
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "South Burlington",
+     "state": "Vermont",
+     "geoPoint": {
+      "lat": 44.46699,
+      "lon": -73.17096
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Spokane",
+     "state": "Washington",
+     "geoPoint": {
+      "lat": 47.65966,
+      "lon": -117.42908
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Madison",
+     "state": "Wisconsin",
+     "geoPoint": {
+      "lat": 43.07305,
+      "lon": -89.40123
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Blacktown",
+     "state": "New South Wales",
+     "geoPoint": {
+      "lat": -33.76667,
+      "lon": 150.91667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Douglas",
+     "state": "Queensland",
+     "geoPoint": {
+      "lat": -19.32394,
+      "lon": 146.75234
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Herston",
+     "state": "Queensland",
+     "geoPoint": {
+      "lat": -27.44453,
+      "lon": 153.01852
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Meadowbrook",
+     "state": "Queensland",
+     "geoPoint": {
+      "lat": -27.66401,
+      "lon": 153.14465
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Keswick",
+     "state": "South Australia",
+     "geoPoint": {
+      "lat": -34.94178,
+      "lon": 138.57459
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oaklands Park",
+     "state": "South Australia",
+     "geoPoint": {
+      "lat": -35.00671,
+      "lon": 138.54457
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hobart",
+     "state": "Tasmania",
+     "geoPoint": {
+      "lat": -42.87936,
+      "lon": 147.32941
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Box Hill",
+     "state": "Victoria",
+     "geoPoint": {
+      "lat": -37.81887,
+      "lon": 145.12545
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fitzroy",
+     "state": "Victoria",
+     "geoPoint": {
+      "lat": -37.79839,
+      "lon": 144.97833
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fremantle",
+     "state": "Western Australia",
+     "geoPoint": {
+      "lat": -32.05632,
+      "lon": 115.74557
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Graz",
+     "geoPoint": {
+      "lat": 47.06733,
+      "lon": 15.44197
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vienna",
+     "geoPoint": {
+      "lat": 48.20849,
+      "lon": 16.37208
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vienna",
+     "geoPoint": {
+      "lat": 48.20849,
+      "lon": 16.37208
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vienna",
+     "geoPoint": {
+      "lat": 48.20849,
+      "lon": 16.37208
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vienna",
+     "geoPoint": {
+      "lat": 48.20849,
+      "lon": 16.37208
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Edegem",
+     "geoPoint": {
+      "lat": 51.15662,
+      "lon": 4.44504
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ghent",
+     "geoPoint": {
+      "lat": 51.05,
+      "lon": 3.71667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Leuven",
+     "geoPoint": {
+      "lat": 50.87959,
+      "lon": 4.70093
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Li\u00e8ge",
+     "geoPoint": {
+      "lat": 50.63373,
+      "lon": 5.56749
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fortaleza",
+     "state": "Cear\u00e1",
+     "geoPoint": {
+      "lat": -3.71722,
+      "lon": -38.54306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fortaleza",
+     "state": "Cear\u00e1",
+     "geoPoint": {
+      "lat": -3.71722,
+      "lon": -38.54306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fortaleza",
+     "state": "Cear\u00e1",
+     "geoPoint": {
+      "lat": -3.71722,
+      "lon": -38.54306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aparecida de Goi\u00e2nia",
+     "state": "Goi\u00e1s",
+     "geoPoint": {
+      "lat": -16.82333,
+      "lon": -49.24389
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Curitiba",
+     "state": "Paran\u00e1",
+     "geoPoint": {
+      "lat": -25.42778,
+      "lon": -49.27306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Curitiba",
+     "state": "Paran\u00e1",
+     "geoPoint": {
+      "lat": -25.42778,
+      "lon": -49.27306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Curitiba",
+     "state": "Paran\u00e1",
+     "geoPoint": {
+      "lat": -25.42778,
+      "lon": -49.27306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bel\u00e9m",
+     "state": "Par\u00e1",
+     "geoPoint": {
+      "lat": -1.45583,
+      "lon": -48.50444
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Caxias do Sul",
+     "state": "Rio Grande do Sul",
+     "geoPoint": {
+      "lat": -29.16806,
+      "lon": -51.17944
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Porto Alegre",
+     "state": "Rio Grande do Sul",
+     "geoPoint": {
+      "lat": -30.03283,
+      "lon": -51.23019
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Campinas",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -22.90556,
+      "lon": -47.06083
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Campinas",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -22.90556,
+      "lon": -47.06083
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mogi das Cruzes",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.52278,
+      "lon": -46.18833
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "state": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aracaj\u00fa"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Belo Horizonte",
+     "geoPoint": {
+      "lat": -19.92083,
+      "lon": -43.93778
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Campinas",
+     "geoPoint": {
+      "lat": -22.90556,
+      "lon": -47.06083
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Curitiba",
+     "geoPoint": {
+      "lat": -25.42778,
+      "lon": -49.27306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Fortaleza",
+     "geoPoint": {
+      "lat": -3.71722,
+      "lon": -38.54306
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Goi\u00e2nia",
+     "geoPoint": {
+      "lat": -16.67861,
+      "lon": -49.25389
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Joinville",
+     "geoPoint": {
+      "lat": -26.30444,
+      "lon": -48.84556
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mar\u00edlia",
+     "geoPoint": {
+      "lat": -22.21389,
+      "lon": -49.94583
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Porto Alegre",
+     "geoPoint": {
+      "lat": -30.03283,
+      "lon": -51.23019
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Recife",
+     "geoPoint": {
+      "lat": -8.05389,
+      "lon": -34.88111
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Rio de Janeiro",
+     "geoPoint": {
+      "lat": -22.90642,
+      "lon": -43.18223
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Rio de Janeiro",
+     "geoPoint": {
+      "lat": -22.90642,
+      "lon": -43.18223
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Santos",
+     "geoPoint": {
+      "lat": -23.96083,
+      "lon": -46.33361
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "S\u00e3o Paulo",
+     "geoPoint": {
+      "lat": -23.5475,
+      "lon": -46.63611
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Edmonton",
+     "state": "Alberta",
+     "geoPoint": {
+      "lat": 53.55014,
+      "lon": -113.46871
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vancouver",
+     "state": "British Columbia",
+     "geoPoint": {
+      "lat": 49.24966,
+      "lon": -123.11934
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Winnipeg",
+     "state": "Manitoba",
+     "geoPoint": {
+      "lat": 49.8844,
+      "lon": -97.14704
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "St. John's",
+     "state": "Newfoundland and Labrador",
+     "geoPoint": {
+      "lat": 47.56494,
+      "lon": -52.70931
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Halifax",
+     "state": "Nova Scotia",
+     "geoPoint": {
+      "lat": 44.64269,
+      "lon": -63.57688
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cambridge",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 43.3601,
+      "lon": -80.31269
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cornwall",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 45.01809,
+      "lon": -74.72815
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "London",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 42.98339,
+      "lon": -81.23304
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "London",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 42.98339,
+      "lon": -81.23304
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mississauga",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 43.5789,
+      "lon": -79.6583
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Scarborough Village",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 43.73899,
+      "lon": -79.22124
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Smiths Falls",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 44.90452,
+      "lon": -76.02333
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Thunder Bay",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 48.38202,
+      "lon": -89.25018
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Toronto",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 43.70643,
+      "lon": -79.39864
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Toronto",
+     "state": "Ontario",
+     "geoPoint": {
+      "lat": 43.70643,
+      "lon": -79.39864
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Montreal",
+     "state": "Quebec",
+     "geoPoint": {
+      "lat": 45.50884,
+      "lon": -73.58781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Qu\u00e9bec",
+     "geoPoint": {
+      "lat": 46.81228,
+      "lon": -71.21454
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Qu\u00e9bec",
+     "geoPoint": {
+      "lat": 46.81228,
+      "lon": -71.21454
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Beijing",
+     "state": "Beijing Municipality",
+     "geoPoint": {
+      "lat": 39.9075,
+      "lon": 116.39723
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Beijing",
+     "state": "Beijing Municipality",
+     "geoPoint": {
+      "lat": 39.9075,
+      "lon": 116.39723
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Beijing",
+     "state": "Beijing Municipality",
+     "geoPoint": {
+      "lat": 39.9075,
+      "lon": 116.39723
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Xiamen",
+     "state": "Fujian",
+     "geoPoint": {
+      "lat": 24.47979,
+      "lon": 118.08187
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Guangzhou",
+     "state": "Guangdong",
+     "geoPoint": {
+      "lat": 23.11667,
+      "lon": 113.25
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Zhenjiang",
+     "state": "Jiangsu",
+     "geoPoint": {
+      "lat": 32.21086,
+      "lon": 119.45508
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Qingdao",
+     "state": "Shandong",
+     "geoPoint": {
+      "lat": 36.06488,
+      "lon": 120.38042
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Shanghai",
+     "state": "Shanghai Municipality",
+     "geoPoint": {
+      "lat": 31.22222,
+      "lon": 121.45806
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pilsen",
+     "geoPoint": {
+      "lat": 49.74747,
+      "lon": 13.37759
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Prague",
+     "geoPoint": {
+      "lat": 50.08804,
+      "lon": 14.42076
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aalborg",
+     "geoPoint": {
+      "lat": 57.048,
+      "lon": 9.9187
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "\u00c5rhus C"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Esbjerg",
+     "geoPoint": {
+      "lat": 55.47028,
+      "lon": 8.45187
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Gentofte Municipality",
+     "geoPoint": {
+      "lat": 55.74903,
+      "lon": 12.54601
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hvidovre",
+     "geoPoint": {
+      "lat": 55.64297,
+      "lon": 12.47708
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Odense",
+     "geoPoint": {
+      "lat": 55.39594,
+      "lon": 10.38831
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kuopio",
+     "geoPoint": {
+      "lat": 62.89238,
+      "lon": 27.67703
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lahti",
+     "geoPoint": {
+      "lat": 60.98267,
+      "lon": 25.66151
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oulu",
+     "geoPoint": {
+      "lat": 65.01236,
+      "lon": 25.46816
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tampere",
+     "geoPoint": {
+      "lat": 61.49911,
+      "lon": 23.78712
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vantaa",
+     "geoPoint": {
+      "lat": 60.29414,
+      "lon": 25.04099
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Corbeil-Essonnes",
+     "geoPoint": {
+      "lat": 48.60603,
+      "lon": 2.48757
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Jarny",
+     "geoPoint": {
+      "lat": 49.15873,
+      "lon": 5.8764
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "N\u00eemes",
+     "geoPoint": {
+      "lat": 43.83665,
+      "lon": 4.35788
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Paris",
+     "geoPoint": {
+      "lat": 48.85341,
+      "lon": 2.3488
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Angerm\u00fcnde/OT Wolletz"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aschaffenburg",
+     "geoPoint": {
+      "lat": 49.97704,
+      "lon": 9.15214
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Berlin",
+     "geoPoint": {
+      "lat": 52.52437,
+      "lon": 13.41053
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Berlin",
+     "geoPoint": {
+      "lat": 52.52437,
+      "lon": 13.41053
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dillingen",
+     "geoPoint": {
+      "lat": 49.35557,
+      "lon": 6.72781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dresden",
+     "geoPoint": {
+      "lat": 51.05089,
+      "lon": 13.73832
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Elsterwerda",
+     "geoPoint": {
+      "lat": 51.46043,
+      "lon": 13.52001
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Essen",
+     "geoPoint": {
+      "lat": 51.45657,
+      "lon": 7.01228
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Falkensee",
+     "geoPoint": {
+      "lat": 52.56014,
+      "lon": 13.0927
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Gifhorn",
+     "geoPoint": {
+      "lat": 52.47944,
+      "lon": 10.55223
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hamburg",
+     "geoPoint": {
+      "lat": 53.55073,
+      "lon": 9.99302
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Karlsbad"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Leipzig",
+     "geoPoint": {
+      "lat": 51.33962,
+      "lon": 12.37129
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Leipzig",
+     "geoPoint": {
+      "lat": 51.33962,
+      "lon": 12.37129
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ludwigshafen",
+     "geoPoint": {
+      "lat": 47.81663,
+      "lon": 9.06138
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mannheim",
+     "geoPoint": {
+      "lat": 49.4891,
+      "lon": 8.46694
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "M\u00fcnchen",
+     "geoPoint": {
+      "lat": 51.60698,
+      "lon": 13.31243
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oldenburg",
+     "geoPoint": {
+      "lat": 53.14039,
+      "lon": 8.21479
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Saint Ingbert-Oberw\u00fcrzbach"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Schkeuditz",
+     "geoPoint": {
+      "lat": 51.39678,
+      "lon": 12.22141
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Schweinfurt",
+     "geoPoint": {
+      "lat": 50.04937,
+      "lon": 10.22175
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ulm",
+     "geoPoint": {
+      "lat": 48.39841,
+      "lon": 9.99155
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Villingen-Schwenningen",
+     "geoPoint": {
+      "lat": 48.06226,
+      "lon": 8.49358
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Wangen",
+     "geoPoint": {
+      "lat": 47.6895,
+      "lon": 9.83247
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Athens",
+     "geoPoint": {
+      "lat": 37.98376,
+      "lon": 23.72784
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Athens",
+     "geoPoint": {
+      "lat": 37.98376,
+      "lon": 23.72784
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Crete"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Thessaloniki",
+     "geoPoint": {
+      "lat": 40.64072,
+      "lon": 22.93493
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hyderabad",
+     "state": "Andhra Pradesh"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hyderbad",
+     "state": "Andhra Pradesh"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Guwahati",
+     "state": "Assam",
+     "geoPoint": {
+      "lat": 26.1844,
+      "lon": 91.7458
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Karn\u0101l",
+     "state": "Haryana",
+     "geoPoint": {
+      "lat": 29.69197,
+      "lon": 76.98448
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bangalore",
+     "state": "Karnataka",
+     "geoPoint": {
+      "lat": 12.97194,
+      "lon": 77.59369
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bangalore",
+     "state": "Karnataka",
+     "geoPoint": {
+      "lat": 12.97194,
+      "lon": 77.59369
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bangalore",
+     "state": "Karnataka",
+     "geoPoint": {
+      "lat": 12.97194,
+      "lon": 77.59369
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Manipal",
+     "state": "Karnataka",
+     "geoPoint": {
+      "lat": 13.35,
+      "lon": 74.78333
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kochi",
+     "state": "Kerala",
+     "geoPoint": {
+      "lat": 9.93988,
+      "lon": 76.26022
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Indore",
+     "state": "Madhya Pradesh",
+     "geoPoint": {
+      "lat": 22.71792,
+      "lon": 75.8333
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mumbai",
+     "state": "Maharashtra",
+     "geoPoint": {
+      "lat": 19.07283,
+      "lon": 72.88261
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chandigarh",
+     "state": "Punjab"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chennai",
+     "state": "Tamil Nadu",
+     "geoPoint": {
+      "lat": 13.08784,
+      "lon": 80.27847
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chennai",
+     "state": "Tamil Nadu",
+     "geoPoint": {
+      "lat": 13.08784,
+      "lon": 80.27847
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Madurai",
+     "state": "Tamil Nadu",
+     "geoPoint": {
+      "lat": 9.919,
+      "lon": 78.11953
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Vellore",
+     "state": "Tamil Nadu",
+     "geoPoint": {
+      "lat": 12.9184,
+      "lon": 79.13255
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kolkata",
+     "state": "West Bengal",
+     "geoPoint": {
+      "lat": 22.56263,
+      "lon": 88.36304
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Thriruvananthapuram"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dublin",
+     "geoPoint": {
+      "lat": 53.33306,
+      "lon": -6.24889
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dublin",
+     "geoPoint": {
+      "lat": 53.33306,
+      "lon": -6.24889
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Haifa",
+     "geoPoint": {
+      "lat": 32.81303,
+      "lon": 34.99928
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Haifa",
+     "geoPoint": {
+      "lat": 32.81303,
+      "lon": 34.99928
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Jerusalem",
+     "geoPoint": {
+      "lat": 31.76904,
+      "lon": 35.21633
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Petah Tikva",
+     "geoPoint": {
+      "lat": 32.0888,
+      "lon": 34.88666
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tel Litwinsky",
+     "geoPoint": {
+      "lat": 32.05096,
+      "lon": 34.84588
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bologna",
+     "geoPoint": {
+      "lat": 44.49381,
+      "lon": 11.33875
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Catanzaro",
+     "geoPoint": {
+      "lat": 38.88247,
+      "lon": 16.60086
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Chieti",
+     "geoPoint": {
+      "lat": 42.34827,
+      "lon": 14.16494
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Florence",
+     "geoPoint": {
+      "lat": 43.77925,
+      "lon": 11.24626
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Latina",
+     "geoPoint": {
+      "lat": 41.46614,
+      "lon": 12.9043
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lucca",
+     "geoPoint": {
+      "lat": 43.84369,
+      "lon": 10.50447
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Milan",
+     "geoPoint": {
+      "lat": 42.78235,
+      "lon": 12.59836
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Padova",
+     "geoPoint": {
+      "lat": 44.38225,
+      "lon": 11.14261
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Palermo",
+     "geoPoint": {
+      "lat": 38.1166,
+      "lon": 13.3636
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Roma",
+     "geoPoint": {
+      "lat": 44.99364,
+      "lon": 11.10642
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Roma",
+     "geoPoint": {
+      "lat": 44.99364,
+      "lon": 11.10642
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tijuana",
+     "state": "Baja California Norte",
+     "geoPoint": {
+      "lat": 32.5027,
+      "lon": -117.00371
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Guadalajara",
+     "state": "Jalisco",
+     "geoPoint": {
+      "lat": 20.67738,
+      "lon": -103.34749
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Guadalajara",
+     "state": "Jalisco",
+     "geoPoint": {
+      "lat": 20.67738,
+      "lon": -103.34749
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aguascalientes",
+     "geoPoint": {
+      "lat": 21.88262,
+      "lon": -102.2843
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Durango",
+     "geoPoint": {
+      "lat": 24.02032,
+      "lon": -104.65756
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Durango",
+     "geoPoint": {
+      "lat": 24.02032,
+      "lon": -104.65756
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Monterrey",
+     "geoPoint": {
+      "lat": 25.68435,
+      "lon": -100.31721
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "San Luis Potos\u00ed City",
+     "geoPoint": {
+      "lat": 22.15234,
+      "lon": -100.97135
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Amsterdam",
+     "geoPoint": {
+      "lat": 52.37403,
+      "lon": 4.88969
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Eindhoven",
+     "geoPoint": {
+      "lat": 51.44083,
+      "lon": 5.47778
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Etten-Leur",
+     "geoPoint": {
+      "lat": 51.57056,
+      "lon": 4.63726
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Goes",
+     "geoPoint": {
+      "lat": 51.50417,
+      "lon": 3.88889
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Groningen",
+     "geoPoint": {
+      "lat": 53.21917,
+      "lon": 6.56667
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hoogeveen",
+     "geoPoint": {
+      "lat": 52.7225,
+      "lon": 6.47639
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Maastricht",
+     "geoPoint": {
+      "lat": 50.84833,
+      "lon": 5.68889
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Nijmegen",
+     "geoPoint": {
+      "lat": 51.8425,
+      "lon": 5.85278
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Utrecht",
+     "geoPoint": {
+      "lat": 52.09083,
+      "lon": 5.12222
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oslo",
+     "geoPoint": {
+      "lat": 59.91273,
+      "lon": 10.74609
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Oslo",
+     "geoPoint": {
+      "lat": 59.91273,
+      "lon": 10.74609
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Stavanger",
+     "geoPoint": {
+      "lat": 58.97005,
+      "lon": 5.73332
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Trondheim",
+     "geoPoint": {
+      "lat": 63.43049,
+      "lon": 10.39506
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "T\u00f8nsberg",
+     "geoPoint": {
+      "lat": 59.26754,
+      "lon": 10.40762
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bialystok",
+     "geoPoint": {
+      "lat": 53.13333,
+      "lon": 23.16433
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bydgoszcz",
+     "geoPoint": {
+      "lat": 53.1235,
+      "lon": 18.00762
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Katowice",
+     "geoPoint": {
+      "lat": 50.2597,
+      "lon": 19.02173
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Krakow",
+     "geoPoint": {
+      "lat": 50.06143,
+      "lon": 19.93658
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Krakow",
+     "geoPoint": {
+      "lat": 50.06143,
+      "lon": 19.93658
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Krakow",
+     "geoPoint": {
+      "lat": 50.06143,
+      "lon": 19.93658
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lodz",
+     "geoPoint": {
+      "lat": 51.77058,
+      "lon": 19.47395
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Poznan",
+     "geoPoint": {
+      "lat": 52.40692,
+      "lon": 16.92993
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pu\u0142awy",
+     "geoPoint": {
+      "lat": 51.41655,
+      "lon": 21.96939
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ruda \u015al\u0105ska",
+     "geoPoint": {
+      "lat": 50.2584,
+      "lon": 18.85632
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Warsaw",
+     "geoPoint": {
+      "lat": 52.22977,
+      "lon": 21.01178
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Warsaw",
+     "geoPoint": {
+      "lat": 52.22977,
+      "lon": 21.01178
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Wroclaw",
+     "geoPoint": {
+      "lat": 51.10286,
+      "lon": 17.03006
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bayam\u00f3n",
+     "geoPoint": {
+      "lat": 18.39856,
+      "lon": -66.15572
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Caguas",
+     "geoPoint": {
+      "lat": 18.23412,
+      "lon": -66.0485
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Craiova",
+     "state": "Dolj",
+     "geoPoint": {
+      "lat": 44.31667,
+      "lon": 23.8
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "T\u00e2rgu Mure\u015f",
+     "state": "Mure\u0219 County",
+     "geoPoint": {
+      "lat": 46.54245,
+      "lon": 24.55747
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Timi\u0219oara",
+     "state": "Timi\u0219 County",
+     "geoPoint": {
+      "lat": 45.75372,
+      "lon": 21.22571
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bacau",
+     "geoPoint": {
+      "lat": 46.56718,
+      "lon": 26.91384
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bucharest",
+     "geoPoint": {
+      "lat": 44.43225,
+      "lon": 26.10626
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Constan\u021ba",
+     "geoPoint": {
+      "lat": 44.18073,
+      "lon": 28.63432
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Deva",
+     "geoPoint": {
+      "lat": 45.88333,
+      "lon": 22.9
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ia\u0219i",
+     "geoPoint": {
+      "lat": 47.16667,
+      "lon": 27.6
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Satu Mare",
+     "geoPoint": {
+      "lat": 47.79926,
+      "lon": 22.86255
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Sibiu",
+     "geoPoint": {
+      "lat": 45.8,
+      "lon": 24.15
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Arkhangelsk",
+     "geoPoint": {
+      "lat": 64.5461,
+      "lon": 40.55183
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Arkhangelsk",
+     "geoPoint": {
+      "lat": 64.5461,
+      "lon": 40.55183
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Barnaul",
+     "geoPoint": {
+      "lat": 53.36199,
+      "lon": 83.72786
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kazan'",
+     "geoPoint": {
+      "lat": 55.78874,
+      "lon": 49.12214
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Moscow",
+     "geoPoint": {
+      "lat": 55.75204,
+      "lon": 37.61781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Moscow",
+     "geoPoint": {
+      "lat": 55.75204,
+      "lon": 37.61781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Moscow",
+     "geoPoint": {
+      "lat": 55.75204,
+      "lon": 37.61781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Moscow",
+     "geoPoint": {
+      "lat": 55.75204,
+      "lon": 37.61781
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Nizhny Novgorod",
+     "geoPoint": {
+      "lat": 56.32867,
+      "lon": 44.00205
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Penza",
+     "geoPoint": {
+      "lat": 53.19568,
+      "lon": 45.01075
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Saratov",
+     "geoPoint": {
+      "lat": 51.54048,
+      "lon": 45.9901
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Smolensk",
+     "geoPoint": {
+      "lat": 54.77826,
+      "lon": 32.05088
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tyumen",
+     "geoPoint": {
+      "lat": 57.15222,
+      "lon": 65.52722
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Yaroslavl",
+     "geoPoint": {
+      "lat": 57.62987,
+      "lon": 39.87368
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Belgrade",
+     "geoPoint": {
+      "lat": 44.80401,
+      "lon": 20.46513
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bloemfontein",
+     "state": "Free State",
+     "geoPoint": {
+      "lat": -29.12107,
+      "lon": 26.214
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Johannesburg",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -26.20227,
+      "lon": 28.04363
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Johannesburg",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -26.20227,
+      "lon": 28.04363
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Lenasia",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -26.32052,
+      "lon": 27.83564
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Midrand",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -25.976,
+      "lon": 28.118
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pretoria",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -25.74486,
+      "lon": 28.18783
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pretoria",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -25.74486,
+      "lon": 28.18783
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pretoria",
+     "state": "Gauteng",
+     "geoPoint": {
+      "lat": -25.74486,
+      "lon": 28.18783
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Durban",
+     "state": "KwaZulu-Natal",
+     "geoPoint": {
+      "lat": -29.8579,
+      "lon": 31.0292
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Durban",
+     "state": "KwaZulu-Natal",
+     "geoPoint": {
+      "lat": -29.8579,
+      "lon": 31.0292
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Durban",
+     "state": "KwaZulu-Natal",
+     "geoPoint": {
+      "lat": -29.8579,
+      "lon": 31.0292
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tongaat",
+     "state": "KwaZulu-Natal",
+     "geoPoint": {
+      "lat": -29.57366,
+      "lon": 31.11552
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cape Town",
+     "state": "Western Cape",
+     "geoPoint": {
+      "lat": -33.92584,
+      "lon": 18.42322
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Somerset West",
+     "state": "Western Cape",
+     "geoPoint": {
+      "lat": -34.08401,
+      "lon": 18.82113
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Alberton",
+     "geoPoint": {
+      "lat": -26.26786,
+      "lon": 28.12225
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Cape Town",
+     "geoPoint": {
+      "lat": -33.92584,
+      "lon": 18.42322
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Goyang",
+     "geoPoint": {
+      "lat": 36.21689,
+      "lon": 127.19731
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Seongnam-si",
+     "geoPoint": {
+      "lat": 37.43861,
+      "lon": 127.13778
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Seoul",
+     "geoPoint": {
+      "lat": 37.566,
+      "lon": 126.9784
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Seoul",
+     "geoPoint": {
+      "lat": 37.566,
+      "lon": 126.9784
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Seoul",
+     "geoPoint": {
+      "lat": 37.566,
+      "lon": 126.9784
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "A Coru\u00f1a",
+     "geoPoint": {
+      "lat": 43.37135,
+      "lon": -8.396
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Almer\u00eda",
+     "geoPoint": {
+      "lat": 36.83814,
+      "lon": -2.45974
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Barcelona",
+     "geoPoint": {
+      "lat": 41.38879,
+      "lon": 2.15899
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Madrid",
+     "geoPoint": {
+      "lat": 40.4165,
+      "lon": -3.70256
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mora de Ebre"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Mostoles - Madrid -"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Palma de Mallorca",
+     "geoPoint": {
+      "lat": 39.56939,
+      "lon": 2.65024
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Pozuelo de Alarc\u00f3n",
+     "geoPoint": {
+      "lat": 40.43293,
+      "lon": -3.81338
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Seville",
+     "geoPoint": {
+      "lat": 37.38283,
+      "lon": -5.97317
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Seville",
+     "geoPoint": {
+      "lat": 37.38283,
+      "lon": -5.97317
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Valladolid",
+     "geoPoint": {
+      "lat": 41.65541,
+      "lon": -4.72353
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Gothenburg",
+     "geoPoint": {
+      "lat": 57.70716,
+      "lon": 11.96679
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Malm\u00f6",
+     "geoPoint": {
+      "lat": 55.60587,
+      "lon": 13.00073
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "\u00d6rebro",
+     "geoPoint": {
+      "lat": 59.27412,
+      "lon": 15.2066
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Stockholm",
+     "geoPoint": {
+      "lat": 59.32938,
+      "lon": 18.06871
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Stockholm",
+     "geoPoint": {
+      "lat": 59.32938,
+      "lon": 18.06871
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Stockholm",
+     "geoPoint": {
+      "lat": 59.32938,
+      "lon": 18.06871
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Changhua",
+     "geoPoint": {
+      "lat": 24.0692,
+      "lon": 120.5512
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kaoshiung"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Tainan",
+     "geoPoint": {
+      "lat": 22.99259,
+      "lon": 120.20507
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Taoyuan",
+     "geoPoint": {
+      "lat": 24.99368,
+      "lon": 121.29696
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ankara",
+     "geoPoint": {
+      "lat": 39.91987,
+      "lon": 32.85427
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Ankara",
+     "geoPoint": {
+      "lat": 39.91987,
+      "lon": 32.85427
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Antalya",
+     "geoPoint": {
+      "lat": 36.90812,
+      "lon": 30.69556
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bursa",
+     "geoPoint": {
+      "lat": 40.19559,
+      "lon": 29.06013
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Gaziantep",
+     "geoPoint": {
+      "lat": 37.05944,
+      "lon": 37.3825
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Istanbul",
+     "geoPoint": {
+      "lat": 41.01384,
+      "lon": 28.94966
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Izmir",
+     "geoPoint": {
+      "lat": 38.41273,
+      "lon": 27.13838
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Izmir",
+     "geoPoint": {
+      "lat": 38.41273,
+      "lon": 27.13838
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Kayseri",
+     "geoPoint": {
+      "lat": 38.73222,
+      "lon": 35.48528
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dubai",
+     "geoPoint": {
+      "lat": 25.07725,
+      "lon": 55.30927
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dubai",
+     "geoPoint": {
+      "lat": 25.07725,
+      "lon": 55.30927
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Aberdeen",
+     "geoPoint": {
+      "lat": 57.14369,
+      "lon": -2.09814
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Birmingham",
+     "geoPoint": {
+      "lat": 52.48142,
+      "lon": -1.89983
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Bristol",
+     "geoPoint": {
+      "lat": 51.45523,
+      "lon": -2.59665
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Coventry",
+     "geoPoint": {
+      "lat": 52.40656,
+      "lon": -1.51217
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Devon"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Dundee",
+     "geoPoint": {
+      "lat": 56.46913,
+      "lon": -2.97489
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Edinburgh",
+     "geoPoint": {
+      "lat": 55.95206,
+      "lon": -3.19648
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Glasgow",
+     "geoPoint": {
+      "lat": 55.86515,
+      "lon": -4.25763
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Guildford",
+     "geoPoint": {
+      "lat": 51.23536,
+      "lon": -0.57427
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Hull",
+     "geoPoint": {
+      "lat": 53.7446,
+      "lon": -0.33525
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Livington"
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "London",
+     "geoPoint": {
+      "lat": 51.50853,
+      "lon": -0.12574
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Manchester",
+     "geoPoint": {
+      "lat": 53.48095,
+      "lon": -2.23743
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Norwich",
+     "geoPoint": {
+      "lat": 52.62783,
+      "lon": 1.29834
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Nuneaton",
+     "geoPoint": {
+      "lat": 52.52323,
+      "lon": -1.46523
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Plymouth",
+     "geoPoint": {
+      "lat": 50.37153,
+      "lon": -4.14305
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "St Helens",
+     "geoPoint": {
+      "lat": 53.45,
+      "lon": -2.73333
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Swansea",
+     "geoPoint": {
+      "lat": 51.62079,
+      "lon": -3.94323
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "Torquay",
+     "geoPoint": {
+      "lat": 50.46198,
+      "lon": -3.52522
+     }
+    },
+    {
+     "facility": "Novo Nordisk Investigational Site",
+     "city": "West Midlands"
+    }
+   ]
+  }
+ }
+}

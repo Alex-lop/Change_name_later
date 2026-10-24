@@ -20,11 +20,15 @@ exclude, and how does that excluded group differ demographically.
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass, field
+from typing import NamedTuple
 
 from .engine import evaluate
 from .model import Patient, Rule, Verdict
 from .store import PatientStore
+
+MIN_GROUP = 30  # groups smaller than this show no deltas and no area numbers
 
 
 @dataclass
@@ -117,11 +121,33 @@ def _demo_deltas(reference: dict, subset: dict) -> dict:
     return out
 
 
+class Marginal(NamedTuple):
+    """One criterion's price-tag sets, from the cohort passing every other one."""
+
+    base: set[str]
+    excluded: set[str]
+    unknown: set[str]
+    kept: set[str]
+
+
+def marginals(matrix: VerdictMatrix, active_ids: list[str]) -> dict[str, Marginal]:
+    """rule_id -> its Marginal. Price tags and area rows both read these sets."""
+    out = {}
+    for rid in active_ids:
+        base = confirmed_eligible(matrix, [x for x in active_ids if x != rid])
+        out[rid] = Marginal(
+            base, base & matrix.fails[rid], base & matrix.unknown[rid],
+            base & matrix.meets[rid],
+        )
+    return out
+
+
 def price_tags(
     rules: list[Rule],
     matrix: VerdictMatrix,
     active_ids: list[str],
     store: PatientStore,
+    marg: dict[str, Marginal] | None = None,
 ) -> list[dict]:
     """Per-criterion marginal price tag.
 
@@ -131,13 +157,10 @@ def price_tags(
     """
     rules_by_id = {r.id: r for r in rules}
     tags = []
-    MIN_GROUP = 30  # hide demographic deltas for excluded groups smaller than this
+    if marg is None:
+        marg = marginals(matrix, active_ids)
     for rid in active_ids:
-        others = [x for x in active_ids if x != rid]
-        base = confirmed_eligible(matrix, others)  # passes everything else
-        excluded = base & matrix.fails[rid]
-        unknown_here = base & matrix.unknown[rid]
-        kept = base & matrix.meets[rid]
+        base, excluded, unknown_here, kept = marg[rid]  # base passes everything else
         excl_demo = store.demographics(sorted(excluded)) if excluded else {
             "n": 0, "mean_age": None, "sex": {}
         }
@@ -172,6 +195,18 @@ def price_tags(
     return tags
 
 
+def patient_order(patients: list[Patient]) -> list[Patient]:
+    """Age ascending, missing age last, ties by id: the visual field's order."""
+
+    def sort_key(p: Patient) -> tuple:
+        datum = p.get("age")
+        if datum is None or datum[0] is None:
+            return (1, 0.0, p.id)  # missing age sorts last, stable by id
+        return (0, float(datum[0]), p.id)
+
+    return sorted(patients, key=sort_key)
+
+
 def patient_codes(
     matrix: VerdictMatrix,
     active_ids: list[str],
@@ -201,14 +236,8 @@ def patient_codes(
     code k.
     """
 
-    def sort_key(p: Patient) -> tuple:
-        datum = p.get("age")
-        if datum is None or datum[0] is None:
-            return (1, 0.0, p.id)  # missing age sorts last, stable by id
-        return (0, float(datum[0]), p.id)
-
     codes: list[int] = []
-    for p in sorted(patients, key=sort_key):
+    for p in patient_order(patients):
         pid = p.id
         # Indices of active criteria this patient FAILS.
         failed = [k for k, rid in enumerate(active_ids) if pid in matrix.fails[rid]]
@@ -232,15 +261,68 @@ def patient_codes(
     return codes
 
 
+def area_breakdown(
+    all_ids: set[str],
+    conf: set[str],
+    poss: set[str],
+    excluded: dict[str, set[str]],
+    area_of: dict[str, str],
+    area_ids: list[str],
+    min_group: int = MIN_GROUP,
+) -> dict:
+    """Split the analysis's own sets by each patient's home area.
+
+    No verdict is recomputed here: `conf` and `poss` are the sets behind the
+    headline counts and `excluded[r]` is price tag r's excluded set. An area
+    with fewer than `min_group` patients (or none) is suppressed: its values are null
+    and its counts go to the `suppressed` bucket, so unsuppressed rows plus
+    the bucket always add up to the totals.
+    """
+
+    def by_area(ids: set[str]) -> Counter:
+        return Counter(area_of[pid] for pid in ids)
+
+    n, c, p = by_area(all_ids), by_area(conf), by_area(poss)
+    ex = {rid: by_area(s) for rid, s in excluded.items()}
+    bucket = {"patients": 0, "confirmed": 0, "possibly": 0,
+              "excluded_by": dict.fromkeys(excluded, 0)}
+    rows = []
+    for a in area_ids:
+        if n[a] < max(min_group, 1):  # an empty area has no rate to show
+            bucket["patients"] += n[a]
+            bucket["confirmed"] += c[a]
+            bucket["possibly"] += p[a]
+            for rid in excluded:
+                bucket["excluded_by"][rid] += ex[rid][a]
+            rows.append({"id": a, "patients": n[a], "confirmed": None,
+                         "possibly": None, "confirmed_rate": None,
+                         "suppressed": True, "excluded_by": None})
+        else:
+            rows.append({"id": a, "patients": n[a], "confirmed": c[a],
+                         "possibly": p[a],
+                         "confirmed_rate": round(c[a] / n[a], 4),
+                         "suppressed": False,
+                         "excluded_by": {rid: ex[rid][a] for rid in excluded}})
+    return {
+        "rows": rows,
+        "suppressed": bucket,
+        "totals": {"patients": len(all_ids), "confirmed": len(conf),
+                   "possibly": len(poss)},
+    }
+
+
 def analyze(
     rules: list[Rule],
     matrix: VerdictMatrix,
     active_ids: list[str],
     store: PatientStore,
     patients: list[Patient] | None = None,
+    area_of: dict[str, str] | None = None,
+    area_ids: list[str] | None = None,
 ) -> dict:
     conf = confirmed_eligible(matrix, active_ids)
     poss = possibly_eligible(matrix, active_ids)
+    marg = marginals(matrix, active_ids)
     total = len(matrix.all_ids)
     result = {
         "total_patients": total,
@@ -249,8 +331,13 @@ def analyze(
         "confirmed_fraction": round(len(conf) / total, 4) if total else 0.0,
         "possibly_fraction": round(len(poss) / total, 4) if total else 0.0,
         "funnel": funnel(matrix, active_ids),
-        "price_tags": price_tags(rules, matrix, active_ids, store),
+        "price_tags": price_tags(rules, matrix, active_ids, store, marg),
     }
     if patients is not None:
         result["patient_codes"] = patient_codes(matrix, active_ids, patients)
+    if area_of is not None and area_ids is not None:
+        result["areas"] = area_breakdown(
+            matrix.all_ids, conf, poss,
+            {rid: m.excluded for rid, m in marg.items()}, area_of, area_ids,
+        )
     return result

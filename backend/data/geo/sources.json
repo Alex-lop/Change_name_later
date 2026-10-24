@@ -1,0 +1,109 @@
+{
+ "sources": [
+  {
+   "what": "County boundaries",
+   "dataset": "Census Bureau cartographic boundary file cb_2024_us_county_500k (1:500,000)",
+   "data_year": "2024",
+   "url": "https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_county_500k.zip",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "PLACES county measures (crude and age-adjusted prevalence)",
+   "dataset": "PLACES: Local Data for Better Health, County Data, 2025 release",
+   "data_year": "2023",
+   "url": "https://data.cdc.gov/resource/swc5-untb.json?stateabbr=MA&$limit=5000&$where=measureid%20in%28%27DIABETES%27%2C%27BPHIGH%27%2C%27CHD%27%2C%27STROKE%27%2C%27KIDNEY%27%2C%27OBESITY%27%29%20AND%20datavaluetypeid%20in%28%27CrdPrv%27%2C%27AgeAdjPrv%27%29",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "PLACES county measure KIDNEY (not published in the 2025 release)",
+   "dataset": "PLACES: Local Data for Better Health, County Data 2023 release",
+   "data_year": "2021",
+   "url": "https://data.cdc.gov/resource/h3ej-a9ec.json?stateabbr=MA&measureid=KIDNEY&$limit=5000&$where=datavaluetypeid%20in%28%27CrdPrv%27%2C%27AgeAdjPrv%27%29",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "ACS table B01001",
+   "dataset": "ACS 5-Year Estimates 2020-2024, table-based summary file B01001",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b01001.dat",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "ACS table B19013",
+   "dataset": "ACS 5-Year Estimates 2020-2024, table-based summary file B19013",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b19013.dat",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "ACS table B19001",
+   "dataset": "ACS 5-Year Estimates 2020-2024, table-based summary file B19001",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b19001.dat",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "ACS table B03003",
+   "dataset": "ACS 5-Year Estimates 2020-2024, table-based summary file B03003",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b03003.dat",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "ACS table B01003",
+   "dataset": "ACS 5-Year Estimates 2020-2024, table-based summary file B01003",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b01003.dat",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "Geography names (municipality labels)",
+   "dataset": "ACS 2020-2024 table-based summary file geography file Geos20245YR.txt",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/documentation/Geos20245YR.txt",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "B01001 column-to-age mapping check",
+   "dataset": "ACS20245YR_Table_Shells.txt",
+   "data_year": "2020-2024",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/documentation/ACS20245YR_Table_Shells.txt",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "Demo trial sites in Massachusetts (4 NCT IDs)",
+   "dataset": "ClinicalTrials.gov API v2, /studies/{nctId}",
+   "data_year": "2026-10-24",
+   "url": "https://clinicaltrials.gov/api/v2/studies/<NCT>?fields=NCTId,BriefTitle,OverallStatus,LocationFacility,LocationCity,LocationState,LocationStatus,LocationGeoPoint",
+   "retrieved": "2026-10-24"
+  },
+  {
+   "what": "Recruiting type 2 diabetes trials with a Massachusetts site (snapshot)",
+   "dataset": "ClinicalTrials.gov API v2, /studies search",
+   "data_year": "2026-10-24",
+   "url": "https://clinicaltrials.gov/api/v2/studies?query.cond=type%202%20diabetes&query.locn=Massachusetts&filter.overallStatus=RECRUITING&pageSize=100&fields=NCTId,BriefTitle,OverallStatus,LocationFacility,LocationCity,LocationState,LocationStatus,LocationGeoPoint",
+   "retrieved": "2026-10-24"
+  }
+ ],
+ "derived": [
+  "cape_islands median_household_income: combined B19001 bracket counts of 25001+25007+25019, 50th percentile by linear interpolation within the bracket containing it (bracket bounds from the table shell).",
+  "cape_islands diabetes_crude_pct: mean of the three counties' PLACES crude DIABETES weighted by ACS B01001 adults 18+.",
+  "pct_65plus: B01001 population 65+ (E020-E025 + E044-E049) / B01001 total (E001) * 100, summed over the area's counties.",
+  "pct_hispanic: B03003 E003 / E001 * 100, summed over the area's counties.",
+  "adults_18plus and adults_by_band: B01001 male E007-E025 plus female E031-E049, grouped per age_bands.",
+  "label: most populous county subdivision by B01003 E001, name from the Geos file with ' city'/' town'/' Town city' stripped.",
+  "label_xy: centroid of the area's largest ring if inside it, else midpoint of the widest horizontal chord at the centroid's y."
+ ],
+ "notes": [
+  "api.census.gov requires a key (keyless requests redirect to missing_key.html); ACS values come from the official table-based summary files of the same release.",
+  "PLACES KIDNEY is not published in the 2024 or 2025 county releases, so it comes from the 2023 release (resource h3ej-a9ec); its BRFSS year is in county_inputs.json.",
+  "Site-to-area assignment: ray-casting point-in-polygon on the unsimplified county rings; a point in no ring takes the county with the nearest ring vertex (listed in sites_fallback below).",
+  "Shapes: Douglas-Peucker simplified to about 0.5 projected units; rings under 1.0 projected unit^2 dropped (each county keeps its largest ring)."
+ ],
+ "home_model": {
+  "module": "backend/dryrun/geo.py",
+  "seed": 20261024,
+  "inputs": "county_inputs.json",
+  "description": "Modeled home areas for the synthetic patients: Massachusetts counties.\n\nPatients are synthetic and so are their homes: each one is modeled from public\ndata, never observed. Every patient gets exactly one of 12 areas (the 14\ncounties, with Barnstable, Dukes and Nantucket grouped as \"Cape and Islands\"),\nstored as the `area` column of patients.csv. Clinical attributes are never\ntouched, so every count elsewhere in the app stays identical.\n\nModel, for patient i and county c:\n\n    w(i, c) = adults(c, band(i)) x D_aa(c) x prod_k LR_k(i, c)\n\n- adults(c, band): ACS 5-year adults in county c in the patient's age band,\n  i.e. adults(c) x P(band | c). Missing age uses all adults 18+.\n- D_aa(c): CDC PLACES age-adjusted diagnosed-diabetes prevalence. Age-adjusted,\n  because age is already in adults(c, band).\n- LR_k: one likelihood ratio per condition the generator models, with PLACES\n  age-adjusted rates: hypertension -> BPHIGH, mi -> CHD, stroke -> STROKE,\n  ckd -> KIDNEY, BMI >= 30 -> OBESITY. p_c / p_state if the patient has it,\n  (1 - p_c) / (1 - p_state) if not; a missing BMI contributes 1. p_state is\n  the adult-weighted mean of the 14 county rates (PLACES has no state row).\n\nRaking (iterative proportional fitting) then rescales w so each patient's row\nsums to 1 and each county's expected patient total equals its share of adults\nwith diabetes (ACS adults x PLACES crude prevalence). Each patient takes one\ndraw from its row, using a uniform seeded by (SEED, patient id): deterministic,\nand independent of row order.\n\nAssumptions: within a county every patient shares the county's rates apart\nfrom the five conditions above; the conditions act independently (a naive\nBayes product); PLACES values are model-based small-area estimates and carry\nthat model's error; the synthetic patients' conditions are generated without\ngeography, so the map shows how the modeled mix of patients meets the\ncriteria, not observed local eligibility."
+ }
+}

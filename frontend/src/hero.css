@@ -1,0 +1,69 @@
+/* Full-viewport landing overlay above the workbench (app z-index tops out at 10). */
+.hero {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  transition: transform 450ms cubic-bezier(0.5, 0, 0.75, 0);
+}
+.hero.is-leaving { transform: translateY(-100%); }
+
+.hero-field {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-mark {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  padding: 2px 4px;
+  font-size: 14px;
+  color: var(--ink-2);
+  background: var(--paper);
+}
+
+/* Plain paper block so ticks never run under the letters. */
+.hero-card {
+  position: relative;
+  max-width: 100%;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+  background: var(--paper);
+}
+.hero-card h1 {
+  margin: 0;
+  max-width: 20ch;
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 600;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.hero-enter {
+  min-height: 48px;
+  padding: 0 20px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.hero-enter:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+.hero-enter:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hero-enter:disabled { cursor: default; }

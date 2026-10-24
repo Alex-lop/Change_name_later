@@ -21,3 +21,6 @@ def _ensure_population() -> None:
 
     if not Path(DEFAULT_CSV).exists():
         synthea.write_csv(synthea.generate_population(), DEFAULT_CSV)
+        from dryrun import geo
+
+        geo.add_area_column(DEFAULT_CSV)

@@ -1,0 +1,751 @@
+{
+ "trial_sites": {
+  "NCT02692716": [],
+  "NCT01179048": [],
+  "NCT01720446": [
+   {
+    "facility": "Novo Nordisk Investigational Site",
+    "city": "Methuen",
+    "status": null,
+    "lat": 42.7262,
+    "lon": -71.19089,
+    "xy": [
+     644.4,
+     69.4
+    ],
+    "area_id": "essex"
+   },
+   {
+    "facility": "Novo Nordisk Investigational Site",
+    "city": "North Dartmouth",
+    "status": null,
+    "lat": 41.63899,
+    "lon": -70.97032,
+    "xy": [
+     704.8,
+     471.8
+    ],
+    "area_id": "bristol"
+   }
+  ],
+  "NCT01131676": [
+   {
+    "facility": "1245.25.10064 Boehringer Ingelheim Investigational Site",
+    "city": "Springfield",
+    "status": null,
+    "lat": 42.10148,
+    "lon": -72.58981,
+    "xy": [
+     261.4,
+     300.6
+    ],
+    "area_id": "hampden"
+   },
+   {
+    "facility": "1245.25.10051 Boehringer Ingelheim Investigational Site",
+    "city": "Watertown",
+    "status": null,
+    "lat": 42.37093,
+    "lon": -71.18283,
+    "xy": [
+     646.6,
+     200.9
+    ],
+    "area_id": "middlesex"
+   }
+  ]
+ },
+ "recruiting_sites": {
+  "as_of": "2026-10-24",
+  "query": "query.cond=type 2 diabetes&query.locn=Massachusetts&filter.overallStatus=RECRUITING",
+  "trials": 40,
+  "sites": [
+   {
+    "nct_id": "NCT07589608",
+    "title": "A Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight",
+    "facility": "Knownwell",
+    "city": "Needham",
+    "status": "RECRUITING",
+    "lat": 42.28343,
+    "lon": -71.23283,
+    "xy": [
+     632.9,
+     233.2
+    ],
+    "area_id": "norfolk"
+   },
+   {
+    "nct_id": "NCT07589608",
+    "title": "A Study to Investigate Weight Management With Macupatide and Eloralintide, Alone or in Combination, in Adult Participants With Obesity or Overweight",
+    "facility": "Lucida Clinical Trials",
+    "city": "New Bedford",
+    "status": "RECRUITING",
+    "lat": 41.63526,
+    "lon": -70.92701,
+    "xy": [
+     716.6,
+     473.2
+    ],
+    "area_id": "bristol"
+   },
+   {
+    "nct_id": "NCT06138821",
+    "title": "Effect of Endoscopic Sleeve Gastroplasty in Patients With Obesity and MASH: A Randomized Controlled Trial",
+    "facility": "Brigham and Women's Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07415954",
+    "title": "A Research Study Comparing How Well Different Doses of the Medicine NNC0662-0419 Lower Blood Sugar in People With Type 2 Diabetes",
+    "facility": "Brigham & Women's Hospital",
+    "city": "Boston",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT05799222",
+    "title": "Medically Intensive Nutrition Therapy Program for Obesity and Diabetes in a Low-income Population",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT06408961",
+    "title": "EVOC - EVs in Obesity and Cardiometabolic Disease",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07784270",
+    "title": "A Study to Evaluate Effect of AZD6234 in Adult Participants With Type 2 Diabetes Mellitus and Obesity or Overweight",
+    "facility": "Research Site",
+    "city": "North Dartmouth",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 41.63899,
+    "lon": -70.97032,
+    "xy": [
+     704.8,
+     471.8
+    ],
+    "area_id": "bristol"
+   },
+   {
+    "nct_id": "NCT04786262",
+    "title": "A Safety, Tolerability, and Efficacy Study of VX-880 and VX-017 in Participants With Type 1 Diabetes",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07351045",
+    "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight Without Type 2 Diabetes",
+    "facility": "Boston Medical Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07351045",
+    "title": "A Clinical Study to Evaluate the Effects of Enicepatide (RO7795068) in Participants With Obesity or Overweight Without Type 2 Diabetes",
+    "facility": "Knownwell",
+    "city": "Needham",
+    "status": "RECRUITING",
+    "lat": 42.28343,
+    "lon": -71.23283,
+    "xy": [
+     632.9,
+     233.2
+    ],
+    "area_id": "norfolk"
+   },
+   {
+    "nct_id": "NCT06959277",
+    "title": "Balance4Mobility: Effects of Walkasins Use in Individuals With Peripheral Neuropathy and Balance Problems",
+    "facility": "Marcus Institute for Aging Research, Hebrew SeniorLife",
+    "city": "Boston",
+    "status": "ACTIVE_NOT_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT05420051",
+    "title": "Boosting Emotional Well-being and Happiness in Outpatients Living With Diabetes",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07392190",
+    "title": "A Study of Eloralintide (LY3841136) in Participants With Persistent Obesity Who Are Treated With a Weekly Incretin",
+    "facility": "Brigham and Women's Hospital Diabetes Program",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07392190",
+    "title": "A Study of Eloralintide (LY3841136) in Participants With Persistent Obesity Who Are Treated With a Weekly Incretin",
+    "facility": "MedVadis Research Corporation",
+    "city": "Waltham",
+    "status": "RECRUITING",
+    "lat": 42.37649,
+    "lon": -71.23561,
+    "xy": [
+     632.1,
+     198.8
+    ],
+    "area_id": "middlesex"
+   },
+   {
+    "nct_id": "NCT06451757",
+    "title": "KHENERFIN Study: A Trial to Evaluate the Efficacy and Safety of Sonlicromanol in Primary Mitochondrial Diseases",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT06525259",
+    "title": "DISCOVERY of Risk Factors for Type 2 Diabetes in Youth",
+    "facility": "Boston Children's/Joslin Diabetes Center/Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT06112418",
+    "title": "A Randomized Comparison of Stage-Based Care Versus Risk Factor-Based Care for Prevention of Cardiovascular Events",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT06112418",
+    "title": "A Randomized Comparison of Stage-Based Care Versus Risk Factor-Based Care for Prevention of Cardiovascular Events",
+    "facility": "Brigham and Women's Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07296484",
+    "title": "Trial Against INtractable Type 2 Diabetes (CAPTAIN-T2D)",
+    "facility": "Elixia SISU BHR - Springfield",
+    "city": "Springfield",
+    "status": "RECRUITING",
+    "lat": 42.10148,
+    "lon": -72.58981,
+    "xy": [
+     261.4,
+     300.6
+    ],
+    "area_id": "hampden"
+   },
+   {
+    "nct_id": "NCT07271043",
+    "title": "Nutrition+: Effect of a High-Protein Diabetes Formula on Body Composition in Type 2 Diabetes Patients Treated With Incretin Mimetics",
+    "facility": "Joslin Diabetes Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07662135",
+    "title": "A Phase III Study to Investigate the Efficacy and Safety of Elecoglipron Compared With Placebo in Adults With Type 2 Diabetes Mellitus and Impaired Renal Function on Background Dapagliflozin",
+    "facility": "Research Site",
+    "city": "Braintree",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.20384,
+    "lon": -71.00215,
+    "xy": [
+     696.0,
+     262.7
+    ],
+    "area_id": "norfolk"
+   },
+   {
+    "nct_id": "NCT07662135",
+    "title": "A Phase III Study to Investigate the Efficacy and Safety of Elecoglipron Compared With Placebo in Adults With Type 2 Diabetes Mellitus and Impaired Renal Function on Background Dapagliflozin",
+    "facility": "Research Site",
+    "city": "New Bedford",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 41.63526,
+    "lon": -70.92701,
+    "xy": [
+     716.6,
+     473.2
+    ],
+    "area_id": "bristol"
+   },
+   {
+    "nct_id": "NCT07662135",
+    "title": "A Phase III Study to Investigate the Efficacy and Safety of Elecoglipron Compared With Placebo in Adults With Type 2 Diabetes Mellitus and Impaired Renal Function on Background Dapagliflozin",
+    "facility": "Research Site",
+    "city": "Worcester",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.26259,
+    "lon": -71.80229,
+    "xy": [
+     477.0,
+     241.0
+    ],
+    "area_id": "worcester"
+   },
+   {
+    "nct_id": "NCT07282600",
+    "title": "A Study of Eloralintide (LY3841136) in Participants With Obesity or Overweight, and Type 2 Diabetes",
+    "facility": "Lucida Clinical Trials",
+    "city": "New Bedford",
+    "status": "RECRUITING",
+    "lat": 41.63526,
+    "lon": -70.92701,
+    "xy": [
+     716.6,
+     473.2
+    ],
+    "area_id": "bristol"
+   },
+   {
+    "nct_id": "NCT07662109",
+    "title": "A Phase III Study to Investigate the Efficacy and Safety of the Combination of Elecoglipron and Dapagliflozin in Adults With Type 2 Diabetes Mellitus",
+    "facility": "Research Site",
+    "city": "Boston",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07662109",
+    "title": "A Phase III Study to Investigate the Efficacy and Safety of the Combination of Elecoglipron and Dapagliflozin in Adults With Type 2 Diabetes Mellitus",
+    "facility": "Research Site",
+    "city": "Boston",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07321886",
+    "title": "A Study of Eloralintide (LY3841136) in Participants With Obesity, or Overweight Without Type 2 Diabetes",
+    "facility": "Care Access - Quincy",
+    "city": "Quincy",
+    "status": "RECRUITING",
+    "lat": 42.25288,
+    "lon": -71.00227,
+    "xy": [
+     696.0,
+     244.6
+    ],
+    "area_id": "norfolk"
+   },
+   {
+    "nct_id": "NCT07654374",
+    "title": "A Study of Aleniglipron in Adults With Obesity or Overweight and Type 2 Diabetes Mellitus (ACCOMPLISH-2)",
+    "facility": "ACCOMPLISH-2 Research Site",
+    "city": "Methuen",
+    "status": "RECRUITING",
+    "lat": 42.7262,
+    "lon": -71.19089,
+    "xy": [
+     644.4,
+     69.4
+    ],
+    "area_id": "essex"
+   },
+   {
+    "nct_id": "NCT07783802",
+    "title": "A Study of Clazakizumab (LY5724886) in Adults With Elevated hsCRP and at Increased Risk for Cardiovascular Event",
+    "facility": "K2 Medical Research - Foxborough",
+    "city": "Foxborough",
+    "status": "RECRUITING",
+    "lat": 42.06538,
+    "lon": -71.24783,
+    "xy": [
+     628.8,
+     314.0
+    ],
+    "area_id": "norfolk"
+   },
+   {
+    "nct_id": "NCT04101669",
+    "title": "The RESET System Pivotal Clinical Trial (Protocol Revision K)",
+    "facility": "Brigham and Women's Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT05390892",
+    "title": "PREvention of CardIovascular and DiabEtic kidNey Disease in Type 2 Diabetes",
+    "facility": "Brigham and Women's Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT05390892",
+    "title": "PREvention of CardIovascular and DiabEtic kidNey Disease in Type 2 Diabetes",
+    "facility": "UMass Chan Medical School",
+    "city": "Worcester",
+    "status": "RECRUITING",
+    "lat": 42.26259,
+    "lon": -71.80229,
+    "xy": [
+     477.0,
+     241.0
+    ],
+    "area_id": "worcester"
+   },
+   {
+    "nct_id": "NCT06869057",
+    "title": "Re-Engineered Discharge for Diabetes Care Transitions",
+    "facility": "UMASS Memorial Healthcare System",
+    "city": "Worcester",
+    "status": "RECRUITING",
+    "lat": 42.26259,
+    "lon": -71.80229,
+    "xy": [
+     477.0,
+     241.0
+    ],
+    "area_id": "worcester"
+   },
+   {
+    "nct_id": "NCT07448974",
+    "title": "Vitamin D and Type 2 Diabetes - Treat-To-Target",
+    "facility": "Tufts Medical Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07064473",
+    "title": "EASi-PROTKT\u2122 - A Study to Test Vicadrostat (BI 690517) Taken Together With Empagliflozin in People With Type 2 Diabetes, High Blood Pressure, and Cardiovascular Disease",
+    "facility": "Walgreens - Malden - Site 4966",
+    "city": "Malden",
+    "status": "COMPLETED",
+    "lat": 42.4251,
+    "lon": -71.06616,
+    "xy": [
+     678.5,
+     180.8
+    ],
+    "area_id": "middlesex"
+   },
+   {
+    "nct_id": "NCT07064473",
+    "title": "EASi-PROTKT\u2122 - A Study to Test Vicadrostat (BI 690517) Taken Together With Empagliflozin in People With Type 2 Diabetes, High Blood Pressure, and Cardiovascular Disease",
+    "facility": "ActivMed Practices & Research",
+    "city": "Methuen",
+    "status": "RECRUITING",
+    "lat": 42.7262,
+    "lon": -71.19089,
+    "xy": [
+     644.4,
+     69.4
+    ],
+    "area_id": "essex"
+   },
+   {
+    "nct_id": "NCT06843902",
+    "title": "Improving Coronary Vascular Health in Women",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07011147",
+    "title": "Primary Care Pragmatic, Real World Experience for Automated Insulin Delivery",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07043426",
+    "title": "Improving Diabetes Care With Strategies For Addressing Health-Related Social Needs and Community Partnerships",
+    "facility": "Boston Medical Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07468188",
+    "title": "Diabetes Body Project 2",
+    "facility": "Joslin Diabetes Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07797335",
+    "title": "AMBITION 7: A Research Study Investigating How Well Zenagamtide Lowers Blood Sugar and Body Weight Compared to Insulin Glargine in People With Type 2 Diabetes and Increased Risk of Diseases That Affect the Heart and Blood Vessels Treated With 1-3 Other Diabetes Medications",
+    "facility": "Brigham & Women's Hospital",
+    "city": "Boston",
+    "status": "NOT_YET_RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07579702",
+    "title": "Efficacy of the Omnipod\u00ae 6 System Compared With the Omnipod\u00ae 5 System",
+    "facility": "Joslin Diabetes Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT05759468",
+    "title": "NAD Augmentation in Diabetes Kidney Disease",
+    "facility": "Brigham and Women's Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT05846802",
+    "title": "Gastroparesis Registry 4",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT06003153",
+    "title": "GLUCOSE-MGH: Genetic Links Understood Through Challenge With Oral Semaglutide Exposure at MGH",
+    "facility": "Massachusetts General Hospital",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07521475",
+    "title": "Evaluation of the Fully Closed Loop Omnipod\u00ae System in Type 2 Diabetes",
+    "facility": "Joslin Diabetes Center",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT06251323",
+    "title": "Implementing Scalable, PAtient-centered, Team-based, Technology-enabled Care for Adults With Type 2 Diabetes (iPATH)",
+    "facility": "President and Fellows of Harvard College, T.H. Chan School",
+    "city": "Boston",
+    "status": "RECRUITING",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "xy": [
+     680.3,
+     205.5
+    ],
+    "area_id": "suffolk"
+   },
+   {
+    "nct_id": "NCT07340320",
+    "title": "A Study of CX11 Tablets in Patients With Type 2 Diabetes Mellitus",
+    "facility": "Elixia Health - Springfield - Elixia - PPDS",
+    "city": "Springfield",
+    "status": "RECRUITING",
+    "lat": 42.10148,
+    "lon": -72.58981,
+    "xy": [
+     261.4,
+     300.6
+    ],
+    "area_id": "hampden"
+   },
+   {
+    "nct_id": "NCT05317585",
+    "title": "Continuous Glucose Monitor Use in Pregnancy",
+    "facility": "University of Massachusetts Memorial Medical Center",
+    "city": "Worcester",
+    "status": "RECRUITING",
+    "lat": 42.26259,
+    "lon": -71.80229,
+    "xy": [
+     477.0,
+     241.0
+    ],
+    "area_id": "worcester"
+   }
+  ]
+ }
+}

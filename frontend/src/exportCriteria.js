@@ -1,32 +1,67 @@
 // Build a plain-text export of the modified protocol.
-// - Active criteria with each changed threshold's before -> after value.
-// - Criteria added in Dry Run are marked.
+// - Active criteria with each changed threshold's before -> after value,
+//   thresholds nested in any_of / all_of included.
+// - Criteria added in Sieve are marked.
 // - Not-evaluable criteria are listed with their reasons.
 
-function fmtVal(v) {
-  if (Array.isArray(v)) return v.join("–");
+const ORDINALS = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"];
+
+// "second branch" for top-level child index 1 of a compound rule.
+export function branchName(i) {
+  return ORDINALS[i] ? `${ORDINALS[i]} branch` : `branch ${i + 1}`;
+}
+
+// The node at a child-index path inside a rule; [] is the rule itself.
+export function childAt(rule, path) {
+  return path.reduce((n, i) => n && n.children && n.children[i], rule);
+}
+
+// Every leaf under a node, with its child-index path.
+export function leaves(node, path = [], out = []) {
+  if (node.logic) {
+    (node.children || []).forEach((c, i) => leaves(c, [...path, i], out));
+  } else {
+    out.push({ node, path });
+  }
+  return out;
+}
+
+// Lists read "mi, stroke"; a between range reads "7.0–10.0".
+function fmtVal(v, op) {
+  if (Array.isArray(v)) return v.join(op === "between" ? "–" : ", ");
   return String(v);
+}
+
+// "age >= 50 years"; a compound lists its children: "any_of(all_of(…), …)".
+function expr(node) {
+  if (node.logic) {
+    return `${node.logic}(${(node.children || []).map(expr).join(", ")})`;
+  }
+  return `${node.field} ${node.operator} ${fmtVal(node.value, node.operator)}${
+    node.unit ? " " + node.unit : ""
+  }`;
+}
+
+function amended(original, rule) {
+  return original && JSON.stringify(original.value) !== JSON.stringify(rule.value);
 }
 
 function ruleLine(rule, original) {
   const label = rule.label || rule.source_sentence || rule.id;
-  let expr;
-  if (rule.logic) {
-    expr = `${rule.logic} of ${(rule.children || []).length} conditions`;
-  } else {
-    expr = `${rule.field} ${rule.operator} ${fmtVal(rule.value)}${
-      rule.unit ? " " + rule.unit : ""
-    }`;
+  let line = `- [${rule.kind}] ${label}: ${expr(rule)}`;
+  if (rule.added) line += "  (added in Sieve)";
+  // Redline a changed threshold: struck original, new value, Sieve wording.
+  if (!rule.logic && amended(original, rule)) {
+    line += `  (amended in Sieve: ~~${fmtVal(original.value, rule.operator)}~~ ${fmtVal(rule.value, rule.operator)})`;
   }
-  let line = `- [${rule.kind}] ${label}: ${expr}`;
-  if (rule.added) line += "  (added in Dry Run)";
-  // Redline a changed threshold: struck original, new value, Dry Run wording.
-  if (
-    original &&
-    !rule.logic &&
-    JSON.stringify(original.value) !== JSON.stringify(rule.value)
-  ) {
-    line += `  (amended in Dry Run: ~~${fmtVal(original.value)}~~ ${fmtVal(rule.value)})`;
+  // A nested threshold also names its field and branch.
+  if (rule.logic && original) {
+    leaves(rule).forEach(({ node, path }) => {
+      const o = childAt(original, path);
+      if (amended(o, node)) {
+        line += `  (amended in Sieve: ${node.field} ~~${fmtVal(o.value, node.operator)}~~ ${fmtVal(node.value, node.operator)}, ${branchName(path[0])})`;
+      }
+    });
   }
   return line;
 }
@@ -39,7 +74,7 @@ export function buildExportText({
   analysis,
 }) {
   const lines = [];
-  lines.push(`Dry Run — modified eligibility criteria`);
+  lines.push(`Sieve — modified eligibility criteria`);
   if (trialTitle) lines.push(trialTitle);
   lines.push(`Generated ${new Date().toISOString()}`);
   lines.push("");

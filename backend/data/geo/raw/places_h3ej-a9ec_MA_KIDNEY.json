@@ -1,0 +1,758 @@
+[
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "807074",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8649085,
+    42.6427082
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "862029",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.940282,
+    42.3116934
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.8",
+  "totalpopulation": "533003",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.7419417,
+    41.9871959
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.4",
+  "low_confidence_limit": "3.0",
+  "high_confidence_limit": "3.7",
+  "totalpopulation": "462718",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6356476,
+    42.1361975
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "1614742",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3949161,
+    42.4817182
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "3.0",
+  "totalpopulation": "724505",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1811102,
+    42.1717377
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.1",
+  "low_confidence_limit": "2.8",
+  "high_confidence_limit": "3.5",
+  "totalpopulation": "580164",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.088894,
+    41.7485884
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.0",
+  "low_confidence_limit": "2.7",
+  "high_confidence_limit": "3.4",
+  "totalpopulation": "533003",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.7419417,
+    41.9871959
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "128657",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2179276,
+    42.371493
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "3.0",
+  "totalpopulation": "161572",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6636936,
+    42.3394593
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.5",
+  "low_confidence_limit": "3.1",
+  "high_confidence_limit": "3.9",
+  "totalpopulation": "128657",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2179276,
+    42.371493
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.4",
+  "low_confidence_limit": "3.0",
+  "high_confidence_limit": "3.7",
+  "totalpopulation": "21097",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.7014995,
+    41.3809696
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.1",
+  "low_confidence_limit": "2.8",
+  "high_confidence_limit": "3.4",
+  "totalpopulation": "807074",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8649085,
+    42.6427082
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.9",
+  "low_confidence_limit": "2.7",
+  "high_confidence_limit": "3.2",
+  "totalpopulation": "462718",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6356476,
+    42.1361975
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.4",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.7",
+  "totalpopulation": "1614742",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3949161,
+    42.4817182
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.9",
+  "low_confidence_limit": "2.7",
+  "high_confidence_limit": "3.2",
+  "totalpopulation": "771245",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.018253,
+    42.3385513
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.4",
+  "low_confidence_limit": "2.1",
+  "high_confidence_limit": "2.6",
+  "totalpopulation": "724505",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1811102,
+    42.1717377
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "3.0",
+  "totalpopulation": "580164",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.088894,
+    41.7485884
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "161572",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6636936,
+    42.3394593
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.9",
+  "low_confidence_limit": "2.6",
+  "high_confidence_limit": "3.2",
+  "totalpopulation": "862029",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.940282,
+    42.3116934
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.7",
+  "totalpopulation": "232411",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.1648227,
+    41.7061233
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "2.8",
+  "totalpopulation": "71015",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917921,
+    42.5845038
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.7",
+  "totalpopulation": "14491",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.1021635,
+    41.2933918
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.7",
+  "low_confidence_limit": "3.3",
+  "high_confidence_limit": "4.1",
+  "totalpopulation": "232411",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.1648227,
+    41.7061233
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "3.0",
+  "totalpopulation": "14491",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.1021635,
+    41.2933918
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.3",
+  "low_confidence_limit": "3.0",
+  "high_confidence_limit": "3.7",
+  "totalpopulation": "71015",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917921,
+    42.5845038
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.5",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "771245",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.018253,
+    42.3385513
+   ]
+  }
+ },
+ {
+  "year": "2021",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Chronic kidney disease among adults aged >=18 years",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.7",
+  "totalpopulation": "21097",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "KIDNEY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Chronic Kidney Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.7014995,
+    41.3809696
+   ]
+  }
+ }
+]

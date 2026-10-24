@@ -3,6 +3,7 @@ import Odometer from "./Odometer";
 import PatientField from "./PatientField";
 import ConsortFlow from "./ConsortFlow";
 import CostTable from "./CostTable";
+import MapView, { MapCaption } from "./MapView";
 import { fmtInt, fmtMoney, fmtMonths, fmtDelta } from "./format";
 
 // The sticky result column: result sentence, three numbers, the patient field,
@@ -18,6 +19,16 @@ export default function ResultColumn({
   dragging,
   hotIndex,
   onHover,
+  geo, // null until /api/geo answers
+  showMap,
+  areas,
+  baselineAreas,
+  nctId,
+  fieldView,
+  onFieldViewChange,
+  selectedRuleId,
+  onSelect,
+  onClearSelection,
 }) {
   if (!analysis) return null;
 
@@ -67,6 +78,12 @@ export default function ResultColumn({
     `Patient field: ${fmtInt(confirmed)} eligible, ` +
     `${fmtInt(possibly - confirmed)} possibly eligible with missing data, ` +
     `${fmtInt(total - possibly)} excluded, of ${fmtInt(total)} synthetic patients.`;
+
+  const labelOf = (id) => rulesById[id]?.label || rulesById[id]?.source_sentence || id;
+  const activeRuleLabels = (analysis.active_rule_ids || []).map(labelOf);
+  const selected = selectedRuleId
+    ? { ruleId: selectedRuleId, gloss: labelOf(selectedRuleId) }
+    : null;
 
   const monthsDeltaStr = fmtDelta(monthsDelta, { months: true });
   const costDeltaStr = fmtDelta(costDelta, { money: true });
@@ -123,6 +140,24 @@ export default function ResultColumn({
         codes={analysis.patient_codes}
         highlightCode={hotIndex}
         ariaLabel={ariaLabel}
+        view={showMap ? fieldView : "age"}
+        onViewChange={onFieldViewChange}
+        mapSlot={
+          showMap ? (
+            <MapView
+              geo={geo}
+              areas={areas}
+              baselineAreas={baselineAreas}
+              selected={selected}
+              onClearSelection={onClearSelection}
+              nctId={nctId}
+            />
+          ) : null
+        }
+        mapCaption={showMap ? <MapCaption geo={geo} /> : null}
+        geoPatients={geo?.patients || null}
+        areaLabels={geo?.areas ? geo.areas.map((a) => a.label) : null}
+        activeRuleLabels={activeRuleLabels}
       />
 
       <h2 className="section-heading">How the cohort narrows</h2>
@@ -138,6 +173,8 @@ export default function ResultColumn({
         dragging={dragging}
         onHover={onHover}
         hotIndex={hotIndex}
+        selectedRuleId={selectedRuleId}
+        onSelect={onSelect}
       />
     </div>
   );

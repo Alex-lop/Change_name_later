@@ -1,0 +1,372 @@
+FILEID|STUSAB|SUMLEVEL|COMPONENT|US|REGION|DIVISION|STATE|COUNTY|COUSUB|PLACE|TRACT|BLKGRP|CONCIT|AIANHH|AIANHHFP|AIHHTLI|AITS|AITSFP|ANRC|CBSA|CSA|METDIV|MACC|MEMI|NECTA|CNECTA|NECTADIV|UA|CDCURR|SLDU|SLDL|ZCTA5|SUBMCD|SDELM|SDSEC|SDUNI|UR|PCI|PUMA5|GEO_ID|NAME|BTTR|BTBG|TL_GEO_ID
+ACSSF|MA|050|00||||25|001||||||||||||||||||||||||||||||||0500000US25001|Barnstable County, Massachusetts|||25001
+ACSSF|MA|050|00||||25|003||||||||||||||||||||||||||||||||0500000US25003|Berkshire County, Massachusetts|||25003
+ACSSF|MA|050|00||||25|005||||||||||||||||||||||||||||||||0500000US25005|Bristol County, Massachusetts|||25005
+ACSSF|MA|050|00||||25|007||||||||||||||||||||||||||||||||0500000US25007|Dukes County, Massachusetts|||25007
+ACSSF|MA|050|00||||25|009||||||||||||||||||||||||||||||||0500000US25009|Essex County, Massachusetts|||25009
+ACSSF|MA|050|00||||25|011||||||||||||||||||||||||||||||||0500000US25011|Franklin County, Massachusetts|||25011
+ACSSF|MA|050|00||||25|013||||||||||||||||||||||||||||||||0500000US25013|Hampden County, Massachusetts|||25013
+ACSSF|MA|050|00||||25|015||||||||||||||||||||||||||||||||0500000US25015|Hampshire County, Massachusetts|||25015
+ACSSF|MA|050|00||||25|017||||||||||||||||||||||||||||||||0500000US25017|Middlesex County, Massachusetts|||25017
+ACSSF|MA|050|00||||25|019||||||||||||||||||||||||||||||||0500000US25019|Nantucket County, Massachusetts|||25019
+ACSSF|MA|050|00||||25|021||||||||||||||||||||||||||||||||0500000US25021|Norfolk County, Massachusetts|||25021
+ACSSF|MA|050|00||||25|023||||||||||||||||||||||||||||||||0500000US25023|Plymouth County, Massachusetts|||25023
+ACSSF|MA|050|00||||25|025||||||||||||||||||||||||||||||||0500000US25025|Suffolk County, Massachusetts|||25025
+ACSSF|MA|050|00||||25|027||||||||||||||||||||||||||||||||0500000US25027|Worcester County, Massachusetts|||25027
+ACSSF|MA|060|00||||25|001|00000|||||||||||||||||||||||||||||||0600000US2500100000|County subdivisions not defined, Barnstable County, Massachusetts|||2500100000
+ACSSF|MA|060|00||||25|001|03690|||||||||||||||||||||||||||||||0600000US2500103690|Barnstable Town city, Barnstable County, Massachusetts|||2500103690
+ACSSF|MA|060|00||||25|001|07175|||||||||||||||||||||||||||||||0600000US2500107175|Bourne town, Barnstable County, Massachusetts|||2500107175
+ACSSF|MA|060|00||||25|001|07980|||||||||||||||||||||||||||||||0600000US2500107980|Brewster town, Barnstable County, Massachusetts|||2500107980
+ACSSF|MA|060|00||||25|001|12995|||||||||||||||||||||||||||||||0600000US2500112995|Chatham town, Barnstable County, Massachusetts|||2500112995
+ACSSF|MA|060|00||||25|001|16775|||||||||||||||||||||||||||||||0600000US2500116775|Dennis town, Barnstable County, Massachusetts|||2500116775
+ACSSF|MA|060|00||||25|001|19295|||||||||||||||||||||||||||||||0600000US2500119295|Eastham town, Barnstable County, Massachusetts|||2500119295
+ACSSF|MA|060|00||||25|001|23105|||||||||||||||||||||||||||||||0600000US2500123105|Falmouth town, Barnstable County, Massachusetts|||2500123105
+ACSSF|MA|060|00||||25|001|29020|||||||||||||||||||||||||||||||0600000US2500129020|Harwich town, Barnstable County, Massachusetts|||2500129020
+ACSSF|MA|060|00||||25|001|39100|||||||||||||||||||||||||||||||0600000US2500139100|Mashpee town, Barnstable County, Massachusetts|||2500139100
+ACSSF|MA|060|00||||25|001|51440|||||||||||||||||||||||||||||||0600000US2500151440|Orleans town, Barnstable County, Massachusetts|||2500151440
+ACSSF|MA|060|00||||25|001|55500|||||||||||||||||||||||||||||||0600000US2500155500|Provincetown town, Barnstable County, Massachusetts|||2500155500
+ACSSF|MA|060|00||||25|001|59735|||||||||||||||||||||||||||||||0600000US2500159735|Sandwich town, Barnstable County, Massachusetts|||2500159735
+ACSSF|MA|060|00||||25|001|70605|||||||||||||||||||||||||||||||0600000US2500170605|Truro town, Barnstable County, Massachusetts|||2500170605
+ACSSF|MA|060|00||||25|001|74385|||||||||||||||||||||||||||||||0600000US2500174385|Wellfleet town, Barnstable County, Massachusetts|||2500174385
+ACSSF|MA|060|00||||25|001|82525|||||||||||||||||||||||||||||||0600000US2500182525|Yarmouth town, Barnstable County, Massachusetts|||2500182525
+ACSSF|MA|060|00||||25|003|00555|||||||||||||||||||||||||||||||0600000US2500300555|Adams town, Berkshire County, Massachusetts|||2500300555
+ACSSF|MA|060|00||||25|003|00975|||||||||||||||||||||||||||||||0600000US2500300975|Alford town, Berkshire County, Massachusetts|||2500300975
+ACSSF|MA|060|00||||25|003|04545|||||||||||||||||||||||||||||||0600000US2500304545|Becket town, Berkshire County, Massachusetts|||2500304545
+ACSSF|MA|060|00||||25|003|13345|||||||||||||||||||||||||||||||0600000US2500313345|Cheshire town, Berkshire County, Massachusetts|||2500313345
+ACSSF|MA|060|00||||25|003|14010|||||||||||||||||||||||||||||||0600000US2500314010|Clarksburg town, Berkshire County, Massachusetts|||2500314010
+ACSSF|MA|060|00||||25|003|16180|||||||||||||||||||||||||||||||0600000US2500316180|Dalton town, Berkshire County, Massachusetts|||2500316180
+ACSSF|MA|060|00||||25|003|21360|||||||||||||||||||||||||||||||0600000US2500321360|Egremont town, Berkshire County, Massachusetts|||2500321360
+ACSSF|MA|060|00||||25|003|24120|||||||||||||||||||||||||||||||0600000US2500324120|Florida town, Berkshire County, Massachusetts|||2500324120
+ACSSF|MA|060|00||||25|003|26815|||||||||||||||||||||||||||||||0600000US2500326815|Great Barrington town, Berkshire County, Massachusetts|||2500326815
+ACSSF|MA|060|00||||25|003|28180|||||||||||||||||||||||||||||||0600000US2500328180|Hancock town, Berkshire County, Massachusetts|||2500328180
+ACSSF|MA|060|00||||25|003|30315|||||||||||||||||||||||||||||||0600000US2500330315|Hinsdale town, Berkshire County, Massachusetts|||2500330315
+ACSSF|MA|060|00||||25|003|34340|||||||||||||||||||||||||||||||0600000US2500334340|Lanesborough town, Berkshire County, Massachusetts|||2500334340
+ACSSF|MA|060|00||||25|003|34655|||||||||||||||||||||||||||||||0600000US2500334655|Lee town, Berkshire County, Massachusetts|||2500334655
+ACSSF|MA|060|00||||25|003|34970|||||||||||||||||||||||||||||||0600000US2500334970|Lenox town, Berkshire County, Massachusetts|||2500334970
+ACSSF|MA|060|00||||25|003|42460|||||||||||||||||||||||||||||||0600000US2500342460|Monterey town, Berkshire County, Massachusetts|||2500342460
+ACSSF|MA|060|00||||25|003|43300|||||||||||||||||||||||||||||||0600000US2500343300|Mount Washington town, Berkshire County, Massachusetts|||2500343300
+ACSSF|MA|060|00||||25|003|44385|||||||||||||||||||||||||||||||0600000US2500344385|New Ashford town, Berkshire County, Massachusetts|||2500344385
+ACSSF|MA|060|00||||25|003|45420|||||||||||||||||||||||||||||||0600000US2500345420|New Marlborough town, Berkshire County, Massachusetts|||2500345420
+ACSSF|MA|060|00||||25|003|46225|||||||||||||||||||||||||||||||0600000US2500346225|North Adams city, Berkshire County, Massachusetts|||2500346225
+ACSSF|MA|060|00||||25|003|51580|||||||||||||||||||||||||||||||0600000US2500351580|Otis town, Berkshire County, Massachusetts|||2500351580
+ACSSF|MA|060|00||||25|003|53050|||||||||||||||||||||||||||||||0600000US2500353050|Peru town, Berkshire County, Massachusetts|||2500353050
+ACSSF|MA|060|00||||25|003|53960|||||||||||||||||||||||||||||||0600000US2500353960|Pittsfield city, Berkshire County, Massachusetts|||2500353960
+ACSSF|MA|060|00||||25|003|56795|||||||||||||||||||||||||||||||0600000US2500356795|Richmond town, Berkshire County, Massachusetts|||2500356795
+ACSSF|MA|060|00||||25|003|59665|||||||||||||||||||||||||||||||0600000US2500359665|Sandisfield town, Berkshire County, Massachusetts|||2500359665
+ACSSF|MA|060|00||||25|003|60225|||||||||||||||||||||||||||||||0600000US2500360225|Savoy town, Berkshire County, Massachusetts|||2500360225
+ACSSF|MA|060|00||||25|003|61065|||||||||||||||||||||||||||||||0600000US2500361065|Sheffield town, Berkshire County, Massachusetts|||2500361065
+ACSSF|MA|060|00||||25|003|67595|||||||||||||||||||||||||||||||0600000US2500367595|Stockbridge town, Berkshire County, Massachusetts|||2500367595
+ACSSF|MA|060|00||||25|003|71095|||||||||||||||||||||||||||||||0600000US2500371095|Tyringham town, Berkshire County, Massachusetts|||2500371095
+ACSSF|MA|060|00||||25|003|73335|||||||||||||||||||||||||||||||0600000US2500373335|Washington town, Berkshire County, Massachusetts|||2500373335
+ACSSF|MA|060|00||||25|003|77990|||||||||||||||||||||||||||||||0600000US2500377990|West Stockbridge town, Berkshire County, Massachusetts|||2500377990
+ACSSF|MA|060|00||||25|003|79985|||||||||||||||||||||||||||||||0600000US2500379985|Williamstown town, Berkshire County, Massachusetts|||2500379985
+ACSSF|MA|060|00||||25|003|80685|||||||||||||||||||||||||||||||0600000US2500380685|Windsor town, Berkshire County, Massachusetts|||2500380685
+ACSSF|MA|060|00||||25|005|00000|||||||||||||||||||||||||||||||0600000US2500500000|County subdivisions not defined, Bristol County, Massachusetts|||2500500000
+ACSSF|MA|060|00||||25|005|00520|||||||||||||||||||||||||||||||0600000US2500500520|Acushnet town, Bristol County, Massachusetts|||2500500520
+ACSSF|MA|060|00||||25|005|02690|||||||||||||||||||||||||||||||0600000US2500502690|Attleboro city, Bristol County, Massachusetts|||2500502690
+ACSSF|MA|060|00||||25|005|05280|||||||||||||||||||||||||||||||0600000US2500505280|Berkley town, Bristol County, Massachusetts|||2500505280
+ACSSF|MA|060|00||||25|005|16425|||||||||||||||||||||||||||||||0600000US2500516425|Dartmouth town, Bristol County, Massachusetts|||2500516425
+ACSSF|MA|060|00||||25|005|16950|||||||||||||||||||||||||||||||0600000US2500516950|Dighton town, Bristol County, Massachusetts|||2500516950
+ACSSF|MA|060|00||||25|005|20100|||||||||||||||||||||||||||||||0600000US2500520100|Easton town, Bristol County, Massachusetts|||2500520100
+ACSSF|MA|060|00||||25|005|22130|||||||||||||||||||||||||||||||0600000US2500522130|Fairhaven town, Bristol County, Massachusetts|||2500522130
+ACSSF|MA|060|00||||25|005|23000|||||||||||||||||||||||||||||||0600000US2500523000|Fall River city, Bristol County, Massachusetts|||2500523000
+ACSSF|MA|060|00||||25|005|25240|||||||||||||||||||||||||||||||0600000US2500525240|Freetown town, Bristol County, Massachusetts|||2500525240
+ACSSF|MA|060|00||||25|005|38225|||||||||||||||||||||||||||||||0600000US2500538225|Mansfield town, Bristol County, Massachusetts|||2500538225
+ACSSF|MA|060|00||||25|005|45000|||||||||||||||||||||||||||||||0600000US2500545000|New Bedford city, Bristol County, Massachusetts|||2500545000
+ACSSF|MA|060|00||||25|005|46598|||||||||||||||||||||||||||||||0600000US2500546598|North Attleborough Town city, Bristol County, Massachusetts|||2500546598
+ACSSF|MA|060|00||||25|005|49970|||||||||||||||||||||||||||||||0600000US2500549970|Norton town, Bristol County, Massachusetts|||2500549970
+ACSSF|MA|060|00||||25|005|56060|||||||||||||||||||||||||||||||0600000US2500556060|Raynham town, Bristol County, Massachusetts|||2500556060
+ACSSF|MA|060|00||||25|005|56375|||||||||||||||||||||||||||||||0600000US2500556375|Rehoboth town, Bristol County, Massachusetts|||2500556375
+ACSSF|MA|060|00||||25|005|60645|||||||||||||||||||||||||||||||0600000US2500560645|Seekonk town, Bristol County, Massachusetts|||2500560645
+ACSSF|MA|060|00||||25|005|62430|||||||||||||||||||||||||||||||0600000US2500562430|Somerset town, Bristol County, Massachusetts|||2500562430
+ACSSF|MA|060|00||||25|005|68750|||||||||||||||||||||||||||||||0600000US2500568750|Swansea town, Bristol County, Massachusetts|||2500568750
+ACSSF|MA|060|00||||25|005|69170|||||||||||||||||||||||||||||||0600000US2500569170|Taunton city, Bristol County, Massachusetts|||2500569170
+ACSSF|MA|060|00||||25|005|77570|||||||||||||||||||||||||||||||0600000US2500577570|Westport town, Bristol County, Massachusetts|||2500577570
+ACSSF|MA|060|00||||25|007|01585|||||||||||||||||||||||||||||||0600000US2500701585|Aquinnah town, Dukes County, Massachusetts|||2500701585
+ACSSF|MA|060|00||||25|007|13800|||||||||||||||||||||||||||||||0600000US2500713800|Chilmark town, Dukes County, Massachusetts|||2500713800
+ACSSF|MA|060|00||||25|007|21150|||||||||||||||||||||||||||||||0600000US2500721150|Edgartown town, Dukes County, Massachusetts|||2500721150
+ACSSF|MA|060|00||||25|007|26325|||||||||||||||||||||||||||||||0600000US2500726325|Gosnold town, Dukes County, Massachusetts|||2500726325
+ACSSF|MA|060|00||||25|007|50390|||||||||||||||||||||||||||||||0600000US2500750390|Oak Bluffs town, Dukes County, Massachusetts|||2500750390
+ACSSF|MA|060|00||||25|007|69940|||||||||||||||||||||||||||||||0600000US2500769940|Tisbury town, Dukes County, Massachusetts|||2500769940
+ACSSF|MA|060|00||||25|007|78235|||||||||||||||||||||||||||||||0600000US2500778235|West Tisbury town, Dukes County, Massachusetts|||2500778235
+ACSSF|MA|060|00||||25|009|00000|||||||||||||||||||||||||||||||0600000US2500900000|County subdivisions not defined, Essex County, Massachusetts|||2500900000
+ACSSF|MA|060|00||||25|009|01185|||||||||||||||||||||||||||||||0600000US2500901185|Amesbury city, Essex County, Massachusetts|||2500901185
+ACSSF|MA|060|00||||25|009|01465|||||||||||||||||||||||||||||||0600000US2500901465|Andover town, Essex County, Massachusetts|||2500901465
+ACSSF|MA|060|00||||25|009|05595|||||||||||||||||||||||||||||||0600000US2500905595|Beverly city, Essex County, Massachusetts|||2500905595
+ACSSF|MA|060|00||||25|009|07420|||||||||||||||||||||||||||||||0600000US2500907420|Boxford town, Essex County, Massachusetts|||2500907420
+ACSSF|MA|060|00||||25|009|16250|||||||||||||||||||||||||||||||0600000US2500916250|Danvers town, Essex County, Massachusetts|||2500916250
+ACSSF|MA|060|00||||25|009|21850|||||||||||||||||||||||||||||||0600000US2500921850|Essex town, Essex County, Massachusetts|||2500921850
+ACSSF|MA|060|00||||25|009|25625|||||||||||||||||||||||||||||||0600000US2500925625|Georgetown town, Essex County, Massachusetts|||2500925625
+ACSSF|MA|060|00||||25|009|26150|||||||||||||||||||||||||||||||0600000US2500926150|Gloucester city, Essex County, Massachusetts|||2500926150
+ACSSF|MA|060|00||||25|009|27620|||||||||||||||||||||||||||||||0600000US2500927620|Groveland town, Essex County, Massachusetts|||2500927620
+ACSSF|MA|060|00||||25|009|27900|||||||||||||||||||||||||||||||0600000US2500927900|Hamilton town, Essex County, Massachusetts|||2500927900
+ACSSF|MA|060|00||||25|009|29405|||||||||||||||||||||||||||||||0600000US2500929405|Haverhill city, Essex County, Massachusetts|||2500929405
+ACSSF|MA|060|00||||25|009|32310|||||||||||||||||||||||||||||||0600000US2500932310|Ipswich town, Essex County, Massachusetts|||2500932310
+ACSSF|MA|060|00||||25|009|34550|||||||||||||||||||||||||||||||0600000US2500934550|Lawrence city, Essex County, Massachusetts|||2500934550
+ACSSF|MA|060|00||||25|009|37490|||||||||||||||||||||||||||||||0600000US2500937490|Lynn city, Essex County, Massachusetts|||2500937490
+ACSSF|MA|060|00||||25|009|37560|||||||||||||||||||||||||||||||0600000US2500937560|Lynnfield town, Essex County, Massachusetts|||2500937560
+ACSSF|MA|060|00||||25|009|37995|||||||||||||||||||||||||||||||0600000US2500937995|Manchester-by-the-Sea town, Essex County, Massachusetts|||2500937995
+ACSSF|MA|060|00||||25|009|38400|||||||||||||||||||||||||||||||0600000US2500938400|Marblehead town, Essex County, Massachusetts|||2500938400
+ACSSF|MA|060|00||||25|009|40430|||||||||||||||||||||||||||||||0600000US2500940430|Merrimac town, Essex County, Massachusetts|||2500940430
+ACSSF|MA|060|00||||25|009|40675|||||||||||||||||||||||||||||||0600000US2500940675|Methuen city, Essex County, Massachusetts|||2500940675
+ACSSF|MA|060|00||||25|009|41095|||||||||||||||||||||||||||||||0600000US2500941095|Middleton town, Essex County, Massachusetts|||2500941095
+ACSSF|MA|060|00||||25|009|43580|||||||||||||||||||||||||||||||0600000US2500943580|Nahant town, Essex County, Massachusetts|||2500943580
+ACSSF|MA|060|00||||25|009|45175|||||||||||||||||||||||||||||||0600000US2500945175|Newbury town, Essex County, Massachusetts|||2500945175
+ACSSF|MA|060|00||||25|009|45245|||||||||||||||||||||||||||||||0600000US2500945245|Newburyport city, Essex County, Massachusetts|||2500945245
+ACSSF|MA|060|00||||25|009|46365|||||||||||||||||||||||||||||||0600000US2500946365|North Andover town, Essex County, Massachusetts|||2500946365
+ACSSF|MA|060|00||||25|009|52490|||||||||||||||||||||||||||||||0600000US2500952490|Peabody city, Essex County, Massachusetts|||2500952490
+ACSSF|MA|060|00||||25|009|57880|||||||||||||||||||||||||||||||0600000US2500957880|Rockport town, Essex County, Massachusetts|||2500957880
+ACSSF|MA|060|00||||25|009|58405|||||||||||||||||||||||||||||||0600000US2500958405|Rowley town, Essex County, Massachusetts|||2500958405
+ACSSF|MA|060|00||||25|009|59105|||||||||||||||||||||||||||||||0600000US2500959105|Salem city, Essex County, Massachusetts|||2500959105
+ACSSF|MA|060|00||||25|009|59245|||||||||||||||||||||||||||||||0600000US2500959245|Salisbury town, Essex County, Massachusetts|||2500959245
+ACSSF|MA|060|00||||25|009|60015|||||||||||||||||||||||||||||||0600000US2500960015|Saugus town, Essex County, Massachusetts|||2500960015
+ACSSF|MA|060|00||||25|009|68645|||||||||||||||||||||||||||||||0600000US2500968645|Swampscott town, Essex County, Massachusetts|||2500968645
+ACSSF|MA|060|00||||25|009|70150|||||||||||||||||||||||||||||||0600000US2500970150|Topsfield town, Essex County, Massachusetts|||2500970150
+ACSSF|MA|060|00||||25|009|74595|||||||||||||||||||||||||||||||0600000US2500974595|Wenham town, Essex County, Massachusetts|||2500974595
+ACSSF|MA|060|00||||25|009|77150|||||||||||||||||||||||||||||||0600000US2500977150|West Newbury town, Essex County, Massachusetts|||2500977150
+ACSSF|MA|060|00||||25|011|02095|||||||||||||||||||||||||||||||0600000US2501102095|Ashfield town, Franklin County, Massachusetts|||2501102095
+ACSSF|MA|060|00||||25|011|05560|||||||||||||||||||||||||||||||0600000US2501105560|Bernardston town, Franklin County, Massachusetts|||2501105560
+ACSSF|MA|060|00||||25|011|09595|||||||||||||||||||||||||||||||0600000US2501109595|Buckland town, Franklin County, Massachusetts|||2501109595
+ACSSF|MA|060|00||||25|011|12505|||||||||||||||||||||||||||||||0600000US2501112505|Charlemont town, Franklin County, Massachusetts|||2501112505
+ACSSF|MA|060|00||||25|011|14885|||||||||||||||||||||||||||||||0600000US2501114885|Colrain town, Franklin County, Massachusetts|||2501114885
+ACSSF|MA|060|00||||25|011|15200|||||||||||||||||||||||||||||||0600000US2501115200|Conway town, Franklin County, Massachusetts|||2501115200
+ACSSF|MA|060|00||||25|011|16670|||||||||||||||||||||||||||||||0600000US2501116670|Deerfield town, Franklin County, Massachusetts|||2501116670
+ACSSF|MA|060|00||||25|011|21780|||||||||||||||||||||||||||||||0600000US2501121780|Erving town, Franklin County, Massachusetts|||2501121780
+ACSSF|MA|060|00||||25|011|25730|||||||||||||||||||||||||||||||0600000US2501125730|Gill town, Franklin County, Massachusetts|||2501125730
+ACSSF|MA|060|00||||25|011|27060|||||||||||||||||||||||||||||||0600000US2501127060|Greenfield city, Franklin County, Massachusetts|||2501127060
+ACSSF|MA|060|00||||25|011|29475|||||||||||||||||||||||||||||||0600000US2501129475|Hawley town, Franklin County, Massachusetts|||2501129475
+ACSSF|MA|060|00||||25|011|29650|||||||||||||||||||||||||||||||0600000US2501129650|Heath town, Franklin County, Massachusetts|||2501129650
+ACSSF|MA|060|00||||25|011|35180|||||||||||||||||||||||||||||||0600000US2501135180|Leverett town, Franklin County, Massachusetts|||2501135180
+ACSSF|MA|060|00||||25|011|35285|||||||||||||||||||||||||||||||0600000US2501135285|Leyden town, Franklin County, Massachusetts|||2501135285
+ACSSF|MA|060|00||||25|011|42040|||||||||||||||||||||||||||||||0600000US2501142040|Monroe town, Franklin County, Massachusetts|||2501142040
+ACSSF|MA|060|00||||25|011|42285|||||||||||||||||||||||||||||||0600000US2501142285|Montague town, Franklin County, Massachusetts|||2501142285
+ACSSF|MA|060|00||||25|011|45490|||||||||||||||||||||||||||||||0600000US2501145490|New Salem town, Franklin County, Massachusetts|||2501145490
+ACSSF|MA|060|00||||25|011|47835|||||||||||||||||||||||||||||||0600000US2501147835|Northfield town, Franklin County, Massachusetts|||2501147835
+ACSSF|MA|060|00||||25|011|51265|||||||||||||||||||||||||||||||0600000US2501151265|Orange town, Franklin County, Massachusetts|||2501151265
+ACSSF|MA|060|00||||25|011|58335|||||||||||||||||||||||||||||||0600000US2501158335|Rowe town, Franklin County, Massachusetts|||2501158335
+ACSSF|MA|060|00||||25|011|61135|||||||||||||||||||||||||||||||0600000US2501161135|Shelburne town, Franklin County, Massachusetts|||2501161135
+ACSSF|MA|060|00||||25|011|61905|||||||||||||||||||||||||||||||0600000US2501161905|Shutesbury town, Franklin County, Massachusetts|||2501161905
+ACSSF|MA|060|00||||25|011|68400|||||||||||||||||||||||||||||||0600000US2501168400|Sunderland town, Franklin County, Massachusetts|||2501168400
+ACSSF|MA|060|00||||25|011|73265|||||||||||||||||||||||||||||||0600000US2501173265|Warwick town, Franklin County, Massachusetts|||2501173265
+ACSSF|MA|060|00||||25|011|74525|||||||||||||||||||||||||||||||0600000US2501174525|Wendell town, Franklin County, Massachusetts|||2501174525
+ACSSF|MA|060|00||||25|011|79110|||||||||||||||||||||||||||||||0600000US2501179110|Whately town, Franklin County, Massachusetts|||2501179110
+ACSSF|MA|060|00||||25|013|00840|||||||||||||||||||||||||||||||0600000US2501300840|Agawam Town city, Hampden County, Massachusetts|||2501300840
+ACSSF|MA|060|00||||25|013|06085|||||||||||||||||||||||||||||||0600000US2501306085|Blandford town, Hampden County, Massachusetts|||2501306085
+ACSSF|MA|060|00||||25|013|08470|||||||||||||||||||||||||||||||0600000US2501308470|Brimfield town, Hampden County, Massachusetts|||2501308470
+ACSSF|MA|060|00||||25|013|13485|||||||||||||||||||||||||||||||0600000US2501313485|Chester town, Hampden County, Massachusetts|||2501313485
+ACSSF|MA|060|00||||25|013|13660|||||||||||||||||||||||||||||||0600000US2501313660|Chicopee city, Hampden County, Massachusetts|||2501313660
+ACSSF|MA|060|00||||25|013|19645|||||||||||||||||||||||||||||||0600000US2501319645|East Longmeadow town, Hampden County, Massachusetts|||2501319645
+ACSSF|MA|060|00||||25|013|26675|||||||||||||||||||||||||||||||0600000US2501326675|Granville town, Hampden County, Massachusetts|||2501326675
+ACSSF|MA|060|00||||25|013|28075|||||||||||||||||||||||||||||||0600000US2501328075|Hampden town, Hampden County, Massachusetts|||2501328075
+ACSSF|MA|060|00||||25|013|30665|||||||||||||||||||||||||||||||0600000US2501330665|Holland town, Hampden County, Massachusetts|||2501330665
+ACSSF|MA|060|00||||25|013|30840|||||||||||||||||||||||||||||||0600000US2501330840|Holyoke city, Hampden County, Massachusetts|||2501330840
+ACSSF|MA|060|00||||25|013|36300|||||||||||||||||||||||||||||||0600000US2501336300|Longmeadow town, Hampden County, Massachusetts|||2501336300
+ACSSF|MA|060|00||||25|013|37175|||||||||||||||||||||||||||||||0600000US2501337175|Ludlow town, Hampden County, Massachusetts|||2501337175
+ACSSF|MA|060|00||||25|013|42145|||||||||||||||||||||||||||||||0600000US2501342145|Monson town, Hampden County, Massachusetts|||2501342145
+ACSSF|MA|060|00||||25|013|42530|||||||||||||||||||||||||||||||0600000US2501342530|Montgomery town, Hampden County, Massachusetts|||2501342530
+ACSSF|MA|060|00||||25|013|52144|||||||||||||||||||||||||||||||0600000US2501352144|Palmer Town city, Hampden County, Massachusetts|||2501352144
+ACSSF|MA|060|00||||25|013|58650|||||||||||||||||||||||||||||||0600000US2501358650|Russell town, Hampden County, Massachusetts|||2501358650
+ACSSF|MA|060|00||||25|013|65825|||||||||||||||||||||||||||||||0600000US2501365825|Southwick town, Hampden County, Massachusetts|||2501365825
+ACSSF|MA|060|00||||25|013|67000|||||||||||||||||||||||||||||||0600000US2501367000|Springfield city, Hampden County, Massachusetts|||2501367000
+ACSSF|MA|060|00||||25|013|70045|||||||||||||||||||||||||||||||0600000US2501370045|Tolland town, Hampden County, Massachusetts|||2501370045
+ACSSF|MA|060|00||||25|013|72390|||||||||||||||||||||||||||||||0600000US2501372390|Wales town, Hampden County, Massachusetts|||2501372390
+ACSSF|MA|060|00||||25|013|76030|||||||||||||||||||||||||||||||0600000US2501376030|Westfield city, Hampden County, Massachusetts|||2501376030
+ACSSF|MA|060|00||||25|013|77890|||||||||||||||||||||||||||||||0600000US2501377890|West Springfield Town city, Hampden County, Massachusetts|||2501377890
+ACSSF|MA|060|00||||25|013|79740|||||||||||||||||||||||||||||||0600000US2501379740|Wilbraham town, Hampden County, Massachusetts|||2501379740
+ACSSF|MA|060|00||||25|015|01370|||||||||||||||||||||||||||||||0600000US2501501370|Amherst Town city, Hampshire County, Massachusetts|||2501501370
+ACSSF|MA|060|00||||25|015|04825|||||||||||||||||||||||||||||||0600000US2501504825|Belchertown town, Hampshire County, Massachusetts|||2501504825
+ACSSF|MA|060|00||||25|015|13590|||||||||||||||||||||||||||||||0600000US2501513590|Chesterfield town, Hampshire County, Massachusetts|||2501513590
+ACSSF|MA|060|00||||25|015|16040|||||||||||||||||||||||||||||||0600000US2501516040|Cummington town, Hampshire County, Massachusetts|||2501516040
+ACSSF|MA|060|00||||25|015|19365|||||||||||||||||||||||||||||||0600000US2501519365|Easthampton city, Hampshire County, Massachusetts|||2501519365
+ACSSF|MA|060|00||||25|015|26290|||||||||||||||||||||||||||||||0600000US2501526290|Goshen town, Hampshire County, Massachusetts|||2501526290
+ACSSF|MA|060|00||||25|015|26535|||||||||||||||||||||||||||||||0600000US2501526535|Granby town, Hampshire County, Massachusetts|||2501526535
+ACSSF|MA|060|00||||25|015|27690|||||||||||||||||||||||||||||||0600000US2501527690|Hadley town, Hampshire County, Massachusetts|||2501527690
+ACSSF|MA|060|00||||25|015|29265|||||||||||||||||||||||||||||||0600000US2501529265|Hatfield town, Hampshire County, Massachusetts|||2501529265
+ACSSF|MA|060|00||||25|015|31785|||||||||||||||||||||||||||||||0600000US2501531785|Huntington town, Hampshire County, Massachusetts|||2501531785
+ACSSF|MA|060|00||||25|015|40990|||||||||||||||||||||||||||||||0600000US2501540990|Middlefield town, Hampshire County, Massachusetts|||2501540990
+ACSSF|MA|060|00||||25|015|46330|||||||||||||||||||||||||||||||0600000US2501546330|Northampton city, Hampshire County, Massachusetts|||2501546330
+ACSSF|MA|060|00||||25|015|52560|||||||||||||||||||||||||||||||0600000US2501552560|Pelham town, Hampshire County, Massachusetts|||2501552560
+ACSSF|MA|060|00||||25|015|54030|||||||||||||||||||||||||||||||0600000US2501554030|Plainfield town, Hampshire County, Massachusetts|||2501554030
+ACSSF|MA|060|00||||25|015|62745|||||||||||||||||||||||||||||||0600000US2501562745|Southampton town, Hampshire County, Massachusetts|||2501562745
+ACSSF|MA|060|00||||25|015|64145|||||||||||||||||||||||||||||||0600000US2501564145|South Hadley town, Hampshire County, Massachusetts|||2501564145
+ACSSF|MA|060|00||||25|015|72880|||||||||||||||||||||||||||||||0600000US2501572880|Ware town, Hampshire County, Massachusetts|||2501572880
+ACSSF|MA|060|00||||25|015|76380|||||||||||||||||||||||||||||||0600000US2501576380|Westhampton town, Hampshire County, Massachusetts|||2501576380
+ACSSF|MA|060|00||||25|015|79915|||||||||||||||||||||||||||||||0600000US2501579915|Williamsburg town, Hampshire County, Massachusetts|||2501579915
+ACSSF|MA|060|00||||25|015|82175|||||||||||||||||||||||||||||||0600000US2501582175|Worthington town, Hampshire County, Massachusetts|||2501582175
+ACSSF|MA|060|00||||25|017|00380|||||||||||||||||||||||||||||||0600000US2501700380|Acton town, Middlesex County, Massachusetts|||2501700380
+ACSSF|MA|060|00||||25|017|01605|||||||||||||||||||||||||||||||0600000US2501701605|Arlington town, Middlesex County, Massachusetts|||2501701605
+ACSSF|MA|060|00||||25|017|01955|||||||||||||||||||||||||||||||0600000US2501701955|Ashby town, Middlesex County, Massachusetts|||2501701955
+ACSSF|MA|060|00||||25|017|02130|||||||||||||||||||||||||||||||0600000US2501702130|Ashland town, Middlesex County, Massachusetts|||2501702130
+ACSSF|MA|060|00||||25|017|03005|||||||||||||||||||||||||||||||0600000US2501703005|Ayer town, Middlesex County, Massachusetts|||2501703005
+ACSSF|MA|060|00||||25|017|04615|||||||||||||||||||||||||||||||0600000US2501704615|Bedford town, Middlesex County, Massachusetts|||2501704615
+ACSSF|MA|060|00||||25|017|05070|||||||||||||||||||||||||||||||0600000US2501705070|Belmont town, Middlesex County, Massachusetts|||2501705070
+ACSSF|MA|060|00||||25|017|05805|||||||||||||||||||||||||||||||0600000US2501705805|Billerica town, Middlesex County, Massachusetts|||2501705805
+ACSSF|MA|060|00||||25|017|07350|||||||||||||||||||||||||||||||0600000US2501707350|Boxborough town, Middlesex County, Massachusetts|||2501707350
+ACSSF|MA|060|00||||25|017|09840|||||||||||||||||||||||||||||||0600000US2501709840|Burlington town, Middlesex County, Massachusetts|||2501709840
+ACSSF|MA|060|00||||25|017|11000|||||||||||||||||||||||||||||||0600000US2501711000|Cambridge city, Middlesex County, Massachusetts|||2501711000
+ACSSF|MA|060|00||||25|017|11525|||||||||||||||||||||||||||||||0600000US2501711525|Carlisle town, Middlesex County, Massachusetts|||2501711525
+ACSSF|MA|060|00||||25|017|13135|||||||||||||||||||||||||||||||0600000US2501713135|Chelmsford town, Middlesex County, Massachusetts|||2501713135
+ACSSF|MA|060|00||||25|017|15060|||||||||||||||||||||||||||||||0600000US2501715060|Concord town, Middlesex County, Massachusetts|||2501715060
+ACSSF|MA|060|00||||25|017|17475|||||||||||||||||||||||||||||||0600000US2501717475|Dracut town, Middlesex County, Massachusetts|||2501717475
+ACSSF|MA|060|00||||25|017|17825|||||||||||||||||||||||||||||||0600000US2501717825|Dunstable town, Middlesex County, Massachusetts|||2501717825
+ACSSF|MA|060|00||||25|017|21990|||||||||||||||||||||||||||||||0600000US2501721990|Everett city, Middlesex County, Massachusetts|||2501721990
+ACSSF|MA|060|00||||25|017|24960|||||||||||||||||||||||||||||||0600000US2501724960|Framingham city, Middlesex County, Massachusetts|||2501724960
+ACSSF|MA|060|00||||25|017|27480|||||||||||||||||||||||||||||||0600000US2501727480|Groton town, Middlesex County, Massachusetts|||2501727480
+ACSSF|MA|060|00||||25|017|30700|||||||||||||||||||||||||||||||0600000US2501730700|Holliston town, Middlesex County, Massachusetts|||2501730700
+ACSSF|MA|060|00||||25|017|31085|||||||||||||||||||||||||||||||0600000US2501731085|Hopkinton town, Middlesex County, Massachusetts|||2501731085
+ACSSF|MA|060|00||||25|017|31540|||||||||||||||||||||||||||||||0600000US2501731540|Hudson town, Middlesex County, Massachusetts|||2501731540
+ACSSF|MA|060|00||||25|017|35215|||||||||||||||||||||||||||||||0600000US2501735215|Lexington town, Middlesex County, Massachusetts|||2501735215
+ACSSF|MA|060|00||||25|017|35425|||||||||||||||||||||||||||||||0600000US2501735425|Lincoln town, Middlesex County, Massachusetts|||2501735425
+ACSSF|MA|060|00||||25|017|35950|||||||||||||||||||||||||||||||0600000US2501735950|Littleton town, Middlesex County, Massachusetts|||2501735950
+ACSSF|MA|060|00||||25|017|37000|||||||||||||||||||||||||||||||0600000US2501737000|Lowell city, Middlesex County, Massachusetts|||2501737000
+ACSSF|MA|060|00||||25|017|37875|||||||||||||||||||||||||||||||0600000US2501737875|Malden city, Middlesex County, Massachusetts|||2501737875
+ACSSF|MA|060|00||||25|017|38715|||||||||||||||||||||||||||||||0600000US2501738715|Marlborough city, Middlesex County, Massachusetts|||2501738715
+ACSSF|MA|060|00||||25|017|39625|||||||||||||||||||||||||||||||0600000US2501739625|Maynard town, Middlesex County, Massachusetts|||2501739625
+ACSSF|MA|060|00||||25|017|39835|||||||||||||||||||||||||||||||0600000US2501739835|Medford city, Middlesex County, Massachusetts|||2501739835
+ACSSF|MA|060|00||||25|017|40115|||||||||||||||||||||||||||||||0600000US2501740115|Melrose city, Middlesex County, Massachusetts|||2501740115
+ACSSF|MA|060|00||||25|017|43895|||||||||||||||||||||||||||||||0600000US2501743895|Natick town, Middlesex County, Massachusetts|||2501743895
+ACSSF|MA|060|00||||25|017|45560|||||||||||||||||||||||||||||||0600000US2501745560|Newton city, Middlesex County, Massachusetts|||2501745560
+ACSSF|MA|060|00||||25|017|48955|||||||||||||||||||||||||||||||0600000US2501748955|North Reading town, Middlesex County, Massachusetts|||2501748955
+ACSSF|MA|060|00||||25|017|52805|||||||||||||||||||||||||||||||0600000US2501752805|Pepperell town, Middlesex County, Massachusetts|||2501752805
+ACSSF|MA|060|00||||25|017|56130|||||||||||||||||||||||||||||||0600000US2501756130|Reading town, Middlesex County, Massachusetts|||2501756130
+ACSSF|MA|060|00||||25|017|61380|||||||||||||||||||||||||||||||0600000US2501761380|Sherborn town, Middlesex County, Massachusetts|||2501761380
+ACSSF|MA|060|00||||25|017|61590|||||||||||||||||||||||||||||||0600000US2501761590|Shirley town, Middlesex County, Massachusetts|||2501761590
+ACSSF|MA|060|00||||25|017|62535|||||||||||||||||||||||||||||||0600000US2501762535|Somerville city, Middlesex County, Massachusetts|||2501762535
+ACSSF|MA|060|00||||25|017|67665|||||||||||||||||||||||||||||||0600000US2501767665|Stoneham town, Middlesex County, Massachusetts|||2501767665
+ACSSF|MA|060|00||||25|017|68050|||||||||||||||||||||||||||||||0600000US2501768050|Stow town, Middlesex County, Massachusetts|||2501768050
+ACSSF|MA|060|00||||25|017|68260|||||||||||||||||||||||||||||||0600000US2501768260|Sudbury town, Middlesex County, Massachusetts|||2501768260
+ACSSF|MA|060|00||||25|017|69415|||||||||||||||||||||||||||||||0600000US2501769415|Tewksbury town, Middlesex County, Massachusetts|||2501769415
+ACSSF|MA|060|00||||25|017|70360|||||||||||||||||||||||||||||||0600000US2501770360|Townsend town, Middlesex County, Massachusetts|||2501770360
+ACSSF|MA|060|00||||25|017|71025|||||||||||||||||||||||||||||||0600000US2501771025|Tyngsborough town, Middlesex County, Massachusetts|||2501771025
+ACSSF|MA|060|00||||25|017|72215|||||||||||||||||||||||||||||||0600000US2501772215|Wakefield town, Middlesex County, Massachusetts|||2501772215
+ACSSF|MA|060|00||||25|017|72600|||||||||||||||||||||||||||||||0600000US2501772600|Waltham city, Middlesex County, Massachusetts|||2501772600
+ACSSF|MA|060|00||||25|017|73405|||||||||||||||||||||||||||||||0600000US2501773405|Watertown city, Middlesex County, Massachusetts|||2501773405
+ACSSF|MA|060|00||||25|017|73790|||||||||||||||||||||||||||||||0600000US2501773790|Wayland town, Middlesex County, Massachusetts|||2501773790
+ACSSF|MA|060|00||||25|017|76135|||||||||||||||||||||||||||||||0600000US2501776135|Westford town, Middlesex County, Massachusetts|||2501776135
+ACSSF|MA|060|00||||25|017|77255|||||||||||||||||||||||||||||||0600000US2501777255|Weston town, Middlesex County, Massachusetts|||2501777255
+ACSSF|MA|060|00||||25|017|80230|||||||||||||||||||||||||||||||0600000US2501780230|Wilmington town, Middlesex County, Massachusetts|||2501780230
+ACSSF|MA|060|00||||25|017|80510|||||||||||||||||||||||||||||||0600000US2501780510|Winchester town, Middlesex County, Massachusetts|||2501780510
+ACSSF|MA|060|00||||25|017|81035|||||||||||||||||||||||||||||||0600000US2501781035|Woburn city, Middlesex County, Massachusetts|||2501781035
+ACSSF|MA|060|00||||25|019|00000|||||||||||||||||||||||||||||||0600000US2501900000|County subdivisions not defined, Nantucket County, Massachusetts|||2501900000
+ACSSF|MA|060|00||||25|019|43790|||||||||||||||||||||||||||||||0600000US2501943790|Nantucket town, Nantucket County, Massachusetts|||2501943790
+ACSSF|MA|060|00||||25|021|02935|||||||||||||||||||||||||||||||0600000US2502102935|Avon town, Norfolk County, Massachusetts|||2502102935
+ACSSF|MA|060|00||||25|021|04930|||||||||||||||||||||||||||||||0600000US2502104930|Bellingham town, Norfolk County, Massachusetts|||2502104930
+ACSSF|MA|060|00||||25|021|07740|||||||||||||||||||||||||||||||0600000US2502107740|Braintree Town city, Norfolk County, Massachusetts|||2502107740
+ACSSF|MA|060|00||||25|021|09175|||||||||||||||||||||||||||||||0600000US2502109175|Brookline town, Norfolk County, Massachusetts|||2502109175
+ACSSF|MA|060|00||||25|021|11315|||||||||||||||||||||||||||||||0600000US2502111315|Canton town, Norfolk County, Massachusetts|||2502111315
+ACSSF|MA|060|00||||25|021|14640|||||||||||||||||||||||||||||||0600000US2502114640|Cohasset town, Norfolk County, Massachusetts|||2502114640
+ACSSF|MA|060|00||||25|021|16495|||||||||||||||||||||||||||||||0600000US2502116495|Dedham town, Norfolk County, Massachusetts|||2502116495
+ACSSF|MA|060|00||||25|021|17405|||||||||||||||||||||||||||||||0600000US2502117405|Dover town, Norfolk County, Massachusetts|||2502117405
+ACSSF|MA|060|00||||25|021|24820|||||||||||||||||||||||||||||||0600000US2502124820|Foxborough town, Norfolk County, Massachusetts|||2502124820
+ACSSF|MA|060|00||||25|021|25172|||||||||||||||||||||||||||||||0600000US2502125172|Franklin Town city, Norfolk County, Massachusetts|||2502125172
+ACSSF|MA|060|00||||25|021|30455|||||||||||||||||||||||||||||||0600000US2502130455|Holbrook town, Norfolk County, Massachusetts|||2502130455
+ACSSF|MA|060|00||||25|021|39765|||||||||||||||||||||||||||||||0600000US2502139765|Medfield town, Norfolk County, Massachusetts|||2502139765
+ACSSF|MA|060|00||||25|021|39975|||||||||||||||||||||||||||||||0600000US2502139975|Medway town, Norfolk County, Massachusetts|||2502139975
+ACSSF|MA|060|00||||25|021|41515|||||||||||||||||||||||||||||||0600000US2502141515|Millis town, Norfolk County, Massachusetts|||2502141515
+ACSSF|MA|060|00||||25|021|41690|||||||||||||||||||||||||||||||0600000US2502141690|Milton town, Norfolk County, Massachusetts|||2502141690
+ACSSF|MA|060|00||||25|021|44105|||||||||||||||||||||||||||||||0600000US2502144105|Needham town, Norfolk County, Massachusetts|||2502144105
+ACSSF|MA|060|00||||25|021|46050|||||||||||||||||||||||||||||||0600000US2502146050|Norfolk town, Norfolk County, Massachusetts|||2502146050
+ACSSF|MA|060|00||||25|021|50250|||||||||||||||||||||||||||||||0600000US2502150250|Norwood town, Norfolk County, Massachusetts|||2502150250
+ACSSF|MA|060|00||||25|021|54100|||||||||||||||||||||||||||||||0600000US2502154100|Plainville town, Norfolk County, Massachusetts|||2502154100
+ACSSF|MA|060|00||||25|021|55745|||||||||||||||||||||||||||||||0600000US2502155745|Quincy city, Norfolk County, Massachusetts|||2502155745
+ACSSF|MA|060|00||||25|021|56000|||||||||||||||||||||||||||||||0600000US2502156000|Randolph Town city, Norfolk County, Massachusetts|||2502156000
+ACSSF|MA|060|00||||25|021|60785|||||||||||||||||||||||||||||||0600000US2502160785|Sharon town, Norfolk County, Massachusetts|||2502160785
+ACSSF|MA|060|00||||25|021|67945|||||||||||||||||||||||||||||||0600000US2502167945|Stoughton town, Norfolk County, Massachusetts|||2502167945
+ACSSF|MA|060|00||||25|021|72495|||||||||||||||||||||||||||||||0600000US2502172495|Walpole town, Norfolk County, Massachusetts|||2502172495
+ACSSF|MA|060|00||||25|021|74175|||||||||||||||||||||||||||||||0600000US2502174175|Wellesley town, Norfolk County, Massachusetts|||2502174175
+ACSSF|MA|060|00||||25|021|78690|||||||||||||||||||||||||||||||0600000US2502178690|Westwood town, Norfolk County, Massachusetts|||2502178690
+ACSSF|MA|060|00||||25|021|78972|||||||||||||||||||||||||||||||0600000US2502178972|Weymouth Town city, Norfolk County, Massachusetts|||2502178972
+ACSSF|MA|060|00||||25|021|82315|||||||||||||||||||||||||||||||0600000US2502182315|Wrentham town, Norfolk County, Massachusetts|||2502182315
+ACSSF|MA|060|00||||25|023|00000|||||||||||||||||||||||||||||||0600000US2502300000|County subdivisions not defined, Plymouth County, Massachusetts|||2502300000
+ACSSF|MA|060|00||||25|023|00170|||||||||||||||||||||||||||||||0600000US2502300170|Abington town, Plymouth County, Massachusetts|||2502300170
+ACSSF|MA|060|00||||25|023|08130|||||||||||||||||||||||||||||||0600000US2502308130|Bridgewater Town city, Plymouth County, Massachusetts|||2502308130
+ACSSF|MA|060|00||||25|023|09000|||||||||||||||||||||||||||||||0600000US2502309000|Brockton city, Plymouth County, Massachusetts|||2502309000
+ACSSF|MA|060|00||||25|023|11665|||||||||||||||||||||||||||||||0600000US2502311665|Carver town, Plymouth County, Massachusetts|||2502311665
+ACSSF|MA|060|00||||25|023|17895|||||||||||||||||||||||||||||||0600000US2502317895|Duxbury town, Plymouth County, Massachusetts|||2502317895
+ACSSF|MA|060|00||||25|023|18455|||||||||||||||||||||||||||||||0600000US2502318455|East Bridgewater town, Plymouth County, Massachusetts|||2502318455
+ACSSF|MA|060|00||||25|023|27795|||||||||||||||||||||||||||||||0600000US2502327795|Halifax town, Plymouth County, Massachusetts|||2502327795
+ACSSF|MA|060|00||||25|023|28285|||||||||||||||||||||||||||||||0600000US2502328285|Hanover town, Plymouth County, Massachusetts|||2502328285
+ACSSF|MA|060|00||||25|023|28495|||||||||||||||||||||||||||||||0600000US2502328495|Hanson town, Plymouth County, Massachusetts|||2502328495
+ACSSF|MA|060|00||||25|023|30210|||||||||||||||||||||||||||||||0600000US2502330210|Hingham town, Plymouth County, Massachusetts|||2502330210
+ACSSF|MA|060|00||||25|023|31645|||||||||||||||||||||||||||||||0600000US2502331645|Hull town, Plymouth County, Massachusetts|||2502331645
+ACSSF|MA|060|00||||25|023|33220|||||||||||||||||||||||||||||||0600000US2502333220|Kingston town, Plymouth County, Massachusetts|||2502333220
+ACSSF|MA|060|00||||25|023|33920|||||||||||||||||||||||||||||||0600000US2502333920|Lakeville town, Plymouth County, Massachusetts|||2502333920
+ACSSF|MA|060|00||||25|023|38540|||||||||||||||||||||||||||||||0600000US2502338540|Marion town, Plymouth County, Massachusetts|||2502338540
+ACSSF|MA|060|00||||25|023|38855|||||||||||||||||||||||||||||||0600000US2502338855|Marshfield town, Plymouth County, Massachusetts|||2502338855
+ACSSF|MA|060|00||||25|023|39450|||||||||||||||||||||||||||||||0600000US2502339450|Mattapoisett town, Plymouth County, Massachusetts|||2502339450
+ACSSF|MA|060|00||||25|023|40850|||||||||||||||||||||||||||||||0600000US2502340850|Middleborough town, Plymouth County, Massachusetts|||2502340850
+ACSSF|MA|060|00||||25|023|50145|||||||||||||||||||||||||||||||0600000US2502350145|Norwell town, Plymouth County, Massachusetts|||2502350145
+ACSSF|MA|060|00||||25|023|52630|||||||||||||||||||||||||||||||0600000US2502352630|Pembroke town, Plymouth County, Massachusetts|||2502352630
+ACSSF|MA|060|00||||25|023|54310|||||||||||||||||||||||||||||||0600000US2502354310|Plymouth town, Plymouth County, Massachusetts|||2502354310
+ACSSF|MA|060|00||||25|023|54415|||||||||||||||||||||||||||||||0600000US2502354415|Plympton town, Plymouth County, Massachusetts|||2502354415
+ACSSF|MA|060|00||||25|023|57600|||||||||||||||||||||||||||||||0600000US2502357600|Rochester town, Plymouth County, Massachusetts|||2502357600
+ACSSF|MA|060|00||||25|023|57775|||||||||||||||||||||||||||||||0600000US2502357775|Rockland town, Plymouth County, Massachusetts|||2502357775
+ACSSF|MA|060|00||||25|023|60330|||||||||||||||||||||||||||||||0600000US2502360330|Scituate town, Plymouth County, Massachusetts|||2502360330
+ACSSF|MA|060|00||||25|023|72985|||||||||||||||||||||||||||||||0600000US2502372985|Wareham town, Plymouth County, Massachusetts|||2502372985
+ACSSF|MA|060|00||||25|023|75260|||||||||||||||||||||||||||||||0600000US2502375260|West Bridgewater town, Plymouth County, Massachusetts|||2502375260
+ACSSF|MA|060|00||||25|023|79530|||||||||||||||||||||||||||||||0600000US2502379530|Whitman town, Plymouth County, Massachusetts|||2502379530
+ACSSF|MA|060|00||||25|025|00000|||||||||||||||||||||||||||||||0600000US2502500000|County subdivisions not defined, Suffolk County, Massachusetts|||2502500000
+ACSSF|MA|060|00||||25|025|07000|||||||||||||||||||||||||||||||0600000US2502507000|Boston city, Suffolk County, Massachusetts|||2502507000
+ACSSF|MA|060|00||||25|025|13205|||||||||||||||||||||||||||||||0600000US2502513205|Chelsea city, Suffolk County, Massachusetts|||2502513205
+ACSSF|MA|060|00||||25|025|56585|||||||||||||||||||||||||||||||0600000US2502556585|Revere city, Suffolk County, Massachusetts|||2502556585
+ACSSF|MA|060|00||||25|025|81005|||||||||||||||||||||||||||||||0600000US2502581005|Winthrop Town city, Suffolk County, Massachusetts|||2502581005
+ACSSF|MA|060|00||||25|027|01885|||||||||||||||||||||||||||||||0600000US2502701885|Ashburnham town, Worcester County, Massachusetts|||2502701885
+ACSSF|MA|060|00||||25|027|02480|||||||||||||||||||||||||||||||0600000US2502702480|Athol town, Worcester County, Massachusetts|||2502702480
+ACSSF|MA|060|00||||25|027|02760|||||||||||||||||||||||||||||||0600000US2502702760|Auburn town, Worcester County, Massachusetts|||2502702760
+ACSSF|MA|060|00||||25|027|03740|||||||||||||||||||||||||||||||0600000US2502703740|Barre town, Worcester County, Massachusetts|||2502703740
+ACSSF|MA|060|00||||25|027|05490|||||||||||||||||||||||||||||||0600000US2502705490|Berlin town, Worcester County, Massachusetts|||2502705490
+ACSSF|MA|060|00||||25|027|06015|||||||||||||||||||||||||||||||0600000US2502706015|Blackstone town, Worcester County, Massachusetts|||2502706015
+ACSSF|MA|060|00||||25|027|06365|||||||||||||||||||||||||||||||0600000US2502706365|Bolton town, Worcester County, Massachusetts|||2502706365
+ACSSF|MA|060|00||||25|027|07525|||||||||||||||||||||||||||||||0600000US2502707525|Boylston town, Worcester County, Massachusetts|||2502707525
+ACSSF|MA|060|00||||25|027|09105|||||||||||||||||||||||||||||||0600000US2502709105|Brookfield town, Worcester County, Massachusetts|||2502709105
+ACSSF|MA|060|00||||25|027|12715|||||||||||||||||||||||||||||||0600000US2502712715|Charlton town, Worcester County, Massachusetts|||2502712715
+ACSSF|MA|060|00||||25|027|14395|||||||||||||||||||||||||||||||0600000US2502714395|Clinton town, Worcester County, Massachusetts|||2502714395
+ACSSF|MA|060|00||||25|027|17300|||||||||||||||||||||||||||||||0600000US2502717300|Douglas town, Worcester County, Massachusetts|||2502717300
+ACSSF|MA|060|00||||25|027|17685|||||||||||||||||||||||||||||||0600000US2502717685|Dudley town, Worcester County, Massachusetts|||2502717685
+ACSSF|MA|060|00||||25|027|18560|||||||||||||||||||||||||||||||0600000US2502718560|East Brookfield town, Worcester County, Massachusetts|||2502718560
+ACSSF|MA|060|00||||25|027|23875|||||||||||||||||||||||||||||||0600000US2502723875|Fitchburg city, Worcester County, Massachusetts|||2502723875
+ACSSF|MA|060|00||||25|027|25485|||||||||||||||||||||||||||||||0600000US2502725485|Gardner city, Worcester County, Massachusetts|||2502725485
+ACSSF|MA|060|00||||25|027|26430|||||||||||||||||||||||||||||||0600000US2502726430|Grafton town, Worcester County, Massachusetts|||2502726430
+ACSSF|MA|060|00||||25|027|28740|||||||||||||||||||||||||||||||0600000US2502728740|Hardwick town, Worcester County, Massachusetts|||2502728740
+ACSSF|MA|060|00||||25|027|28950|||||||||||||||||||||||||||||||0600000US2502728950|Harvard town, Worcester County, Massachusetts|||2502728950
+ACSSF|MA|060|00||||25|027|30560|||||||||||||||||||||||||||||||0600000US2502730560|Holden town, Worcester County, Massachusetts|||2502730560
+ACSSF|MA|060|00||||25|027|30945|||||||||||||||||||||||||||||||0600000US2502730945|Hopedale town, Worcester County, Massachusetts|||2502730945
+ACSSF|MA|060|00||||25|027|31435|||||||||||||||||||||||||||||||0600000US2502731435|Hubbardston town, Worcester County, Massachusetts|||2502731435
+ACSSF|MA|060|00||||25|027|34165|||||||||||||||||||||||||||||||0600000US2502734165|Lancaster town, Worcester County, Massachusetts|||2502734165
+ACSSF|MA|060|00||||25|027|34795|||||||||||||||||||||||||||||||0600000US2502734795|Leicester town, Worcester County, Massachusetts|||2502734795
+ACSSF|MA|060|00||||25|027|35075|||||||||||||||||||||||||||||||0600000US2502735075|Leominster city, Worcester County, Massachusetts|||2502735075
+ACSSF|MA|060|00||||25|027|37420|||||||||||||||||||||||||||||||0600000US2502737420|Lunenburg town, Worcester County, Massachusetts|||2502737420
+ACSSF|MA|060|00||||25|027|40255|||||||||||||||||||||||||||||||0600000US2502740255|Mendon town, Worcester County, Massachusetts|||2502740255
+ACSSF|MA|060|00||||25|027|41165|||||||||||||||||||||||||||||||0600000US2502741165|Milford town, Worcester County, Massachusetts|||2502741165
+ACSSF|MA|060|00||||25|027|41340|||||||||||||||||||||||||||||||0600000US2502741340|Millbury town, Worcester County, Massachusetts|||2502741340
+ACSSF|MA|060|00||||25|027|41585|||||||||||||||||||||||||||||||0600000US2502741585|Millville town, Worcester County, Massachusetts|||2502741585
+ACSSF|MA|060|00||||25|027|45105|||||||||||||||||||||||||||||||0600000US2502745105|New Braintree town, Worcester County, Massachusetts|||2502745105
+ACSSF|MA|060|00||||25|027|46820|||||||||||||||||||||||||||||||0600000US2502746820|Northborough town, Worcester County, Massachusetts|||2502746820
+ACSSF|MA|060|00||||25|027|46925|||||||||||||||||||||||||||||||0600000US2502746925|Northbridge town, Worcester County, Massachusetts|||2502746925
+ACSSF|MA|060|00||||25|027|47135|||||||||||||||||||||||||||||||0600000US2502747135|North Brookfield town, Worcester County, Massachusetts|||2502747135
+ACSSF|MA|060|00||||25|027|50670|||||||||||||||||||||||||||||||0600000US2502750670|Oakham town, Worcester County, Massachusetts|||2502750670
+ACSSF|MA|060|00||||25|027|51825|||||||||||||||||||||||||||||||0600000US2502751825|Oxford town, Worcester County, Massachusetts|||2502751825
+ACSSF|MA|060|00||||25|027|52420|||||||||||||||||||||||||||||||0600000US2502752420|Paxton town, Worcester County, Massachusetts|||2502752420
+ACSSF|MA|060|00||||25|027|53120|||||||||||||||||||||||||||||||0600000US2502753120|Petersham town, Worcester County, Massachusetts|||2502753120
+ACSSF|MA|060|00||||25|027|53225|||||||||||||||||||||||||||||||0600000US2502753225|Phillipston town, Worcester County, Massachusetts|||2502753225
+ACSSF|MA|060|00||||25|027|55395|||||||||||||||||||||||||||||||0600000US2502755395|Princeton town, Worcester County, Massachusetts|||2502755395
+ACSSF|MA|060|00||||25|027|58580|||||||||||||||||||||||||||||||0600000US2502758580|Royalston town, Worcester County, Massachusetts|||2502758580
+ACSSF|MA|060|00||||25|027|58825|||||||||||||||||||||||||||||||0600000US2502758825|Rutland town, Worcester County, Massachusetts|||2502758825
+ACSSF|MA|060|00||||25|027|61800|||||||||||||||||||||||||||||||0600000US2502761800|Shrewsbury town, Worcester County, Massachusetts|||2502761800
+ACSSF|MA|060|00||||25|027|63165|||||||||||||||||||||||||||||||0600000US2502763165|Southborough town, Worcester County, Massachusetts|||2502763165
+ACSSF|MA|060|00||||25|027|63345|||||||||||||||||||||||||||||||0600000US2502763345|Southbridge Town city, Worcester County, Massachusetts|||2502763345
+ACSSF|MA|060|00||||25|027|66105|||||||||||||||||||||||||||||||0600000US2502766105|Spencer town, Worcester County, Massachusetts|||2502766105
+ACSSF|MA|060|00||||25|027|67385|||||||||||||||||||||||||||||||0600000US2502767385|Sterling town, Worcester County, Massachusetts|||2502767385
+ACSSF|MA|060|00||||25|027|68155|||||||||||||||||||||||||||||||0600000US2502768155|Sturbridge town, Worcester County, Massachusetts|||2502768155
+ACSSF|MA|060|00||||25|027|68610|||||||||||||||||||||||||||||||0600000US2502768610|Sutton town, Worcester County, Massachusetts|||2502768610
+ACSSF|MA|060|00||||25|027|69275|||||||||||||||||||||||||||||||0600000US2502769275|Templeton town, Worcester County, Massachusetts|||2502769275
+ACSSF|MA|060|00||||25|027|71480|||||||||||||||||||||||||||||||0600000US2502771480|Upton town, Worcester County, Massachusetts|||2502771480
+ACSSF|MA|060|00||||25|027|71620|||||||||||||||||||||||||||||||0600000US2502771620|Uxbridge town, Worcester County, Massachusetts|||2502771620
+ACSSF|MA|060|00||||25|027|73090|||||||||||||||||||||||||||||||0600000US2502773090|Warren town, Worcester County, Massachusetts|||2502773090
+ACSSF|MA|060|00||||25|027|73895|||||||||||||||||||||||||||||||0600000US2502773895|Webster town, Worcester County, Massachusetts|||2502773895
+ACSSF|MA|060|00||||25|027|75015|||||||||||||||||||||||||||||||0600000US2502775015|Westborough town, Worcester County, Massachusetts|||2502775015
+ACSSF|MA|060|00||||25|027|75155|||||||||||||||||||||||||||||||0600000US2502775155|West Boylston town, Worcester County, Massachusetts|||2502775155
+ACSSF|MA|060|00||||25|027|75400|||||||||||||||||||||||||||||||0600000US2502775400|West Brookfield town, Worcester County, Massachusetts|||2502775400
+ACSSF|MA|060|00||||25|027|77010|||||||||||||||||||||||||||||||0600000US2502777010|Westminster town, Worcester County, Massachusetts|||2502777010
+ACSSF|MA|060|00||||25|027|80405|||||||||||||||||||||||||||||||0600000US2502780405|Winchendon town, Worcester County, Massachusetts|||2502780405
+ACSSF|MA|060|00||||25|027|82000|||||||||||||||||||||||||||||||0600000US2502782000|Worcester city, Worcester County, Massachusetts|||2502782000

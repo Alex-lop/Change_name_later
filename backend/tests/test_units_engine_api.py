@@ -341,3 +341,53 @@ def test_verbatim_trials_match_raw_eligibility_text():
             )
             checked += 1
     assert checked > 0  # at least PIONEER 6 was verified
+
+
+def test_geo_endpoint_contract():
+    # v4 map: 12 areas, one area index and age per patient in patient_codes
+    # order, and a source for every bundled dataset.
+    c = TestClient(app)
+    g = c.get("/api/geo").json()
+    assert g["level"] == "county" and len(g["areas"]) == 12
+    assert sum(a["patients"] for a in g["areas"]) == 10000
+    pts = g["patients"]
+    assert len(pts["area"]) == len(pts["age"]) == 10000
+    assert all(0 <= i < 12 for i in pts["area"])
+    assert pts["age"] == sorted(pts["age"])  # age-ascending, like patient_codes
+    keys = {"what", "dataset", "data_year", "url", "retrieved"}
+    assert g["sources"] and all(set(s) == keys for s in g["sources"])
+    for a in g["areas"]:
+        assert a["paths"] and len(a["label_xy"]) == 2
+        assert None not in a["context"].values()
+
+
+def test_analyze_areas_reconcile_with_counts_and_price_tags():
+    c = TestClient(app)
+    ids = [a["id"] for a in c.get("/api/geo").json()["areas"]]
+    pr = c.post("/api/parse", json={"nct_id": "NCT02692716"}).json()
+    an = c.post("/api/analyze", json={"rules": pr["rules"]}).json()
+    assert an["confirmed_eligible"] == 1807
+    areas = an["areas"]
+    assert [r["id"] for r in areas["rows"]] == ids
+    shown = [r for r in areas["rows"] if not r["suppressed"]]
+    for key, total in (("patients", 10000),
+                       ("confirmed", an["confirmed_eligible"]),
+                       ("possibly", an["possibly_eligible"])):
+        assert sum(r[key] for r in shown) + areas["suppressed"][key] == total
+    for tag in an["price_tags"]:
+        rid = tag["rule_id"]
+        got = sum(r["excluded_by"][rid] for r in shown)
+        assert got + areas["suppressed"]["excluded_by"][rid] == tag["excluded"]
+
+
+def test_csv_area_column_is_the_home_model():
+    # The shipped column is exactly what geo.assign_areas produces.
+    import csv
+
+    from dryrun.geo import assign_areas
+    from dryrun.store import DEFAULT_CSV
+
+    with open(DEFAULT_CSV, newline="") as f:
+        rows = list(csv.DictReader(f))
+    areas, _ = assign_areas(rows)
+    assert [r["area"] for r in rows] == areas

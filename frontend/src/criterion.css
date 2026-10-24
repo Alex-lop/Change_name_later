@@ -1,0 +1,24 @@
+/* Criterion rows: selection and the nested any_of / all_of lines.
+   styles.css loads after this file, so each selector here carries an extra
+   class to win over the base rule it adjusts. */
+
+/* An active row can be selected: the same 2px left edge, in accent. */
+.criterion.selectable { cursor: pointer; }
+.criterion.selected:not(.off) { border-left-color: var(--accent); }
+
+/* One line per branch beneath the gloss: "Either: …" / "Or: …". A branch
+   with one threshold uses its line as the slider head. */
+.crit-branch { margin-top: 8px; font-size: 14px; color: var(--ink-2); }
+.crit-branch .slider-wrap { margin: 6px 0 0; }
+.crit-branch .slider-value { color: var(--ink); }
+.crit-branch .slider-aswritten { white-space: nowrap; }
+
+/* 44px touch target on every criterion slider; the track still draws 3px. */
+.criterion .range-row { height: 44px; }
+.criterion input[type="range"].range {
+  height: 44px;
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.criterion .as-written-tick { top: 12px; }

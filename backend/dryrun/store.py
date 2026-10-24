@@ -51,6 +51,7 @@ class PatientStore:
         # id -> (age, sex) index, built once from the materialized patients and
         # used to compute subset demographics in Python (no per-request query).
         self._demo_index: dict[str, tuple[float | None, str | None]] | None = None
+        self._areas: dict[str, str] | None = None
 
     def count(self) -> int:
         with self._lock:
@@ -87,6 +88,28 @@ class PatientStore:
                         self._row_to_patient(dict(zip(names, r))) for r in cols
                     ]
         return self._patients
+
+    def areas(self) -> dict[str, str]:
+        """id -> modeled home area (the CSV's `area` column, see geo.py).
+
+        Never part of a Patient, so no rule can read it. A CSV without the
+        column gets the same deterministic assignment computed in memory.
+        """
+        if self._areas is None:
+            with self._lock:
+                cols = [r[0] for r in self._con.execute("DESCRIBE patients").fetchall()]
+                rows = (
+                    self._con.execute("SELECT id, area FROM patients").fetchall()
+                    if "area" in cols
+                    else None
+                )
+            if rows is None:
+                from . import geo
+
+                self._areas = geo.patient_areas(self.patients())
+            else:
+                self._areas = dict(rows)
+        return self._areas
 
     def _demo_lookup(self) -> dict[str, tuple[float | None, str | None]]:
         """Return (and lazily build) the id -> (age, sex) index.

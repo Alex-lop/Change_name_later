@@ -1,0 +1,3922 @@
+[
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "32.6",
+  "low_confidence_limit": "28.3",
+  "high_confidence_limit": "36.9",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "12.1",
+  "low_confidence_limit": "10.5",
+  "high_confidence_limit": "13.8",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.5",
+  "low_confidence_limit": "3.0",
+  "high_confidence_limit": "4.0",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.6",
+  "low_confidence_limit": "4.9",
+  "high_confidence_limit": "6.4",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "25.5",
+  "low_confidence_limit": "19.1",
+  "high_confidence_limit": "32.7",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "32.6",
+  "low_confidence_limit": "29.5",
+  "high_confidence_limit": "35.7",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.4",
+  "low_confidence_limit": "9.0",
+  "high_confidence_limit": "11.9",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "8.1",
+  "low_confidence_limit": "6.7",
+  "high_confidence_limit": "9.5",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "26.1",
+  "low_confidence_limit": "20.5",
+  "high_confidence_limit": "32.4",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "4.8",
+  "low_confidence_limit": "4.3",
+  "high_confidence_limit": "5.4",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.7",
+  "low_confidence_limit": "3.2",
+  "high_confidence_limit": "4.1",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "3.1",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "34.7",
+  "low_confidence_limit": "31.4",
+  "high_confidence_limit": "37.8",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "25.2",
+  "low_confidence_limit": "21.6",
+  "high_confidence_limit": "28.9",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "7.3",
+  "low_confidence_limit": "6.3",
+  "high_confidence_limit": "8.3",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "32.1",
+  "low_confidence_limit": "29.1",
+  "high_confidence_limit": "35.1",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "29.9",
+  "low_confidence_limit": "27.1",
+  "high_confidence_limit": "32.6",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "23.8",
+  "low_confidence_limit": "20.5",
+  "high_confidence_limit": "27.2",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "26.3",
+  "low_confidence_limit": "21.2",
+  "high_confidence_limit": "31.8",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "5.2",
+  "low_confidence_limit": "4.5",
+  "high_confidence_limit": "6.0",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "27.7",
+  "low_confidence_limit": "20.6",
+  "high_confidence_limit": "35.7",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.7",
+  "low_confidence_limit": "8.9",
+  "high_confidence_limit": "12.8",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "32.1",
+  "low_confidence_limit": "27.8",
+  "high_confidence_limit": "36.9",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "7.7",
+  "low_confidence_limit": "6.6",
+  "high_confidence_limit": "8.7",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "8.6",
+  "low_confidence_limit": "7.2",
+  "high_confidence_limit": "10.1",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "8.2",
+  "low_confidence_limit": "7.0",
+  "high_confidence_limit": "9.6",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.8",
+  "low_confidence_limit": "9.2",
+  "high_confidence_limit": "12.4",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.1",
+  "low_confidence_limit": "2.6",
+  "high_confidence_limit": "3.5",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "7.0",
+  "low_confidence_limit": "6.1",
+  "high_confidence_limit": "8.0",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "6.8",
+  "low_confidence_limit": "5.9",
+  "high_confidence_limit": "7.8",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "35.2",
+  "low_confidence_limit": "30.4",
+  "high_confidence_limit": "40.3",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "22.2",
+  "low_confidence_limit": "17.9",
+  "high_confidence_limit": "27.2",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.3",
+  "low_confidence_limit": "2.0",
+  "high_confidence_limit": "2.6",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "27.7",
+  "low_confidence_limit": "24.4",
+  "high_confidence_limit": "30.9",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.0",
+  "low_confidence_limit": "4.4",
+  "high_confidence_limit": "5.7",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "23.4",
+  "low_confidence_limit": "19.9",
+  "high_confidence_limit": "27.6",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "29.8",
+  "low_confidence_limit": "27.0",
+  "high_confidence_limit": "32.8",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "24.2",
+  "low_confidence_limit": "20.7",
+  "high_confidence_limit": "27.8",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "4.9",
+  "low_confidence_limit": "4.2",
+  "high_confidence_limit": "5.6",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "29.7",
+  "low_confidence_limit": "25.3",
+  "high_confidence_limit": "34.5",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.1",
+  "low_confidence_limit": "2.7",
+  "high_confidence_limit": "3.6",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "7.7",
+  "low_confidence_limit": "6.6",
+  "high_confidence_limit": "8.9",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.3",
+  "low_confidence_limit": "8.9",
+  "high_confidence_limit": "11.9",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "38.2",
+  "low_confidence_limit": "34.2",
+  "high_confidence_limit": "42.2",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.8",
+  "low_confidence_limit": "9.1",
+  "high_confidence_limit": "12.7",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "26.3",
+  "low_confidence_limit": "20.8",
+  "high_confidence_limit": "32.8",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.3",
+  "low_confidence_limit": "8.8",
+  "high_confidence_limit": "11.8",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "7.3",
+  "low_confidence_limit": "6.2",
+  "high_confidence_limit": "8.4",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "7.8",
+  "low_confidence_limit": "6.7",
+  "high_confidence_limit": "8.9",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "26.9",
+  "low_confidence_limit": "20.1",
+  "high_confidence_limit": "34.8",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "24.4",
+  "low_confidence_limit": "19.8",
+  "high_confidence_limit": "29.6",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.6",
+  "low_confidence_limit": "8.8",
+  "high_confidence_limit": "12.4",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "9.1",
+  "low_confidence_limit": "7.8",
+  "high_confidence_limit": "10.5",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.2",
+  "low_confidence_limit": "2.8",
+  "high_confidence_limit": "3.7",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "27.5",
+  "low_confidence_limit": "24.3",
+  "high_confidence_limit": "30.8",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "27.6",
+  "low_confidence_limit": "25.2",
+  "high_confidence_limit": "30.0",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.3",
+  "low_confidence_limit": "2.0",
+  "high_confidence_limit": "2.6",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "32.0",
+  "low_confidence_limit": "27.6",
+  "high_confidence_limit": "36.8",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "27.4",
+  "low_confidence_limit": "25.0",
+  "high_confidence_limit": "29.9",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "8.2",
+  "low_confidence_limit": "7.1",
+  "high_confidence_limit": "9.5",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "7.1",
+  "low_confidence_limit": "6.0",
+  "high_confidence_limit": "8.3",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "7.2",
+  "low_confidence_limit": "6.1",
+  "high_confidence_limit": "8.5",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "30.0",
+  "low_confidence_limit": "25.8",
+  "high_confidence_limit": "34.5",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "29.4",
+  "low_confidence_limit": "26.7",
+  "high_confidence_limit": "31.9",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "26.3",
+  "low_confidence_limit": "23.7",
+  "high_confidence_limit": "29.2",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "31.2",
+  "low_confidence_limit": "25.4",
+  "high_confidence_limit": "36.7",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "26.8",
+  "low_confidence_limit": "21.6",
+  "high_confidence_limit": "32.2",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "3.0",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "7.8",
+  "low_confidence_limit": "6.6",
+  "high_confidence_limit": "9.1",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "10.9",
+  "low_confidence_limit": "9.2",
+  "high_confidence_limit": "12.8",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "8.7",
+  "low_confidence_limit": "7.5",
+  "high_confidence_limit": "9.9",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "6.2",
+  "low_confidence_limit": "5.4",
+  "high_confidence_limit": "7.2",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "9.0",
+  "low_confidence_limit": "7.7",
+  "high_confidence_limit": "10.5",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "3.1",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "5.5",
+  "low_confidence_limit": "4.7",
+  "high_confidence_limit": "6.3",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "27.1",
+  "low_confidence_limit": "23.5",
+  "high_confidence_limit": "30.9",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.8",
+  "low_confidence_limit": "5.0",
+  "high_confidence_limit": "6.5",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "29.4",
+  "low_confidence_limit": "25.4",
+  "high_confidence_limit": "33.7",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "23.5",
+  "low_confidence_limit": "19.9",
+  "high_confidence_limit": "27.8",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "10.1",
+  "low_confidence_limit": "8.8",
+  "high_confidence_limit": "11.4",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "25.9",
+  "low_confidence_limit": "22.8",
+  "high_confidence_limit": "29.2",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "31.5",
+  "low_confidence_limit": "25.8",
+  "high_confidence_limit": "37.1",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "29.7",
+  "low_confidence_limit": "25.4",
+  "high_confidence_limit": "34.7",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Norfolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.3",
+  "low_confidence_limit": "3.7",
+  "high_confidence_limit": "4.9",
+  "totalpopulation": "727473",
+  "totalpop18plus": "580073",
+  "locationid": "25021",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.2079315371717,
+    42.1619857272555
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "33.5",
+  "low_confidence_limit": "30.5",
+  "high_confidence_limit": "36.6",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "8.2",
+  "low_confidence_limit": "6.9",
+  "high_confidence_limit": "9.5",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "7.3",
+  "low_confidence_limit": "6.2",
+  "high_confidence_limit": "8.6",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "31.2",
+  "low_confidence_limit": "28.1",
+  "high_confidence_limit": "34.2",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "28.0",
+  "low_confidence_limit": "25.3",
+  "high_confidence_limit": "30.8",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "29.7",
+  "low_confidence_limit": "27.0",
+  "high_confidence_limit": "32.8",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "32.5",
+  "low_confidence_limit": "28.2",
+  "high_confidence_limit": "36.8",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "33.2",
+  "low_confidence_limit": "30.2",
+  "high_confidence_limit": "36.1",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "9.0",
+  "low_confidence_limit": "7.7",
+  "high_confidence_limit": "10.2",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "26.7",
+  "low_confidence_limit": "23.7",
+  "high_confidence_limit": "29.9",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "30.0",
+  "low_confidence_limit": "25.6",
+  "high_confidence_limit": "34.5",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "5.1",
+  "low_confidence_limit": "4.3",
+  "high_confidence_limit": "5.9",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "25.8",
+  "low_confidence_limit": "22.3",
+  "high_confidence_limit": "29.8",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Essex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.6",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "810089",
+  "totalpop18plus": "642879",
+  "locationid": "25009",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.9515214537115,
+    42.6718608300579
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.3",
+  "low_confidence_limit": "3.7",
+  "high_confidence_limit": "4.9",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "36.0",
+  "low_confidence_limit": "31.6",
+  "high_confidence_limit": "40.4",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.8",
+  "low_confidence_limit": "2.5",
+  "high_confidence_limit": "3.1",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "27.5",
+  "low_confidence_limit": "24.8",
+  "high_confidence_limit": "30.5",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "6.0",
+  "low_confidence_limit": "5.2",
+  "high_confidence_limit": "6.9",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.9",
+  "low_confidence_limit": "4.3",
+  "high_confidence_limit": "5.6",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.5",
+  "low_confidence_limit": "3.0",
+  "high_confidence_limit": "4.1",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.6",
+  "low_confidence_limit": "3.1",
+  "high_confidence_limit": "4.2",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "9.3",
+  "low_confidence_limit": "8.1",
+  "high_confidence_limit": "10.5",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.4",
+  "low_confidence_limit": "2.1",
+  "high_confidence_limit": "2.8",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.3",
+  "high_confidence_limit": "3.1",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "2.7",
+  "low_confidence_limit": "2.4",
+  "high_confidence_limit": "3.1",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.7",
+  "low_confidence_limit": "4.0",
+  "high_confidence_limit": "5.4",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "36.3",
+  "low_confidence_limit": "32.2",
+  "high_confidence_limit": "40.4",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.5",
+  "low_confidence_limit": "2.2",
+  "high_confidence_limit": "2.9",
+  "totalpopulation": "162502",
+  "totalpop18plus": "139946",
+  "locationid": "25015",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6630607344035,
+    42.34025166646
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "8.5",
+  "low_confidence_limit": "7.3",
+  "high_confidence_limit": "9.6",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.8",
+  "low_confidence_limit": "4.1",
+  "high_confidence_limit": "5.4",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "3.0",
+  "low_confidence_limit": "2.7",
+  "high_confidence_limit": "3.3",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "25.6",
+  "low_confidence_limit": "23.3",
+  "high_confidence_limit": "27.9",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.8",
+  "low_confidence_limit": "3.2",
+  "high_confidence_limit": "4.5",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Suffolk",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.2",
+  "low_confidence_limit": "4.6",
+  "high_confidence_limit": "5.8",
+  "totalpopulation": "768425",
+  "totalpop18plus": "646638",
+  "locationid": "25025",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.0693454244262,
+    42.3340370910155
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.4",
+  "low_confidence_limit": "2.1",
+  "high_confidence_limit": "2.8",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.2",
+  "low_confidence_limit": "4.5",
+  "high_confidence_limit": "5.9",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "25.3",
+  "low_confidence_limit": "19.0",
+  "high_confidence_limit": "32.5",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Diagnosed diabetes among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "10.5",
+  "low_confidence_limit": "9.0",
+  "high_confidence_limit": "12.0",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "DIABETES",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Diabetes",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "3.1",
+  "low_confidence_limit": "2.7",
+  "high_confidence_limit": "3.5",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "34.8",
+  "low_confidence_limit": "30.9",
+  "high_confidence_limit": "38.4",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Dukes",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.7",
+  "low_confidence_limit": "4.0",
+  "high_confidence_limit": "5.4",
+  "totalpopulation": "20819",
+  "totalpop18plus": "17186",
+  "locationid": "25007",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.6538263300096,
+    41.3979064331708
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Plymouth",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "6.2",
+  "low_confidence_limit": "5.4",
+  "high_confidence_limit": "7.2",
+  "totalpopulation": "535308",
+  "totalpop18plus": "426137",
+  "locationid": "25023",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.8131463191532,
+    41.9537873793157
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.3",
+  "low_confidence_limit": "4.6",
+  "high_confidence_limit": "6.1",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Barnstable",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "8.0",
+  "low_confidence_limit": "6.8",
+  "high_confidence_limit": "9.4",
+  "totalpopulation": "231735",
+  "totalpop18plus": "199941",
+  "locationid": "25001",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.2900437375163,
+    41.7233065590504
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Bristol",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.9",
+  "low_confidence_limit": "2.5",
+  "high_confidence_limit": "3.3",
+  "totalpopulation": "581841",
+  "totalpop18plus": "463617",
+  "locationid": "25005",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.1142068476454,
+    41.7970686849921
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "23.8",
+  "low_confidence_limit": "20.5",
+  "high_confidence_limit": "27.2",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Nantucket",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "2.2",
+  "low_confidence_limit": "1.9",
+  "high_confidence_limit": "2.5",
+  "totalpopulation": "14444",
+  "totalpop18plus": "11509",
+  "locationid": "25019",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -70.0734407385574,
+    41.284227791995
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Worcester",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "5.0",
+  "low_confidence_limit": "4.3",
+  "high_confidence_limit": "5.7",
+  "totalpopulation": "866866",
+  "totalpop18plus": "690404",
+  "locationid": "25027",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.907721776532,
+    42.3513441194523
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Hampden",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Obesity among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "34.9",
+  "low_confidence_limit": "30.1",
+  "high_confidence_limit": "40.1",
+  "totalpopulation": "460291",
+  "totalpop18plus": "365283",
+  "locationid": "25013",
+  "categoryid": "HLTHOUT",
+  "measureid": "OBESITY",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Obesity",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.6315256129094,
+    42.1352566047193
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Middlesex",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Coronary heart disease among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "4.3",
+  "low_confidence_limit": "3.7",
+  "high_confidence_limit": "4.9",
+  "totalpopulation": "1623952",
+  "totalpop18plus": "1310019",
+  "locationid": "25017",
+  "categoryid": "HLTHOUT",
+  "measureid": "CHD",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "Coronary Heart Disease",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -71.3919058370361,
+    42.4853611024069
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Franklin",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "High blood pressure among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Age-adjusted prevalence",
+  "data_value": "29.1",
+  "low_confidence_limit": "25.4",
+  "high_confidence_limit": "32.8",
+  "totalpopulation": "70836",
+  "totalpop18plus": "59245",
+  "locationid": "25011",
+  "categoryid": "HLTHOUT",
+  "measureid": "BPHIGH",
+  "datavaluetypeid": "AgeAdjPrv",
+  "short_question_text": "High Blood Pressure",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -72.5917508209882,
+    42.583226696317
+   ]
+  }
+ },
+ {
+  "year": "2023",
+  "stateabbr": "MA",
+  "statedesc": "Massachusetts",
+  "locationname": "Berkshire",
+  "datasource": "BRFSS",
+  "category": "Health Outcomes",
+  "measure": "Stroke among adults",
+  "data_value_unit": "%",
+  "data_value_type": "Crude prevalence",
+  "data_value": "3.7",
+  "low_confidence_limit": "3.2",
+  "high_confidence_limit": "4.3",
+  "totalpopulation": "126818",
+  "totalpop18plus": "106721",
+  "locationid": "25003",
+  "categoryid": "HLTHOUT",
+  "measureid": "STROKE",
+  "datavaluetypeid": "CrdPrv",
+  "short_question_text": "Stroke",
+  "geolocation": {
+   "type": "Point",
+   "coordinates": [
+    -73.2062245902623,
+    42.3704857844323
+   ]
+  }
+ }
+]

@@ -21,6 +21,8 @@ export default function ProtocolColumn({
   onDragStart,
   onDragEnd,
   onHover,
+  selectedRuleId,
+  onSelect,
   assumptions,
   onAssumptionsChange,
 }) {
@@ -38,6 +40,7 @@ export default function ProtocolColumn({
       rule={r}
       original={originalById[r.id]}
       bounds={bounds[r.field]}
+      allBounds={bounds}
       active={activeIds.includes(r.id)}
       codeIndex={codeIndexOf[r.id] != null ? codeIndexOf[r.id] : null}
       onToggle={onToggle}
@@ -45,6 +48,8 @@ export default function ProtocolColumn({
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}
       onHover={onHover}
+      selected={selectedRuleId === r.id}
+      onSelect={onSelect}
     />
   );
 
@@ -55,7 +60,7 @@ export default function ProtocolColumn({
       <div className="trial-title">{title}</div>
       {coverage && coverage.total > 0 && (
         <div className="coverage-line">
-          Dry Run can evaluate {coverage.evaluable} of {coverage.total} criteria
+          Sieve can evaluate {coverage.evaluable} of {coverage.total} criteria
           on this data.
         </div>
       )}

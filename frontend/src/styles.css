@@ -1,4 +1,4 @@
-/* Dry Run v3 — lab-paper instrument.
+/* Sieve v3 — lab-paper instrument.
    Structure from spacing and a single left edge, not boxes. No gradients, no
    shadows (except a 3px paper halo on slider thumbs), 2px radius everywhere. */
 
@@ -422,6 +422,32 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
   padding: 16px 0 40px;
   color: var(--ink-2);
   font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+/* plain text button: footer "Pause motion" */
+.btn-text {
+  margin-left: auto;
+  min-height: 44px;
+  padding: 0 4px;
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.btn-text:hover { color: var(--accent); }
+
+/* "Pause motion" or prefers-reduced-motion: every final state, immediately. */
+.motion-off *,
+.motion-off *::before,
+.motion-off *::after {
+  transition: none !important;
+  animation: none !important;
 }
 
 /* ---- messages ------------------------------------------------------------- */
@@ -470,4 +496,6 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
   :root { --gutter: 14px; }
   .topbar { gap: 10px; }
   .trial-picker { max-width: 100%; flex: 1; }
+  /* provenance takes its own line so the picker can show the trial name */
+  .trial-provenance { order: 3; flex-basis: 100%; font-size: 13px; color: var(--ink-2); }
 }

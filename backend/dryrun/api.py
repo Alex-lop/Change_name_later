@@ -6,7 +6,11 @@ Endpoints:
   POST /api/parse                   -> translate criteria text or an NCT ID
                                        into structured rules (cache-first)
   POST /api/analyze                 -> funnel, counts, price tags, cost model
-                                       for a set of rules + active toggles
+                                       for a set of rules + active toggles,
+                                       and those counts split by home area
+  GET  /api/geo                     -> Massachusetts map: 12 areas, each
+                                       patient's modeled home, trial sites,
+                                       sources (bundled, works offline)
 
 The parser is translate-only. Analysis is fully deterministic. The frontend
 holds the parsed rules and re-posts /api/analyze whenever the user toggles a
@@ -25,6 +29,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+from . import geo
 from . import parser as parser_mod
 from . import synthea
 from . import units
@@ -45,6 +50,7 @@ def _ensure_population() -> None:
     if not csv_path.exists():
         pop = synthea.generate_population()  # all adults with type 2 diabetes
         synthea.write_csv(pop, csv_path)
+        geo.add_area_column(csv_path)  # modeled home areas, see geo.py
 
 
 @asynccontextmanager
@@ -104,6 +110,12 @@ def health() -> dict:
 @app.get("/api/trials")
 def trials() -> dict:
     return {"trials": list(load_registry().values())}
+
+
+@app.get("/api/geo")
+def geo_endpoint() -> dict:
+    """Map areas, each patient's modeled home area and age, sites, sources."""
+    return geo.geo_payload(get_store())
 
 
 @app.get("/api/field-bounds")
@@ -187,7 +199,10 @@ def analyze_endpoint(req: AnalyzeRequest) -> dict:
     active_ids = [rid for rid in active_ids if rid in evaluable_ids]
 
     matrix = VerdictMatrix.build(req.rules, patients)
-    result = analyze(req.rules, matrix, active_ids, store, patients=patients)
+    result = analyze(
+        req.rules, matrix, active_ids, store, patients=patients,
+        area_of=store.areas(), area_ids=geo.area_ids(),
+    )
 
     # Coverage score: evaluable criteria / total criteria across the rule set.
     total_rules = len(req.rules)
