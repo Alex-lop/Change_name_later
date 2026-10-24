@@ -201,57 +201,58 @@ export default function App() {
       </section>
 
       {rules.length > 0 && (
-        <>
-          <section className="panel">
-            <div className="panel-head">
-              <h3>2. Criteria ({activeIds.length}/{rules.length} active)</h3>
-              <button className="chip-btn" onClick={resetToOriginal}>
-                Reset to original protocol
-              </button>
-            </div>
-            <ul className="criteria-list">
-              {rules.map((r) => (
-                <CriterionRow
-                  key={r.id}
-                  rule={r}
-                  original={originalById[r.id]}
-                  bounds={bounds[r.field]}
-                  active={activeIds.includes(r.id)}
-                  onToggle={toggle}
-                  onValueChange={setRuleValue}
+        <div className="workbench">
+          <div className="col-left">
+            <section className="panel">
+              <div className="panel-head">
+                <h3>Criteria ({activeIds.length}/{rules.length} active)</h3>
+                <button className="chip-btn" onClick={resetToOriginal}>
+                  Reset to original protocol
+                </button>
+              </div>
+              <ul className="criteria-list">
+                {rules.map((r) => (
+                  <CriterionRow
+                    key={r.id}
+                    rule={r}
+                    original={originalById[r.id]}
+                    bounds={bounds[r.field]}
+                    active={activeIds.includes(r.id)}
+                    onToggle={toggle}
+                    onValueChange={setRuleValue}
+                  />
+                ))}
+              </ul>
+            </section>
+
+            <AssumptionsPanel assumptions={assumptions} onChange={setAssumptions} />
+          </div>
+
+          <div className="col-right">
+            {analysis && (
+              <>
+                <ResultsHeader analysis={analysis} baseline={baseline} />
+                <p className="possibly-note">
+                  {analysis.possibly_eligible.toLocaleString()} possibly eligible
+                  (meets or unknown) ·{" "}
+                  {(analysis.confirmed_fraction * 100).toFixed(1)}% of population
+                  confirmed
+                </p>
+
+                <section className="panel">
+                  <h3>Eligibility funnel</h3>
+                  <FunnelChart funnel={analysis.funnel} rulesById={rulesById} />
+                </section>
+
+                <PriceTags
+                  priceTags={analysis.price_tags}
+                  perRuleCost={analysis.per_rule_cost}
+                  baselineMonths={cost?.enrollment_months}
                 />
-              ))}
-            </ul>
-          </section>
-
-          {analysis && (
-            <>
-              <ResultsHeader analysis={analysis} baseline={baseline} />
-              <p className="possibly-note">
-                {analysis.possibly_eligible.toLocaleString()} possibly eligible
-                (meets or unknown) ·{" "}
-                {(analysis.confirmed_fraction * 100).toFixed(1)}% of population
-                confirmed
-              </p>
-
-              <section className="panel">
-                <h3>Eligibility funnel</h3>
-                <FunnelChart funnel={analysis.funnel} rulesById={rulesById} />
-              </section>
-
-              <PriceTags
-                priceTags={analysis.price_tags}
-                perRuleCost={analysis.per_rule_cost}
-                baselineMonths={cost?.enrollment_months}
-              />
-            </>
-          )}
-
-          <AssumptionsPanel
-            assumptions={assumptions}
-            onChange={setAssumptions}
-          />
-        </>
+              </>
+            )}
+          </div>
+        </div>
       )}
 
       <footer>

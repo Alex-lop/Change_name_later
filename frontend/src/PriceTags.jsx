@@ -27,11 +27,21 @@ export default function PriceTags({ priceTags, perRuleCost, baselineMonths }) {
   const costById = {};
   (perRuleCost || []).forEach((c) => (costById[c.rule_id] = c));
 
+  // Months a criterion adds = current enrollment months minus the months it
+  // would take if that criterion were removed. Sort largest-first.
+  const monthsAdded = (t) => {
+    const c = costById[t.rule_id];
+    const without = c ? c.enrollment_months_without : null;
+    if (baselineMonths == null || without == null) return -Infinity;
+    return baselineMonths - without;
+  };
+  const sorted = [...priceTags].sort((a, b) => monthsAdded(b) - monthsAdded(a));
+
   return (
     <div className="panel">
       <h3>Criterion price tags <span className="estimate-tag">estimates</span></h3>
       <div className="price-tags">
-        {priceTags.map((t) => {
+        {sorted.map((t) => {
           const c = costById[t.rule_id];
           // Enrollment months saved if this criterion were dropped.
           const monthsWithout = c ? c.enrollment_months_without : null;

@@ -22,9 +22,27 @@ body {
 }
 
 .app {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.25rem 4rem;
+}
+
+.workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.col-left { min-width: 0; }
+.col-right {
+  min-width: 0;
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+}
+@media (max-width: 860px) {
+  .workbench { grid-template-columns: 1fr; }
+  .col-right { position: static; }
 }
 
 header h1 {
