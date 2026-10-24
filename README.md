@@ -69,11 +69,12 @@ Property tests in `backend/tests/test_properties.py` lock the claims that matter
 
 ## Run it
 
-Python 3.11+, [uv](https://docs.astral.sh/uv/), and Node 18+. The population and the seeded cache are already in the repo.
+Python 3.11+, [uv](https://docs.astral.sh/uv/), and Node 18+. `backend/data/patients.csv` is gitignored. After install, regenerate it so a fresh clone works:
 
 ```bash
 cd frontend && npm install && npm run build
 cd ../backend && uv venv && uv pip install -e ".[dev]"
+uv run python -m dryrun.synthea && uv run python -m dryrun.seed
 uv run uvicorn dryrun.api:app --host 0.0.0.0 --port 8000
 ```
 
