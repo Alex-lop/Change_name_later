@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/sieve-wordmark.png" alt="Sieve" width="480">
+  <img src="docs/images/sieve.png" alt="Sieve" width="480">
 </p>
 
 <p align="center">
@@ -159,7 +159,7 @@ backend/dryrun/
   api.py         FastAPI
 backend/tests/   Hypothesis properties and unit tests
 frontend/src/    React 18 + Vite
-docs/images/     wordmark and other README figures
+docs/images/     Sieve logo and other README figures
 .kiro/           steering, spec, hook, reviewer
 ```
 
