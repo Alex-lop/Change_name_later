@@ -1,8 +1,8 @@
+Most clinical trials don’t stall because the drug doesn’t work. They stall because they can’t find enough patients. Sieve shows which eligibility criteria are to blame, before you launch.
+
 <p align="center">
   <img src="docs/images/sieve.png" alt="Sieve" width="480">
 </p>
-
-Most clinical trials don’t stall because the drug doesn’t work. They stall because they can’t find enough patients. Sieve shows which eligibility criteria are to blame, before you launch.
 
 A protocol can look careful and still be unfillable. One age cutoff, one lab threshold, one exclusion for a history almost nobody in the cohort has, and the eligible pool collapses. Sieve runs the criteria against 10,000 synthetic adults with type 2 diabetes and prices each rule: patients kept out, months added, and estimated delay cost. Move a threshold and those numbers update against the protocol you loaded, so you can see the trade before the first patient is screened.
 
