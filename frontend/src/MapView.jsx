@@ -629,7 +629,7 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
                   {RAMP.map((color) => (
                     <span key={color} style={{ background: color }} />
                   ))}
-                  {statePos != null && <i className="map-ramp-tick" style={{ left: statePos + "%" }} />}
+                  {statePos != null && <span className="map-ramp-tick" style={{ left: statePos + "%" }} />}
                 </div>
                 <div className="map-ramp-edges" aria-hidden="true">
                   {[0, 1, 2, 3, 4, 5].map((i) => (
@@ -670,8 +670,11 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
               <Ring color={ACCENT} r={5} w={1.5} /> {sites.length} Massachusetts{" "}
               {sites.length === 1 ? "site" : "sites"} this trial lists on ClinicalTrials.gov
             </>
-          ) : (
+          ) : nctId && geo?.sites && nctId in geo.sites ? (
             "This trial lists no Massachusetts sites on ClinicalTrials.gov."
+          ) : (
+            // Only the bundled trials have a site snapshot; don't claim "none" for the rest.
+            "Massachusetts site locations are bundled for the original demo trials only."
           )}
         </p>
         {rec && (
