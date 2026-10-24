@@ -2,6 +2,12 @@
   <img src="docs/images/sieve.png" alt="Sieve" width="480">
 </p>
 
+<p align="center">
+  <a href="HOW_WE_USED_KIRO.md"><img src="https://img.shields.io/badge/How%20we%20used%20Kiro-read%20the%20full%20write--up-D97706?style=for-the-badge" alt="How we used Kiro — read the full write-up"></a>
+</p>
+
+**[How we used Kiro](HOW_WE_USED_KIRO.md)** — Kiro CLI, the v2 spec, hooks, steering, MCP, and property-based tests. Judges: start here.
+
 Most clinical trials don’t stall because the drug doesn’t work. They stall because they can’t find enough patients. Sieve shows which eligibility criteria are to blame, before you launch.
 
 A protocol can look careful and still be unfillable. One age cutoff, one lab threshold, one exclusion for a history almost nobody in the cohort has, and the eligible pool collapses. Sieve runs the criteria against 10,000 synthetic adults with type 2 diabetes and prices each rule: patients kept out, months added, and estimated delay cost. Move a threshold and those numbers update against the protocol you loaded, so you can see the trade before the first patient is screened.
@@ -85,7 +91,7 @@ docker run -p 8000:8000 sieve
 
 Patient rows are synthetic. No real patient data is used. This build does not call a model.
 
-Specified and built in [Kiro](https://kiro.dev). Product rules, the v2 spec, and the reviewer live in `.kiro/`.
+Specified and built in [Kiro](https://kiro.dev). Full write-up: **[How we used Kiro](HOW_WE_USED_KIRO.md)**. Product rules, the v2 spec, and the reviewer live in `.kiro/`.
 
 ## License
 
