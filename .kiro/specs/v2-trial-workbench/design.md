@@ -56,5 +56,5 @@ Property tests go in `backend/tests/test_properties.py` and use Hypothesis where
 
 Live LLM parsing (only the `LLMBackend` protocol seam exists: no Bedrock or other
 model backend ships, so a sentence missing from the parse cache is reported as unparsed),
-renaming the repo, LOINC / SNOMED / RxNorm, real Synthea, and any feature not
+LOINC / SNOMED / RxNorm, real Synthea, and any feature not
 listed in `tasks.md` or its "Also shipped" note.
