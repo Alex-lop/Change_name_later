@@ -57,7 +57,7 @@ export default function App() {
   const [geo, setGeo] = useState(null);
   const [geoLive, setGeoLive] = useState(false);
   const [selectedRuleId, setSelectedRuleId] = useState(null);
-  const [fieldView, setFieldView] = useState("age");
+  const [fieldView, setFieldView] = useState("place");
   const [paused, setPaused] = useState(false);
   const [showHero, setShowHero] = useState(HERO_ENABLED);
   const shellRef = useRef(null);
