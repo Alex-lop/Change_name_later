@@ -104,15 +104,15 @@ export default function ProtocolColumn({
       )}
 
       {notEvaluable.length > 0 && (
-        <>
-          <h2 className="section-heading">Not evaluable here</h2>
+        <details className="fold">
+          <summary className="section-heading">Not evaluable here ({notEvaluable.length})</summary>
           <ul className="criteria-list">{notEvaluable.map(renderRow)}</ul>
-        </>
+        </details>
       )}
 
       {n > 0 && (
-        <>
-          <h2 className="section-heading">Not translated yet</h2>
+        <details className="fold">
+          <summary className="section-heading">Not translated yet ({n})</summary>
           <p className="section-note">
             Not in the translation cache. They change no count until you add them.
           </p>
@@ -143,7 +143,7 @@ export default function ProtocolColumn({
               </li>
             ))}
           </ul>
-        </>
+        </details>
       )}
 
       <AddCriterion onAdd={onAddRule} draft={draft} onDraftDone={onDraftDone} />

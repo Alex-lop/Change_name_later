@@ -270,13 +270,17 @@ export default function CriterionRow({
 
   // Not-evaluable leaf or compound.
   if (rule.evaluable === false) {
+    const title = rule.label || rule.source_sentence;
+    const sentence = rule.label && rule.source_sentence !== rule.label ? rule.source_sentence : null;
     return (
       <li className="criterion uneval">
         <div className="crit-body">
-          <div className="crit-sentence">{rule.source_sentence}</div>
-          <div className="crit-uneval-reason">
-            Not counted — {rule.unevaluable_reason}
-          </div>
+          <div className="crit-sentence">{title}</div>
+          <details className="crit-more">
+            <summary>Text</summary>
+            {sentence && <div className="crit-sentence">{sentence}</div>}
+            <div className="crit-uneval-reason">Not counted — {rule.unevaluable_reason}</div>
+          </details>
         </div>
       </li>
     );
@@ -292,7 +296,7 @@ export default function CriterionRow({
 
   // Clicks on controls (and near-misses on a slider track) never select.
   const onRowClick = (e) => {
-    if (!e.target.closest("input, button, select, label, a, .range-row")) {
+    if (!e.target.closest("input, button, select, label, a, details, .range-row")) {
       onSelect(rule.id);
     }
   };
@@ -325,18 +329,24 @@ export default function CriterionRow({
         />
         <div className="crit-body">
           <div className="crit-sentence" {...sentenceButton}>
-            {rule.source_sentence || rule.label}
+            {rule.label || rule.source_sentence}
             {rule.added && (
               <span className="crit-added-tag">added in Sieve</span>
             )}
           </div>
-          <div className="crit-gloss">
-            {rule.added ? (
-              <span className="redline-added">{glossText(rule)}</span>
-            ) : (
-              glossText(rule)
+          <details className="crit-more">
+            <summary>Text</summary>
+            {rule.source_sentence && rule.source_sentence !== rule.label && (
+              <div className="crit-sentence">{rule.source_sentence}</div>
             )}
-          </div>
+            <div className="crit-gloss">
+              {rule.added ? (
+                <span className="redline-added">{glossText(rule)}</span>
+              ) : (
+                glossText(rule)
+              )}
+            </div>
+          </details>
           <Redline original={original} rule={rule} />
           <NestedRedlines original={original} rule={rule} />
 

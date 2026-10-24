@@ -129,6 +129,9 @@ button { font-family: inherit; font-size: inherit; }
   font-weight: 600;
   margin: 28px 0 10px;
 }
+.fold > summary.section-heading { cursor: pointer; }
+.crit-more { margin-top: 4px; }
+.crit-more summary { cursor: pointer; font-size: 13px; color: var(--ink-2); }
 
 /* ---- criterion rows ------------------------------------------------------- */
 
