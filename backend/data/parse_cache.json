@@ -1,40 +1,29 @@
 {
-  "0a46c77d00a6d70d": {
-    "field": "conditions",
+  "158dcc1e48af97ab": {
+    "field": "bmi",
     "kind": "inclusion",
-    "label": "Has type 2 diabetes",
-    "operator": "has",
-    "value": [
-      "t2d"
-    ]
+    "label": "BMI <= 45",
+    "operator": "<=",
+    "unit": "kg/m2",
+    "value": 45
   },
-  "17843507775065a0": {
-    "evaluable": false,
-    "field": "conditions",
-    "kind": "exclusion",
-    "label": "Exclude recent MI/stroke (60-day window)",
-    "operator": "not_has",
-    "unevaluable_reason": "60-day event window needs dates; the synthetic data has no dates",
-    "value": [
-      "mi",
-      "stroke"
-    ]
+  "1bbc0f6a13f1487b": {
+    "field": "hba1c",
+    "kind": "inclusion",
+    "label": "HbA1c >= 7.0%",
+    "operator": ">=",
+    "unit": "percent",
+    "value": 7.0
   },
-  "1c33512b000966ef": {
-    "evaluable": false,
-    "kind": "exclusion",
-    "label": "Exclude major gastric surgery",
-    "unevaluable_reason": "Procedures table not in the synthetic data"
+  "21d14d677b05e4f8": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 50y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 50
   },
-  "20356b475c327953": {
-    "field": "egfr",
-    "kind": "exclusion",
-    "label": "Exclude eGFR < 30",
-    "operator": "<",
-    "unit": "ml/min/1.73m2",
-    "value": 30
-  },
-  "309be34a32ad1095": {
+  "21f3e13cf9ecd6ec": {
     "field": "hba1c",
     "kind": "inclusion",
     "label": "HbA1c 7-10%",
@@ -45,7 +34,64 @@
       10.0
     ]
   },
-  "3674042af319ff4f": {
+  "2f06bc32cf7f9802": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude NYHA Class IV heart failure",
+    "unevaluable_reason": "NYHA class is not recorded"
+  },
+  "49ae5682b3f4135e": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude planned revascularisation",
+    "unevaluable_reason": "Future plans are not in the records"
+  },
+  "5cd5264043ff2274": {
+    "children": [
+      {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "dialysis"
+        ]
+      },
+      {
+        "field": "egfr",
+        "operator": "<",
+        "unit": "ml/min/1.73m2",
+        "value": 30
+      }
+    ],
+    "kind": "exclusion",
+    "label": "Exclude dialysis or eGFR < 30",
+    "logic": "any_of"
+  },
+  "6ef856fce7b8ff1a": {
+    "field": "conditions",
+    "kind": "inclusion",
+    "label": "Has type 2 diabetes",
+    "operator": "has",
+    "value": [
+      "t2d"
+    ]
+  },
+  "793a33cc8dfb5f6c": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 18y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 18
+  },
+  "8b73fc4575c7b488": {
+    "field": "egfr",
+    "kind": "exclusion",
+    "label": "Exclude eGFR < 30",
+    "operator": "<",
+    "unit": "ml/min/1.73m2",
+    "value": 30
+  },
+  "8db12f38171de21b": {
     "children": [
       {
         "children": [
@@ -89,29 +135,19 @@
     "label": "Age 50+ with CV disease, or 60+ with a CV risk factor",
     "logic": "any_of"
   },
-  "3f9b9cf877b2b515": {
+  "94d6bc0b59d67882": {
     "evaluable": false,
+    "field": "medications",
     "kind": "exclusion",
-    "label": "Exclude MEN 2 / MTC history",
-    "unevaluable_reason": "Family history is not in the synthetic records"
+    "label": "Exclude recent GLP-1/DPP-4/pramlintide (washout)",
+    "operator": "not_has",
+    "unevaluable_reason": "90-day medication washout needs dates; the synthetic data has no dates",
+    "value": [
+      "glp1 agonist",
+      "dpp4 inhibitor"
+    ]
   },
-  "454a49ff3d451f2b": {
-    "field": "bmi",
-    "kind": "inclusion",
-    "label": "BMI >= 20",
-    "operator": ">=",
-    "unit": "kg/m2",
-    "value": 20
-  },
-  "4862a5275f27d661": {
-    "field": "bmi",
-    "kind": "inclusion",
-    "label": "BMI <= 45",
-    "operator": "<=",
-    "unit": "kg/m2",
-    "value": 45
-  },
-  "4989640330442e2d": {
+  "9d25c6ffde18986a": {
     "field": "conditions",
     "kind": "exclusion",
     "label": "Exclude type 1 diabetes",
@@ -120,21 +156,7 @@
       "t1d"
     ]
   },
-  "5209da741e4a56c2": {
-    "evaluable": false,
-    "kind": "exclusion",
-    "label": "Exclude planned revascularisation",
-    "unevaluable_reason": "Future plans are not in the records"
-  },
-  "55547fdfd3a01ee4": {
-    "field": "age",
-    "kind": "inclusion",
-    "label": "Age >= 18y",
-    "operator": ">=",
-    "unit": "years",
-    "value": 18
-  },
-  "601d9817913bfa68": {
+  "a7625946d40c907c": {
     "field": "conditions",
     "kind": "inclusion",
     "label": "Has type 2 diabetes",
@@ -143,42 +165,31 @@
       "t2d"
     ]
   },
-  "8f4a977833d77fd5": {
-    "field": "conditions",
-    "kind": "exclusion",
-    "label": "Exclude pancreatitis history",
-    "operator": "has",
-    "value": [
-      "pancreatitis"
-    ]
-  },
-  "a14c6dc96fc73957": {
-    "children": [
-      {
-        "field": "conditions",
-        "operator": "has",
-        "value": [
-          "dialysis"
-        ]
-      },
-      {
-        "field": "egfr",
-        "operator": "<",
-        "unit": "ml/min/1.73m2",
-        "value": 30
-      }
-    ],
-    "kind": "exclusion",
-    "label": "Exclude dialysis or eGFR < 30",
-    "logic": "any_of"
-  },
-  "aedee6ef7c2882a7": {
+  "ac7bd6c7dec08b3f": {
     "evaluable": false,
     "kind": "exclusion",
-    "label": "Exclude NYHA Class IV heart failure",
-    "unevaluable_reason": "NYHA class is not recorded"
+    "label": "Exclude major gastric surgery",
+    "unevaluable_reason": "Procedures table not in the synthetic data"
   },
-  "b6c262f067cbfbc1": {
+  "b062c48ba9fc4810": {
+    "evaluable": false,
+    "field": "conditions",
+    "kind": "exclusion",
+    "label": "Exclude recent MI/stroke (60-day window)",
+    "operator": "not_has",
+    "unevaluable_reason": "60-day event window needs dates; the synthetic data has no dates",
+    "value": [
+      "mi",
+      "stroke"
+    ]
+  },
+  "c19fd93229a97d88": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude MEN 2 / MTC history",
+    "unevaluable_reason": "Family history is not in the synthetic records"
+  },
+  "ca6d88ce5518b4cf": {
     "evaluable": false,
     "field": "conditions",
     "kind": "exclusion",
@@ -189,32 +200,21 @@
       "cancer"
     ]
   },
-  "cb203fb06afb9d1c": {
-    "field": "age",
+  "ce0f37790f328941": {
+    "field": "bmi",
     "kind": "inclusion",
-    "label": "Age >= 50y",
+    "label": "BMI >= 20",
     "operator": ">=",
-    "unit": "years",
-    "value": 50
+    "unit": "kg/m2",
+    "value": 20
   },
-  "ee85f216b4503d95": {
-    "field": "hba1c",
-    "kind": "inclusion",
-    "label": "HbA1c >= 7.0%",
-    "operator": ">=",
-    "unit": "percent",
-    "value": 7.0
-  },
-  "efe803ed25d5879e": {
-    "evaluable": false,
-    "field": "medications",
+  "f2860672251d6cce": {
+    "field": "conditions",
     "kind": "exclusion",
-    "label": "Exclude recent GLP-1/DPP-4/pramlintide (washout)",
-    "operator": "not_has",
-    "unevaluable_reason": "90-day medication washout needs dates; the synthetic data has no dates",
+    "label": "Exclude pancreatitis history",
+    "operator": "has",
     "value": [
-      "glp1 agonist",
-      "dpp4 inhibitor"
+      "pancreatitis"
     ]
   }
 }

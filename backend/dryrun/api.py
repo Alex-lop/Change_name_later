@@ -108,7 +108,7 @@ def field_bounds() -> dict:
 
 @app.post("/api/parse", response_model=ParseResponse)
 def parse(req: ParseRequest) -> ParseResponse:
-    sentences: list[str] = []
+    sections: list[tuple[str, str]] = []  # (sentence, kind)
     trial_meta: dict | None = None
     source = "text"
 
@@ -117,7 +117,9 @@ def parse(req: ParseRequest) -> ParseResponse:
         key = req.nct_id.strip().upper()
         if key in registry:
             trial_meta = registry[key]
-            sentences = list(trial_meta["criteria"])
+            for c in trial_meta["criteria"]:
+                # Registry criteria are {sentence, kind} objects.
+                sections.append((c["sentence"], c.get("kind", "inclusion")))
             source = "registry"
         else:
             # Not seeded: try a live ClinicalTrials.gov v2 fetch.
@@ -132,10 +134,10 @@ def parse(req: ParseRequest) -> ParseResponse:
                 raise HTTPException(
                     status_code=404, detail=f"No eligibility criteria for {key}"
                 )
-            sentences = parser_mod.split_criteria(raw)
+            sections = parser_mod.split_criteria(raw)
             source = "ctgov"
     elif req.criteria_text:
-        sentences = parser_mod.split_criteria(req.criteria_text)
+        sections = parser_mod.split_criteria(req.criteria_text)
         source = "text"
     else:
         raise HTTPException(
@@ -144,9 +146,9 @@ def parse(req: ParseRequest) -> ParseResponse:
 
     rules: list[Rule] = []
     unparsed: list[str] = []
-    for i, s in enumerate(sentences):
+    for i, (s, kind) in enumerate(sections):
         try:
-            rules.append(_parser.parse_sentence(s, rule_id=f"r{i}"))
+            rules.append(_parser.parse_sentence(s, rule_id=f"r{i}", kind=kind))
         except LookupError:
             # No cached parse and no LLM backend: report it, don't fabricate.
             unparsed.append(s)

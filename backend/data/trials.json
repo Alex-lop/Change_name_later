@@ -4,17 +4,50 @@
     "title": "PIONEER 6: Cardiovascular Safety of Oral Semaglutide in Type 2 Diabetes",
     "condition": "type 2 diabetes",
     "criteria": [
-      "Male or female diagnosed with type 2 diabetes",
-      "Age at least 50 years at screening and presence of cardiovascular disease, or age at least 60 years at screening and presence of at least one cardiovascular risk factor",
-      "Current or previous (within 90 days prior to screening) treatment with any GLP-1 (glucagon-like peptide-1) receptor agonist, DPP-4 (dipeptidyl peptidase-4) inhibitor or pramlintide",
-      "Family or personal history of multiple endocrine neoplasia type 2 (MEN 2) or medullary thyroid carcinoma (MTC)",
-      "History of pancreatitis (acute or chronic)",
-      "History of major surgical procedures involving the stomach potentially affecting absorption of trial product (e.g. subtotal and total gastrectomy, sleeve gastrectomy, gastric bypass surgery)",
-      "Subjects presently classified as being in New York Heart Association (NYHA) Class IV heart failure",
-      "Planned coronary, carotid or peripheral artery revascularisation known on the day of screening",
-      "Any of the following: myocardial infarction, stroke or hospitalisation for unstable angina or transient ischaemic attack within the past 60 days prior to screening",
-      "Chronic or intermittent hemodialysis or peritoneal dialysis or severe renal impairment (corresponding to eGFR (glomerular filtration rate, estimated) below 30 mL/min/1.73 m^2)",
-      "History or presence of malignant neoplasms within the last 5 years (except basal and squamous cell skin cancer and carcinoma in situ)"
+      {
+        "sentence": "Male or female diagnosed with type 2 diabetes",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Age at least 50 years at screening and presence of cardiovascular disease, or age at least 60 years at screening and presence of at least one cardiovascular risk factor",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Current or previous (within 90 days prior to screening) treatment with any GLP-1 (glucagon-like peptide-1) receptor agonist, DPP-4 (dipeptidyl peptidase-4) inhibitor or pramlintide",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Family or personal history of multiple endocrine neoplasia type 2 (MEN 2) or medullary thyroid carcinoma (MTC)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "History of pancreatitis (acute or chronic)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "History of major surgical procedures involving the stomach potentially affecting absorption of trial product (e.g. subtotal and total gastrectomy, sleeve gastrectomy, gastric bypass surgery)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Subjects presently classified as being in New York Heart Association (NYHA) Class IV heart failure",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Planned coronary, carotid or peripheral artery revascularisation known on the day of screening",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Any of the following: myocardial infarction, stroke or hospitalisation for unstable angina or transient ischaemic attack within the past 60 days prior to screening",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Chronic or intermittent hemodialysis or peritoneal dialysis or severe renal impairment (corresponding to eGFR (glomerular filtration rate, estimated) below 30 mL/min/1.73 m^2)",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "History or presence of malignant neoplasms within the last 5 years (except basal and squamous cell skin cancer and carcinoma in situ)",
+        "kind": "exclusion"
+      }
     ]
   },
   "NCT01179048": {
@@ -22,11 +55,26 @@
     "title": "LEADER: Liraglutide Effect and Action in Diabetes (CV outcomes)",
     "condition": "type 2 diabetes",
     "criteria": [
-      "Type 2 diabetes mellitus.",
-      "HbA1c of at least 7.0 %.",
-      "Age 50 years or older.",
-      "Type 1 diabetes mellitus.",
-      "Estimated GFR below 30 mL/min/1.73m2."
+      {
+        "sentence": "Type 2 diabetes mellitus.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "HbA1c of at least 7.0 %.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Age 50 years or older.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Type 1 diabetes mellitus.",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Estimated GFR below 30 mL/min/1.73m2.",
+        "kind": "exclusion"
+      }
     ]
   },
   "NCT01720446": {
@@ -34,11 +82,26 @@
     "title": "SUSTAIN-6: Semaglutide CV outcomes in type 2 diabetes",
     "condition": "type 2 diabetes",
     "criteria": [
-      "Type 2 diabetes mellitus.",
-      "HbA1c of at least 7.0 %.",
-      "Age 50 years or older.",
-      "Body mass index of at least 20 kg/m2.",
-      "Type 1 diabetes mellitus."
+      {
+        "sentence": "Type 2 diabetes mellitus.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "HbA1c of at least 7.0 %.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Age 50 years or older.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Body mass index of at least 20 kg/m2.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Type 1 diabetes mellitus.",
+        "kind": "exclusion"
+      }
     ]
   },
   "NCT01131676": {
@@ -46,11 +109,26 @@
     "title": "EMPA-REG OUTCOME: Empagliflozin CV outcomes in type 2 diabetes",
     "condition": "type 2 diabetes",
     "criteria": [
-      "Type 2 diabetes mellitus.",
-      "HbA1c between 7.0 % and 10.0 %.",
-      "Age 18 years or older.",
-      "Body mass index of 45 kg/m2 or lower.",
-      "Estimated GFR below 30 mL/min/1.73m2."
+      {
+        "sentence": "Type 2 diabetes mellitus.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "HbA1c between 7.0 % and 10.0 %.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Age 18 years or older.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Body mass index of 45 kg/m2 or lower.",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Estimated GFR below 30 mL/min/1.73m2.",
+        "kind": "exclusion"
+      }
     ]
   }
 }

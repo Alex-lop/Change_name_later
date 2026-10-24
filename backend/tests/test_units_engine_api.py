@@ -86,6 +86,40 @@ def test_api_parse_requires_input():
     assert c.post("/api/parse", json={}).status_code == 400
 
 
+def test_split_criteria_is_section_aware():
+    # Task 11: split_criteria returns (sentence, kind), tracking the section.
+    from dryrun.parser import split_criteria
+
+    text = (
+        "Inclusion Criteria:\n- Age at least 50 years\n"
+        "Exclusion Criteria:\n- History of pancreatitis\n- Severe renal impairment"
+    )
+    out = split_criteria(text)
+    assert out == [
+        ("Age at least 50 years", "inclusion"),
+        ("History of pancreatitis", "exclusion"),
+        ("Severe renal impairment", "exclusion"),
+    ]
+
+
+def test_cache_key_includes_kind():
+    # The same sentence under different sections is cached separately.
+    from dryrun.parser import ParseCache
+    import tempfile, pathlib
+
+    with tempfile.TemporaryDirectory() as d:
+        cache = ParseCache(pathlib.Path(d) / "c.json")
+        s = "Active malignancy"
+        cache.put(s, {"field": "conditions", "operator": "has",
+                      "value": ["cancer"], "kind": "inclusion"}, "inclusion")
+        cache.put(s, {"field": "conditions", "operator": "has",
+                      "value": ["cancer"], "kind": "exclusion"}, "exclusion")
+        inc = cache.get(s, "inclusion")
+        exc = cache.get(s, "exclusion")
+        assert inc["kind"] == "inclusion"
+        assert exc["kind"] == "exclusion"
+
+
 def test_added_rule_evaluated_by_engine():
     # Task 7: a hand-added rule (added=true, no parser) is evaluated like any
     # other rule and tightens the confirmed-eligible count.

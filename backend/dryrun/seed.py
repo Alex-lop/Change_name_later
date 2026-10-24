@@ -208,15 +208,16 @@ def seed() -> None:
     cache = ParseCache()
     registry = {}
     for trial in TRIALS:
-        sentences = []
+        criteria = []
         for sentence, kwargs in trial["criteria"]:
-            cache.put(sentence, kwargs)
-            sentences.append(sentence)
+            kind = kwargs.get("kind", "inclusion")
+            cache.put(sentence, kwargs, kind)
+            criteria.append({"sentence": sentence, "kind": kind})
         registry[trial["nct_id"]] = {
             "nct_id": trial["nct_id"],
             "title": trial["title"],
             "condition": trial["condition"],
-            "criteria": sentences,
+            "criteria": criteria,
         }
     TRIALS_PATH.write_text(json.dumps(registry, indent=2))
     print(f"Seeded {len(cache)} parses, {len(registry)} trials -> {TRIALS_PATH}")

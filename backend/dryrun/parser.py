@@ -26,12 +26,19 @@ from .model import Rule
 CACHE_PATH = Path(__file__).resolve().parent.parent / "data" / "parse_cache.json"
 
 
-def _key(sentence: str) -> str:
-    return hashlib.sha256(sentence.strip().encode("utf-8")).hexdigest()[:16]
+def _key(sentence: str, kind: str = "inclusion") -> str:
+    """Cache key for a parsed sentence, scoped by its section (kind).
+
+    Including the kind means the same sentence appearing under an Inclusion vs
+    an Exclusion header is cached (and re-parsed) separately, so a fetched
+    protocol never stores a sentence as the wrong kind.
+    """
+    raw = f"{kind}\n{sentence.strip()}"
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
 
 
 class LLMBackend(Protocol):
-    def translate(self, sentence: str) -> dict:
+    def translate(self, sentence: str, kind: str = "inclusion") -> dict:
         """Return a dict of Rule kwargs (without source_sentence)."""
         ...
 
@@ -43,11 +50,14 @@ class ParseCache:
         if self.path.exists():
             self._data = json.loads(self.path.read_text())
 
-    def get(self, sentence: str) -> dict | None:
-        return self._data.get(_key(sentence))
+    def get(self, sentence: str, kind: str = "inclusion") -> dict | None:
+        return self._data.get(_key(sentence, kind))
 
-    def put(self, sentence: str, rule_kwargs: dict) -> None:
-        self._data[_key(sentence)] = rule_kwargs
+    def put(self, sentence: str, rule_kwargs: dict, kind: str | None = None) -> None:
+        # Default the key's kind to the rule's own kind so a cached rule is
+        # retrieved under the section it belongs to.
+        k = kind or rule_kwargs.get("kind", "inclusion")
+        self._data[_key(sentence, k)] = rule_kwargs
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(self._data, indent=2, sort_keys=True))
 
@@ -66,25 +76,40 @@ class RuleParser:
         self.cache = cache or ParseCache()
         self.backend = backend
 
-    def parse_sentence(self, sentence: str, rule_id: str) -> Rule:
+    def parse_sentence(
+        self, sentence: str, rule_id: str, kind: str = "inclusion"
+    ) -> Rule:
         sentence = sentence.strip()
-        cached = self.cache.get(sentence)
+        cached = self.cache.get(sentence, kind)
         if cached is not None:
             return Rule(id=rule_id, source_sentence=sentence, **cached)
         if self.backend is None:
             raise LookupError(
                 f"Sentence not in cache and no LLM backend configured: {sentence!r}"
             )
-        kwargs = self.backend.translate(sentence)
-        self.cache.put(sentence, kwargs)
+        kwargs = self.backend.translate(sentence, kind)
+        self.cache.put(sentence, kwargs, kind)
         return Rule(id=rule_id, source_sentence=sentence, **kwargs)
 
-    def parse_criteria(self, sentences: list[str], prefix: str = "r") -> list[Rule]:
+    def parse_criteria(
+        self, sentences: list[str], prefix: str = "r", kind: str = "inclusion"
+    ) -> list[Rule]:
         rules = []
         for i, s in enumerate(sentences):
             if not s.strip():
                 continue
-            rules.append(self.parse_sentence(s, rule_id=f"{prefix}{i}"))
+            rules.append(self.parse_sentence(s, rule_id=f"{prefix}{i}", kind=kind))
+        return rules
+
+    def parse_sections(
+        self, sections: list[tuple[str, str]], prefix: str = "r"
+    ) -> list[Rule]:
+        """Parse (sentence, kind) pairs as produced by split_criteria."""
+        rules = []
+        for i, (s, kind) in enumerate(sections):
+            if not s.strip():
+                continue
+            rules.append(self.parse_sentence(s, rule_id=f"{prefix}{i}", kind=kind))
         return rules
 
 
@@ -113,19 +138,27 @@ def fetch_ctgov_eligibility(nct_id: str, client: httpx.Client | None = None) -> 
     return elig
 
 
-def split_criteria(text: str) -> list[str]:
-    """Split a raw eligibility block into individual criterion sentences.
+def split_criteria(text: str) -> list[tuple[str, str]]:
+    """Split a raw eligibility block into (sentence, kind) pairs.
 
-    Splits on newlines and leading bullet markers. Keeps non-empty lines that
-    look like actual criteria (drops section headers like 'Inclusion Criteria:').
+    Tracks which section each sentence came from: lines after an
+    "Inclusion Criteria" header are ``inclusion``; lines after an
+    "Exclusion Criteria" header are ``exclusion``. The section is returned as
+    the rule kind so a fetched protocol is never stored as the wrong kind.
+    Section header lines themselves are dropped.
     """
-    lines = []
+    out: list[tuple[str, str]] = []
+    current = "inclusion"  # default before any header
     for raw in text.replace("\r", "\n").split("\n"):
         s = raw.strip().lstrip("-*•").strip()
         if not s:
             continue
         low = s.lower().rstrip(":")
-        if low in {"inclusion criteria", "exclusion criteria", "key inclusion criteria", "key exclusion criteria"}:
+        if "inclusion criteria" in low and len(low) <= len("key inclusion criteria"):
+            current = "inclusion"
             continue
-        lines.append(s)
-    return lines
+        if "exclusion criteria" in low and len(low) <= len("key exclusion criteria"):
+            current = "exclusion"
+            continue
+        out.append((s, current))
+    return out
