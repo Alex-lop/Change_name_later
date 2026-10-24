@@ -399,10 +399,9 @@ export default function App() {
       {loading && <div className="loading">Loading trial…</div>}
       {pending.length > 0 && (
         <div className="notice">
-          {pending.length} sentence{pending.length > 1 ? "s aren't" : " isn't"} in
-          Sieve's translation cache yet. {pending.length > 1 ? "They're" : "It's"}{" "}
-          listed under "Not translated yet" and change no count until you add
-          {pending.length > 1 ? " them" : " it"} by hand.
+          {pending.length} sentence{pending.length > 1 ? "s" : ""} not translated
+          yet. {pending.length > 1 ? "They change" : "It changes"} no count until
+          you add {pending.length > 1 ? "them" : "it"}.
         </div>
       )}
 
@@ -439,10 +438,8 @@ export default function App() {
               <div className="result-empty">
                 <p className="result-sentence">Nothing is counted yet.</p>
                 <p>
-                  None of this trial's sentences are in Sieve's translation
-                  cache. Choose "Add by hand" on the criteria you care about and
-                  the counts, the patient field and the map appear here, run on
-                  the {fmtInt(health?.population)} synthetic adults with type 2
+                  Add a criterion by hand. Counts use the{" "}
+                  {fmtInt(health?.population)} synthetic adults with type 2
                   diabetes.
                 </p>
               </div>
@@ -451,7 +448,6 @@ export default function App() {
               analysis={analysis}
               baseline={baseline}
               edited={edited}
-              populationLabel={analysis?.population_label}
               paraphrased={trialMeta?.paraphrased}
               rulesById={rulesById}
               assumptions={assumptions}

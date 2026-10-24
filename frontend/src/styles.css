@@ -370,9 +370,9 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .result-sentence {
   font-family: var(--serif);
-  font-size: clamp(22px, 2.2vw, 28px);
+  font-size: clamp(18px, 1.6vw, 22px);
   line-height: 1.35;
-  margin: 0 0 20px;
+  margin: 0 0 14px;
 }
 
 .numbers {
@@ -391,7 +391,7 @@ input[type="range"].range:disabled { opacity: 0.4; cursor: not-allowed; }
 .number-value.accent { color: var(--accent); }
 .number-label { font-size: 14px; color: var(--ink-2); margin-top: 4px; }
 .number-delta { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
-.uptoline { font-size: 14px; color: var(--ink-2); margin: 6px 0 24px; }
+.uptoline { font-size: 14px; color: var(--ink-2); margin: 4px 0 16px; }
 
 /* odometer */
 .odometer { display: inline-flex; overflow: hidden; }

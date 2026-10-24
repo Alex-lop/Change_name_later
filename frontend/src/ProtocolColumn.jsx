@@ -72,21 +72,20 @@ export default function ProtocolColumn({
       <div className="trial-title">{title}</div>
       {coverage && coverage.total > 0 ? (
         <div className="coverage-line">
-          Sieve can evaluate {coverage.evaluable} of {coverage.total} criteria
-          on this data.{n > 0 && ` ${n} more ${n > 1 ? "aren't" : "isn't"} translated yet.`}
+          {coverage.evaluable} of {coverage.total} criteria can be counted.
+          {n > 0 && ` ${n} not translated yet.`}
         </div>
       ) : (
         n > 0 && (
           <div className="coverage-line">
-            None of these {n} criteria {n > 1 ? "are" : "is"} translated yet.
+            None of these {n} {n > 1 ? "are" : "is"} translated yet.
           </div>
         )
       )}
       {condition && !T2D_FIRST.test(condition) && (
         <p className="population-note">
-          This study is about {condition}. Sieve's synthetic population is
-          adults with type 2 diabetes, so the counts show how these criteria act
-          on that group, not on everyone the study could enroll.
+          This study is about {condition}. Counts use the synthetic type 2
+          diabetes cohort.
         </p>
       )}
 
@@ -106,7 +105,7 @@ export default function ProtocolColumn({
 
       {notEvaluable.length > 0 && (
         <>
-          <h2 className="section-heading">Not evaluable on this data</h2>
+          <h2 className="section-heading">Not evaluable here</h2>
           <ul className="criteria-list">{notEvaluable.map(renderRow)}</ul>
         </>
       )}
@@ -115,9 +114,7 @@ export default function ProtocolColumn({
         <>
           <h2 className="section-heading">Not translated yet</h2>
           <p className="section-note">
-            These sentences aren't in Sieve's translation cache, so they change
-            no count. Add the ones you need by hand; the sentence stays word for
-            word.
+            Not in the translation cache. They change no count until you add them.
           </p>
           <ul className="criteria-list">
             {untranslated.map((u, i) => (

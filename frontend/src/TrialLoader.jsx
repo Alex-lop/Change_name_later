@@ -68,10 +68,8 @@ export default function TrialLoader({ loading, onLoadNct, onLoadText, onClose })
         </form>
       )}
       <p className="loader-note" id="loader-note">
-        Any study on ClinicalTrials.gov loads, in any field. Sentences Sieve has
-        already translated become criteria right away; the rest are listed
-        word for word so you can add the ones you need by hand. Counts always
-        run on the synthetic adults with type 2 diabetes.
+        Cached sentences become criteria. The rest stay as text until you add
+        them. Counts use the synthetic type 2 diabetes cohort.
       </p>
       <button className="btn-text loader-close" type="button" onClick={onClose}>
         Close

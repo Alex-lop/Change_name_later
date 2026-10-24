@@ -12,7 +12,6 @@ export default function ResultColumn({
   analysis,
   baseline,
   edited,
-  populationLabel,
   paraphrased,
   rulesById,
   assumptions,
@@ -50,34 +49,29 @@ export default function ResultColumn({
       ? cost.delay_cost - baseCost.delay_cost
       : null;
 
-  const label = populationLabel || "adults with type 2 diabetes";
-
   // Result sentence: as-written vs after edits.
   let sentence;
   if (noProtocol) {
     sentence = (
       <>
-        With the criteria you added, {fmtInt(confirmed)} of {fmtInt(total)}{" "}
-        synthetic {label} are eligible.
+        {fmtInt(confirmed)} of {fmtInt(total)} eligible.
       </>
     );
   } else if (!edited || confDelta == null || confDelta === 0) {
     sentence = (
       <>
-        As written, {fmtInt(confirmed)} of {fmtInt(total)} synthetic {label} are
-        eligible.
+        {fmtInt(confirmed)} of {fmtInt(total)} eligible, as written.
       </>
     );
   } else {
     const more = confDelta > 0;
     const monthsPhrase =
       monthsDelta != null && Math.abs(monthsDelta) >= 0.05
-        ? `, ${monthsDelta < 0 ? "shortening" : "lengthening"} enrollment by about ${fmtMonths(Math.abs(monthsDelta))} months`
+        ? `, about ${fmtMonths(Math.abs(monthsDelta))} months ${monthsDelta < 0 ? "sooner" : "later"}`
         : "";
     sentence = (
       <>
-        Your changes {more ? "admit" : "remove"} {fmtInt(Math.abs(confDelta))}{" "}
-        {more ? "more" : "fewer"} patients{monthsPhrase}.
+        {fmtInt(Math.abs(confDelta))} {more ? "more" : "fewer"} patients{monthsPhrase}.
       </>
     );
   }
@@ -105,13 +99,13 @@ export default function ResultColumn({
           <div className="number-value accent">
             <Odometer value={confirmed} />
           </div>
-          <div className="number-label">eligible patients</div>
+          <div className="number-label">eligible</div>
           <div className="number-delta">
             {noProtocol
-              ? "from criteria added by hand"
+              ? "added by hand"
               : confDelta == null || confDelta === 0
-                ? "same as the protocol"
-                : `${fmtDelta(confDelta)} vs the protocol`}
+                ? "as written"
+                : `${fmtDelta(confDelta)} vs protocol`}
           </div>
         </div>
 
@@ -121,13 +115,13 @@ export default function ResultColumn({
               ? `about ${fmtMonths(cost.enrollment_months)}`
               : "—"}
           </div>
-          <div className="number-label">months to enroll (estimate)</div>
+          <div className="number-label">months to enroll</div>
           <div className="number-delta">
             {noProtocol
-              ? "from criteria added by hand"
+              ? "added by hand"
               : monthsDeltaStr
-                ? `${monthsDeltaStr} mo vs the protocol`
-                : "same as the protocol"}
+                ? `${monthsDeltaStr} mo vs protocol`
+                : "as written"}
           </div>
         </div>
 
@@ -135,19 +129,19 @@ export default function ResultColumn({
           <div className="number-value">
             {cost.delay_cost != null ? `about ${fmtMoney(cost.delay_cost)}` : "—"}
           </div>
-          <div className="number-label">delay cost (estimate)</div>
+          <div className="number-label">delay cost</div>
           <div className="number-delta">
             {noProtocol
-              ? "from criteria added by hand"
+              ? "added by hand"
               : costDeltaStr
-                ? `${costDeltaStr} vs the protocol`
-                : "same as the protocol"}
+                ? `${costDeltaStr} vs protocol`
+                : "as written"}
           </div>
         </div>
       </div>
 
       <p className="uptoline">
-        up to {fmtInt(possibly)} if missing data checks out.
+        Up to {fmtInt(possibly)} if missing data checks out.
       </p>
 
       <PatientField
@@ -174,7 +168,7 @@ export default function ResultColumn({
         activeRuleLabels={activeRuleLabels}
       />
 
-      <h2 className="section-heading">How the cohort narrows</h2>
+      <h2 className="section-heading">Enrollment funnel</h2>
       <ConsortFlow funnel={analysis.funnel} rulesById={rulesById} />
 
       <CostTable

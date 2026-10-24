@@ -470,7 +470,7 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
             </button>
           </>
         ) : (
-          <span>Confirmed-eligible share of synthetic patients, by county</span>
+          <span>Eligible share, by county</span>
         )}
       </div>
 
@@ -614,7 +614,7 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
         ) : (
           <>
             {crit && (
-              <p className="map-legend-title">Share of each county's synthetic patients this criterion keeps out</p>
+              <p className="map-legend-title">Share this criterion keeps out</p>
             )}
             <div className="map-legend-row">
               <div className="map-ramp">
@@ -668,13 +668,13 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
           {sites.length ? (
             <>
               <Ring color={ACCENT} r={5} w={1.5} /> {sites.length} Massachusetts{" "}
-              {sites.length === 1 ? "site" : "sites"} this trial lists on ClinicalTrials.gov
+              {sites.length === 1 ? "site" : "sites"} on ClinicalTrials.gov
             </>
           ) : nctId && geo?.sites && nctId in geo.sites ? (
-            "This trial lists no Massachusetts sites on ClinicalTrials.gov."
+            "No Massachusetts sites on ClinicalTrials.gov."
           ) : (
             // Only the bundled trials have a site snapshot; don't claim "none" for the rest.
-            "Massachusetts site locations are bundled for the original demo trials only."
+            "Sites are shown for the original demo trials."
           )}
         </p>
         {rec && (
@@ -682,7 +682,7 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
             <input type="checkbox" checked={showRec} onChange={(e) => setShowRec(e.target.checked)} />
             <Ring color={INK2} r={3} w={1.2} />
             <span>
-              Recruiting type 2 diabetes trials in Massachusetts, as of {fmtDate(rec.as_of)}
+              Recruiting in Massachusetts, {fmtDate(rec.as_of)}
               {Number.isFinite(rec.trials) ? ` (${rec.trials} ${rec.trials === 1 ? "trial" : "trials"})` : ""}
             </span>
           </label>
@@ -724,7 +724,7 @@ export default function MapView({ geo, areas, baselineAreas, selected, onClearSe
           <caption>
             {crit
               ? `Where “${gloss}” keeps patients out, by county`
-              : "Confirmed-eligible share of synthetic patients, by county"}
+              : "Eligible share, by county"}
           </caption>
           <thead>
             <tr>

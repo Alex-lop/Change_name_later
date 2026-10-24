@@ -226,7 +226,7 @@ export default function AddCriterion({ onAdd, draft, onDraftDone }) {
       )}
       {suggested && (
         <p className="add-suggested">
-          Filled in from the sentence as a suggestion. Check it before adding.
+          Suggested from the sentence. Check it before adding.
         </p>
       )}
       <div className="add-grid">

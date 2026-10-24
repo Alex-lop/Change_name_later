@@ -15,8 +15,7 @@ export default function AssumptionsPanel({ assumptions, onChange }) {
     <details className="assumptions">
       <summary>Enrollment assumptions</summary>
       <p className="assumptions-note">
-        All enrollment and cost figures are planning estimates, not financial
-        advice.
+        Planning estimates, not financial advice.
       </p>
       <div className="assumptions-grid">
         {FIELDS.map((f) => (

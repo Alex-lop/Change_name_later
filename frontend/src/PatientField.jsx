@@ -471,8 +471,7 @@ export default function PatientField({
         mapCaption != null && <div className="field-caption">{mapCaption}</div>
       ) : (
         <p className="field-caption">
-          Each mark is one synthetic patient. Standing: eligible. Short: missing
-          data. Fallen: excluded.
+          One mark per patient. Standing: eligible. Short: missing data. Fallen: excluded.
         </p>
       )}
     </div>

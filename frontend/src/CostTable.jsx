@@ -138,7 +138,7 @@ export default function CostTable({
           What each criterion costs
           {onSelect && (
             <span className="cost-hint">
-              Select a row to map where it keeps patients out.
+              Select a row to see it on the map.
             </span>
           )}
         </caption>

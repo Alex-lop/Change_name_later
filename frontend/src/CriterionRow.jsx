@@ -275,7 +275,7 @@ export default function CriterionRow({
         <div className="crit-body">
           <div className="crit-sentence">{rule.source_sentence}</div>
           <div className="crit-uneval-reason">
-            Not evaluable on this data — {rule.unevaluable_reason}
+            Not counted — {rule.unevaluable_reason}
           </div>
         </div>
       </li>
