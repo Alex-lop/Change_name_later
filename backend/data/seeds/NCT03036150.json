@@ -1,0 +1,132 @@
+{
+  "nct_id": "NCT03036150",
+  "title": "Dapa-CKD: A Study to Evaluate the Effect of Dapagliflozin on Renal Outcomes and Cardiovascular Mortality in Patients With Chronic Kidney Disease",
+  "condition": "chronic kidney disease, with or without type 2 diabetes",
+  "paraphrased": false,
+  "criteria": [
+    {
+      "sentence": "Provision of signed informed consent prior to any study specific procedures",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Informed consent is not in the synthetic records",
+        "label": "Signed informed consent"
+      }
+    },
+    {
+      "sentence": "Female or male aged \u226518 years at the time of consent",
+      "rule": {
+        "field": "age",
+        "operator": ">=",
+        "value": 18,
+        "unit": "years",
+        "kind": "inclusion",
+        "label": "Age >= 18y"
+      }
+    },
+    {
+      "sentence": "eGFR \u226525 and \u226475 mL/min/1.73m2 (CKD-EPI Formula) at visit 1",
+      "rule": {
+        "field": "egfr",
+        "operator": "between",
+        "value": [
+          25,
+          75
+        ],
+        "unit": "ml/min/1.73m2",
+        "kind": "inclusion",
+        "label": "eGFR 25-75"
+      }
+    },
+    {
+      "sentence": "Evidence of increased albuminuria 3 months or more before visit 1 and UACR \u2265200 and \u22645000 mg/g at visit 1",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "UACR is not in the synthetic data, and the 3-month albuminuria history needs dates",
+        "label": "UACR 200-5000 mg/g with albuminuria for 3+ months"
+      }
+    },
+    {
+      "sentence": "Stable, and for the patient maximum tolerated labelled daily dose, treatment with ACE-I or ARB for at least 4 weeks before visit 1, if not medically contraindicated,",
+      "rule": {
+        "kind": "inclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Doses, ARBs, the 4-week treatment window and contraindications are not in the synthetic data",
+        "label": "Stable max-dose ACE inhibitor or ARB for 4+ weeks"
+      }
+    },
+    {
+      "sentence": "Autosomal dominant or autosomal recessive polycystic kidney disease, lupus nephritis or ANCA-associated vasculitis",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Polycystic kidney disease, lupus nephritis and ANCA vasculitis are not in the synthetic conditions list",
+        "label": "Exclude PKD, lupus nephritis or ANCA vasculitis"
+      }
+    },
+    {
+      "sentence": "Receiving cytotoxic therapy, immunosuppressive therapy or other immunotherapy for primary or secondary renal disease within 6 months prior to enrolment",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Cytotoxic and immunosuppressive drugs are not in the synthetic medication list, and the 6-month window needs dates",
+        "label": "Exclude renal immunotherapy in last 6 months"
+      }
+    },
+    {
+      "sentence": "History of organ transplantation",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "Procedures, including transplants, are not in the synthetic data",
+        "label": "Exclude organ transplant history"
+      }
+    },
+    {
+      "sentence": "Receiving therapy with an SGLT2 inhibitor within 8 weeks prior to enrolment or previous intolerance of an SGLT2 inhibitor",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "SGLT2 inhibitors are not in the synthetic medication list, and the 8-week window needs dates",
+        "label": "Exclude recent SGLT2 inhibitor use or intolerance"
+      }
+    },
+    {
+      "sentence": "Type 1 diabetes mellitus",
+      "rule": {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "t1d"
+        ],
+        "kind": "exclusion",
+        "label": "Exclude type 1 diabetes"
+      }
+    },
+    {
+      "sentence": "New York Heart Association (NYHA) class IV Congestive Heart Failure at the time of enrolment",
+      "rule": {
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "NYHA class is not recorded",
+        "label": "Exclude NYHA class IV heart failure"
+      }
+    },
+    {
+      "sentence": "MI, unstable angina, stroke or transient ischemic attack within 12 weeks prior to enrolment",
+      "rule": {
+        "field": "conditions",
+        "operator": "has",
+        "value": [
+          "mi",
+          "stroke"
+        ],
+        "kind": "exclusion",
+        "evaluable": false,
+        "unevaluable_reason": "12-week event window needs dates; the synthetic data has no dates",
+        "label": "Exclude recent MI/stroke/unstable angina/TIA (12-week window)"
+      }
+    }
+  ]
+}

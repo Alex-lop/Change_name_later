@@ -286,5 +286,61 @@
         "kind": "exclusion"
       }
     ]
+  },
+  "NCT03036150": {
+    "nct_id": "NCT03036150",
+    "title": "Dapa-CKD: A Study to Evaluate the Effect of Dapagliflozin on Renal Outcomes and Cardiovascular Mortality in Patients With Chronic Kidney Disease",
+    "condition": "chronic kidney disease, with or without type 2 diabetes",
+    "paraphrased": false,
+    "criteria": [
+      {
+        "sentence": "Provision of signed informed consent prior to any study specific procedures",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Female or male aged \u226518 years at the time of consent",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "eGFR \u226525 and \u226475 mL/min/1.73m2 (CKD-EPI Formula) at visit 1",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Evidence of increased albuminuria 3 months or more before visit 1 and UACR \u2265200 and \u22645000 mg/g at visit 1",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Stable, and for the patient maximum tolerated labelled daily dose, treatment with ACE-I or ARB for at least 4 weeks before visit 1, if not medically contraindicated,",
+        "kind": "inclusion"
+      },
+      {
+        "sentence": "Autosomal dominant or autosomal recessive polycystic kidney disease, lupus nephritis or ANCA-associated vasculitis",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Receiving cytotoxic therapy, immunosuppressive therapy or other immunotherapy for primary or secondary renal disease within 6 months prior to enrolment",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "History of organ transplantation",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Receiving therapy with an SGLT2 inhibitor within 8 weeks prior to enrolment or previous intolerance of an SGLT2 inhibitor",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "Type 1 diabetes mellitus",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "New York Heart Association (NYHA) class IV Congestive Heart Failure at the time of enrolment",
+        "kind": "exclusion"
+      },
+      {
+        "sentence": "MI, unstable angina, stroke or transient ischemic attack within 12 weeks prior to enrolment",
+        "kind": "exclusion"
+      }
+    ]
   }
 }

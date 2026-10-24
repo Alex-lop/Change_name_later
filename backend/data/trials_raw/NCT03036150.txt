@@ -1,0 +1,17 @@
+Inclusion Criteria:
+
+* Provision of signed informed consent prior to any study specific procedures
+* Female or male aged ≥18 years at the time of consent
+* eGFR ≥25 and ≤75 mL/min/1.73m2 (CKD-EPI Formula) at visit 1
+* Evidence of increased albuminuria 3 months or more before visit 1 and UACR ≥200 and ≤5000 mg/g at visit 1
+* Stable, and for the patient maximum tolerated labelled daily dose, treatment with ACE-I or ARB for at least 4 weeks before visit 1, if not medically contraindicated,
+
+Exclusion Criteria:
+
+* Autosomal dominant or autosomal recessive polycystic kidney disease, lupus nephritis or ANCA-associated vasculitis
+* Receiving cytotoxic therapy, immunosuppressive therapy or other immunotherapy for primary or secondary renal disease within 6 months prior to enrolment
+* History of organ transplantation
+* Receiving therapy with an SGLT2 inhibitor within 8 weeks prior to enrolment or previous intolerance of an SGLT2 inhibitor
+* Type 1 diabetes mellitus
+* New York Heart Association (NYHA) class IV Congestive Heart Failure at the time of enrolment
+* MI, unstable angina, stroke or transient ischemic attack within 12 weeks prior to enrolment

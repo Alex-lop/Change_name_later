@@ -10,6 +10,12 @@
       "t1d"
     ]
   },
+  "0c05e6d934cc9b9a": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude renal immunotherapy in last 6 months",
+    "unevaluable_reason": "Cytotoxic and immunosuppressive drugs are not in the synthetic medication list, and the 6-month window needs dates"
+  },
   "0fd75bbd1214520b": {
     "evaluable": false,
     "field": "systolic_bp",
@@ -114,6 +120,23 @@
     "label": "Exclude NYHA Class IV heart failure",
     "unevaluable_reason": "NYHA class is not recorded"
   },
+  "2f595f998c987627": {
+    "field": "egfr",
+    "kind": "inclusion",
+    "label": "eGFR 25-75",
+    "operator": "between",
+    "unit": "ml/min/1.73m2",
+    "value": [
+      25,
+      75
+    ]
+  },
+  "34018dd3e562e5fa": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude PKD, lupus nephritis or ANCA vasculitis",
+    "unevaluable_reason": "Polycystic kidney disease, lupus nephritis and ANCA vasculitis are not in the synthetic conditions list"
+  },
   "3aea2613e7165140": {
     "evaluable": false,
     "kind": "exclusion",
@@ -145,6 +168,18 @@
     "kind": "exclusion",
     "label": "Exclude chronic cystitis or recurrent UTIs",
     "unevaluable_reason": "Cystitis and urinary tract infections are not in the synthetic records"
+  },
+  "4e2e1d5533fa8e9f": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "UACR 200-5000 mg/g with albuminuria for 3+ months",
+    "unevaluable_reason": "UACR is not in the synthetic data, and the 3-month albuminuria history needs dates"
+  },
+  "4ee1108aeae5a3f5": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude NYHA class IV heart failure",
+    "unevaluable_reason": "NYHA class is not recorded"
   },
   "5a9f2bf10bcd7228": {
     "evaluable": false,
@@ -195,6 +230,12 @@
     "kind": "exclusion",
     "label": "Exclude NYHA Class IV heart failure",
     "unevaluable_reason": "NYHA class is not recorded"
+  },
+  "611762cb5e501c91": {
+    "evaluable": false,
+    "kind": "inclusion",
+    "label": "Stable max-dose ACE inhibitor or ARB for 4+ weeks",
+    "unevaluable_reason": "Doses, ARBs, the 4-week treatment window and contraindications are not in the synthetic data"
   },
   "668f9d1364ac7439": {
     "evaluable": false,
@@ -459,6 +500,14 @@
     "label": "Exclude glucose-galactose malabsorption or renal glucosuria",
     "unevaluable_reason": "Glucose-galactose malabsorption and renal glucosuria are not in the synthetic records"
   },
+  "cd737a2abbad38b2": {
+    "field": "age",
+    "kind": "inclusion",
+    "label": "Age >= 18y",
+    "operator": ">=",
+    "unit": "years",
+    "value": 18
+  },
   "f2860672251d6cce": {
     "field": "conditions",
     "kind": "exclusion",
@@ -478,5 +527,11 @@
     "value": [
       "chf"
     ]
+  },
+  "ff801a46e68b8981": {
+    "evaluable": false,
+    "kind": "exclusion",
+    "label": "Exclude organ transplant history",
+    "unevaluable_reason": "Procedures, including transplants, are not in the synthetic data"
   }
 }
