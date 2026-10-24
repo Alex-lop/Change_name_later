@@ -200,14 +200,6 @@
       "cancer"
     ]
   },
-  "ce0f37790f328941": {
-    "field": "bmi",
-    "kind": "inclusion",
-    "label": "BMI >= 20",
-    "operator": ">=",
-    "unit": "kg/m2",
-    "value": 20
-  },
   "f2860672251d6cce": {
     "field": "conditions",
     "kind": "exclusion",

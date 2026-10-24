@@ -67,7 +67,7 @@ def test_api_full_flow():
     assert any(t["nct_id"] == "NCT01179048" for t in trials)
 
     pr = c.post("/api/parse", json={"nct_id": "NCT01179048"}).json()
-    assert len(pr["rules"]) == 5 and pr["unparsed"] == []
+    assert len(pr["rules"]) == 4 and pr["unparsed"] == []
 
     an = c.post("/api/analyze", json={"rules": pr["rules"]}).json()
     assert an["total_patients"] == 10000
@@ -309,3 +309,29 @@ def test_frontend_mount_contains_path_traversal(tmp_path):
 
     # A missing API route returns 404 (not shadowed by the static mount).
     assert client.get("/api/nope").status_code == 404
+
+
+def test_verbatim_trials_match_raw_eligibility_text():
+    # Every source sentence of a trial flagged paraphrased=false must appear
+    # verbatim in backend/data/trials_raw/<NCT>.txt, once backslash escapes are
+    # removed (ClinicalTrials.gov escapes e.g. "m\^2").
+    from pathlib import Path
+
+    from dryrun.seed import load_registry
+
+    raw_dir = Path(__file__).resolve().parent.parent / "data" / "trials_raw"
+    registry = load_registry()
+    checked = 0
+    for nct, trial in registry.items():
+        if trial.get("paraphrased") is not False:
+            continue
+        raw_path = raw_dir / f"{nct}.txt"
+        assert raw_path.exists(), f"missing raw text for {nct}"
+        raw = raw_path.read_text().replace("\\", "")
+        for crit in trial["criteria"]:
+            sentence = crit["sentence"]
+            assert sentence in raw, (
+                f"{nct}: source sentence not verbatim in raw text:\n{sentence!r}"
+            )
+            checked += 1
+    assert checked > 0  # at least PIONEER 6 was verified

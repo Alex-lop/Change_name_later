@@ -12,6 +12,7 @@ export default function ResultColumn({
   baseline,
   edited,
   populationLabel,
+  paraphrased,
   rulesById,
   assumptions,
   dragging,
@@ -133,6 +134,7 @@ export default function ResultColumn({
         baselineMonths={cost.enrollment_months}
         costPerDay={assumptions?.cost_per_day}
         activeRuleIds={analysis.active_rule_ids}
+        paraphrased={paraphrased}
         dragging={dragging}
         onHover={onHover}
         hotIndex={hotIndex}

@@ -22,6 +22,7 @@ export default function CostTable({
   baselineMonths,
   costPerDay,
   activeRuleIds,
+  paraphrased,
   dragging,
   onHover,
   hotIndex,
@@ -112,7 +113,11 @@ export default function CostTable({
                       cohort
                     </div>
                   )}
-                  <div className="cost-source">“{tag.source_sentence}”</div>
+                  <div className="cost-source">
+                    {paraphrased
+                      ? tag.source_sentence
+                      : `\u201c${tag.source_sentence}\u201d`}
+                  </div>
                 </td>
                 <td className="num">{fmtInt(tag.excluded)}</td>
                 <td className="num month-bar-cell">

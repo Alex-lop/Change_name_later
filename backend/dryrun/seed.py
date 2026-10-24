@@ -31,6 +31,7 @@ LEADER = {
     "nct_id": "NCT01179048",
     "title": "LEADER: Liraglutide Effect and Action in Diabetes (CV outcomes)",
     "condition": "type 2 diabetes",
+    "paraphrased": True,
     "criteria": [
         ("Type 2 diabetes mellitus.",
          dict(field="conditions", operator="has", value=["t2d"],
@@ -44,9 +45,6 @@ LEADER = {
         ("Type 1 diabetes mellitus.",
          dict(field="conditions", operator="has", value=["t1d"],
               kind="exclusion", label="Exclude type 1 diabetes")),
-        ("Estimated GFR below 30 mL/min/1.73m2.",
-         dict(field="egfr", operator="<", value=30, unit="ml/min/1.73m2",
-              kind="exclusion", label="Exclude eGFR < 30")),
     ],
 }
 
@@ -54,6 +52,7 @@ SUSTAIN6 = {
     "nct_id": "NCT01720446",
     "title": "SUSTAIN-6: Semaglutide CV outcomes in type 2 diabetes",
     "condition": "type 2 diabetes",
+    "paraphrased": True,
     "criteria": [
         ("Type 2 diabetes mellitus.",
          dict(field="conditions", operator="has", value=["t2d"],
@@ -64,9 +63,6 @@ SUSTAIN6 = {
         ("Age 50 years or older.",
          dict(field="age", operator=">=", value=50, unit="years",
               kind="inclusion", label="Age >= 50y")),
-        ("Body mass index of at least 20 kg/m2.",
-         dict(field="bmi", operator=">=", value=20, unit="kg/m2",
-              kind="inclusion", label="BMI >= 20")),
         ("Type 1 diabetes mellitus.",
          dict(field="conditions", operator="has", value=["t1d"],
               kind="exclusion", label="Exclude type 1 diabetes")),
@@ -77,6 +73,7 @@ EMPAREG = {
     "nct_id": "NCT01131676",
     "title": "EMPA-REG OUTCOME: Empagliflozin CV outcomes in type 2 diabetes",
     "condition": "type 2 diabetes",
+    "paraphrased": True,
     "criteria": [
         ("Type 2 diabetes mellitus.",
          dict(field="conditions", operator="has", value=["t2d"],
@@ -100,6 +97,7 @@ PIONEER6 = {
     "nct_id": "NCT02692716",
     "title": "PIONEER 6: Cardiovascular Safety of Oral Semaglutide in Type 2 Diabetes",
     "condition": "type 2 diabetes",
+    "paraphrased": False,
     # source_sentence values are VERBATIM from ClinicalTrials.gov (API v2),
     # saved in backend/data/trials_raw/NCT02692716.txt. The structured rules
     # map onto canonical engine fields only (no SNOMED/LOINC/RxNorm matching).
@@ -217,6 +215,7 @@ def seed() -> None:
             "nct_id": trial["nct_id"],
             "title": trial["title"],
             "condition": trial["condition"],
+            "paraphrased": trial["paraphrased"],
             "criteria": criteria,
         }
     TRIALS_PATH.write_text(json.dumps(registry, indent=2))

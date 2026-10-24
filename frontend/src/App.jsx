@@ -210,6 +210,11 @@ export default function App() {
             </option>
           ))}
         </select>
+        <span className="trial-provenance">
+          {trials.find((t) => t.nct_id === currentNct)?.paraphrased === false
+            ? "Verbatim from ClinicalTrials.gov"
+            : "Paraphrased, abridged"}
+        </span>
         <div className="topbar-actions">
           <button
             className="btn"
@@ -282,6 +287,7 @@ export default function App() {
               baseline={baseline}
               edited={edited}
               populationLabel={analysis?.population_label}
+              paraphrased={trialMeta?.paraphrased}
               rulesById={rulesById}
               assumptions={assumptions}
               dragging={dragging}
