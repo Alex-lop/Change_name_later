@@ -12,18 +12,21 @@ RUN npm run build
 FROM python:3.11-slim AS runtime
 WORKDIR /app
 
-# Install the backend and its dependencies into the environment, but keep the
-# source tree in place: the app resolves data/ and frontend/dist via paths
-# relative to the dryrun package source, so it must run from the repo layout.
+# Source tree stays in place: the app resolves data/ and frontend/dist via
+# paths relative to the dryrun package source, so it must run from the repo
+# layout. This also brings in backend/data/patients.csv (shipped with the
+# image; startup generation is only a fallback) and the uv lockfile.
 COPY backend/ /app/backend/
-RUN pip install --no-cache-dir -e /app/backend
 
-# Built frontend, served by FastAPI from frontend/dist with SPA fallback.
+# Install exactly the locked dependencies, then the package itself with no deps.
+RUN pip install --no-cache-dir uv \
+    && (cd /app/backend && uv export --frozen --no-dev --no-emit-project -o /tmp/req.txt) \
+    && pip install --no-cache-dir -r /tmp/req.txt \
+    && pip install --no-cache-dir --no-deps -e /app/backend
+
+# Built frontend, served by FastAPI from frontend/dist.
 COPY --from=frontend /app/frontend/dist /app/frontend/dist
-
-# The synthetic population CSV is generated on startup if missing, so the
-# image stays small and the data is reproducible from the fixed seed.
 
 EXPOSE 8000
 WORKDIR /app/backend
-CMD ["uvicorn", "dryrun.api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn dryrun.api:app --host 0.0.0.0 --port ${PORT:-8000}"]

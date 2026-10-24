@@ -15,6 +15,7 @@ criterion or edits assumptions.
 
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
@@ -33,7 +34,26 @@ from .model import Rule
 from .seed import load_registry
 from .store import DEFAULT_CSV, get_store
 
-app = FastAPI(title="Dry Run", version="0.2.0")
+
+def _ensure_population() -> None:
+    """Generate the synthetic population CSV if it is missing.
+
+    The image ships the CSV, so this is only a fallback (e.g. a volume mount
+    that hides it). The seed is fixed, so the population is reproducible.
+    """
+    csv_path = Path(DEFAULT_CSV)
+    if not csv_path.exists():
+        pop = synthea.generate_population()  # all adults with type 2 diabetes
+        synthea.write_csv(pop, csv_path)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    _ensure_population()
+    yield
+
+
+app = FastAPI(title="Dry Run", version="0.2.0", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -45,19 +65,6 @@ _parser = parser_mod.RuleParser()
 
 # Built frontend (vite) output, served in production. Optional in dev.
 FRONTEND_DIST = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
-
-
-@app.on_event("startup")
-def _ensure_population() -> None:
-    """Generate the synthetic population CSV at startup if it is missing.
-
-    Keeps deployment one-step: the container does not need a separate data
-    generation stage. The seed is fixed so the population is reproducible.
-    """
-    csv_path = Path(DEFAULT_CSV)
-    if not csv_path.exists():
-        pop = synthea.generate_population()  # all adults with type 2 diabetes
-        synthea.write_csv(pop, csv_path)
 
 
 # --- request/response models ---------------------------------------------------
