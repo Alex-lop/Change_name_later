@@ -6,6 +6,7 @@ import PriceTags, { fmtMoney } from "./PriceTags";
 import CriterionRow from "./CriterionRow";
 import ResultsHeader from "./ResultsHeader";
 import AddCriterion from "./AddCriterion";
+import { buildExportText, downloadText } from "./exportCriteria";
 
 const DEFAULT_ASSUMPTIONS = {
   target_enrollment: 1000,
@@ -28,6 +29,7 @@ export default function App() {
   const [assumptions, setAssumptions] = useState(DEFAULT_ASSUMPTIONS);
   const [analysis, setAnalysis] = useState(null);
   const [baseline, setBaseline] = useState(null);
+  const [trialMeta, setTrialMeta] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -58,6 +60,7 @@ export default function App() {
       const loaded = res.rules.map((r) => JSON.parse(JSON.stringify(r)));
       setRules(loaded);
       setOriginalRules(loaded.map((r) => JSON.parse(JSON.stringify(r))));
+      setTrialMeta(res.trial || null);
       setUnparsed(res.unparsed || []);
       setActiveIds(res.rules.map((r) => r.id));
       setBaseline(null);
@@ -138,6 +141,18 @@ export default function App() {
     setActiveIds((prev) => [...prev, rule.id]);
   }
 
+  function exportModified() {
+    const text = buildExportText({
+      trialTitle: trialMeta?.title,
+      rules,
+      originalById,
+      activeIds,
+      analysis,
+    });
+    const name = (trialMeta?.nct_id || "dry-run") + "-modified-criteria.txt";
+    downloadText(name, text);
+  }
+
   const cost = analysis?.cost;
 
   return (
@@ -214,9 +229,14 @@ export default function App() {
             <section className="panel">
               <div className="panel-head">
                 <h3>Criteria ({activeIds.length}/{rules.length} active)</h3>
-                <button className="chip-btn" onClick={resetToOriginal}>
-                  Reset to original protocol
-                </button>
+                <div className="head-btns">
+                  <button className="chip-btn" onClick={exportModified}>
+                    Export as text
+                  </button>
+                  <button className="chip-btn" onClick={resetToOriginal}>
+                    Reset to original protocol
+                  </button>
+                </div>
               </div>
               <ul className="criteria-list">
                 {rules.map((r) => (

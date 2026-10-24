@@ -123,6 +123,7 @@ details textarea { margin: 0.5rem 0; font-family: ui-monospace, monospace; }
   cursor: pointer;
 }
 .panel-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.head-btns { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .added-tag {
   font-size: 0.65rem;
   background: rgba(79,156,249,0.18);
