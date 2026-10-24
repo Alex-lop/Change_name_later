@@ -48,7 +48,7 @@ funnel · cost table · enrollment estimate
 
 A criterion sentence is translated into a structured rule: `field`, `operator`, `value`, `unit`, and `kind`. The source sentence is kept. The translator never sees patient rows and never returns a verdict.
 
-The four demo protocols ship as hand-checked translations in `backend/data/parse_cache.json`, so the walkthrough runs offline. `LLMBackend` in `backend/dryrun/parser.py` is the plug-in for a live translator. This build does not configure one. A sentence missing from the cache is reported as unparsed and left out. Add it by hand from the workbench instead.
+The eleven demo protocols ship as hand-checked translations in `backend/data/parse_cache.json`, so the walkthrough runs offline. `LLMBackend` in `backend/dryrun/parser.py` is the plug-in for a live translator. This build does not configure one. A sentence missing from the cache is reported as unparsed and left out. Add it by hand from the workbench instead.
 
 The engine in `backend/dryrun/engine.py` returns `meets`, `fails`, or `unknown`. Units are converted to a canonical unit before any comparison, so HbA1c in % and mmol/mol receive the same verdict. An exclusion flips `meets` and `fails` and leaves `unknown` as `unknown`.
 
@@ -75,6 +75,8 @@ PIONEER 6 is the protocol to judge the product on. It has 11 criteria. Four can 
 Cardiovascular disease is approximated as a history of myocardial infarction or stroke. A cardiovascular risk factor is approximated as hypertension. The other seven criteria need a date or a field this generator does not have (medication washout, family history, gastric surgery, NYHA class, planned revascularisation, a 60-day event window, a 5-year malignancy window). Each is shown with that reason and drops out of the counts. Coverage on the protocol column is 4 of 11.
 
 LEADER, SUSTAIN-6, and EMPA-REG OUTCOME are shortened working examples. Their sentences are not a full copy of the registry text.
+
+The picker also includes seven more protocols with verbatim ClinicalTrials.gov text: DECLARE-TIMI 58 (NCT01730534), CREDENCE (NCT02065791), DAPA-HF (NCT03036124), Dapa-CKD (NCT03036150), FLOW (NCT03819153), SOUL (NCT03914326), and SURPASS-CVOT (NCT04255433). The walkthrough is still PIONEER 6. Every count uses the 10,000 synthetic adults with type 2 diabetes. DAPA-HF and Dapa-CKD enroll a broader group, and the screen says so.
 
 ## Enrollment model
 
@@ -136,7 +138,7 @@ Open http://localhost:8000.
 
 ### Docker
 
-The image builds the frontend with Node and runs the API with Python on port 8000. The committed population ships in the image; it is regenerated from the fixed seed at startup only if missing. The seeded cache ships in the image, so the four demo protocols load with no network call.
+The image builds the frontend with Node and runs the API with Python on port 8000. The committed population ships in the image; it is regenerated from the fixed seed at startup only if missing. The seeded cache ships in the image, so the eleven demo protocols load with no network call.
 
 ```bash
 docker build -t sieve .
@@ -153,7 +155,7 @@ backend/dryrun/
   synthea.py     fixed-seed population → CSV
   store.py       DuckDB patient store
   parser.py      cache, ClinicalTrials.gov v2 fetch, LLMBackend plug-in
-  seed.py        four demo protocols
+  seed.py        eleven demo protocols
   analysis.py    funnel, coverage, price tags
   cost.py        enrollment and delay cost
   api.py         FastAPI
@@ -179,7 +181,7 @@ v1 was built in [Kiro](https://kiro.dev) CLI from a single brief. v2 was specifi
 
 - Patient rows are synthetic. No real patient data is used.
 - Time and cost figures are planning estimates under the assumptions on screen.
-- PIONEER 6 keeps its registry wording. The cardiovascular inclusion uses the approximations named above. The other three protocols are abridged paraphrases.
+- PIONEER 6 keeps its registry wording. The cardiovascular inclusion uses the approximations named above. LEADER, SUSTAIN-6, and EMPA-REG OUTCOME are abridged paraphrases. The other seeded protocols keep their registry wording.
 - Criteria that need a date, a family history, a procedure, or a class the generator does not store are shown and then ignored by the counts.
 - This build does not call a model. Uncached sentences are reported, never guessed.
 
