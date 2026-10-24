@@ -122,24 +122,40 @@ class RuleParser:
 CTGOV_V2 = "https://clinicaltrials.gov/api/v2/studies/{nct}"
 
 
-def fetch_ctgov_eligibility(nct_id: str, client: httpx.Client | None = None) -> str:
-    """Fetch the raw eligibility criteria text for an NCT ID (API v2)."""
-    url = CTGOV_V2.format(nct=nct_id.strip().upper())
+def fetch_ctgov_study(
+    nct_id: str, client: httpx.Client | None = None
+) -> tuple[str, dict]:
+    """Fetch an NCT ID once (API v2): (raw eligibility text, trial meta)."""
+    nct = nct_id.strip().upper()
     owns = client is None
     client = client or httpx.Client(timeout=20.0)
     try:
-        resp = client.get(url, params={"format": "json"})
+        resp = client.get(CTGOV_V2.format(nct=nct), params={"format": "json"})
         resp.raise_for_status()
         data = resp.json()
     finally:
         if owns:
             client.close()
-    elig = (
-        data.get("protocolSection", {})
-        .get("eligibilityModule", {})
-        .get("eligibilityCriteria", "")
-    )
-    return elig
+    ps = data.get("protocolSection", {})
+    ident = ps.get("identificationModule", {})
+    brief = ident.get("briefTitle") or nct
+    acronym = ident.get("acronym")
+    meta = {
+        "nct_id": ident.get("nctId") or nct,
+        # Some brief titles already lead with the acronym ("STEP 1: ...").
+        "title": brief if not acronym or brief.startswith(acronym)
+        else f"{acronym}: {brief}",
+        "condition": ", ".join(ps.get("conditionsModule", {}).get("conditions", [])),
+        "paraphrased": False,  # sentences are ClinicalTrials.gov's own text
+        "source": "ctgov",
+    }
+    elig = ps.get("eligibilityModule", {}).get("eligibilityCriteria", "")
+    return elig, meta
+
+
+def fetch_ctgov_eligibility(nct_id: str, client: httpx.Client | None = None) -> str:
+    """Fetch the raw eligibility criteria text for an NCT ID (API v2)."""
+    return fetch_ctgov_study(nct_id, client)[0]
 
 
 def split_criteria(text: str) -> list[tuple[str, str]]:
