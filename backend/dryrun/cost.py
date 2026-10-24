@@ -79,6 +79,7 @@ def cost_model(
             "feasible": False,
             "days_added_vs_baseline": None,
             "delay_cost": None,
+            "delay_cost_label": "vs. enrolling any adult with type 2 diabetes",
             "assumptions": a.to_dict(),
             "note": "Eligible fraction is zero: enrollment never completes.",
         }
@@ -96,6 +97,7 @@ def cost_model(
         "baseline_months": round(base_months, 2) if base_months is not None else None,
         "days_added_vs_baseline": round(days_added, 1) if days_added is not None else None,
         "delay_cost": round(delay_cost, 2) if delay_cost is not None else None,
+        "delay_cost_label": "vs. enrolling any adult with type 2 diabetes",
         "assumptions": a.to_dict(),
         "note": "All values are estimates.",
     }

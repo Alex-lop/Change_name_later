@@ -138,6 +138,7 @@ details textarea { margin: 0.5rem 0; font-family: ui-monospace, monospace; }
 .card-num { font-size: 1.9rem; font-weight: 700; color: var(--accent); }
 .card-label { font-weight: 600; }
 .card-sub { color: var(--muted); font-size: 0.85rem; }
+.card-note { color: var(--muted); font-size: 0.72rem; font-style: italic; margin-top: 0.15rem; }
 
 .funnel { display: flex; flex-direction: column; gap: 0.5rem; }
 .funnel-row { display: flex; align-items: center; gap: 0.75rem; }

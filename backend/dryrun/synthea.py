@@ -16,6 +16,9 @@ import random
 from dataclasses import dataclass, field
 from pathlib import Path
 
+# Human-readable description of the shipped population base.
+POPULATION_LABEL = "adults with type 2 diabetes"
+
 # Canonical units used in the CSV (match dryrun.units.CANONICAL_UNIT).
 CSV_FIELDS = [
     "id",
@@ -137,8 +140,15 @@ def generate_patient(rng: random.Random, i: int, diabetic: bool) -> Patient:
 
 
 def generate_population(
-    n: int = 10_000, diabetic_fraction: float = 0.35, seed: int = 42
+    n: int = 10_000, diabetic_fraction: float = 1.0, seed: int = 42
 ) -> list[Patient]:
+    """Generate the trial-base population.
+
+    The shipped population is adults with type 2 diabetes (``diabetic_fraction``
+    defaults to 1.0): every patient carries ``t2d``. All eligible fractions,
+    enrollment months, and price tags are therefore relative to adults with
+    type 2 diabetes, not the general public.
+    """
     rng = random.Random(seed)
     out = []
     for i in range(n):

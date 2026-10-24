@@ -88,7 +88,8 @@ export default function App() {
         {health && (
           <p className="pop">
             Synthetic population:{" "}
-            <strong>{health.population.toLocaleString()}</strong> patients
+            <strong>{health.population.toLocaleString()}</strong>{" "}
+            {health.population_label || "patients"}
           </p>
         )}
       </header>
@@ -208,6 +209,10 @@ export default function App() {
                   <div className="card-label">Est. enrollment time</div>
                   <div className="card-sub">
                     delay cost {fmtMoney(cost?.delay_cost)}
+                  </div>
+                  <div className="card-note">
+                    {cost?.delay_cost_label ||
+                      "vs. enrolling any adult with type 2 diabetes"}
                   </div>
                 </div>
               </section>

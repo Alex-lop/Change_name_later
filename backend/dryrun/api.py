@@ -23,6 +23,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from . import parser as parser_mod
+from . import synthea
 from .analysis import VerdictMatrix, analyze
 from .cost import Assumptions, cost_model
 from .model import Rule
@@ -67,7 +68,11 @@ class AnalyzeRequest(BaseModel):
 @app.get("/api/health")
 def health() -> dict:
     store = get_store()
-    return {"status": "ok", "population": store.count()}
+    return {
+        "status": "ok",
+        "population": store.count(),
+        "population_label": synthea.POPULATION_LABEL,
+    }
 
 
 @app.get("/api/trials")
@@ -169,4 +174,5 @@ def analyze_endpoint(req: AnalyzeRequest) -> dict:
         )
     result["per_rule_cost"] = per_rule_cost
     result["active_rule_ids"] = active_ids
+    result["population_label"] = synthea.POPULATION_LABEL
     return result
