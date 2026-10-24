@@ -21,7 +21,6 @@ from typing import Any
 import httpx
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -231,22 +230,19 @@ def analyze_endpoint(req: AnalyzeRequest) -> dict:
 
 
 # --- static frontend (production) ---------------------------------------------
-# Mounted LAST so it never shadows the /api/* routes above. Serves the built
-# Vite app from frontend/dist with SPA fallback to index.html.
 
-if FRONTEND_DIST.exists():
-    assets = FRONTEND_DIST / "assets"
-    if assets.exists():
-        app.mount("/assets", StaticFiles(directory=str(assets)), name="assets")
 
-    @app.get("/")
-    def _index() -> FileResponse:
-        return FileResponse(str(FRONTEND_DIST / "index.html"))
+def mount_frontend(app: FastAPI, dist: Path) -> None:
+    """Serve the built Vite app from ``dist`` at ``/`` if it exists.
 
-    @app.get("/{full_path:path}")
-    def _spa_fallback(full_path: str) -> FileResponse:
-        # Any non-API, non-asset path returns the SPA shell.
-        candidate = FRONTEND_DIST / full_path
-        if candidate.is_file():
-            return FileResponse(str(candidate))
-        return FileResponse(str(FRONTEND_DIST / "index.html"))
+    Mounted AFTER every API route so it never shadows ``/api/*``. Uses
+    Starlette's StaticFiles, which resolves and contains every request path
+    inside ``dist`` (rejecting ``..`` / percent-encoded traversal), and with
+    ``html=True`` serves ``index.html`` for ``/``. The app has no client-side
+    router, so no SPA catch-all fallback is needed.
+    """
+    if dist.exists():
+        app.mount("/", StaticFiles(directory=str(dist), html=True), name="frontend")
+
+
+mount_frontend(app, FRONTEND_DIST)

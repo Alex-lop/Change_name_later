@@ -271,3 +271,41 @@ def test_analyze_endpoint_under_200ms():
     elapsed = time.perf_counter() - start
     assert resp.status_code == 200
     assert elapsed < 0.2, f"/api/analyze took {elapsed * 1000:.0f} ms"
+
+
+def test_frontend_mount_contains_path_traversal(tmp_path):
+    # Static serving must contain every request inside the dist dir and serve
+    # index.html at /, without leaking source via path traversal.
+    from pathlib import Path
+
+    from fastapi import FastAPI
+
+    from dryrun.api import mount_frontend
+
+    dist = tmp_path / "dist"
+    dist.mkdir()
+    (dist / "index.html").write_text("<!doctype html><div id=\"root\"></div>")
+
+    fresh = FastAPI()
+
+    @fresh.get("/api/health")
+    def _health() -> dict:  # a representative API route
+        return {"status": "ok"}
+
+    mount_frontend(fresh, Path(dist))
+    client = TestClient(fresh)
+
+    # / serves index.html
+    root = client.get("/")
+    assert root.status_code == 200
+    assert 'id="root"' in root.text
+
+    # Path traversal must NOT return 200 (and must not leak source).
+    traversal = client.get(
+        "/%2e%2e/%2e%2e/backend/dryrun/api.py", follow_redirects=False
+    )
+    assert traversal.status_code != 200
+    assert "mount_frontend" not in traversal.text
+
+    # A missing API route returns 404 (not shadowed by the static mount).
+    assert client.get("/api/nope").status_code == 404
