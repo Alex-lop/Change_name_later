@@ -199,13 +199,33 @@ PIONEER6 = {
     ],
 }
 
+SEEDS_DIR = DATA_DIR / "seeds"
+
+
+def _seed_files() -> list[dict]:
+    """More demo trials, kept as data: one JSON file per trial in data/seeds/.
+
+    Same contract as PIONEER6: each sentence is verbatim from ClinicalTrials.gov
+    (raw text in data/trials_raw/<NCT>.txt, markdown backslash escapes removed),
+    paired with its hand-checked translation. Criteria the synthetic data cannot
+    decide are marked evaluable=False with a reason.
+    """
+    trials = []
+    for path in sorted(SEEDS_DIR.glob("*.json")):
+        t = json.loads(path.read_text())
+        t["criteria"] = [(c["sentence"], c["rule"]) for c in t["criteria"]]
+        trials.append(t)
+    return trials
+
+
 TRIALS = [PIONEER6, LEADER, SUSTAIN6, EMPAREG]
 
 def seed() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     cache = ParseCache()
     registry = {}
-    for trial in TRIALS:
+    # Read at seed time, not import time: api.py imports this module.
+    for trial in TRIALS + _seed_files():
         criteria = []
         for sentence, kwargs in trial["criteria"]:
             kind = kwargs.get("kind", "inclusion")
