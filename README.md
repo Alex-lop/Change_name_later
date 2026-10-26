@@ -3,8 +3,11 @@
 </p>
 
 <p align="center">
+  <a href="https://www.youtube.com/watch?v=Ic7tmAcfrfg"><img src="https://img.shields.io/badge/Demo%20video-watch%20on%20YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Demo video — watch on YouTube"></a>
   <a href="HOW_WE_USED_KIRO.md"><img src="https://img.shields.io/badge/How%20we%20used%20Kiro-read%20the%20full%20write--up-D97706?style=for-the-badge" alt="How we used Kiro — read the full write-up"></a>
 </p>
+
+**[Watch the demo video](https://www.youtube.com/watch?v=Ic7tmAcfrfg)** — a walkthrough of Sieve on YouTube.
 
 **[How we used Kiro](HOW_WE_USED_KIRO.md)** — Kiro CLI, the v2 spec, hooks, steering, MCP, and property-based tests. Judges: start here.
 
@@ -46,6 +49,11 @@ Criteria stay on the left. Results stay on the right, so a change and its effect
 Enrollment months assume 1,000 patients, 50 sites, 20 screened per site per month, and a 60% consent rate. Delay cost assumes $40,000 a day, measured against enrolling any adult with type 2 diabetes. All five are editable and labeled as estimates. If nobody is eligible, enrollment is reported as never completing.
 
 ## The demo
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=Ic7tmAcfrfg"><img src="https://img.youtube.com/vi/Ic7tmAcfrfg/hqdefault.jpg" alt="Watch the Sieve demo video on YouTube" width="560"></a>
+  <br><em>Click to watch the demo on YouTube.</em>
+</p>
 
 Open the app and PIONEER 6 loads first. Condition: type 2 diabetes.
 
